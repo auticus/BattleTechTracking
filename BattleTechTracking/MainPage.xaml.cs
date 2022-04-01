@@ -14,5 +14,10 @@ namespace BattleTechTracking
         {
             InitializeComponent();
         }
+
+        private void CreateNew_OnClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

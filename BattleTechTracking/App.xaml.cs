@@ -1,7 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
+[assembly: ExportFont("Hvymtl1.ttf", Alias="BattletechFont")]
 namespace BattleTechTracking
 {
     public partial class App : Application
