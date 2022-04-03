@@ -9,7 +9,8 @@ namespace BattleTechTracking
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //important - the template just creates the new mainpage.  You can't navigate from that.
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

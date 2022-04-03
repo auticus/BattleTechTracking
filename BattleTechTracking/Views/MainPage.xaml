@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.MainPage"
              BackgroundImageSource="MainScreenBackground.jpg">
-<StackLayout>
+    <ContentPage.BindingContext>
+        <viewModels:MainPageViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
     <!--Top level elements-->
     <StackLayout VerticalOptions="Start">
         <Frame BackgroundColor="MidnightBlue" Padding="24" CornerRadius="0" Opacity="0.7">
@@ -14,13 +18,13 @@
     <StackLayout VerticalOptions="CenterAndExpand">
         <Button Text="Load Existing Game" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" Padding="10"
                 BackgroundColor="Black" Opacity="0.8" CornerRadius="10"
-                FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                FontSize="Medium" FontAttributes="Bold" TextColor="White" Command="{Binding LoadExistingGame}"/>
         <Button Text="View Saved Game" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" Padding="10"
                 BackgroundColor="Black" Opacity="0.8" CornerRadius="10"
-                FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                FontSize="Medium" FontAttributes="Bold" TextColor="White" Command="{Binding ViewSavedGame}"/>
         <Button Text="View/Edit Data" HorizontalOptions="CenterAndExpand" Padding="10"
                 BackgroundColor="Black" Opacity="0.8" CornerRadius="10"
-                FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                FontSize="Medium" FontAttributes="Bold" TextColor="White" Command="{Binding OpenDataView}"/>
         </StackLayout>
     <!--Bottom level Elements-->
     <StackLayout VerticalOptions="End">
@@ -44,7 +48,7 @@
             <ImageButton Grid.Column="1" Grid.RowSpan="2" WidthRequest="230" HeightRequest="230" 
                          CornerRadius="120" HorizontalOptions="End" Clicked="CreateNew_OnClicked"
                          BackgroundColor="Black" Source="MainScreenCircleButton.png"
-                         Margin="25" BorderColor="Red" BorderWidth="3"/>
+                         Margin="25" BorderColor="Red" BorderWidth="3" Command="{Binding CreateNewGame}"/>
         </Grid>
     </StackLayout>
 </StackLayout>
