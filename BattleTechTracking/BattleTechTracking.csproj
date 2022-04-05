@@ -12,10 +12,12 @@
 
   <ItemGroup>
     <None Remove="Resources\Fonts\Hvymtl1.ttf" />
+    <None Remove="Resources\RestoreFiles\MasterMech.json" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Hvymtl1.ttf" />
+    <EmbeddedResource Include="Resources\RestoreFiles\MasterMech.json" />
   </ItemGroup>
 
   <ItemGroup>

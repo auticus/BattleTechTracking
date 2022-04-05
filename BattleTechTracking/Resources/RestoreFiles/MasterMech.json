@@ -1,0 +1,515 @@
+[
+  {
+    "Name": "Centurion",
+    "Model": "CN9-A",
+    "Tonnage": 50,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "BattleValue": 945,
+    "YearIntroduced": 2801,
+    "UnitMovement": {
+      "Walking": 4,
+      "Running": 6,
+      "Jumping": 0
+    },
+    "Components": [
+      {
+        "Name": "Head",
+        "Armor": 9,
+        "Structure": 3
+      },
+      {
+        "Name": "Center Torso",
+        "Armor": 18,
+        "RearArmor": 7,
+        "Structure": 16
+      },
+      {
+        "Name": "Left Torso",
+        "Armor": 13,
+        "RearArmor": 6,
+        "Structure": 12
+      },
+      {
+        "Name": "Right Torso",
+        "Armor": 13,
+        "RearArmor": 6,
+        "Structure": 12
+      },
+      {
+        "Name": "Right Arm",
+        "Armor": 16,
+        "Structure": 8
+      },
+      {
+        "Name": "Left Arm",
+        "Armor": 16,
+        "Structure": 8
+      },
+      {
+        "Name": "Right Leg",
+        "Armor": 16,
+        "Structure": 12
+      },
+      {
+        "Name": "Left Leg",
+        "Armor": 16,
+        "Structure": 12
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "Location": "H"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "Location": "H"
+      },
+      {
+        "Name": "Cockpit",
+        "Hits": 1,
+        "Location": "H"
+      },
+      {
+        "Name": "Fusion Engine",
+        "Hits": 3,
+        "Location": "CT"
+      },
+      {
+        "Name": "Gyro",
+        "Hits": 2,
+        "Location": "CT"
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 5,
+        "Location": "LT"
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 5,
+        "Location": "RT"
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "Location": "RL"
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "Location": "RL"
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "Location": "RL"
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "Location": "RL"
+      }
+    ],
+    "Weapons": [
+      {
+        "Name": "AC/10",
+        "Hits": 1,
+        "Location": "RA",
+        "Heat": 3,
+        "Damage": 10,
+        "DamageCodes": [
+          "DB",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 5,
+        "MediumRange": 10,
+        "LongRange": 15,
+        "Ammo": [
+          {
+            "Name": "Ammo (AC/10)",
+            "Hits": 1,
+            "Location": "RT",
+            "AmmoCount": 10
+          },
+          {
+            "Name": "Ammo (AC/10)",
+            "Hits": 1,
+            "Location": "RT",
+            "AmmoCount": 10
+          }
+        ]
+      },
+      {
+        "Name": "LRM 10",
+        "Hits": 1,
+        "Location": "LT",
+        "Heat": 4,
+        "Damage": 1,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 6,
+        "ShortRange": 7,
+        "MediumRange": 14,
+        "LongRange": 21,
+        "Ammo": [
+          {
+            "Name": "Ammo (LRM 10)",
+            "Hits": 1,
+            "Location": "LT",
+            "AmmoCount": 12
+          },
+          {
+            "Name": "Ammo (LRM 10)",
+            "Hits": 1,
+            "Location": "LT",
+            "AmmoCount": 12
+          }
+        ]
+      },
+      {
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "Location": "CT",
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": []
+      },
+      {
+        "Name": "Medium Laser (R)",
+        "Hits": 1,
+        "Location": "CT",
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": []
+      }
+    ],
+    "HeatSinks": 10,
+    "Quirks": [
+      "Improved Targeting (Short)",
+      "Non-Standard Parts"
+    ]
+  },
+  {
+    "Name": "Commando",
+    "Model": "COM-2D",
+    "Tonnage": 25,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "BattleValue": 541,
+    "YearIntroduced": 2486,
+    "UnitMovement": {
+      "Walking": 6,
+      "Running": 9,
+      "Jumping": 0
+    },
+    "Components": [
+      {
+        "Name": "Head",
+        "Armor": 6,
+        "Structure": 3
+      },
+      {
+        "Name": "Center Torso",
+        "Armor": 8,
+        "RearArmor": 4,
+        "Structure": 8
+      },
+      {
+        "Name": "Left Torso",
+        "Armor": 6,
+        "RearArmor": 3,
+        "Structure": 6
+      },
+      {
+        "Name": "Right Torso",
+        "Armor": 6,
+        "RearArmor": 3,
+        "Structure": 6
+      },
+      {
+        "Name": "Right Arm",
+        "Armor": 6,
+        "Structure": 4
+      },
+      {
+        "Name": "Left Arm",
+        "Armor": 6,
+        "Structure": 4
+      },
+      {
+        "Name": "Right Leg",
+        "Armor": 8,
+        "Structure": 6
+      },
+      {
+        "Name": "Left Leg",
+        "Armor": 8,
+        "Structure": 6
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "Location": "LA"
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "Location": "RA"
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "Location": "H"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "Location": "H"
+      },
+      {
+        "Name": "Cockpit",
+        "Hits": 1,
+        "Location": "H"
+      },
+      {
+        "Name": "Fusion Engine",
+        "Hits": 3,
+        "Location": "CT"
+      },
+      {
+        "Name": "Gyro",
+        "Hits": 2,
+        "Location": "CT"
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 5,
+        "Location": "LT"
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 5,
+        "Location": "RT"
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "Location": "LL"
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "Location": "RL"
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "Location": "RL"
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "Location": "RL"
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "Location": "RL"
+      }
+    ],
+    "Weapons": [
+      {
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "Location": "LA",
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": []
+      },
+      {
+        "Name": "SRM 4",
+        "Hits": 1,
+        "Location": "RA",
+        "Heat": 3,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "Name": "Ammo (SRM 4)",
+            "Hits": 1,
+            "Location": "RT",
+            "AmmoCount": 25
+          }
+        ]
+      },
+      {
+        "Name": "SRM 6",
+        "Hits": 1,
+        "Location": "CT",
+        "Heat": 4,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "Name": "Ammo (SRM 6)",
+            "Hits": 1,
+            "Location": "LT",
+            "AmmoCount": 15
+          }
+        ]
+      }
+    ],
+    "HeatSinks": 10,
+    "Quirks": [
+      "Narrow/Low Profile",
+      "Exposed Actuators"
+    ]
+  }
+]

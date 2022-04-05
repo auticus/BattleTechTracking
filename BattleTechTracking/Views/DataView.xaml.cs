@@ -13,6 +13,7 @@ namespace BattleTechTracking.Views
         public DataView()
         {
             InitializeComponent();
+            
         }
     }
 }
