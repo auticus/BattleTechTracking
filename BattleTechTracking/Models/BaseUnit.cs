@@ -9,16 +9,61 @@ namespace BattleTechTracking.Models
     public abstract class BaseUnit : IDisplayUnit, INotifyPropertyChanged
     {
         private IEnumerable<UnitComponent> _components;
+        private string _name;
+        private string _model;
+        private int _tonnage;
+        private int _battleValue;
 
         /// <inheritdoc/>
-        public string Name { get; set; }
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name == value) return;
+                _name = value;
+                OnPropertyChanged(nameof(Name));
+                OnPropertyChanged(nameof(UnitHeader));
+            }
+        }
 
         /// <inheritdoc/>
-        public string Model { get; set; }
+        public string Model
+        {
+            get => _model;
+            set
+            {
+                if (_model == value) return;
+                _model = value;
+                OnPropertyChanged(nameof(Model));
+                OnPropertyChanged(nameof(UnitHeader));
+            }
+        }
 
-        public int Tonnage { get; set; }
+        public int Tonnage
+        {
+            get => _tonnage;
+            set
+            {
+                if (_tonnage == value) return;
+                _tonnage = value;
+                OnPropertyChanged(nameof(Tonnage));
+                OnPropertyChanged(nameof(UnitDetails));
+            }
+        }
 
-        public int BattleValue { get; set; }
+        public int BattleValue
+        {
+            get => _battleValue;
+            set
+            {
+                if (_battleValue == value) return;
+                _battleValue = value;
+                OnPropertyChanged(nameof(BattleValue));
+                OnPropertyChanged(nameof(UnitDetails));
+            }
+        }
+
         public string TechBase { get; set; }
         public string RulesLevel { get; set; }
 

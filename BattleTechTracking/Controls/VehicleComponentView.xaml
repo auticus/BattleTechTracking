@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.VehicleComponentView"
              x:Name="thisView">
     <ContentView.Content>
@@ -39,12 +40,16 @@
                                      FontAttributes="Italic"
                                      FontSize="Caption"
                                      VerticalTextAlignment="Center"/>
-                              <Entry Text="{Binding Armor}"
+                                <Entry Text="{Binding Armor}"
                                      Grid.Column="2"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
                                      MaxLength="2"
-                                     BackgroundColor="Gray"/>
+                                     BackgroundColor="Gray">
+                                    <Entry.Behaviors>
+                                        <behaviors:NumericValidationBehavior/>
+                                    </Entry.Behaviors>
+                                </Entry>
                               <Label Text="Rear"
                                      Margin="5,0,0,0"
                                      Grid.Column="3"
@@ -52,12 +57,16 @@
                                      FontAttributes="Italic"
                                      FontSize="Caption"
                                      VerticalTextAlignment="Center"/>
-                              <Entry Text="{Binding RearArmor}"
+                                <Entry Text="{Binding RearArmor}"
                                      Grid.Column="4"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
                                      MaxLength="2"
-                                     BackgroundColor="Gray"/>
+                                     BackgroundColor="Gray">
+                                    <Entry.Behaviors>
+                                        <behaviors:NullableNumericValidationBehavior/>
+                                    </Entry.Behaviors>
+                                </Entry>
                               <Label Text="Structure"
                                      Margin="5,0,0,0"
                                      Grid.Column="5"
@@ -65,14 +74,17 @@
                                      FontAttributes="Italic"
                                      FontSize="Caption"
                                      VerticalTextAlignment="Center"/>
-                              <Entry Text="{Binding Structure}"
+                                <Entry Text="{Binding Structure}"
                                      Grid.Column="6"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
                                      MaxLength="2"
-                                     BackgroundColor="Gray"/>
-
-                            </Grid>
+                                     BackgroundColor="Gray">
+                                    <Entry.Behaviors>
+                                        <behaviors:NumericValidationBehavior/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                          </Grid>
                           <!-- underline of the item -->
                           <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
                       </StackLayout>

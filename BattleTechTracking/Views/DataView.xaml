@@ -4,6 +4,7 @@
              xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
              xmlns:views="clr-namespace:BattleTechTracking.Views;assembly=BattleTechTracking"
              xmlns:controls="clr-namespace:BattleTechTracking.Controls;assembly=BattleTechTracking"
+             xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Views.DataView"
              BackgroundImageSource="dataBackground.jpg" 
              BackgroundColor="MidnightBlue">
@@ -136,27 +137,35 @@
                            Grid.Row="1"
                            Grid.Column="0"
                            Text="Tons"/>
-                    <Editor AutoSize="Disabled" WidthRequest="125" MaxLength="6"  HorizontalOptions="Start"
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Text="{Binding SelectedUnit.Tonnage}"/>
+                    <Entry WidthRequest="125" MaxLength="6"  HorizontalOptions="Start"
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding SelectedUnit.Tonnage}">
+                        <Entry.Behaviors>
+                            <behaviors:NumericValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <!--Battle Value-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                            Grid.Row="1"
                            Grid.Column="2"
                            Text="Battle Value"/>
-                    <Editor AutoSize="Disabled" WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
+                    <Entry  WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
                             Grid.Row="1"
                             Grid.Column="3"
-                            Text="{Binding SelectedUnit.BattleValue}"/>
+                            Text="{Binding SelectedUnit.BattleValue}">
+                        <Entry.Behaviors>
+                            <behaviors:NumericValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <!--Tech Base-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                            Grid.Row="2"
                            Grid.Column="0"
                            Text="Tech Base"/>
-                    <Editor AutoSize="Disabled" WidthRequest="125" MaxLength="6"  HorizontalOptions="Start"
+                    <Entry WidthRequest="125" MaxLength="6"  HorizontalOptions="Start"
                             Grid.Row="2"
                             Grid.Column="1"
                             Text="{Binding SelectedUnit.TechBase}"/>
@@ -166,7 +175,7 @@
                            Grid.Row="2"
                            Grid.Column="2"
                            Text="Rules Level"/>
-                    <Editor AutoSize="Disabled" WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
+                    <Entry WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
                             Grid.Row="2"
                             Grid.Column="3"
                             Text="{Binding SelectedUnit.RulesLevel}"/>
@@ -176,30 +185,42 @@
                            Grid.Row="3"
                            Grid.Column="0"
                            Text="Year"/>
-                    <Editor AutoSize="Disabled" WidthRequest="125" MaxLength="4"  HorizontalOptions="Start"
+                    <Entry WidthRequest="125" MaxLength="4"  HorizontalOptions="Start"
                             Grid.Row="3"
                             Grid.Column="1"
-                            Text="{Binding SelectedUnit.YearIntroduced}"/>
+                            Text="{Binding SelectedUnit.YearIntroduced}">
+                        <Entry.Behaviors>
+                            <behaviors:NumericValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <!--Year Extinct-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                            Grid.Row="3"
                            Grid.Column="2"
                            Text="Year Extinct"/>
-                    <Editor AutoSize="Disabled" WidthRequest="150" MaxLength="4" HorizontalOptions="Start"
+                    <Entry WidthRequest="150" MaxLength="4" HorizontalOptions="Start"
                             Grid.Row="3"
                             Grid.Column="3"
-                            Text="{Binding SelectedUnit.YearExtinct}"/>
+                            Text="{Binding SelectedUnit.YearExtinct}">
+                        <Entry.Behaviors>
+                            <behaviors:NullableNumericValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <!--Heat Sinks-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                            Grid.Row="4"
                            Grid.Column="0"
                            Text="Heat Sinks"/>
-                    <Editor AutoSize="Disabled" WidthRequest="125" MaxLength="4"  HorizontalOptions="Start"
+                    <Entry WidthRequest="125" MaxLength="4"  HorizontalOptions="Start"
                             Grid.Row="4"
                             Grid.Column="1"
-                            Text="{Binding SelectedUnit.HeatSinks}"/>
+                            Text="{Binding SelectedUnit.HeatSinks}">
+                        <Entry.Behaviors>
+                            <behaviors:NumericValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
 
                     <!--Movement-->
                     <Grid Grid.Row="5">
@@ -225,7 +246,11 @@
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Text="{Binding SelectedUnit.UnitMovement.Walking}"/>
+                                Text="{Binding SelectedUnit.UnitMovement.Walking}">
+                            <Entry.Behaviors>
+                                <behaviors:NumericValidationBehavior/>
+                            </Entry.Behaviors>
+                        </Entry>
                         <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                Grid.Row="1"
                                Grid.Column="2"
@@ -233,7 +258,11 @@
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="3"
-                                Text="{Binding SelectedUnit.UnitMovement.Running}"/>
+                                Text="{Binding SelectedUnit.UnitMovement.Running}">
+                            <Entry.Behaviors>
+                                <behaviors:NumericValidationBehavior/>
+                            </Entry.Behaviors>
+                        </Entry>
                         <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                Grid.Row="1"
                                Grid.Column="4"
@@ -241,7 +270,11 @@
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="5"
-                                Text="{Binding SelectedUnit.UnitMovement.Jumping}"/>
+                                Text="{Binding SelectedUnit.UnitMovement.Jumping}">
+                            <Entry.Behaviors>
+                                <behaviors:NumericValidationBehavior/>
+                            </Entry.Behaviors>
+                        </Entry>
                     </Grid>
 
                     <controls:VehicleComponentView Grid.Row="6" Grid.ColumnSpan="6" x:Name="vehicleComponentView"
