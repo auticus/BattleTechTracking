@@ -18,7 +18,7 @@ namespace BattleTechTracking.ViewModels
             // to get around that wec an use the Application object to get the root page nav.
             _nav ?? (_nav = Application.Current.MainPage.Navigation);
 
-        protected virtual void OnProperyChanged(string propertyName)
+        protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

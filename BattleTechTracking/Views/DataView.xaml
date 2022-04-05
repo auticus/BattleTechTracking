@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
+             xmlns:views="clr-namespace:BattleTechTracking.Views;assembly=BattleTechTracking"
+             xmlns:controls="clr-namespace:BattleTechTracking.Controls;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Views.DataView"
              BackgroundImageSource="dataBackground.jpg" 
              BackgroundColor="MidnightBlue">
@@ -107,6 +109,7 @@
                         <RowDefinition Height="32"/>
                         <RowDefinition Height="32"/>
                         <RowDefinition Height="32"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <!--Name-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
@@ -213,13 +216,13 @@
                             <RowDefinition Height="32"/>
                         </Grid.RowDefinitions>
                         <Label TextColor="Yellow" HorizontalTextAlignment="Center" 
-                               Grid.ColumnSpan="6" Grid.Row="0" FontAttributes="Bold"
+                               Grid.ColumnSpan="6" Grid.Row="0" FontAttributes="Bold" 
                                Text="Movement" />
                         <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                Grid.Row="1"
                                Grid.Column="0"
                                Text="Walking"/>
-                        <Editor AutoSize="Disabled" WidthRequest="50" MaxLength="2"  HorizontalOptions="Start"
+                        <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Text="{Binding SelectedUnit.UnitMovement.Walking}"/>
@@ -227,7 +230,7 @@
                                Grid.Row="1"
                                Grid.Column="2"
                                Text="Running"/>
-                        <Editor AutoSize="Disabled" WidthRequest="50" MaxLength="2"  HorizontalOptions="Start"
+                        <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="3"
                                 Text="{Binding SelectedUnit.UnitMovement.Running}"/>
@@ -235,11 +238,17 @@
                                Grid.Row="1"
                                Grid.Column="4"
                                Text="Jumping"/>
-                        <Editor AutoSize="Disabled" WidthRequest="50" MaxLength="2"  HorizontalOptions="Start"
+                        <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="5"
                                 Text="{Binding SelectedUnit.UnitMovement.Jumping}"/>
                     </Grid>
+
+                    <controls:VehicleComponentView Grid.Row="6" Grid.ColumnSpan="6" x:Name="vehicleComponentView"
+                                                   Margin="10,30,15,0"
+                                                   IsVisible="{Binding VehicleComponentsVisible}"
+                                                   ItemSource="{Binding SelectedUnitComponents}"
+                                                   SelectedItem="{Binding SelectedComponent}"/>
                 </Grid>
             </Grid>
         </StackLayout>

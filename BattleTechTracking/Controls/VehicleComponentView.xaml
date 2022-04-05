@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BattleTechTracking.Controls.VehicleComponentView"
+             x:Name="thisView">
+    <ContentView.Content>
+      <ListView VerticalOptions="FillAndExpand"
+                BindingContext="{x:Reference thisView}"
+                ItemsSource="{Binding ItemSource, Source={x:Reference thisView}}"
+                SelectedItem="{Binding SelectedItem, Source={x:Reference thisView}}">
+          <ListView.Header>
+              <ContentView BackgroundColor="MidnightBlue">
+                  <Label Text="Unit Components" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Yellow"/>
+              </ContentView>
+          </ListView.Header>
+          <ListView.ItemTemplate>
+              <DataTemplate>
+                  <ViewCell>
+                      <StackLayout>
+                          <Grid Margin="5, 5, 0, 0">
+                              <Grid.ColumnDefinitions>
+                                  <ColumnDefinition Width="100"/>
+                                  <ColumnDefinition Width="50"/>
+                                  <ColumnDefinition Width="35"/>
+                                  <ColumnDefinition Width="50"/>
+                                  <ColumnDefinition Width="35"/>
+                                  <ColumnDefinition Width="60"/>
+                                  <ColumnDefinition Width="35"/>
+                                </Grid.ColumnDefinitions>
+                              <Label Text="{Binding Name}"
+                                     Grid.Column="0"
+                                     Margin="5,0,10,0"
+                                     TextColor="WhiteSmoke"
+                                     FontAttributes="Bold"
+                                     VerticalTextAlignment="Center"/>
+                              <Label Text="Armor"
+                                     Grid.Column="1"
+                                     TextColor="WhiteSmoke"
+                                     FontAttributes="Italic"
+                                     FontSize="Caption"
+                                     VerticalTextAlignment="Center"/>
+                              <Entry Text="{Binding Armor}"
+                                     Grid.Column="2"
+                                     VerticalOptions="Center"
+                                     VerticalTextAlignment="Center"
+                                     MaxLength="2"
+                                     BackgroundColor="Gray"/>
+                              <Label Text="Rear"
+                                     Margin="5,0,0,0"
+                                     Grid.Column="3"
+                                     TextColor="WhiteSmoke"
+                                     FontAttributes="Italic"
+                                     FontSize="Caption"
+                                     VerticalTextAlignment="Center"/>
+                              <Entry Text="{Binding RearArmor}"
+                                     Grid.Column="4"
+                                     VerticalOptions="Center"
+                                     VerticalTextAlignment="Center"
+                                     MaxLength="2"
+                                     BackgroundColor="Gray"/>
+                              <Label Text="Structure"
+                                     Margin="5,0,0,0"
+                                     Grid.Column="5"
+                                     TextColor="WhiteSmoke"
+                                     FontAttributes="Italic"
+                                     FontSize="Caption"
+                                     VerticalTextAlignment="Center"/>
+                              <Entry Text="{Binding Structure}"
+                                     Grid.Column="6"
+                                     VerticalOptions="Center"
+                                     VerticalTextAlignment="Center"
+                                     MaxLength="2"
+                                     BackgroundColor="Gray"/>
+
+                            </Grid>
+                          <!-- underline of the item -->
+                          <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
+                      </StackLayout>
+                  </ViewCell>
+              </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+  </ContentView.Content>
+</ContentView>

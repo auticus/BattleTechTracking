@@ -12,11 +12,51 @@ namespace BattleTechTracking.ViewModels
         private IDisplayUnit _selectedUnit;
         private string _unitNameFilter;
         private string _selectedUnitFilter;
-
-        private readonly List<BattleMech> _mechList = new List<BattleMech>();
+        private bool _vehicleComponentsVisible;
+        private bool _equipmentVisible;
+        private bool _weaponsVisible;
+        private UnitComponent _selectedComponent;
+        private ObservableCollection<IDisplayUnit> _visibleUnits;
+        private ObservableCollection<UnitComponent> _selectedUnitComponents;
+        private readonly List<BattleMech> _mechList;
 
         public ObservableCollection<string> UnitFilters { get; }
-        public ObservableCollection<IDisplayUnit> VisibleUnits { get; private set; }
+
+        public ObservableCollection<IDisplayUnit> VisibleUnits
+        {
+            get => _visibleUnits;
+            private set
+            {
+                _visibleUnits = value;
+                OnPropertyChanged(nameof(VisibleUnits));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the unit components for the selected unit.
+        /// </summary>
+        public ObservableCollection<UnitComponent> SelectedUnitComponents
+        {
+            get => _selectedUnitComponents;
+            private set
+            {
+                _selectedUnitComponents = value;
+                OnPropertyChanged(nameof(SelectedUnitComponents));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the selected component.
+        /// </summary>
+        public UnitComponent SelectedComponent
+        {
+            get => _selectedComponent;
+            set
+            {
+                _selectedComponent = value;
+                OnPropertyChanged(nameof(SelectedComponent));
+            }
+        }
 
         public IDisplayUnit SelectedUnit
         {
@@ -24,7 +64,10 @@ namespace BattleTechTracking.ViewModels
             set
             {
                 _selectedUnit = value;
-                OnProperyChanged(nameof(SelectedUnit));
+                OnPropertyChanged(nameof(SelectedUnit));
+
+                if (_selectedUnit == null) return;
+                SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
             }
         }
 
@@ -35,7 +78,40 @@ namespace BattleTechTracking.ViewModels
             {
                 if (_unitNameFilter == value) return;
                 _unitNameFilter = value;
-                OnProperyChanged(nameof(UnitNameFilter));
+                OnPropertyChanged(nameof(UnitNameFilter));
+            }
+        }
+
+        public bool VehicleComponentsVisible
+        {
+            get => _vehicleComponentsVisible;
+            set
+            {
+                if (_vehicleComponentsVisible == value) return;
+                _vehicleComponentsVisible = value;
+                OnPropertyChanged(nameof(VehicleComponentsVisible));
+            }
+        }
+
+        public bool EquipmentVisible
+        {
+            get => _equipmentVisible;
+            set
+            {
+                if (_equipmentVisible == value) return;
+                _equipmentVisible = value;
+                OnPropertyChanged(nameof(EquipmentVisible));
+            }
+        }
+
+        public bool WeaponsVisible
+        {
+            get => _weaponsVisible;
+            set
+            {
+                if (_weaponsVisible == value) return;
+                _weaponsVisible = value;
+                OnPropertyChanged(nameof(WeaponsVisible));
             }
         }
 
@@ -49,7 +125,7 @@ namespace BattleTechTracking.ViewModels
             {
                 if (_selectedUnitFilter == value) return;
                 _selectedUnitFilter = value;
-                OnProperyChanged(nameof(SelectedUnitFilter));
+                OnPropertyChanged(nameof(SelectedUnitFilter));
                 LoadListViewWithSelectedUnitType();
             }
         }
@@ -62,6 +138,7 @@ namespace BattleTechTracking.ViewModels
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
 
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
+            VehicleComponentsVisible = true;
         }
 
         private void LoadListViewWithSelectedUnitType()

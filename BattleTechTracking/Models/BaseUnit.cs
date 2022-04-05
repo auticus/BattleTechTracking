@@ -1,12 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BattleTechTracking.Models
 {
     /// <summary>
     /// The base model of all units in the application.
     /// </summary>
-    public abstract class BaseUnit : IDisplayUnit
+    public abstract class BaseUnit : IDisplayUnit, INotifyPropertyChanged
     {
+        private IEnumerable<UnitComponent> _components;
+
         /// <inheritdoc/>
         public string Name { get; set; }
 
@@ -24,7 +27,15 @@ namespace BattleTechTracking.Models
 
         public Movement UnitMovement { get; set; }
 
-        public IEnumerable<UnitComponent> Components { get; set; } = new List<UnitComponent>();
+        public IEnumerable<UnitComponent> Components
+        {
+            get => _components;
+            set
+            {
+                _components = value;
+                OnPropertyChanged(nameof(Components));
+            }
+        }
 
         // todo: if you want to add details to each piece of gear - don't do it on each mech - need a master list of gear and their details
         public IEnumerable<Equipment> Equipment { get; set; } = new List<Equipment>();
@@ -44,5 +55,12 @@ namespace BattleTechTracking.Models
 
         public string UnitHeader => $"{Name} ({Model})";
         public string UnitDetails => $"{Tonnage} tons - BV: {BattleValue}";
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace BattleTechTracking.Models
+﻿using System.Collections.Generic;
+
+namespace BattleTechTracking.Models
 {
     /// <summary>
     /// Interface for elements that will be displayed in the Data View list element.
@@ -27,6 +29,7 @@
         int HeatSinks { get; set; }
 
         Movement UnitMovement { get; set; }
+        IEnumerable<UnitComponent> Components { get; set; }
         string UnitHeader { get; }
         string UnitDetails { get; }
     }
