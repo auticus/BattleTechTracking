@@ -1,6 +1,8 @@
-﻿namespace BattleTechTracking.Models
+﻿using System;
+
+namespace BattleTechTracking.Models
 {
-    public struct UnitComponent
+    public class UnitComponent : BaseModel
     {
         public string Name { get; set; }
         public int Armor { get; set; }

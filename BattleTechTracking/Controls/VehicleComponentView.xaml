@@ -8,11 +8,24 @@
       <ListView VerticalOptions="FillAndExpand"
                 BindingContext="{x:Reference thisView}"
                 ItemsSource="{Binding ItemSource, Source={x:Reference thisView}}"
-                SelectedItem="{Binding SelectedItem, Source={x:Reference thisView}}">
+                SelectedItem="{Binding SelectedComponent, Source={x:Reference thisView}}">
           <ListView.Header>
               <ContentView BackgroundColor="MidnightBlue">
-                  <Label Text="Unit Components" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Yellow"/>
-              </ContentView>
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.95*"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Unit Components" HorizontalTextAlignment="Center" Margin="20,5,0,0"
+                               HorizontalOptions="Center" FontSize="Medium" TextColor="Yellow"
+                               Grid.Column="0"/>
+                        <ImageButton WidthRequest="32" HeightRequest="32" 
+                                   CornerRadius="120" HorizontalOptions="End" 
+                                   BackgroundColor="Black" Source="plusIcon.jpg"
+                                   Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
+                                   Command="{Binding NewComponent, Source={x:Reference thisView}}"/>
+                    </Grid>
+                </ContentView>
           </ListView.Header>
           <ListView.ItemTemplate>
               <DataTemplate>
@@ -20,19 +33,20 @@
                       <StackLayout>
                           <Grid Margin="5, 5, 0, 0">
                               <Grid.ColumnDefinitions>
-                                  <ColumnDefinition Width="100"/>
+                                  <ColumnDefinition Width="200"/>
                                   <ColumnDefinition Width="50"/>
                                   <ColumnDefinition Width="35"/>
                                   <ColumnDefinition Width="50"/>
                                   <ColumnDefinition Width="35"/>
                                   <ColumnDefinition Width="60"/>
                                   <ColumnDefinition Width="35"/>
+                                  <ColumnDefinition Width="75"/>
                                 </Grid.ColumnDefinitions>
-                              <Label Text="{Binding Name}"
+                              <Entry Text="{Binding Name}"
+                                     WidthRequest="200"
                                      Grid.Column="0"
                                      Margin="5,0,10,0"
-                                     TextColor="WhiteSmoke"
-                                     FontAttributes="Bold"
+                                     VerticalOptions="Center"
                                      VerticalTextAlignment="Center"/>
                               <Label Text="Armor"
                                      Grid.Column="1"
@@ -84,7 +98,12 @@
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
                                 </Entry>
-                          </Grid>
+                              <ImageButton WidthRequest="32" HeightRequest="32" 
+                                           BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
+                                           BorderColor="Gold" BorderWidth="1" Grid.Column="7"
+                                           Command="{Binding DeleteComponent, Source={x:Reference thisView}}"
+                                           CommandParameter="{Binding ID}"/>
+                            </Grid>
                           <!-- underline of the item -->
                           <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
                       </StackLayout>

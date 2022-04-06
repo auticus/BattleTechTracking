@@ -276,12 +276,25 @@
                             </Entry.Behaviors>
                         </Entry>
                     </Grid>
+                    
+                    <StackLayout Grid.Row="6" Grid.ColumnSpan="6">
+                        <controls:VehicleComponentView Margin="10,30,15,10"
+                                                       IsVisible="{Binding VehicleComponentsVisible}"
+                                                       ItemSource="{Binding SelectedUnitComponents}"
+                                                       SelectedComponent="{Binding SelectedComponent, Mode=TwoWay}"
+                                                       NewComponent="{Binding NewComponent}"
+                                                       DeleteComponent ="{Binding DeleteComponent}"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Button Text="Unit Components" TextColor="White" BackgroundColor="Gray" 
+                                    Margin="20,0,0,10" Command="{Binding UnitComponentCommand }"/>
+                            <Button Text="Equipment" TextColor="White" BackgroundColor="Gray" 
+                                    Margin="20,0,0,10" Command="{Binding EquipmentCommand}"/>
+                            <Button Text="Weapons" TextColor="White" BackgroundColor="Gray" 
+                                    Margin="20,0,0,10" Command="{Binding WeaponsCommand }"/>
+                        </StackLayout>
 
-                    <controls:VehicleComponentView Grid.Row="6" Grid.ColumnSpan="6" x:Name="vehicleComponentView"
-                                                   Margin="10,30,15,0"
-                                                   IsVisible="{Binding VehicleComponentsVisible}"
-                                                   ItemSource="{Binding SelectedUnitComponents}"
-                                                   SelectedItem="{Binding SelectedComponent}"/>
+                    </StackLayout>
+                    
                 </Grid>
             </Grid>
         </StackLayout>

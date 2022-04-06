@@ -6,7 +6,7 @@ namespace BattleTechTracking.Models
     /// <summary>
     /// The base model of all units in the application.
     /// </summary>
-    public abstract class BaseUnit : IDisplayUnit, INotifyPropertyChanged
+    public abstract class BaseUnit : BaseModel, IDisplayUnit
     {
         private IEnumerable<UnitComponent> _components;
         private string _name;
@@ -100,12 +100,5 @@ namespace BattleTechTracking.Models
 
         public string UnitHeader => $"{Name} ({Model})";
         public string UnitDetails => $"{Tonnage} tons - BV: {BattleValue}";
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

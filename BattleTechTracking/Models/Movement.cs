@@ -3,7 +3,7 @@
     /// <summary>
     /// Model that holds information on Movement.
     /// </summary>
-    public class Movement
+    public class Movement : BaseModel
     {
         public int Walking { get; set; }
         public int Running { get; set; }

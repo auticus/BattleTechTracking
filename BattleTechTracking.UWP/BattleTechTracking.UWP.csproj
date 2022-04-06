@@ -107,6 +107,7 @@
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="plusIcon.jpg" />
     <Content Include="dataBackground.jpg" />
     <Content Include="MainScreenBackground.jpg" />
     <Content Include="Assets\SmallTile.scale-100.png" />
@@ -135,6 +136,7 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="MainScreenCircleButton.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="trash.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using BattleTechTracking.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,9 +14,19 @@ namespace BattleTechTracking.Controls
             typeof(ObservableCollection<UnitComponent>),
             typeof(VehicleComponentView));
 
-        public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(
-            nameof(SelectedItem),
+        public static readonly BindableProperty SelectedComponentProperty = BindableProperty.Create(
+            nameof(SelectedComponent),
             typeof(UnitComponent),
+            typeof(VehicleComponentView));
+
+        public static readonly BindableProperty NewComponentProperty = BindableProperty.Create(
+            nameof(NewComponent),
+            typeof(ICommand),
+            typeof(VehicleComponentView));
+
+        public static readonly BindableProperty DeleteComponentProperty = BindableProperty.Create(
+            nameof(DeleteComponent),
+            typeof(ICommand),
             typeof(VehicleComponentView));
 
         public ObservableCollection<UnitComponent> ItemSource
@@ -24,10 +35,22 @@ namespace BattleTechTracking.Controls
             set => SetValue(VehicleComponentView.ItemSourceProperty, value);
         }
 
-        public UnitComponent SelectedItem
+        public UnitComponent SelectedComponent
         {
-            get => (UnitComponent)GetValue(VehicleComponentView.SelectedItemProperty);
-            set => SetValue(VehicleComponentView.SelectedItemProperty, value);
+            get => (UnitComponent)GetValue(VehicleComponentView.SelectedComponentProperty);
+            set => SetValue(VehicleComponentView.SelectedComponentProperty, value);
+        }
+
+        public Command NewComponent
+        {
+            get => (Command)GetValue(VehicleComponentView.NewComponentProperty);
+            set => SetValue(VehicleComponentView.NewComponentProperty, value);
+        }
+
+        public Command DeleteComponent
+        {
+            get => (Command)GetValue(VehicleComponentView.DeleteComponentProperty);
+            set => SetValue(VehicleComponentView.DeleteComponentProperty, value);
         }
 
         public VehicleComponentView()
