@@ -30,6 +30,8 @@ namespace BattleTechTracking.Models
 
         Movement UnitMovement { get; set; }
         IEnumerable<UnitComponent> Components { get; set; }
+        IEnumerable<Equipment> Equipment { get; set; }
+        IEnumerable<Weapon> Weapons { get; set; }
         string UnitHeader { get; }
         string UnitDetails { get; }
     }

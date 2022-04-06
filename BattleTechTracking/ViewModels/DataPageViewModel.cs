@@ -17,16 +17,14 @@ namespace BattleTechTracking.ViewModels
         private bool _vehicleComponentsVisible;
         private bool _equipmentVisible;
         private bool _weaponsVisible;
-        private UnitComponent _selectedComponent;
         private ObservableCollection<IDisplayUnit> _visibleUnits;
         private ObservableCollection<UnitComponent> _selectedUnitComponents;
+        private ObservableCollection<Equipment> _selectedUnitEquipment;
+        private ObservableCollection<Weapon> _selectedUnitWeapons;
+        private UnitComponent _selectedComponent;
+        private Equipment _selectedEquipment;
         private readonly List<BattleMech> _mechList;
-        private ICommand _newComponent;
-        private ICommand _deleteComponent;
-        private ICommand _unitComponentCommand;
-        private ICommand _equipmentCommand;
-        private ICommand _weaponsCommand;
-
+        
         public ObservableCollection<string> UnitFilters { get; }
 
         public ObservableCollection<IDisplayUnit> VisibleUnits
@@ -53,6 +51,29 @@ namespace BattleTechTracking.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets the equipment for the selected unit.
+        /// </summary>
+        public ObservableCollection<Equipment> SelectedUnitEquipment
+        {
+            get => _selectedUnitEquipment;
+            private set
+            {
+                _selectedUnitEquipment = value;
+                OnPropertyChanged(nameof(SelectedUnitEquipment));
+            }
+        }
+
+        public ObservableCollection<Weapon> SelectedUnitWeapons
+        {
+            get => _selectedUnitWeapons;
+            private set
+            {
+                _selectedUnitWeapons = value;
+                OnPropertyChanged(nameof(SelectedUnitWeapons));
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the selected component.
         /// </summary>
         public UnitComponent SelectedComponent
@@ -62,6 +83,19 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedComponent = value;
                 OnPropertyChanged(nameof(SelectedComponent));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the selected equipment.
+        /// </summary>
+        public Equipment SelectedEquipment
+        {
+            get => _selectedEquipment;
+            set
+            {
+                _selectedEquipment = value;
+                OnPropertyChanged(nameof(SelectedEquipment));
             }
         }
 
@@ -75,6 +109,8 @@ namespace BattleTechTracking.ViewModels
 
                 if (_selectedUnit == null) return;
                 SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
+                SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p=>p.Location));
+                SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
             }
         }
 
@@ -152,64 +188,26 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
-        public ICommand NewComponent
-        {
-            get => _newComponent;
-            private set
-            {
-                _newComponent = value;
-                OnPropertyChanged(nameof(NewComponent));
-            }
-        }
-
-        public ICommand DeleteComponent
-        {
-            get => _deleteComponent;
-            private set
-            {
-                _deleteComponent = value;
-                OnPropertyChanged(nameof(DeleteComponent));
-            }
-        }
-
+        public ICommand NewComponent { get; }
+        public ICommand DeleteComponent { get; }
+        public ICommand NewEquipment { get; }
+        public ICommand DeleteEquipment { get; }
+        
         /// <summary>
         /// Gets the command responsible for showing the Unit Components panel.
         /// </summary>
-        public ICommand UnitComponentCommand
-        {
-            get => _unitComponentCommand;
-            private set
-            {
-                _unitComponentCommand = value;
-                OnPropertyChanged(nameof(UnitComponentCommand));
-            }
-        }
-
+        public ICommand UnitComponentCommand { get; }
+        
         /// <summary>
         /// Gets the command responsible for showing the Equipment panel.
         /// </summary>
-        public ICommand EquipmentCommand
-        {
-            get => _equipmentCommand;
-            private set
-            {
-                _equipmentCommand = value;
-                OnPropertyChanged(nameof(EquipmentCommand));
-            }
-        }
-
+        public ICommand EquipmentCommand { get; }
+        
         /// <summary>
         /// Gets the command responsible for showing the Weapons panel.
         /// </summary>
-        public ICommand WeaponsCommand
-        {
-            get => _weaponsCommand;
-            private set
-            {
-                _weaponsCommand = value;
-                OnPropertyChanged(nameof(WeaponsCommand));
-            }
-        }
+        public ICommand WeaponsCommand { get; }
+        
 
         public DataPageViewModel()
         {
@@ -232,6 +230,19 @@ namespace BattleTechTracking.ViewModels
                 var item = SelectedUnitComponents.FirstOrDefault(x => x.ID == id);
                 if (item == null) return;
                 SelectedUnitComponents.Remove(item);
+            });
+
+            NewEquipment = new Command(() =>
+            {
+                if (SelectedUnit == null) return;
+                SelectedUnitEquipment.Add(new Equipment() { Name = "Unnamed", Hits = 1, Location="CT" });
+            });
+
+            DeleteEquipment = new Command<Guid>((id) =>
+            {
+                var item = SelectedUnitEquipment.FirstOrDefault(x => x.ID == id);
+                if (item == null) return;
+                SelectedUnitEquipment.Remove(item);
             });
 
             UnitComponentCommand = new Command(() =>

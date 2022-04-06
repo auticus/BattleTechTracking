@@ -284,6 +284,13 @@
                                                        SelectedComponent="{Binding SelectedComponent, Mode=TwoWay}"
                                                        NewComponent="{Binding NewComponent}"
                                                        DeleteComponent ="{Binding DeleteComponent}"/>
+                        <controls:EquipmentView Margin="10,30,15,10"
+                                                IsVisible="{Binding EquipmentVisible}"
+                                                ItemSource="{Binding SelectedUnitEquipment}"
+                                                SelectedEquipment="{Binding SelectedEquipment, Mode=TwoWay}"
+                                                NewEquipment="{Binding NewEquipment}"
+                                                DeleteEquipment ="{Binding DeleteEquipment}"/>
+                                                
                         <StackLayout Orientation="Horizontal">
                             <Button Text="Unit Components" TextColor="White" BackgroundColor="Gray" 
                                     Margin="20,0,0,10" Command="{Binding UnitComponentCommand }"/>

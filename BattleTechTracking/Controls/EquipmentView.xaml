@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
+             x:Class="BattleTechTracking.Controls.EquipmentView"
+             x:Name="thisView">
+    <ContentView.Content>
+        <ListView VerticalOptions="FillAndExpand"
+                BindingContext="{x:Reference thisView}"
+                ItemsSource="{Binding ItemSource, Source={x:Reference thisView}}"
+                SelectedItem="{Binding SelectedEquipment, Source={x:Reference thisView}}">
+            <ListView.Header>
+                <ContentView BackgroundColor="MidnightBlue">
+                    <Grid HorizontalOptions="FillAndExpand">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.95*"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Equipment" HorizontalTextAlignment="Center" Margin="20,5,0,0"
+                               HorizontalOptions="Center" FontSize="Medium" TextColor="Yellow"
+                               Grid.Column="0"/>
+                        <ImageButton WidthRequest="32" HeightRequest="32" 
+                                   CornerRadius="120" HorizontalOptions="End" 
+                                   BackgroundColor="Black" Source="plusIcon.jpg"
+                                   Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
+                                   Command="{Binding NewEquipment, Source={x:Reference thisView}}"/>
+                    </Grid>
+                </ContentView>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Grid Margin="5, 5, 0, 0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="75"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry Text="{Binding Name}"
+                                     WidthRequest="200"
+                                     Grid.Column="0"
+                                     Margin="5,0,10,0"
+                                     VerticalOptions="Center"
+                                     VerticalTextAlignment="Center"/>
+                                <Label Text="Hits"
+                                     Grid.Column="1"
+                                     TextColor="WhiteSmoke"
+                                     FontAttributes="Italic"
+                                     FontSize="Caption"
+                                     VerticalTextAlignment="Center"/>
+                                <Entry Text="{Binding Hits}"
+                                     Grid.Column="2"
+                                     VerticalOptions="Center"
+                                     VerticalTextAlignment="Center"
+                                     MaxLength="2"
+                                     BackgroundColor="Gray">
+                                    <Entry.Behaviors>
+                                        <behaviors:NumericValidationBehavior/>
+                                    </Entry.Behaviors>
+                                </Entry>
+                                <Label Text="Location"
+                                     Margin="5,0,0,0"
+                                     Grid.Column="3"
+                                     TextColor="WhiteSmoke"
+                                     FontAttributes="Italic"
+                                     FontSize="Caption"
+                                     VerticalTextAlignment="Center"/>
+                                <Entry Text="{Binding Location}"
+                                     Grid.Column="4"
+                                     VerticalOptions="Center"
+                                     VerticalTextAlignment="Center"
+                                     MaxLength="2"
+                                     BackgroundColor="Gray">
+                                </Entry>
+                                <ImageButton WidthRequest="32" HeightRequest="32" 
+                                           BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
+                                           BorderColor="Gold" BorderWidth="1" Grid.Column="5"
+                                           Command="{Binding DeleteEquipment, Source={x:Reference thisView}}"
+                                           CommandParameter="{Binding ID}"/>
+                            </Grid>
+                            <!-- underline of the item -->
+                            <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentView.Content>
+</ContentView>
