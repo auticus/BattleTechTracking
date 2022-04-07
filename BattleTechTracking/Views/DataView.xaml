@@ -297,8 +297,13 @@
                                               SelectedWeapon ="{Binding SelectedWeapon, Mode=TwoWay}"
                                               NewWeapon ="{Binding NewWeapon}"
                                               DeleteWeapon="{Binding DeleteWeapon}"
-                                              OpenCommandCodes ="{Binding OpenCommandCodes}"
+                                              OpenDamageCodes ="{Binding OpenDamageCodes}"
                                               OpenAmmo="{Binding OpenAmmo}"/>
+
+                        <controls:DamageCodesView Margin="10,30,15,10"
+                                                  IsVisible="{Binding DamageCodesVisible}"
+                                                  DamageCodes="{Binding DamageCodesCommaSeparated, Mode=TwoWay}"
+                                                  OkCommand ="{Binding DamageCodesOkCommand}"/>
                                                 
                         <StackLayout Orientation="Horizontal">
                             <Button Text="Unit Components" TextColor="White" BackgroundColor="Gray" 

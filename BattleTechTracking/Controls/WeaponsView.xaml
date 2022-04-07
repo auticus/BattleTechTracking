@@ -125,7 +125,8 @@
                                        Margin="5,0,3,0"/>
 
                                 <Button Text="+" TextColor="Gold" Grid.Row="1" Grid.Column="5" BackgroundColor="Black"
-                                        Command="{Binding OpenCommandCodes, Source={x:Reference thisView}}"/>
+                                        Command="{Binding OpenDamageCodes, Source={x:Reference thisView}}"
+                                        CommandParameter="{Binding ID}"/>
 
                                 <Label Text="Ammo"
                                        Grid.Row="1"

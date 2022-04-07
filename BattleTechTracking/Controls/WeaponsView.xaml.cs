@@ -29,8 +29,8 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(WeaponsView));
 
-        public static readonly BindableProperty OpenCommandCodesProperty = BindableProperty.Create(
-            nameof(OpenCommandCodes),
+        public static readonly BindableProperty OpenDamageCodesProperty = BindableProperty.Create(
+            nameof(OpenDamageCodes),
             typeof(ICommand),
             typeof(WeaponsView)
         );
@@ -65,12 +65,11 @@ namespace BattleTechTracking.Controls
             set => SetValue(WeaponsView.DeleteWeaponProperty, value);
         }
 
-        public Command OpenCommandCodes
+        public Command OpenDamageCodes
         {
-            get => (Command)GetValue(WeaponsView.OpenCommandCodesProperty);
-            set => SetValue(WeaponsView.OpenCommandCodesProperty, value);
+            get => (Command)GetValue(WeaponsView.OpenDamageCodesProperty);
+            set => SetValue(WeaponsView.OpenDamageCodesProperty, value);
         }
-
         public Command OpenAmmo
         {
             get => (Command)GetValue(WeaponsView.OpenAmmoProperty);

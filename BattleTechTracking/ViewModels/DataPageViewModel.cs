@@ -17,6 +17,9 @@ namespace BattleTechTracking.ViewModels
         private bool _vehicleComponentsVisible;
         private bool _equipmentVisible;
         private bool _weaponsVisible;
+        private bool _damageCodesVisible;
+        private bool _ammoVisible;
+
         private ObservableCollection<IDisplayUnit> _visibleUnits;
         private ObservableCollection<UnitComponent> _selectedUnitComponents;
         private ObservableCollection<Equipment> _selectedUnitEquipment;
@@ -25,6 +28,7 @@ namespace BattleTechTracking.ViewModels
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
         private readonly List<BattleMech> _mechList;
+        private string _damageCodesCommaSeparated;
         
         public ObservableCollection<string> UnitFilters { get; }
 
@@ -154,6 +158,8 @@ namespace BattleTechTracking.ViewModels
                 if (value == false) return;
                 EquipmentVisible = false;
                 WeaponsVisible = false;
+                DamageCodesVisible = false;
+                AmmoVisible = false;
             }
         }
 
@@ -169,6 +175,8 @@ namespace BattleTechTracking.ViewModels
                 if (value == false) return;
                 VehicleComponentsVisible = false;
                 WeaponsVisible = false;
+                DamageCodesVisible = false;
+                AmmoVisible = false;
             }
         }
 
@@ -184,6 +192,42 @@ namespace BattleTechTracking.ViewModels
                 if (value == false) return;
                 VehicleComponentsVisible = false;
                 EquipmentVisible = false;
+                DamageCodesVisible = false;
+                AmmoVisible = false;
+            }
+        }
+
+        public bool DamageCodesVisible
+        {
+            get => _damageCodesVisible;
+            set
+            {
+                if (_damageCodesVisible == value) return;
+                _damageCodesVisible = value;
+                OnPropertyChanged(nameof(DamageCodesVisible));
+
+                if (value == false) return;
+                VehicleComponentsVisible = false;
+                EquipmentVisible = false;
+                WeaponsVisible = false;
+                AmmoVisible = false;
+            }
+        }
+
+        public bool AmmoVisible
+        {
+            get => _ammoVisible;
+            set
+            {
+                if (_ammoVisible == value) return;
+                _ammoVisible = value;
+                OnPropertyChanged(nameof(AmmoVisible));
+
+                if (value == false) return;
+                VehicleComponentsVisible = false;
+                EquipmentVisible = false;
+                WeaponsVisible = false;
+                DamageCodesVisible = false;
             }
         }
 
@@ -202,13 +246,26 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the damage codes in the Damage Code view in a comma separated format.
+        /// </summary>
+        public string DamageCodesCommaSeparated
+        {
+            get => _damageCodesCommaSeparated;
+            set
+            {
+                _damageCodesCommaSeparated = value;
+                OnPropertyChanged(nameof(DamageCodesCommaSeparated));
+            }
+        }
+
         public ICommand NewComponent { get; }
         public ICommand DeleteComponent { get; }
         public ICommand NewEquipment { get; }
         public ICommand DeleteEquipment { get; }
         public ICommand NewWeapon { get; }
         public ICommand DeleteWeapon { get; }
-        public ICommand OpenCommandCodes { get; }
+        public ICommand OpenDamageCodes { get; }
         public ICommand OpenAmmo { get; }
         
         /// <summary>
@@ -225,7 +282,11 @@ namespace BattleTechTracking.ViewModels
         /// Gets the command responsible for showing the Weapons panel.
         /// </summary>
         public ICommand WeaponsCommand { get; }
-        
+
+        /// <summary>
+        /// Gets the command that runs when the Ok button on the Damage Codes view is pressed.
+        /// </summary>
+        public ICommand DamageCodesOkCommand { get; }
 
         public DataPageViewModel()
         {
@@ -291,9 +352,24 @@ namespace BattleTechTracking.ViewModels
                 WeaponsVisible = true;
             });
 
-            OpenCommandCodes = new Command<Guid>((id) =>
+            OpenDamageCodes = new Command<Guid>((id) =>
             {
+                var weapon = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
+                if (weapon == null) return;
 
+                //SelectedWeapon may not be selected if the user just clicked the button (it doesn't select the entity)
+                SelectedWeapon = weapon;
+
+                DamageCodesCommaSeparated = string.Join(",", weapon.DamageCodes.ToArray());
+                DamageCodesVisible = true;
+            });
+
+            DamageCodesOkCommand = new Command(() =>
+            {
+                //the selected weapon property should have been set in OpenCommandCodes
+                SelectedWeapon.DamageCodes = DamageCodesCommaSeparated.Split(',')
+                    .Select(x=>x.Trim()).ToList();
+                WeaponsVisible = true;
             });
 
             OpenAmmo = new Command<Guid>((id) =>
