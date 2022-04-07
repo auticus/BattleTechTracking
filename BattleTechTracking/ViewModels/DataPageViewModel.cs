@@ -23,6 +23,7 @@ namespace BattleTechTracking.ViewModels
         private ObservableCollection<Weapon> _selectedUnitWeapons;
         private UnitComponent _selectedComponent;
         private Equipment _selectedEquipment;
+        private Weapon _selectedWeapon;
         private readonly List<BattleMech> _mechList;
         
         public ObservableCollection<string> UnitFilters { get; }
@@ -96,6 +97,19 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedEquipment = value;
                 OnPropertyChanged(nameof(SelectedEquipment));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the selected weapon.
+        /// </summary>
+        public Weapon SelectedWeapon
+        {
+            get => _selectedWeapon;
+            set
+            {
+                _selectedWeapon = value;
+                OnPropertyChanged(nameof(SelectedWeapon));
             }
         }
 
@@ -192,6 +206,10 @@ namespace BattleTechTracking.ViewModels
         public ICommand DeleteComponent { get; }
         public ICommand NewEquipment { get; }
         public ICommand DeleteEquipment { get; }
+        public ICommand NewWeapon { get; }
+        public ICommand DeleteWeapon { get; }
+        public ICommand OpenCommandCodes { get; }
+        public ICommand OpenAmmo { get; }
         
         /// <summary>
         /// Gets the command responsible for showing the Unit Components panel.
@@ -245,6 +263,19 @@ namespace BattleTechTracking.ViewModels
                 SelectedUnitEquipment.Remove(item);
             });
 
+            NewWeapon = new Command(() =>
+            {
+                if (SelectedUnit == null) return;
+                SelectedUnitWeapons.Add(new Weapon(){Name = "Unnamed", Hits=1, Location="CT"});
+            });
+
+            DeleteWeapon = new Command<Guid>((id) =>
+            {
+                var item = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
+                if (item == null) return;
+                SelectedUnitWeapons.Remove(item);
+            });
+
             UnitComponentCommand = new Command(() =>
             {
                 VehicleComponentsVisible = true;
@@ -258,6 +289,16 @@ namespace BattleTechTracking.ViewModels
             WeaponsCommand = new Command(() =>
             {
                 WeaponsVisible = true;
+            });
+
+            OpenCommandCodes = new Command<Guid>((id) =>
+            {
+
+            });
+
+            OpenAmmo = new Command<Guid>((id) =>
+            {
+
             });
         }
 

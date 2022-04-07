@@ -45,6 +45,7 @@
                               <Entry Text="{Binding Name}"
                                      WidthRequest="200"
                                      Grid.Column="0"
+                                     MaxLength="50"
                                      Margin="5,0,10,0"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"/>
@@ -58,8 +59,7 @@
                                      Grid.Column="2"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     BackgroundColor="Gray">
+                                     MaxLength="2">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -75,8 +75,7 @@
                                      Grid.Column="4"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     BackgroundColor="Gray">
+                                     MaxLength="2">
                                     <Entry.Behaviors>
                                         <behaviors:NullableNumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -92,8 +91,7 @@
                                      Grid.Column="6"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     BackgroundColor="Gray">
+                                     MaxLength="2">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>

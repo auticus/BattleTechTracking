@@ -290,6 +290,15 @@
                                                 SelectedEquipment="{Binding SelectedEquipment, Mode=TwoWay}"
                                                 NewEquipment="{Binding NewEquipment}"
                                                 DeleteEquipment ="{Binding DeleteEquipment}"/>
+
+                        <controls:WeaponsView Margin="10,30,15,10"
+                                              IsVisible="{Binding WeaponsVisible}"
+                                              ItemSource="{Binding SelectedUnitWeapons}"
+                                              SelectedWeapon ="{Binding SelectedWeapon, Mode=TwoWay}"
+                                              NewWeapon ="{Binding NewWeapon}"
+                                              DeleteWeapon="{Binding DeleteWeapon}"
+                                              OpenCommandCodes ="{Binding OpenCommandCodes}"
+                                              OpenAmmo="{Binding OpenAmmo}"/>
                                                 
                         <StackLayout Orientation="Horizontal">
                             <Button Text="Unit Components" TextColor="White" BackgroundColor="Gray" 

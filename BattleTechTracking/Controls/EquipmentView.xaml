@@ -42,6 +42,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Entry Text="{Binding Name}"
                                      WidthRequest="200"
+                                     MaxLength="50"
                                      Grid.Column="0"
                                      Margin="5,0,10,0"
                                      VerticalOptions="Center"
@@ -56,8 +57,7 @@
                                      Grid.Column="2"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     BackgroundColor="Gray">
+                                     MaxLength="2">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -73,8 +73,7 @@
                                      Grid.Column="4"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     BackgroundColor="Gray">
+                                     MaxLength="2">
                                 </Entry>
                                 <ImageButton WidthRequest="32" HeightRequest="32" 
                                            BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
