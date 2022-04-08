@@ -19,14 +19,17 @@ namespace BattleTechTracking.ViewModels
         private bool _weaponsVisible;
         private bool _damageCodesVisible;
         private bool _ammoVisible;
+        private string _ammunitionViewHeader;
 
         private ObservableCollection<IDisplayUnit> _visibleUnits;
         private ObservableCollection<UnitComponent> _selectedUnitComponents;
         private ObservableCollection<Equipment> _selectedUnitEquipment;
         private ObservableCollection<Weapon> _selectedUnitWeapons;
+        private ObservableCollection<Ammunition> _selectedWeaponAmmunition;
         private UnitComponent _selectedComponent;
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
+        private Ammunition _selectedAmmo;
         private readonly List<BattleMech> _mechList;
         private string _damageCodesCommaSeparated;
         
@@ -68,6 +71,9 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the selected unit weapons.
+        /// </summary>
         public ObservableCollection<Weapon> SelectedUnitWeapons
         {
             get => _selectedUnitWeapons;
@@ -75,6 +81,19 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedUnitWeapons = value;
                 OnPropertyChanged(nameof(SelectedUnitWeapons));
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the selected weapon's ammunition.
+        /// </summary>
+        public ObservableCollection<Ammunition> SelectedWeaponAmmunition
+        {
+            get => _selectedWeaponAmmunition;
+            private set
+            {
+                _selectedWeaponAmmunition = value;
+                OnPropertyChanged(nameof(SelectedWeaponAmmunition));
             }
         }
 
@@ -114,6 +133,18 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedWeapon = value;
                 OnPropertyChanged(nameof(SelectedWeapon));
+                AmmunitionViewHeader = $"{_selectedWeapon.Name ?? string.Empty} Ammunition";
+                SelectedWeaponAmmunition = new ObservableCollection<Ammunition>(SelectedWeapon.Ammo);
+            }
+        }
+
+        public Ammunition SelectedAmmunition
+        {
+            get => _selectedAmmo;
+            set
+            {
+                _selectedAmmo = value;
+                OnPropertyChanged(nameof(SelectedAmmunition));
             }
         }
 
@@ -140,6 +171,17 @@ namespace BattleTechTracking.ViewModels
                 if (_unitNameFilter == value) return;
                 _unitNameFilter = value;
                 OnPropertyChanged(nameof(UnitNameFilter));
+            }
+        }
+
+        public string AmmunitionViewHeader
+        {
+            get => _ammunitionViewHeader;
+            set
+            {
+                if (_ammunitionViewHeader == value) return;
+                _ammunitionViewHeader = value;
+                OnPropertyChanged(nameof(AmmunitionViewHeader));
             }
         }
 
@@ -267,6 +309,8 @@ namespace BattleTechTracking.ViewModels
         public ICommand DeleteWeapon { get; }
         public ICommand OpenDamageCodes { get; }
         public ICommand OpenAmmo { get; }
+        public ICommand NewAmmo { get; }
+        public ICommand DeleteAmmo { get; }
         
         /// <summary>
         /// Gets the command responsible for showing the Unit Components panel.
@@ -287,6 +331,11 @@ namespace BattleTechTracking.ViewModels
         /// Gets the command that runs when the Ok button on the Damage Codes view is pressed.
         /// </summary>
         public ICommand DamageCodesOkCommand { get; }
+
+        /// <summary>
+        /// Gets the command that runs when the Ok button on the Ammunition view is pressed.
+        /// </summary>
+        public ICommand AmmunitionOkCommand { get; }
 
         public DataPageViewModel()
         {
@@ -374,7 +423,32 @@ namespace BattleTechTracking.ViewModels
 
             OpenAmmo = new Command<Guid>((id) =>
             {
+                var weapon = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
+                if (weapon == null) return;
 
+                //SelectedWeapon may not be selected if the user just clicked the button (it doesn't select the entity)
+                SelectedWeapon = weapon;
+                AmmoVisible = true;
+            });
+
+            NewAmmo = new Command(() =>
+            {
+                if (SelectedWeaponAmmunition == null) return;
+                SelectedWeaponAmmunition.Add(new Ammunition(){Name=$"Ammo ({SelectedWeapon.Name})", Hits = 1, Location="CT", AmmoCount = 10});
+            });
+
+            DeleteAmmo = new Command<Guid>((id) =>
+            {
+                var ammo = SelectedWeaponAmmunition.FirstOrDefault(x => x.ID == id);
+                if (ammo == null) return;
+                SelectedWeaponAmmunition.Remove(ammo);
+            });
+
+            AmmunitionOkCommand = new Command(() =>
+            {
+                //the selected weapon property should have been set in OpenAmmo
+                SelectedWeapon.Ammo = SelectedWeaponAmmunition.ToList();
+                WeaponsVisible = true;
             });
         }
 

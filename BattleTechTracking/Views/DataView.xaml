@@ -304,6 +304,16 @@
                                                   IsVisible="{Binding DamageCodesVisible}"
                                                   DamageCodes="{Binding DamageCodesCommaSeparated, Mode=TwoWay}"
                                                   OkCommand ="{Binding DamageCodesOkCommand}"/>
+
+                        <controls:AmmunitionView Margin="10,30,15,10"
+                                                 IsVisible="{Binding AmmoVisible}"
+                                                 AmmunitionViewHeader="{Binding AmmunitionViewHeader}"
+                                                 AmmunitionList="{Binding SelectedWeaponAmmunition}"
+                                                 SelectedAmmo ="{Binding SelectedAmmunition}"
+                                                 NewAmmo="{Binding NewAmmo}"
+                                                 DeleteAmmo="{Binding DeleteAmmo}"
+                                                 OkCommand="{Binding AmmunitionOkCommand}"
+                                                 />
                                                 
                         <StackLayout Orientation="Horizontal">
                             <Button Text="Unit Components" TextColor="White" BackgroundColor="Gray" 
