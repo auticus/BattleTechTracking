@@ -46,6 +46,24 @@ namespace BattleTechTracking.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets the currently selected unit.
+        /// </summary>
+        public IDisplayUnit SelectedUnit
+        {
+            get => _selectedUnit;
+            set
+            {
+                PersistObservableCollectionsToModel();
+
+                _selectedUnit = value;
+                OnPropertyChanged(nameof(SelectedUnit));
+
+                SetObservableCollectionsFromSelectedModel();
+                VehicleComponentsVisible = true;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the unit components for the selected unit.
         /// </summary>
         public ObservableCollection<UnitComponent> SelectedUnitComponents
@@ -145,21 +163,6 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedAmmo = value;
                 OnPropertyChanged(nameof(SelectedAmmunition));
-            }
-        }
-
-        public IDisplayUnit SelectedUnit
-        {
-            get => _selectedUnit;
-            set
-            {
-                _selectedUnit = value;
-                OnPropertyChanged(nameof(SelectedUnit));
-
-                if (_selectedUnit == null) return;
-                SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
-                SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p=>p.Location));
-                SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
             }
         }
 
@@ -466,6 +469,22 @@ namespace BattleTechTracking.ViewModels
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
             }
+        }
+
+        private void PersistObservableCollectionsToModel()
+        {
+            if (_selectedUnit == null) return;
+            _selectedUnit.Components = SelectedUnitComponents.ToList();
+            _selectedUnit.Equipment = SelectedUnitEquipment.ToList();
+            _selectedUnit.Weapons = SelectedUnitWeapons.ToList();
+        }
+
+        private void SetObservableCollectionsFromSelectedModel()
+        {
+            if (_selectedUnit == null) return;
+            SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
+            SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p => p.Location));
+            SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
         }
     }
 }
