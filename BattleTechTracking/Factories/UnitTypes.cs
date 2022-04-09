@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Factories
 {
@@ -14,5 +16,17 @@ namespace BattleTechTracking.Factories
 
         public static ObservableCollection<string> BuildUnitTypesCollection() 
             => new ObservableCollection<string> { BATTLE_MECH, INDUSTRIAL_MECH, COMBAT_VEHICLE, SUPPORT_VEHICLE, VTOL, INFANTRY, AEROSPACE };
+
+        public static IDisplayUnit BuildNewUnitFromType(string unitType)
+        {
+            switch (unitType)
+            {
+                case BATTLE_MECH:
+                    return BattleMechFactory.BuildDefaultBattleMech();
+                default:
+                    throw new ArgumentException(
+                        $"The value {unitType} is not recognized or has not been implemented yet.");
+            }
+        }
     }
 }

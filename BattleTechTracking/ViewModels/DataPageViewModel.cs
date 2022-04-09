@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Dynamic;
 using System.Linq;
 using System.Windows.Input;
 using BattleTechTracking.Factories;
@@ -30,7 +31,7 @@ namespace BattleTechTracking.ViewModels
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
         private Ammunition _selectedAmmo;
-        private readonly List<BattleMech> _mechList;
+        private List<BattleMech> _mechList;
         private string _damageCodesCommaSeparated;
         
         public ObservableCollection<string> UnitFilters { get; }
@@ -53,7 +54,7 @@ namespace BattleTechTracking.ViewModels
             get => _selectedUnit;
             set
             {
-                PersistObservableCollectionsToModel();
+                PersistSelectedUnitToModels();
 
                 _selectedUnit = value;
                 OnPropertyChanged(nameof(SelectedUnit));
@@ -285,9 +286,15 @@ namespace BattleTechTracking.ViewModels
             set
             {
                 if (_selectedUnitFilter == value) return;
+
+                if (_selectedUnitFilter != null)
+                {
+                    PersistSelectedUnitToList();
+                }
+                
                 _selectedUnitFilter = value;
                 OnPropertyChanged(nameof(SelectedUnitFilter));
-                LoadListViewWithSelectedUnitType();
+                LoadVisibleUnits();
             }
         }
 
@@ -339,6 +346,16 @@ namespace BattleTechTracking.ViewModels
         /// Gets the command that runs when the Ok button on the Ammunition view is pressed.
         /// </summary>
         public ICommand AmmunitionOkCommand { get; }
+
+        /// <summary>
+        /// Gets the command that will create a new unit.
+        /// </summary>
+        public ICommand NewUnit { get; }
+
+        /// <summary>
+        /// Gets the command that will delete a unit.
+        /// </summary>
+        public ICommand DeleteUnit { get; }
 
         public DataPageViewModel()
         {
@@ -453,9 +470,19 @@ namespace BattleTechTracking.ViewModels
                 SelectedWeapon.Ammo = SelectedWeaponAmmunition.ToList();
                 WeaponsVisible = true;
             });
+
+            NewUnit = new Command(() =>
+            {
+                VisibleUnits.Add(UnitTypes.BuildNewUnitFromType(SelectedUnitFilter));
+            });
+
+            DeleteUnit = new Command<Guid>((id) =>
+            {
+
+            });
         }
 
-        private void LoadListViewWithSelectedUnitType()
+        private void LoadVisibleUnits()
         {
             VisibleUnits = new ObservableCollection<IDisplayUnit>(GetAssociatedUnitsByFilterType());
         }
@@ -471,7 +498,19 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
-        private void PersistObservableCollectionsToModel()
+        private void PersistSelectedUnitToList()
+        {
+            switch (SelectedUnitFilter)
+            {
+                case UnitTypes.BATTLE_MECH:
+                    _mechList = VisibleUnits.Cast<BattleMech>().ToList();
+                    break;
+                default:
+                    throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
+            }
+        }
+
+        private void PersistSelectedUnitToModels()
         {
             if (_selectedUnit == null) return;
             _selectedUnit.Components = SelectedUnitComponents.ToList();

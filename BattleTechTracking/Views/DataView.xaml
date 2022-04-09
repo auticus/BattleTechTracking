@@ -7,7 +7,8 @@
              xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Views.DataView"
              BackgroundImageSource="dataBackground.jpg" 
-             BackgroundColor="MidnightBlue">
+             BackgroundColor="MidnightBlue"
+             x:Name="thisView">
     <ContentPage.BindingContext>
         <viewModels:DataPageViewModel/>
     </ContentPage.BindingContext>
@@ -60,6 +61,22 @@
                           ItemsSource="{Binding VisibleUnits}"
                           SelectedItem="{Binding SelectedUnit}"
                           VerticalOptions="FillAndExpand">
+                    <ListView.Header>
+                        <ContentView BackgroundColor="MidnightBlue">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="Units" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Yellow"/>
+                                <ImageButton Grid.Column="1" WidthRequest="32" HeightRequest="32" 
+                                             CornerRadius="20" HorizontalOptions="End" 
+                                             BackgroundColor="Black" Source="plusIcon.jpg"
+                                             Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" 
+                                             Command="{Binding NewUnit}"/>
+                            </Grid>
+                        </ContentView>
+                    </ListView.Header>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -80,11 +97,6 @@
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
-                    <ListView.Header>
-                        <ContentView BackgroundColor="MidnightBlue">
-                            <Label Text="Units" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Yellow"/>
-                        </ContentView>
-                    </ListView.Header>
                 </ListView>
 
                 <!-- Details Panel Column 2-->

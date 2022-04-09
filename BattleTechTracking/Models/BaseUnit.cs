@@ -8,7 +8,6 @@ namespace BattleTechTracking.Models
     /// </summary>
     public abstract class BaseUnit : BaseModel, IDisplayUnit
     {
-        private IEnumerable<UnitComponent> _components;
         private string _name;
         private string _model;
         private int _tonnage;
@@ -70,18 +69,10 @@ namespace BattleTechTracking.Models
         public int YearIntroduced { get; set; }
         public int? YearExtinct { get; set; }
 
-        public Movement UnitMovement { get; set; }
+        public Movement UnitMovement { get; set; } = new Movement();
 
-        public IEnumerable<UnitComponent> Components
-        {
-            get => _components;
-            set
-            {
-                _components = value;
-                OnPropertyChanged(nameof(Components));
-            }
-        }
-
+        public IEnumerable<UnitComponent> Components { get; set; } = new List<UnitComponent>();
+        
         // todo: if you want to add details to each piece of gear - don't do it on each mech - need a master list of gear and their details
         public IEnumerable<Equipment> Equipment { get; set; } = new List<Equipment>();
         public IEnumerable<Weapon> Weapons { get; set; } = new List<Weapon>();
