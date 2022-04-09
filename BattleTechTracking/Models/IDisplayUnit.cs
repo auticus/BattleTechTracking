@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace BattleTechTracking.Models
 {
@@ -7,6 +8,11 @@ namespace BattleTechTracking.Models
     /// </summary>
     public interface IDisplayUnit
     {
+        /// <summary>
+        /// Gets the unique ID of the unit.
+        /// </summary>
+        Guid ID { get; }
+
         /// <summary>
         /// The given name of the unit.
         /// </summary>

@@ -478,7 +478,9 @@ namespace BattleTechTracking.ViewModels
 
             DeleteUnit = new Command<Guid>((id) =>
             {
-
+                var unit = VisibleUnits.FirstOrDefault(x => x.ID == id);
+                if (unit == null) return;
+                VisibleUnits.Remove(unit);
             });
         }
 
