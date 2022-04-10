@@ -52,7 +52,7 @@ namespace BattleTechTracking.Factories
                 new Equipment(){Name = "Hand Actuator", Hits=1, Location="LA"},
                 new Equipment(){Name = "Hand Actuator", Hits=1, Location="RA"},
                 new Equipment(){Name = "Life Support", Hits=1, Location="H"},
-                new Equipment(){Name = "Sensors", Hits=1, Location="H"},
+                new Equipment(){Name = "Sensors", Hits=2, Location="H"},
                 new Equipment(){Name = "Cockpit", Hits=1, Location="H"},
                 new Equipment(){Name = "Fusion Engine", Hits=3, Location="CT"},
                 new Equipment(){Name = "Gyro", Hits=2, Location="CT"},

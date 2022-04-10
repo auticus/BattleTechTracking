@@ -38,6 +38,7 @@
                                     <ColumnDefinition Width="35"/>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="75"/>
                                 </Grid.ColumnDefinitions>
                                 <Entry Text="{Binding Name}"
@@ -75,11 +76,16 @@
                                      VerticalTextAlignment="Center"
                                      MaxLength="2">
                                 </Entry>
-                                <ImageButton WidthRequest="32" HeightRequest="32" 
-                                           BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
+                                <ImageButton WidthRequest="32" HeightRequest="32" Margin="10,0,0,0"
+                                           BackgroundColor="Black" Source="copy.png" HorizontalOptions="Center"
                                            BorderColor="Gold" BorderWidth="1" Grid.Column="5"
-                                           Command="{Binding DeleteEquipment, Source={x:Reference thisView}}"
+                                           Command="{Binding CopyEquipment, Source={x:Reference thisView}}"
                                            CommandParameter="{Binding ID}"/>
+                                <ImageButton WidthRequest="32" HeightRequest="32" 
+                                             BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="Center"
+                                             BorderColor="Gold" BorderWidth="1" Grid.Column="6"
+                                             Command="{Binding DeleteEquipment, Source={x:Reference thisView}}"
+                                             CommandParameter="{Binding ID}"/>
                             </Grid>
                             <!-- underline of the item -->
                             <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>

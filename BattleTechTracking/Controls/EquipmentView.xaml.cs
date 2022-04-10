@@ -29,6 +29,11 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(EquipmentView));
 
+        public static readonly BindableProperty CopyEquipmentProperty = BindableProperty.Create(
+            nameof(CopyEquipment),
+            typeof(ICommand),
+            typeof(EquipmentView));
+
         public ObservableCollection<Equipment> ItemSource
         {
             get => (ObservableCollection<Equipment>)GetValue(EquipmentView.ItemSourceProperty);
@@ -52,6 +57,13 @@ namespace BattleTechTracking.Controls
             get => (Command)GetValue(EquipmentView.DeleteEquipmentProperty);
             set => SetValue(EquipmentView.DeleteEquipmentProperty, value);
         }
+
+        public Command CopyEquipment
+        {
+            get => (Command)GetValue(EquipmentView.CopyEquipmentProperty);
+            set => SetValue(EquipmentView.CopyEquipmentProperty, value);
+        }
+
         public EquipmentView()
         {
             InitializeComponent();

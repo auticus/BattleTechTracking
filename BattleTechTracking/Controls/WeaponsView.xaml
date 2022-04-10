@@ -41,6 +41,7 @@
                                     <ColumnDefinition Width="35"/>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="35"/>
+                                    <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="75"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
@@ -90,8 +91,13 @@
                                     </Entry.Behaviors>
                                 </Entry>
                                 <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
-                                             BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
+                                             BackgroundColor="Black" Source="copy.png" HorizontalOptions="End"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="8"
+                                             Command="{Binding CopyWeapon, Source={x:Reference thisView}}"
+                                             CommandParameter="{Binding ID}"/>
+                                <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
+                                             BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="Center"
+                                             BorderColor="Gold" BorderWidth="1" Grid.Column="9"
                                              Command="{Binding DeleteWeapon, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
 

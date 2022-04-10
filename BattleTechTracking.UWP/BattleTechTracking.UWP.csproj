@@ -107,6 +107,8 @@
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="copy.png" />
+    <Content Include="goBack.png" />
     <Content Include="okIcon.png" />
     <Content Include="plusIcon.jpg" />
     <Content Include="dataBackground.jpg" />

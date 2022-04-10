@@ -29,6 +29,11 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty CopyWeaponProperty = BindableProperty.Create(
+            nameof(CopyWeapon),
+            typeof(ICommand),
+            typeof(WeaponsView));
+
         public static readonly BindableProperty OpenDamageCodesProperty = BindableProperty.Create(
             nameof(OpenDamageCodes),
             typeof(ICommand),
@@ -63,6 +68,12 @@ namespace BattleTechTracking.Controls
         {
             get => (Command)GetValue(WeaponsView.DeleteWeaponProperty);
             set => SetValue(WeaponsView.DeleteWeaponProperty, value);
+        }
+
+        public Command CopyWeapon
+        {
+            get => (Command)GetValue(WeaponsView.CopyWeaponProperty);
+            set => SetValue(WeaponsView.CopyWeaponProperty, value);
         }
 
         public Command OpenDamageCodes

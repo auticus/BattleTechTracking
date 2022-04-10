@@ -20,7 +20,8 @@ namespace BattleTechTracking.Factories
         public static IEnumerable<T> GetPersistedDataForType<T>()
         {
             //System.Environment.ApplicationData
-            var fileName = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)}\\{GetFileNameForType<T>()}";
+            var fileName = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{GetFileNameForType<T>()}";
+            
             if (!File.Exists(fileName))
             {
                 //if it does not already exist as a saved file, get the embedded version which should come with the app and return that in its stead.
@@ -29,6 +30,18 @@ namespace BattleTechTracking.Factories
 
             var stream = File.OpenRead(fileName);
             return HydrateListFromJsonStream<T>(stream);
+        }
+
+        public static void SavePersistedDataForType<T>(IEnumerable<T> data)
+        {
+            //System.Environment.ApplicationData
+            var fileName = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{GetFileNameForType<T>()}";
+            
+            using (var file = File.CreateText(fileName))
+            {
+                var serializer = new JsonSerializer();
+                serializer.Serialize(file, data);
+            }
         }
         
         /// <summary>

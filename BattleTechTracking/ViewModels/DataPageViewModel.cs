@@ -315,8 +315,10 @@ namespace BattleTechTracking.ViewModels
         public ICommand DeleteComponent { get; }
         public ICommand NewEquipment { get; }
         public ICommand DeleteEquipment { get; }
+        public ICommand CopyEquipment { get; }
         public ICommand NewWeapon { get; }
         public ICommand DeleteWeapon { get; }
+        public ICommand CopyWeapon { get; }
         public ICommand OpenDamageCodes { get; }
         public ICommand OpenAmmo { get; }
         public ICommand NewAmmo { get; }
@@ -357,6 +359,16 @@ namespace BattleTechTracking.ViewModels
         /// </summary>
         public ICommand DeleteUnit { get; }
 
+        /// <summary>
+        /// Gets the command that will save all changes and return to the main page.
+        /// </summary>
+        public ICommand OkCommand { get; }
+
+        /// <summary>
+        /// Gets the command that will close the data view out and return to the main page.
+        /// </summary>
+        public ICommand CloseCommand { get; }
+
         public DataPageViewModel()
         {
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
@@ -393,6 +405,13 @@ namespace BattleTechTracking.ViewModels
                 SelectedUnitEquipment.Remove(item);
             });
 
+            CopyEquipment = new Command<Guid>((id) =>
+            {
+                var item = SelectedUnitEquipment.FirstOrDefault(x => x.ID == id);
+                if (item == null) return;
+                SelectedUnitEquipment.Add(item.Copy());
+            });
+
             NewWeapon = new Command(() =>
             {
                 if (SelectedUnit == null) return;
@@ -401,9 +420,16 @@ namespace BattleTechTracking.ViewModels
 
             DeleteWeapon = new Command<Guid>((id) =>
             {
-                var item = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
-                if (item == null) return;
-                SelectedUnitWeapons.Remove(item);
+                var weapon = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
+                if (weapon == null) return;
+                SelectedUnitWeapons.Remove(weapon);
+            });
+
+            CopyWeapon = new Command<Guid>((id) =>
+            {
+                var weapon = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
+                if (weapon == null) return;
+                SelectedUnitWeapons.Add(weapon.Copy());
             });
 
             UnitComponentCommand = new Command(() =>
@@ -482,6 +508,21 @@ namespace BattleTechTracking.ViewModels
                 if (unit == null) return;
                 VisibleUnits.Remove(unit);
             });
+
+            OkCommand = new Command(() =>
+            {
+                // finish out saving whatever is currently loaded
+                PersistSelectedUnitToList();
+
+                // now go ahead and save all of the files.
+                DataPump.SavePersistedDataForType(_mechList);
+                PageNavigation.PopAsync();
+            });
+
+            CloseCommand = new Command(() =>
+            {
+                PageNavigation.PopAsync();
+            });
         }
 
         private void LoadVisibleUnits()
@@ -502,6 +543,8 @@ namespace BattleTechTracking.ViewModels
 
         private void PersistSelectedUnitToList()
         {
+            PersistSelectedUnitToModels();
+
             switch (SelectedUnitFilter)
             {
                 case UnitTypes.BATTLE_MECH:
@@ -524,7 +567,7 @@ namespace BattleTechTracking.ViewModels
         {
             if (_selectedUnit == null) return;
             SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
-            SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p => p.Location));
+            SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p => p.Location).ThenBy(p=>p.Name));
             SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
         }
     }
