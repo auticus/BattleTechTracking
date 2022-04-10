@@ -14,7 +14,7 @@ namespace BattleTechTracking.Models
         public int LongRange { get; set; }
         public IEnumerable<Ammunition> Ammo { get; set; } = new List<Ammunition>();
 
-        public Weapon Copy()
+        public new Weapon Copy()
             => new Weapon
             {
                 Name = this.Name,

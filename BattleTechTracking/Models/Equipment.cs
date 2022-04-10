@@ -6,7 +6,7 @@
         public int Hits { get; set; }
         public string Location { get; set; }
 
-        public Equipment Copy()
+        public virtual Equipment Copy()
             => new Equipment()
             {
                 Name = this.Name,
