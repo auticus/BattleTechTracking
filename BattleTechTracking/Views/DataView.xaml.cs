@@ -15,5 +15,14 @@ namespace BattleTechTracking.Views
             InitializeComponent();
             
         }
+
+        private void VisualElement_OnFocused(object sender, FocusEventArgs e)
+        {
+            var textBox = sender as Entry;
+            if (textBox?.Text == null) return;
+
+            textBox.CursorPosition = 0;
+            textBox.SelectionLength = textBox.Text.Length;
+        }
     }
 }

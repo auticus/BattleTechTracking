@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows.Input;
 using BattleTechTracking.Models;
 using Xamarin.Forms;
@@ -56,6 +57,15 @@ namespace BattleTechTracking.Controls
         public VehicleComponentView()
         {
             InitializeComponent();
+        }
+
+        private void VisualElement_OnFocused(object sender, FocusEventArgs e)
+        {
+            var textBox = sender as Entry;
+            if (textBox?.Text == null) return;
+
+            textBox.CursorPosition = 0;
+            textBox.SelectionLength = textBox.Text.Length;
         }
     }
 }

@@ -57,7 +57,8 @@
                                      MaxLength="50"
                                      Margin="5,0,10,0"
                                      VerticalOptions="Center"
-                                     VerticalTextAlignment="Center"/>
+                                     VerticalTextAlignment="Center"
+                                     Focused="VisualElement_OnFocused"/>
                                 <Label Text="Location"
                                        Grid.Row="0"
                                      Grid.Column="4"
@@ -70,7 +71,8 @@
                                      Grid.Column="5"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                     Focused="VisualElement_OnFocused">
                                 </Entry>
                                 <Label Text="Heat"
                                        Grid.Row="0"
@@ -85,7 +87,8 @@
                                      Grid.Column="7"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                    Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -115,7 +118,8 @@
                                        Grid.Column="1"
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
-                                       MaxLength="2">
+                                       MaxLength="2"
+                                       Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -161,7 +165,8 @@
                                    Grid.Column="1"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
-                                   MaxLength="2">
+                                   MaxLength="2"
+                                   Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NullableNumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -179,7 +184,8 @@
                                    Grid.Column="3"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
-                                   MaxLength="2">
+                                   MaxLength="2"
+                                   Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -197,7 +203,8 @@
                                    Grid.Column="5"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
-                                   MaxLength="2">
+                                   MaxLength="2"
+                                   Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -215,7 +222,8 @@
                                    Grid.Column="7"
                                    VerticalOptions="Center"
                                    VerticalTextAlignment="Center"
-                                   MaxLength="2">
+                                   MaxLength="2"
+                                   Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>

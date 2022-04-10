@@ -47,7 +47,8 @@
                                      Grid.Column="0"
                                      Margin="5,0,10,0"
                                      VerticalOptions="Center"
-                                     VerticalTextAlignment="Center"/>
+                                     VerticalTextAlignment="Center"
+                                     Focused="VisualElement_OnFocused"/>
                                 <Label Text="Hits"
                                      Grid.Column="1"
                                      TextColor="WhiteSmoke"
@@ -58,7 +59,8 @@
                                      Grid.Column="2"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                     Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -74,7 +76,8 @@
                                      Grid.Column="4"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                     Focused="VisualElement_OnFocused">
                                 </Entry>
                                 <ImageButton WidthRequest="32" HeightRequest="32" Margin="10,0,0,0"
                                            BackgroundColor="Black" Source="copy.png" HorizontalOptions="Center"

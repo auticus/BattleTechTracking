@@ -164,20 +164,22 @@
                            Grid.Row="0"
                            Grid.Column="0"
                            Text="Name"/>
-                    <Editor AutoSize="Disabled" WidthRequest="250" MaxLength="50" HorizontalOptions="Start"
+                    <Entry WidthRequest="250" MaxLength="50" HorizontalOptions="Start"
                             Grid.Row="0"
                             Grid.Column="1"
-                            Text="{Binding SelectedUnit.Name}"/>
+                            Text="{Binding SelectedUnit.Name}"
+                            Focused="VisualElement_OnFocused"/>
 
                     <!--Model-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                            Grid.Row="0"
                            Grid.Column="2"
                            Text="Model"/>
-                    <Editor AutoSize="Disabled" WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
+                    <Entry WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
                             Grid.Row="0"
                             Grid.Column="3"
-                            Text="{Binding SelectedUnit.Model}"/>
+                            Text="{Binding SelectedUnit.Model}"
+                            Focused="VisualElement_OnFocused"/>
 
                     <!--Tonnage-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
@@ -187,7 +189,8 @@
                     <Entry WidthRequest="125" MaxLength="6"  HorizontalOptions="Start"
                            Grid.Row="1"
                            Grid.Column="1"
-                           Text="{Binding SelectedUnit.Tonnage}">
+                           Text="{Binding SelectedUnit.Tonnage}"
+                           Focused="VisualElement_OnFocused">
                         <Entry.Behaviors>
                             <behaviors:NumericValidationBehavior/>
                         </Entry.Behaviors>
@@ -201,7 +204,8 @@
                     <Entry  WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
                             Grid.Row="1"
                             Grid.Column="3"
-                            Text="{Binding SelectedUnit.BattleValue}">
+                            Text="{Binding SelectedUnit.BattleValue}"
+                            Focused="VisualElement_OnFocused">
                         <Entry.Behaviors>
                             <behaviors:NumericValidationBehavior/>
                         </Entry.Behaviors>
@@ -215,7 +219,8 @@
                     <Entry WidthRequest="125" MaxLength="6"  HorizontalOptions="Start"
                             Grid.Row="2"
                             Grid.Column="1"
-                            Text="{Binding SelectedUnit.TechBase}"/>
+                            Text="{Binding SelectedUnit.TechBase}"
+                            Focused="VisualElement_OnFocused"/>
 
                     <!--Rules Level-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
@@ -225,7 +230,8 @@
                     <Entry WidthRequest="150" MaxLength="50" HorizontalOptions="Start"
                             Grid.Row="2"
                             Grid.Column="3"
-                            Text="{Binding SelectedUnit.RulesLevel}"/>
+                            Text="{Binding SelectedUnit.RulesLevel}"
+                            Focused="VisualElement_OnFocused"/>
 
                     <!--Year Introduced-->
                     <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
@@ -235,7 +241,8 @@
                     <Entry WidthRequest="125" MaxLength="4"  HorizontalOptions="Start"
                             Grid.Row="3"
                             Grid.Column="1"
-                            Text="{Binding SelectedUnit.YearIntroduced}">
+                            Text="{Binding SelectedUnit.YearIntroduced}"
+                            Focused="VisualElement_OnFocused">
                         <Entry.Behaviors>
                             <behaviors:NumericValidationBehavior/>
                         </Entry.Behaviors>
@@ -249,7 +256,8 @@
                     <Entry WidthRequest="150" MaxLength="4" HorizontalOptions="Start"
                             Grid.Row="3"
                             Grid.Column="3"
-                            Text="{Binding SelectedUnit.YearExtinct}">
+                            Text="{Binding SelectedUnit.YearExtinct}"
+                            Focused="VisualElement_OnFocused">
                         <Entry.Behaviors>
                             <behaviors:NullableNumericValidationBehavior/>
                         </Entry.Behaviors>
@@ -263,7 +271,8 @@
                     <Entry WidthRequest="125" MaxLength="2"  HorizontalOptions="Start"
                             Grid.Row="4"
                             Grid.Column="1"
-                            Text="{Binding SelectedUnit.HeatSinks}">
+                            Text="{Binding SelectedUnit.HeatSinks}"
+                            Focused="VisualElement_OnFocused">
                         <Entry.Behaviors>
                             <behaviors:NumericValidationBehavior/>
                         </Entry.Behaviors>
@@ -293,7 +302,8 @@
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="1"
-                                Text="{Binding SelectedUnit.UnitMovement.Walking}">
+                                Text="{Binding SelectedUnit.UnitMovement.Walking}"
+                                Focused="VisualElement_OnFocused">
                             <Entry.Behaviors>
                                 <behaviors:NumericValidationBehavior/>
                             </Entry.Behaviors>
@@ -305,7 +315,8 @@
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="3"
-                                Text="{Binding SelectedUnit.UnitMovement.Running}">
+                                Text="{Binding SelectedUnit.UnitMovement.Running}"
+                                Focused="VisualElement_OnFocused">
                             <Entry.Behaviors>
                                 <behaviors:NumericValidationBehavior/>
                             </Entry.Behaviors>
@@ -317,7 +328,8 @@
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="5"
-                                Text="{Binding SelectedUnit.UnitMovement.Jumping}">
+                                Text="{Binding SelectedUnit.UnitMovement.Jumping}"
+                                Focused="VisualElement_OnFocused">
                             <Entry.Behaviors>
                                 <behaviors:NumericValidationBehavior/>
                             </Entry.Behaviors>

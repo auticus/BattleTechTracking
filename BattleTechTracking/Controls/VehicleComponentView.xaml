@@ -48,7 +48,8 @@
                                      MaxLength="50"
                                      Margin="5,0,10,0"
                                      VerticalOptions="Center"
-                                     VerticalTextAlignment="Center"/>
+                                     VerticalTextAlignment="Center"
+                                     Focused="VisualElement_OnFocused"/>
                               <Label Text="Armor"
                                      Grid.Column="1"
                                      TextColor="WhiteSmoke"
@@ -59,7 +60,8 @@
                                      Grid.Column="2"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                     Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -75,7 +77,8 @@
                                      Grid.Column="4"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                     Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NullableNumericValidationBehavior/>
                                     </Entry.Behaviors>
@@ -91,7 +94,8 @@
                                      Grid.Column="6"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
-                                     MaxLength="2">
+                                     MaxLength="2"
+                                     Focused="VisualElement_OnFocused">
                                     <Entry.Behaviors>
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
