@@ -375,6 +375,12 @@
                                                  DeleteAmmo="{Binding DeleteAmmo}"
                                                  OkCommand="{Binding AmmunitionOkCommand}"
                                                  />
+                        <controls:QuirksView Margin="10,30,15,10"
+                                             IsVisible = "{Binding QuirksVisible}"
+                                             QuirkSource="{Binding SelectedUnitQuirks}"
+                                             SelectedQuirk="{Binding SelectedQuirk}"
+                                             NewQuirk="{Binding NewQuirk}"
+                                             DeleteQuirk="{Binding DeleteQuirk}"/>
                                                 
                         <StackLayout Orientation="Horizontal">
                             <Button Text="Unit Components" TextColor="White" BackgroundColor="Gray" 
@@ -383,6 +389,8 @@
                                     Margin="20,0,0,10" Command="{Binding EquipmentCommand}"/>
                             <Button Text="Weapons" TextColor="White" BackgroundColor="Gray" 
                                     Margin="20,0,0,10" Command="{Binding WeaponsCommand }"/>
+                            <Button Text="Quirks" TextColor="White" BackgroundColor="Gray" 
+                                    Margin="20,0,0,10" Command="{Binding QuirksCommand }"/>
                         </StackLayout>
 
                     </StackLayout>

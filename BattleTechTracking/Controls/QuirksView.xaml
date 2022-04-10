@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BattleTechTracking.Controls.QuirksView"
+             VerticalOptions="FillAndExpand"
+             x:Name = "thisView">
+  <ContentView.Content>
+      <StackLayout>
+            <ListView Margin="0,10,0,25"
+                      BindingContext="{x:Reference thisView}"
+                      ItemsSource="{Binding QuirkSource, Source={x:Reference thisView}}"
+                      SelectedItem="{Binding SelectedQuirk, Source={x:Reference thisView}}"
+                      VerticalOptions="FillAndExpand">
+                <ListView.Header>
+                    <ContentView BackgroundColor="MidnightBlue">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="Quirks" HorizontalTextAlignment="Center" FontSize="Medium" TextColor="Yellow"/>
+                            <ImageButton WidthRequest="32" HeightRequest="32" 
+                                         CornerRadius="120" HorizontalOptions="End" 
+                                         BackgroundColor="Black" Source="plusIcon.jpg"
+                                         Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
+                                         Command="{Binding NewQuirk, Source={x:Reference thisView}}"/>
+                        </Grid>
+                    </ContentView>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="5,5,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+                                <Entry Grid.Column="0" Text="{Binding}"
+                                       VerticalOptions="Center"
+                                       VerticalTextAlignment="Center"
+                                       Focused="VisualElement_OnFocused"/>
+                                <ImageButton Grid.Column="1"
+                                             Margin="20,0,0,0"
+                                             WidthRequest="32" HeightRequest="32" 
+                                             BackgroundColor="Black" Source="trash.jpg"
+                                             BorderColor="Gold" BorderWidth="1" 
+                                             Command="{Binding DeleteQuirk, Source={x:Reference thisView}}"
+                                             CommandParameter="{Binding .}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

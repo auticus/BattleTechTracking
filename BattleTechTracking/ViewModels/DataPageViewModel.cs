@@ -20,6 +20,7 @@ namespace BattleTechTracking.ViewModels
         private bool _weaponsVisible;
         private bool _damageCodesVisible;
         private bool _ammoVisible;
+        private bool _quirksVisible;
         private string _ammunitionViewHeader;
 
         private ObservableCollection<IDisplayUnit> _visibleUnits;
@@ -27,12 +28,15 @@ namespace BattleTechTracking.ViewModels
         private ObservableCollection<Equipment> _selectedUnitEquipment;
         private ObservableCollection<Weapon> _selectedUnitWeapons;
         private ObservableCollection<Ammunition> _selectedWeaponAmmunition;
+        private ObservableCollection<string> _selectedUnitQuirks;
+
         private UnitComponent _selectedComponent;
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
         private Ammunition _selectedAmmo;
         private List<BattleMech> _mechList;
         private string _damageCodesCommaSeparated;
+        private string _selectedQuirk;
         
         public ObservableCollection<string> UnitFilters { get; }
 
@@ -103,6 +107,16 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public ObservableCollection<string> SelectedUnitQuirks
+        {
+            get => _selectedUnitQuirks;
+            private set
+            {
+                _selectedUnitQuirks = value;
+                OnPropertyChanged(nameof(SelectedUnitQuirks));
+            }
+        }
+
         /// <summary>
         /// Gets or sets the selected weapon's ammunition.
         /// </summary>
@@ -167,6 +181,16 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public string SelectedQuirk
+        {
+            get => _selectedQuirk;
+            set
+            {
+                _selectedQuirk = value;
+                OnPropertyChanged(nameof(SelectedQuirk));
+            }
+        }
+
         public string UnitNameFilter
         {
             get => _unitNameFilter;
@@ -200,12 +224,7 @@ namespace BattleTechTracking.ViewModels
                 if (_vehicleComponentsVisible == value) return;
                 _vehicleComponentsVisible = value;
                 OnPropertyChanged(nameof(VehicleComponentsVisible));
-
-                if (value == false) return;
-                EquipmentVisible = false;
-                WeaponsVisible = false;
-                DamageCodesVisible = false;
-                AmmoVisible = false;
+                if (_vehicleComponentsVisible) HideAllPanelsExceptForItemPassed(nameof(VehicleComponentsVisible));
             }
         }
 
@@ -217,12 +236,7 @@ namespace BattleTechTracking.ViewModels
                 if (_equipmentVisible == value) return;
                 _equipmentVisible = value;
                 OnPropertyChanged(nameof(EquipmentVisible));
-
-                if (value == false) return;
-                VehicleComponentsVisible = false;
-                WeaponsVisible = false;
-                DamageCodesVisible = false;
-                AmmoVisible = false;
+                if (_equipmentVisible) HideAllPanelsExceptForItemPassed(nameof(EquipmentVisible));
             }
         }
 
@@ -234,12 +248,7 @@ namespace BattleTechTracking.ViewModels
                 if (_weaponsVisible == value) return;
                 _weaponsVisible = value;
                 OnPropertyChanged(nameof(WeaponsVisible));
-
-                if (value == false) return;
-                VehicleComponentsVisible = false;
-                EquipmentVisible = false;
-                DamageCodesVisible = false;
-                AmmoVisible = false;
+                if (_weaponsVisible) HideAllPanelsExceptForItemPassed(nameof(WeaponsVisible));
             }
         }
 
@@ -251,12 +260,7 @@ namespace BattleTechTracking.ViewModels
                 if (_damageCodesVisible == value) return;
                 _damageCodesVisible = value;
                 OnPropertyChanged(nameof(DamageCodesVisible));
-
-                if (value == false) return;
-                VehicleComponentsVisible = false;
-                EquipmentVisible = false;
-                WeaponsVisible = false;
-                AmmoVisible = false;
+                if (_damageCodesVisible) HideAllPanelsExceptForItemPassed(nameof(DamageCodesVisible));
             }
         }
 
@@ -268,12 +272,19 @@ namespace BattleTechTracking.ViewModels
                 if (_ammoVisible == value) return;
                 _ammoVisible = value;
                 OnPropertyChanged(nameof(AmmoVisible));
+                if(_ammoVisible) HideAllPanelsExceptForItemPassed(nameof(AmmoVisible));
+            }
+        }
 
-                if (value == false) return;
-                VehicleComponentsVisible = false;
-                EquipmentVisible = false;
-                WeaponsVisible = false;
-                DamageCodesVisible = false;
+        public bool QuirksVisible
+        {
+            get => _quirksVisible;
+            set
+            {
+                if (_quirksVisible == value) return;
+                _quirksVisible = value;
+                OnPropertyChanged(nameof(QuirksVisible));
+                if (_quirksVisible) HideAllPanelsExceptForItemPassed(nameof(QuirksVisible));
             }
         }
 
@@ -340,6 +351,11 @@ namespace BattleTechTracking.ViewModels
         public ICommand WeaponsCommand { get; }
 
         /// <summary>
+        /// Gets the command responsible for showing the quirks panel.
+        /// </summary>
+        public ICommand QuirksCommand { get; }
+
+        /// <summary>
         /// Gets the command that runs when the Ok button on the Damage Codes view is pressed.
         /// </summary>
         public ICommand DamageCodesOkCommand { get; }
@@ -368,6 +384,16 @@ namespace BattleTechTracking.ViewModels
         /// Gets the command that will close the data view out and return to the main page.
         /// </summary>
         public ICommand CloseCommand { get; }
+
+        /// <summary>
+        /// Gets the command that will create a new quirk.
+        /// </summary>
+        public ICommand NewQuirk { get; }
+
+        /// <summary>
+        /// Gets the command that will delete a quirk.
+        /// </summary>
+        public ICommand DeleteQuirk { get; }
 
         public DataPageViewModel()
         {
@@ -447,6 +473,11 @@ namespace BattleTechTracking.ViewModels
                 WeaponsVisible = true;
             });
 
+            QuirksCommand = new Command(() =>
+            {
+                QuirksVisible = true;
+            });
+
             OpenDamageCodes = new Command<Guid>((id) =>
             {
                 var weapon = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
@@ -523,6 +554,17 @@ namespace BattleTechTracking.ViewModels
             {
                 PageNavigation.PopAsync();
             });
+
+            NewQuirk = new Command(() =>
+            {
+                if (SelectedUnitQuirks == null) return;
+                SelectedUnitQuirks.Add("Unknown");
+            });
+
+            DeleteQuirk = new Command<string>((quirk) =>
+            {
+                SelectedUnitQuirks.Remove(quirk);
+            });
         }
 
         private void LoadVisibleUnits()
@@ -561,6 +603,7 @@ namespace BattleTechTracking.ViewModels
             _selectedUnit.Components = SelectedUnitComponents.ToList();
             _selectedUnit.Equipment = SelectedUnitEquipment.ToList();
             _selectedUnit.Weapons = SelectedUnitWeapons.ToList();
+            _selectedUnit.Quirks = SelectedUnitQuirks.ToList();
         }
 
         private void SetObservableCollectionsFromSelectedModel()
@@ -569,6 +612,17 @@ namespace BattleTechTracking.ViewModels
             SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
             SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p => p.Location).ThenBy(p=>p.Name));
             SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
+            SelectedUnitQuirks = new ObservableCollection<string>(_selectedUnit.Quirks);
+        }
+
+        private void HideAllPanelsExceptForItemPassed(string panelToKeepVisible)
+        {
+            if (panelToKeepVisible != nameof(VehicleComponentsVisible)) VehicleComponentsVisible = false;
+            if (panelToKeepVisible != nameof(EquipmentVisible)) EquipmentVisible = false;
+            if (panelToKeepVisible != nameof(WeaponsVisible)) WeaponsVisible = false;
+            if (panelToKeepVisible != nameof(DamageCodesVisible)) DamageCodesVisible = false;
+            if (panelToKeepVisible != nameof(AmmoVisible)) AmmoVisible = false;
+            if (panelToKeepVisible != nameof(QuirksVisible)) QuirksVisible = false;
         }
     }
 }

@@ -38,6 +38,7 @@ namespace BattleTechTracking.Models
         IEnumerable<UnitComponent> Components { get; set; }
         IEnumerable<Equipment> Equipment { get; set; }
         IEnumerable<Weapon> Weapons { get; set; }
+        IEnumerable<string> Quirks { get; set; }
         string UnitHeader { get; }
         string UnitDetails { get; }
     }
