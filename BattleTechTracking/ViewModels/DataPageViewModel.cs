@@ -22,6 +22,9 @@ namespace BattleTechTracking.ViewModels
         private bool _ammoVisible;
         private bool _quirksVisible;
         private string _ammunitionViewHeader;
+        private string _walkingLabel;
+        private string _runningLabel;
+        private string _jumpingLabel;
 
         private ObservableCollection<IDisplayUnit> _visibleUnits;
         private ObservableCollection<UnitComponent> _selectedUnitComponents;
@@ -34,8 +37,9 @@ namespace BattleTechTracking.ViewModels
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
         private Ammunition _selectedAmmo;
-        private List<BattleMech> _mechList;
-        private List<IndustrialMech> _industrialMechList;
+        private List<BattleUnit> _mechList;
+        private List<IndustrialUnit> _industrialMechList;
+        private List<Infantry> _infantryList;
         private string _damageCodesCommaSeparated;
         private string _selectedQuirk;
         
@@ -48,6 +52,7 @@ namespace BattleTechTracking.ViewModels
             {
                 _visibleUnits = value;
                 OnPropertyChanged(nameof(VisibleUnits));
+                SelectedUnit = null;
             }
         }
 
@@ -323,6 +328,36 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public string WalkingLabel
+        {
+            get => _walkingLabel;
+            set
+            {
+                _walkingLabel = value;
+                OnPropertyChanged(nameof(WalkingLabel));
+            }
+        }
+
+        public string RunningLabel
+        {
+            get => _runningLabel;
+            set
+            {
+                _runningLabel = value;
+                OnPropertyChanged(nameof(RunningLabel));
+            }
+        }
+
+        public string JumpingLabel
+        {
+            get => _jumpingLabel;
+            set
+            {
+                _jumpingLabel = value;
+                OnPropertyChanged(nameof(JumpingLabel));
+            }
+        }
+
         public ICommand NewComponent { get; }
         public ICommand DeleteComponent { get; }
         public ICommand NewEquipment { get; }
@@ -401,8 +436,9 @@ namespace BattleTechTracking.ViewModels
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
             VisibleUnits = new ObservableCollection<IDisplayUnit>();
 
-            _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
-            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialMech>().ToList();
+            _mechList = DataPump.GetPersistedDataForType<BattleUnit>().ToList();
+            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialUnit>().ToList();
+            _infantryList = DataPump.GetPersistedDataForType<Infantry>().ToList();
 
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
             VehicleComponentsVisible = true;
@@ -550,6 +586,7 @@ namespace BattleTechTracking.ViewModels
                 // now go ahead and save all of the files.
                 DataPump.SavePersistedDataForType(_mechList);
                 DataPump.SavePersistedDataForType(_industrialMechList);
+                DataPump.SavePersistedDataForType(_infantryList);
                 PageNavigation.PopAsync();
             });
 
@@ -573,6 +610,7 @@ namespace BattleTechTracking.ViewModels
         private void LoadVisibleUnits()
         {
             VisibleUnits = new ObservableCollection<IDisplayUnit>(GetAssociatedUnitsByFilterType());
+            SetAssociatedViewLabelsByFilterType();
         }
 
         private IEnumerable<IDisplayUnit> GetAssociatedUnitsByFilterType()
@@ -583,8 +621,27 @@ namespace BattleTechTracking.ViewModels
                     return _mechList.OrderBy(p=>p.Name).ThenBy(p=>p.Model);
                 case UnitTypes.INDUSTRIAL_MECH:
                     return _industrialMechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
+                case UnitTypes.INFANTRY:
+                    return new List<IDisplayUnit>();
+                    //return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
+                    //infantry is not a display unit
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
+            }
+        }
+
+        private void SetAssociatedViewLabelsByFilterType()
+        {
+            switch (SelectedUnitFilter)
+            {
+                case UnitTypes.BATTLE_MECH:
+                case UnitTypes.INDUSTRIAL_MECH:
+                    SetMechMovementLabels();
+                    break;
+                case UnitTypes.COMBAT_VEHICLE:
+                case UnitTypes.SUPPORT_VEHICLE:
+                    SetVehiclesMovementLabels();
+                    break;
             }
         }
 
@@ -595,11 +652,12 @@ namespace BattleTechTracking.ViewModels
             switch (SelectedUnitFilter)
             {
                 case UnitTypes.BATTLE_MECH:
-                    _mechList = VisibleUnits.Cast<BattleMech>().ToList();
+                    _mechList = VisibleUnits.Cast<BattleUnit>().ToList();
                     break;
                 case UnitTypes.INDUSTRIAL_MECH:
-                    _industrialMechList = VisibleUnits.Cast<IndustrialMech>().ToList();
+                    _industrialMechList = VisibleUnits.Cast<IndustrialUnit>().ToList();
                     break;
+                //infantry is not a display unit
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
             }
@@ -616,11 +674,24 @@ namespace BattleTechTracking.ViewModels
 
         private void SetObservableCollectionsFromSelectedModel()
         {
-            if (_selectedUnit == null) return;
+            if (_selectedUnit == null)
+            {
+                SelectedUnitComponents?.Clear();
+                SelectedUnitEquipment?.Clear();
+                SelectedUnitWeapons?.Clear();
+                SelectedUnitQuirks?.Clear();
+                return;
+            }
+
             SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
             SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p => p.Location).ThenBy(p=>p.Name));
             SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
             SelectedUnitQuirks = new ObservableCollection<Quirk>(_selectedUnit.Quirks);
+        }
+
+        private void HideAllSubPanels()
+        {
+            HideAllPanelsExceptForItemPassed(string.Empty);
         }
 
         private void HideAllPanelsExceptForItemPassed(string panelToKeepVisible)
@@ -631,6 +702,20 @@ namespace BattleTechTracking.ViewModels
             if (panelToKeepVisible != nameof(DamageCodesVisible)) DamageCodesVisible = false;
             if (panelToKeepVisible != nameof(AmmoVisible)) AmmoVisible = false;
             if (panelToKeepVisible != nameof(QuirksVisible)) QuirksVisible = false;
+        }
+
+        private void SetMechMovementLabels()
+        {
+            WalkingLabel = "Walking";
+            RunningLabel = "Running";
+            JumpingLabel = "Jumping";
+        }
+
+        private void SetVehiclesMovementLabels()
+        {
+            WalkingLabel = "Cruising";
+            RunningLabel = "Flanking";
+            JumpingLabel = "Flying";
         }
     }
 }

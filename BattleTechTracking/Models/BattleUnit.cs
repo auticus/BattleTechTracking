@@ -2,7 +2,7 @@
 
 namespace BattleTechTracking.Models
 {
-    public class BattleMech : BaseUnit
+    public class BattleUnit : BaseUnit
     {
         public IEnumerable<UnitComponent> BuildDefaultLocations()
         => new List<UnitComponent>

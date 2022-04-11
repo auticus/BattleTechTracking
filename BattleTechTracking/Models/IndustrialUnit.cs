@@ -1,6 +1,6 @@
 ﻿namespace BattleTechTracking.Models
 {
-    internal class IndustrialMech : BattleMech
+    internal class IndustrialUnit : BattleUnit
     {
     }
 }

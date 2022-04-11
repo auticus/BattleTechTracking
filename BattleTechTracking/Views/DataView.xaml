@@ -298,7 +298,7 @@
                         <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                Grid.Row="1"
                                Grid.Column="0"
-                               Text="Walking"/>
+                               Text="{Binding WalkingLabel}"/>
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="1"
@@ -311,7 +311,7 @@
                         <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                Grid.Row="1"
                                Grid.Column="2"
-                               Text="Running"/>
+                               Text="{Binding RunningLabel}"/>
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="3"
@@ -324,7 +324,7 @@
                         <Label TextColor="Gold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                Grid.Row="1"
                                Grid.Column="4"
-                               Text="Jumping"/>
+                               Text="{Binding JumpingLabel}"/>
                         <Entry WidthRequest="32" MaxLength="2"  HorizontalOptions="Start"
                                 Grid.Row="1"
                                 Grid.Column="5"

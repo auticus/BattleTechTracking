@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace BattleTechTracking.Models
 {
     /// <summary>
-    /// Interface for elements that will be displayed in the Data View list element.
+    /// Interface for elements that will be displayed in the Data View list element for mechs.
     /// </summary>
     public interface IDisplayUnit
     {

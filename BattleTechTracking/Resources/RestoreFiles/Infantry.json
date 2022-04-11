@@ -1,0 +1,12 @@
+[
+  {
+    "Name": "Foot Squad",
+    "Model": "Ballistic Rifle",
+    "Range": "-2/0/2/4",
+    "ArmorType": "Generic Infantry Kit",
+    "Number": 7,
+    "Tonnage": 0.5,
+    "Movement": 1,
+    "BattleValue":  90 
+  }
+]
