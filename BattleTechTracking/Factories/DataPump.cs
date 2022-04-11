@@ -77,6 +77,11 @@ namespace BattleTechTracking.Factories
                 return "MasterMech.json";
             }
 
+            if (typeof(T) == typeof(IndustrialMech))
+            {
+                return "IndustrialMech.json";
+            }
+
             throw new ArgumentException($"The type {typeof(T)} was not found in {nameof(GetFileNameForType)}");
         }
     }

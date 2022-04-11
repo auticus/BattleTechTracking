@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
+using BattleTechTracking.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace BattleTechTracking.Controls
     {
         public static readonly BindableProperty QuirkSourceProperty = BindableProperty.Create(
             nameof(QuirkSource),
-            typeof(ObservableCollection<string>),
+            typeof(ObservableCollection<Quirk>),
             typeof(QuirksView));
 
         public static readonly BindableProperty SelectedQuirkProperty = BindableProperty.Create(
@@ -33,9 +34,9 @@ namespace BattleTechTracking.Controls
             InitializeComponent();
         }
 
-        public ObservableCollection<string> QuirkSource
+        public ObservableCollection<Quirk> QuirkSource
         {
-            get => (ObservableCollection<string>)GetValue(QuirksView.QuirkSourceProperty);
+            get => (ObservableCollection<Quirk>)GetValue(QuirksView.QuirkSourceProperty);
             set => SetValue(QuirksView.QuirkSourceProperty, value);
         }
 

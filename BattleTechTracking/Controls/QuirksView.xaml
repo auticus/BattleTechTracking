@@ -35,7 +35,7 @@
                                     <ColumnDefinition Width="200"/>
                                     <ColumnDefinition Width="50"/>
                                 </Grid.ColumnDefinitions>
-                                <Entry Grid.Column="0" Text="{Binding}"
+                                <Entry Grid.Column="0" Text="{Binding Name}"
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
                                        Focused="VisualElement_OnFocused"/>

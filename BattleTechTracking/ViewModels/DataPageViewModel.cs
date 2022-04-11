@@ -28,13 +28,14 @@ namespace BattleTechTracking.ViewModels
         private ObservableCollection<Equipment> _selectedUnitEquipment;
         private ObservableCollection<Weapon> _selectedUnitWeapons;
         private ObservableCollection<Ammunition> _selectedWeaponAmmunition;
-        private ObservableCollection<string> _selectedUnitQuirks;
+        private ObservableCollection<Quirk> _selectedUnitQuirks;
 
         private UnitComponent _selectedComponent;
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
         private Ammunition _selectedAmmo;
         private List<BattleMech> _mechList;
+        private List<IndustrialMech> _industrialMechList;
         private string _damageCodesCommaSeparated;
         private string _selectedQuirk;
         
@@ -107,7 +108,7 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
-        public ObservableCollection<string> SelectedUnitQuirks
+        public ObservableCollection<Quirk> SelectedUnitQuirks
         {
             get => _selectedUnitQuirks;
             private set
@@ -401,6 +402,7 @@ namespace BattleTechTracking.ViewModels
             VisibleUnits = new ObservableCollection<IDisplayUnit>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
+            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialMech>().ToList();
 
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
             VehicleComponentsVisible = true;
@@ -547,6 +549,7 @@ namespace BattleTechTracking.ViewModels
 
                 // now go ahead and save all of the files.
                 DataPump.SavePersistedDataForType(_mechList);
+                DataPump.SavePersistedDataForType(_industrialMechList);
                 PageNavigation.PopAsync();
             });
 
@@ -558,10 +561,10 @@ namespace BattleTechTracking.ViewModels
             NewQuirk = new Command(() =>
             {
                 if (SelectedUnitQuirks == null) return;
-                SelectedUnitQuirks.Add("Unknown");
+                SelectedUnitQuirks.Add(new Quirk(){Name="Unknown"});
             });
 
-            DeleteQuirk = new Command<string>((quirk) =>
+            DeleteQuirk = new Command<Quirk>((quirk) =>
             {
                 SelectedUnitQuirks.Remove(quirk);
             });
@@ -577,7 +580,9 @@ namespace BattleTechTracking.ViewModels
             switch (SelectedUnitFilter)
             {
                 case UnitTypes.BATTLE_MECH:
-                    return _mechList;
+                    return _mechList.OrderBy(p=>p.Name).ThenBy(p=>p.Model);
+                case UnitTypes.INDUSTRIAL_MECH:
+                    return _industrialMechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
             }
@@ -591,6 +596,9 @@ namespace BattleTechTracking.ViewModels
             {
                 case UnitTypes.BATTLE_MECH:
                     _mechList = VisibleUnits.Cast<BattleMech>().ToList();
+                    break;
+                case UnitTypes.INDUSTRIAL_MECH:
+                    _industrialMechList = VisibleUnits.Cast<IndustrialMech>().ToList();
                     break;
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
@@ -612,7 +620,7 @@ namespace BattleTechTracking.ViewModels
             SelectedUnitComponents = new ObservableCollection<UnitComponent>(_selectedUnit.Components);
             SelectedUnitEquipment = new ObservableCollection<Equipment>(_selectedUnit.Equipment.OrderBy(p => p.Location).ThenBy(p=>p.Name));
             SelectedUnitWeapons = new ObservableCollection<Weapon>(_selectedUnit.Weapons);
-            SelectedUnitQuirks = new ObservableCollection<string>(_selectedUnit.Quirks);
+            SelectedUnitQuirks = new ObservableCollection<Quirk>(_selectedUnit.Quirks);
         }
 
         private void HideAllPanelsExceptForItemPassed(string panelToKeepVisible)

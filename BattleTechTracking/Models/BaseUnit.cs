@@ -87,7 +87,7 @@ namespace BattleTechTracking.Models
         /// </summary>
         public int HeatSinks { get; set; }
 
-        public IEnumerable<string> Quirks { get; set; } = new List<string>();
+        public IEnumerable<Quirk> Quirks { get; set; } = new List<Quirk>();
 
         public string UnitHeader => $"{Name} ({Model})";
         public string UnitDetails => $"{Tonnage} tons - BV: {BattleValue}";

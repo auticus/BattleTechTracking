@@ -1,0 +1,329 @@
+[
+  {
+    "Name": "Quasit MilitiaMech",
+    "Model": "QUA-51T",
+    "Tonnage": 45,
+    "BattleValue": 696,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Standard",
+    "YearIntroduced": 2517,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 5,
+      "Running": 8,
+      "Jumping": 0,
+      "ID": "f1a050d7-1e96-4801-b992-906756ecef77"
+    },
+    "Components": [
+      {
+        "Name": "Head",
+        "Armor": 8,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "1478aeca-dfdd-4509-80ef-0090e3f28a54"
+      },
+      {
+        "Name": "Center Torso",
+        "Armor": 20,
+        "RearArmor": 6,
+        "Structure": 14,
+        "ID": "c07a06ff-d1c3-4599-a3e8-8f15a0aa0330"
+      },
+      {
+        "Name": "Left Torso",
+        "Armor": 13,
+        "RearArmor": 5,
+        "Structure": 11,
+        "ID": "6b857e5e-02b1-4fae-9c87-5f9bf8295cc6"
+      },
+      {
+        "Name": "Right Torso",
+        "Armor": 13,
+        "RearArmor": 5,
+        "Structure": 11,
+        "ID": "0c582b6f-26d2-42e5-81bc-917632cfb1c5"
+      },
+      {
+        "Name": "Right Arm",
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 7,
+        "ID": "ab7961d2-c0da-40a9-ab6b-f4c96ae512d2"
+      },
+      {
+        "Name": "Left Arm",
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 7,
+        "ID": "7ebf2197-9d30-450d-8662-6cd2bf8f64b6"
+      },
+      {
+        "Name": "Right Leg",
+        "Armor": 15,
+        "RearArmor": null,
+        "Structure": 11,
+        "ID": "a9f7bdf7-5873-4d62-a021-df06cb18c7eb"
+      },
+      {
+        "Name": "Left Leg",
+        "Armor": 15,
+        "RearArmor": null,
+        "Structure": 11,
+        "ID": "8e1d3452-b5e3-422c-a963-e8a3a9acd6d7"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Fusion Engine",
+        "Hits": 3,
+        "Location": "CT",
+        "ID": "7e95cac3-8909-4ba8-992a-ccb03cbd7d2b"
+      },
+      {
+        "Name": "Gyro",
+        "Hits": 2,
+        "Location": "CT",
+        "ID": "bad06976-30a5-4075-a309-479cb4113c9d"
+      },
+      {
+        "Name": "Industrial Cockpit (adv FCS)",
+        "Hits": 1,
+        "Location": "H",
+        "ID": "f76cdfbc-dca5-445c-9a9e-72aba94ce06d"
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "Location": "H",
+        "ID": "2e5062e7-5586-427f-ac28-f2f7206c87ed"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "Location": "H",
+        "ID": "e53d9948-e9b4-4bc1-bded-2ddcb00867df"
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "Location": "LA",
+        "ID": "a6300631-7c83-4f11-b75b-f44570dc2f34"
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "Location": "LA",
+        "ID": "e544e1b3-12fe-4ce6-af0c-e4790cde5116"
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "Location": "LL",
+        "ID": "6c423778-1a33-4a7f-a190-e6135e6effa3"
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "Location": "LL",
+        "ID": "e24f494a-298f-47bb-b0d6-554117e6c982"
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "Location": "LL",
+        "ID": "d62a52c9-fc73-4a74-874c-afb39d016016"
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "Location": "LL",
+        "ID": "24672ff4-61ff-4521-94da-47f6188d6863"
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "Location": "RA",
+        "ID": "81042dc3-1610-478a-a50a-c8a701d80a5a"
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "Location": "RA",
+        "ID": "c8d46a7e-1a81-436b-9364-b7cc33bfea2e"
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "Location": "RL",
+        "ID": "d33dd213-9374-4623-bfed-85baf326a1b6"
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "Location": "RL",
+        "ID": "5e0abccc-cb1c-48bb-90da-e898d57c5792"
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "Location": "RL",
+        "ID": "16b2b658-8ac4-41d8-b9f1-678413e49512"
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "Location": "RL",
+        "ID": "feb85209-a630-4b91-be54-4d1fe246858c"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "CT",
+        "ID": "6eed2336-ea80-4736-906a-e2cd031e18c3"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "LA",
+        "ID": "d08ce58a-9d16-42e6-918b-5e4427c8fe37"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "RA",
+        "ID": "6fc81730-7904-4552-9e30-e40b7da1850d"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "LT",
+        "ID": "6933ecb3-c6bc-4693-9a25-bbed282aae09"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "RT",
+        "ID": "8629f354-c61f-4cc8-a615-f6c2f407d959"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "LL",
+        "ID": "f193a940-4aaa-487b-a925-82d8bac7ca08"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "RL",
+        "ID": "1165cc7f-66fd-425c-a6a7-1f650c8b1fb3"
+      },
+      {
+        "Name": "Environmental Sealing",
+        "Hits": 1,
+        "Location": "H",
+        "ID": "ccf727a5-34a9-4c43-a2cc-20759d731d4c"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 3,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "AmmoCount": 25,
+            "Name": "Ammo (SRM 4)",
+            "Hits": 1,
+            "Location": "LT",
+            "ID": "3b2c55f9-2bb4-4933-aa51-ac1dbcc8a868"
+          }
+        ],
+        "Name": "SRM 4",
+        "Hits": 1,
+        "Location": "LA",
+        "ID": "7d0744ad-7c44-48a0-b3cb-53879fd65f0c"
+      },
+      {
+        "Heat": 3,
+        "Damage": 1,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 6,
+        "ShortRange": 7,
+        "MediumRange": 14,
+        "LongRange": 21,
+        "Ammo": [
+          {
+            "AmmoCount": 24,
+            "Name": "Ammo (LRM 5)",
+            "Hits": 1,
+            "Location": "LT",
+            "ID": "67785c23-9b53-4499-a9a8-148b62ce3ec7"
+          }
+        ],
+        "Name": "LRM 5",
+        "Hits": 1,
+        "Location": "CT",
+        "ID": "2aa19d69-12b5-4b14-b0ea-0bc735865fac"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [
+          {
+            "AmmoCount": 100,
+            "Name": "Ammo (Machine Gun)",
+            "Hits": 1,
+            "Location": "RT",
+            "ID": "fb2271b3-b2e8-4f18-8189-ee8d8370292f"
+          }
+        ],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "RT",
+        "ID": "8699e5e5-a160-43e7-975e-020b24e5a11c"
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "Location": "CT",
+        "ID": "19d52e4c-5ad2-40a9-b669-9ae6d236c3d8"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 10,
+    "Quirks": [],
+    "UnitHeader": "Quasit MilitiaMech (QUA-51T)",
+    "UnitDetails": "45 tons - BV: 696",
+    "ID": "15ad6acf-d46f-43e1-a805-179289bf9af6"
+  }
+]
