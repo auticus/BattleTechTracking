@@ -22,7 +22,11 @@ namespace BattleTechTracking.Factories
             switch (unitType)
             {
                 case BATTLE_MECH:
+                case INDUSTRIAL_MECH:
                     return BattleMechFactory.BuildDefaultBattleMech();
+                case COMBAT_VEHICLE:
+                case SUPPORT_VEHICLE:
+                    return CombatVehicleFactory.BuildDefaultCombatVehicle();
                 default:
                     throw new ArgumentException(
                         $"The value {unitType} is not recognized or has not been implemented yet.");

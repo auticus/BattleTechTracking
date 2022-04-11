@@ -1,0 +1,1346 @@
+[
+  {
+    "Name": "Armored Personnel Carrier",
+    "Model": "Wheeled SRM",
+    "Tonnage": 10,
+    "BattleValue": 176,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2500,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 6,
+      "Running": 9,
+      "Jumping": 0,
+      "ID": "446b0db9-9c7e-4f93-95f3-c1c12958b7b8"
+    },
+    "Components": [
+      {
+        "Name": "Front Armor",
+        "Armor": 12,
+        "RearArmor": null,
+        "Structure": 1,
+        "ID": "f5615ee0-34e7-4357-b32e-ab9cdca2786a"
+      },
+      {
+        "Name": "Right Side Armor",
+        "Armor": 10,
+        "RearArmor": 0,
+        "Structure": 1,
+        "ID": "724429ac-cd8e-402c-8ac7-5788366cdac7"
+      },
+      {
+        "Name": "Left Side Armor",
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 1,
+        "ID": "9fdd164e-41aa-44a9-acfc-aaa2a0470d3c"
+      },
+      {
+        "Name": "Rear Armor",
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 1,
+        "ID": "0db0e344-98b5-444d-8769-31b8bc33d4c0"
+      },
+      {
+        "Name": "Turret Armor",
+        "Armor": 6,
+        "RearArmor": null,
+        "Structure": 1,
+        "ID": "fe373506-62e7-4032-9a2d-bde2000db9dc"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "0cc7ddaa-daa7-4ddf-97cc-b4fc9a5832dd"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "3d7ad384-8d87-4908-b059-c572ea96b187"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "8e6a8ded-1192-4aaf-8989-f8d8e0764235"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "6f4d9f0c-fc66-4699-91d3-156671fa182f"
+      },
+      {
+        "Name": "Infantry Bay (1 ton)",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "d5da83f4-0281-413a-bb0b-a6957eb7f5bc"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "a7429a15-be2d-401c-ba33-46bb458b2845"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "5cfe5b55-ee72-47e3-b3b0-bfd79dd3bf76"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "TU",
+        "ID": "24a15b9c-b8de-4d6d-a076-edc8d056659c"
+      },
+      {
+        "Name": "Turret",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "6cbbdc4a-60f6-43f7-aa5e-41f2691bcf6d"
+      },
+      {
+        "Name": "Turret Stabalizer",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "595bead1-474a-4b44-916a-42b32dff738f"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "AmmoCount": 50,
+            "Name": "Ammo (SRM 2)",
+            "Hits": 1,
+            "Location": "",
+            "ID": "5e3434da-0794-40be-901e-dcb1e098500e"
+          }
+        ],
+        "Name": "SRM 2",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "bd0078c7-5e64-4efa-ac7e-554cf0c3e42e"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Armored Personnel Carrier (Wheeled SRM)",
+    "UnitDetails": "10 tons - BV: 176",
+    "ID": "6e116660-636b-45d8-acb8-5d27138686b7"
+  },
+  {
+    "Name": "Galleon Light Tank",
+    "Model": "GAL-200",
+    "Tonnage": 30,
+    "BattleValue": 345,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2915,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 5,
+      "Running": 5,
+      "Jumping": 0,
+      "ID": "aa2f53a9-9aa4-4cf6-99ba-6457a4841aa5"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 14,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "000067b8-116f-40c3-897a-1e8cb0afce03"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 13,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "b465737f-8ff0-4b31-8025-080a868e36d1"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 13,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "d2ccdb82-db49-4ce8-b682-022404f35620"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 14,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "39f83dc5-2c00-4ae5-a31d-3b97c1e06dbd"
+      },
+      {
+        "Name": "Turret",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "85f71a4b-a835-4855-8259-14e5e87e1e00"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "9dc783f3-db40-4cb9-b811-892db5b4144a"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "a757c627-d7e4-4ee4-acf4-9f2ec2ca32c1"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "77ce5bf9-b90d-4ef9-a5f9-188b4b2c7b92"
+      },
+      {
+        "Name": "Turret Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "9aa5032c-a60d-4b50-9047-9fe83aabd643"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "33fc0f1c-87ea-4cdc-a668-80d68c37600a"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "0f6c4e1e-eb81-4393-b5cf-08ec83aafff2"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "5de18bf7-8549-4320-9d93-1537578d6e7e"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "38849644-3d1b-451e-9274-0cd09be8ef40"
+      },
+      {
+        "Name": "Turret",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "ec25a9da-3e98-4209-92fc-503500c19c27"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [
+          {
+            "AmmoCount": 200,
+            "Name": "Ammo (Machine Gun)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "917e5471-1162-46e2-a2a0-ead83faa1d55"
+          }
+        ],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "92a693ec-8d91-421b-a62c-d3f607a99657"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "934e7f7f-580b-4467-8c46-a75ea6dc9494"
+      },
+      {
+        "Heat": 0,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "899f4fb1-bbec-48f8-8903-b60f421d244f"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Galleon Light Tank (GAL-200)",
+    "UnitDetails": "30 tons - BV: 345",
+    "ID": "6e497744-3a56-4c64-94d3-fa0950f2a242"
+  },
+  {
+    "Name": "Saladin Assault Hover Tank",
+    "Model": "Standard",
+    "Tonnage": 35,
+    "BattleValue": 596,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2942,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 8,
+      "Running": 12,
+      "Jumping": 0,
+      "ID": "0c1077dc-7e44-4729-8dfd-a60dc36c4c73"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 17,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "375101bd-f92d-44ae-bba7-f71667ed8421"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 5,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "69b86c87-433b-448a-b256-b1d443de51bd"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 5,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "62393861-ad54-43b5-9bd4-90db4bbf252e"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 5,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "c55a95d3-c5f1-4d94-98ca-3bf16324bd8f"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "4483d9cf-8a8e-4d0d-acf9-b43c950eb8cf"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "05015c95-08c5-4b95-a62a-694cf9c8da61"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "7776eb58-23d2-4c75-8fe9-df882dfef7d0"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "a1717091-446b-4ec9-9982-f27261f36066"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "a076f695-455c-4d67-84c2-08aacf739c21"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "80dd4ed9-a333-40eb-aa07-76e906d2a7f8"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "7b1d6528-b074-44dc-9ede-d12621b10bf1"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 20,
+        "DamageCodes": [
+          "DB",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "AmmoCount": 15,
+            "Name": "Ammo (AC/20)",
+            "Hits": 1,
+            "Location": "",
+            "ID": "27f2e52c-c1f6-4a6f-a31b-567b63047fa8"
+          }
+        ],
+        "Name": "AC/20",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "8f63a0c3-1a18-4917-8541-e24e2bc0c1b8"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Saladin Assault Hover Tank (Standard)",
+    "UnitDetails": "35 tons - BV: 596",
+    "ID": "888aef70-777a-4afa-9b57-f76f63294fc0"
+  },
+  {
+    "Name": "Saracen Medium Hover Tank",
+    "Model": "Standard",
+    "Tonnage": 35,
+    "BattleValue": 673,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2932,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 8,
+      "Running": 12,
+      "Jumping": 0,
+      "ID": "68932d74-85c7-4ec7-bc92-aab3d968f8e3"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 24,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "ca13e07d-7537-4e99-90cd-15ef6f4b368b"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "a5238162-0882-444f-a19e-df4a0d67b853"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "823c516e-6748-45e9-950d-a3312f61300b"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 24,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "df081596-e393-48f8-82b8-9685886995f0"
+      },
+      {
+        "Name": "Turret",
+        "Armor": 24,
+        "RearArmor": null,
+        "Structure": 4,
+        "ID": "c23157ce-b0a4-4f1d-ba54-614940b99bec"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "fc6b01c9-c91a-40bc-b0a6-8e762d882f99"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "b2fc5741-17f0-4a2e-acc2-c100ca6b0ae6"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "85a1d13f-59e7-4543-a0f6-3d1649a9f68b"
+      },
+      {
+        "Name": "Turret Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "e2e8e261-3cd9-4e6a-bf9a-b60422d98a60"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "ca8366c1-6dd1-4b0f-b09b-370904c4a795"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "bd205481-5175-4ebd-a3ae-c572db737edb"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "eb449e44-20e1-4a8e-8479-1ae58c05cc3d"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "d7927cdd-c6a6-4119-8bc6-8de2452111d5"
+      },
+      {
+        "Name": "Turret",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "4bb4ece3-514c-45c2-86ab-4ff8e7c56c92"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 1,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 6,
+        "ShortRange": 7,
+        "MediumRange": 14,
+        "LongRange": 21,
+        "Ammo": [
+          {
+            "AmmoCount": 50,
+            "Name": "Ammo (SRM 2)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "d1f909a4-37b0-4a0c-b652-f0460ceecaa2"
+          }
+        ],
+        "Name": "LRM 10",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "2852d3d3-1816-474d-9633-db287ccfbe08"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "AmmoCount": 50,
+            "Name": "Ammo (SRM 2)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "f89efcf9-1613-412c-b66c-f48c07bf5679"
+          }
+        ],
+        "Name": "SRM 2",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "79981676-79ca-471c-b2a9-a12dd1a25b6f"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "SRM 2",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "c6d15291-1845-4aa9-bffe-ac19d004da4f"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "SRM 2",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "bc2ee95b-ed9d-4bb4-8482-df78186dee57"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Saracen Medium Hover Tank (Standard)",
+    "UnitDetails": "35 tons - BV: 673",
+    "ID": "d286a925-a49a-43e5-a000-769e1af78cf3"
+  },
+  {
+    "Name": "Skulker Wheeled Scout Tank",
+    "Model": "MG",
+    "Tonnage": 20,
+    "BattleValue": 252,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2897,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 7,
+      "Running": 11,
+      "Jumping": 0,
+      "ID": "542567b1-2ecb-4587-88bd-25707765f894"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 2,
+        "ID": "f1357721-a04e-4f34-87c0-7a76ab9ecd37"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 2,
+        "ID": "1f4a862d-01af-4954-816a-34d4c046aa9b"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 2,
+        "ID": "dd1fb51a-bfac-4b15-87d1-8408cff441d4"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 2,
+        "ID": "558c03e4-f099-4d76-bd3b-c1568281d4fa"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "8a4423b9-055f-4ffa-bfca-08ad4327e33c"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "16c5a647-a439-49a0-a319-c72c7ea9f07c"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "20ff6594-ce81-4fe1-8521-7a75e41ea04c"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "c7df5ed3-e575-4460-bab1-3360d2195dfd"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "3ce2be19-65e7-4933-9612-1bb2b4724453"
+      },
+      {
+        "Name": "Infantry Bay (2 tons)",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "73ea2e34-92fb-4123-ab29-69b63692db7c"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "b4ec0755-3154-470e-bd4e-6c45b90f5b4c"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "5cf8975f-2956-4f21-a4aa-f1f19fabbaf6"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [
+          {
+            "AmmoCount": 200,
+            "Name": "Ammo (Machine Gun)",
+            "Hits": 1,
+            "Location": "",
+            "ID": "060e75e5-ac8a-4333-b7ce-3e86ac75e576"
+          }
+        ],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "09c1df59-263e-4fc1-bd48-5942d958391f"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "18441f81-bdca-4f99-abea-c152136a8c74"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Skulker Wheeled Scout Tank (MG)",
+    "UnitDetails": "20 tons - BV: 252",
+    "ID": "39eb812b-391a-4d73-8c28-bba880214cdb"
+  },
+  {
+    "Name": "Scorpion Light Tank",
+    "Model": "SRM",
+    "Tonnage": 25,
+    "BattleValue": 373,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2840,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 4,
+      "Running": 6,
+      "Jumping": 0,
+      "ID": "681b39f8-881a-4e97-a531-1498ed0d5393"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 16,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "f12df43d-f485-4a07-ba50-28134540764a"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 11,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "d65c3ef8-c500-4d30-9214-02524d85dcd4"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 11,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "292ee6cc-1f0a-4313-b0b1-f61702ab5940"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "aca5fdb6-65b9-49d9-9465-f5adf15f6a33"
+      },
+      {
+        "Name": "Turret",
+        "Armor": 16,
+        "RearArmor": null,
+        "Structure": 3,
+        "ID": "08a9daea-2234-42d6-8000-ead08ab06850"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "9a882ca1-78ca-40f9-81c6-33521a2b44f0"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "938ba043-124a-42d3-8c82-20a7870ca4bc"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "a18c8ae7-f742-4174-98da-079e14ebadac"
+      },
+      {
+        "Name": "Turret Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "127d4a4c-408e-45f3-854a-fa84e5af0078"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "ea4bec08-8025-4dc1-bab8-1baa30b56ff8"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "50dc0d2f-303e-4e85-ae2c-fc0361dd41da"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "220448fd-86d0-40ed-be85-e0eef1808750"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "513060b8-625e-42a0-99ad-a36643046c93"
+      },
+      {
+        "Name": "Turret",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "a66f99ea-2aea-44ca-b0b4-2ddb26590ec4"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [
+          {
+            "AmmoCount": 100,
+            "Name": "Ammo (Machine Gun)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "bffeb885-27e1-42f8-ba2e-1eaec9f8d904"
+          }
+        ],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "9ad64b6b-117b-45e3-ba34-f4c4d7dab4c7"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "AmmoCount": 45,
+            "Name": "Ammo (SRM 6)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "4d435a28-2c0a-461e-83be-ccdd0d3792bd"
+          }
+        ],
+        "Name": "SRM 6",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "624624a9-651a-41d8-9546-23b65a132177"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "SRM 6",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "b7db39eb-f690-4c27-a5a4-e0b7b65d4798"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Scorpion Light Tank (SRM)",
+    "UnitDetails": "25 tons - BV: 373",
+    "ID": "c16f681f-0e19-491f-a2eb-6ddc26e286b5"
+  },
+  {
+    "Name": "Vedette Medium Tank",
+    "Model": "AC2",
+    "Tonnage": 50,
+    "BattleValue": 0,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2962,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 5,
+      "Running": 8,
+      "Jumping": 0,
+      "ID": "1045d2de-0bea-4297-a57c-c482b44a22ec"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "87c18dad-efc1-408a-8625-8f0f7d2a35f9"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "93cc8116-80fd-4550-96e8-d01353012ff8"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "7b818113-541a-46a3-9a11-b10836a89c00"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "fab3c307-af38-4c1c-b311-f5e63d4b3340"
+      },
+      {
+        "Name": "Turret",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "108d40f6-abf7-4a30-8f01-d491b83bbcd3"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "75df1598-7be4-4a16-80fd-d3e5a1a8d782"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "93d9e3a2-e4f2-4d58-a945-2b5958a21991"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "5ee1f70b-38ac-4231-a4c6-4bcc6ce22501"
+      },
+      {
+        "Name": "Turret Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "fc714865-0d7d-4bfb-bf0b-ad686182c8f7"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "c0ef9777-d1fe-4787-9680-021cc02ce829"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "6293c1f2-e6c4-442b-adcb-e5343d9d631b"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "62b0b191-4c30-44ab-9dad-0639a2a1143c"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "03b9d103-e2f6-4ae7-ad49-2fed1050885b"
+      },
+      {
+        "Name": "Turret",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "e6b88207-68a4-44ea-af9c-bca05df796c1"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [
+          {
+            "AmmoCount": 200,
+            "Name": "Ammo (Machine Gun)",
+            "Hits": 1,
+            "Location": "F",
+            "ID": "b193f066-5018-4911-94e5-a5f6ccf4f926"
+          }
+        ],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "f2ff2840-d152-4643-ab16-1f1df92fbef1"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [
+          {
+            "AmmoCount": 50,
+            "Name": "Ammo (SRM 2)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "8266794f-7b0e-41b2-bbbc-fd45aebd5685"
+          }
+        ],
+        "Name": "SRM 2",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "b88a9e1b-5f92-4a76-b449-9f53128731d7"
+      },
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "S"
+        ],
+        "MinimumRange": 4,
+        "ShortRange": 8,
+        "MediumRange": 16,
+        "LongRange": 24,
+        "Ammo": [
+          {
+            "AmmoCount": 45,
+            "Name": "Ammo (AC/2)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "9536e290-423f-4de9-9c24-83f15f854887"
+          }
+        ],
+        "Name": "AC/2",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "36d16a19-b96d-4991-89b6-17cd14797c89"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Vedette Medium Tank (AC2)",
+    "UnitDetails": "50 tons - BV: 0",
+    "ID": "394ee129-3bec-44e2-ab0d-37da67a0529c"
+  },
+  {
+    "Name": "Vedette Medium Tank",
+    "Model": "Standard",
+    "Tonnage": 50,
+    "BattleValue": 4750,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2943,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 5,
+      "Running": 8,
+      "Jumping": 0,
+      "ID": "3c0f7e8c-5f46-4f80-a042-9e65ee636b27"
+    },
+    "Components": [
+      {
+        "Name": "Front",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "cf4843ad-84d2-4ec5-83d4-e2eb8bcde90e"
+      },
+      {
+        "Name": "Right Side",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "a0dce123-94c0-4514-a168-902126c6f5c0"
+      },
+      {
+        "Name": "Left Side",
+        "Armor": 18,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "4a4d5798-77bb-4fc9-8113-eff8167de9ef"
+      },
+      {
+        "Name": "Rear",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "24d205cd-f325-4a8b-8687-aae6f3bae01c"
+      },
+      {
+        "Name": "Turret",
+        "Armor": 20,
+        "RearArmor": null,
+        "Structure": 5,
+        "ID": "ff763bf2-c767-4430-9141-dfed0a6458e7"
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Motive System",
+        "Hits": 3,
+        "Location": "",
+        "ID": "a35db24b-ddec-4a62-9477-150840771334"
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 4,
+        "Location": "",
+        "ID": "75de1d38-f17a-4614-9e7b-3a706105ebca"
+      },
+      {
+        "Name": "Front Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "c9a2212a-c530-4288-b9e2-9b6a51fbb47a"
+      },
+      {
+        "Name": "Turret Stabalizer",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "cd69d987-2a1e-4d8e-8a06-c5ea175286e2"
+      },
+      {
+        "Name": "Left Stabalizer",
+        "Hits": 1,
+        "Location": "LS",
+        "ID": "072179c2-b14b-4cef-9463-e7aaeb399e1c"
+      },
+      {
+        "Name": "ICE Engine",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "a5025932-821f-48ce-ab75-44f3c04c1abb"
+      },
+      {
+        "Name": "Rear Stabalizer",
+        "Hits": 1,
+        "Location": "R",
+        "ID": "b6d1b15f-6347-4dad-8857-03d6d7220a40"
+      },
+      {
+        "Name": "Right Stabalizer",
+        "Hits": 1,
+        "Location": "RS",
+        "ID": "7a13a4c3-4739-4f70-ab9a-523ab3861063"
+      },
+      {
+        "Name": "Turret",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "19df5141-c6ca-43e5-b460-d5524fb18a96"
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 0,
+        "Damage": 2,
+        "DamageCodes": [
+          "DB",
+          "AI"
+        ],
+        "MinimumRange": 0,
+        "ShortRange": 1,
+        "MediumRange": 2,
+        "LongRange": 3,
+        "Ammo": [
+          {
+            "AmmoCount": 200,
+            "Name": "Ammo (Machine Gun)",
+            "Hits": 1,
+            "Location": "F",
+            "ID": "f3a0eb47-d116-48f5-8897-5e26e1adcbae"
+          }
+        ],
+        "Name": "Machine Gun",
+        "Hits": 1,
+        "Location": "F",
+        "ID": "1cff8833-1f23-4f15-ba7e-fde5bd15130c"
+      },
+      {
+        "Heat": 0,
+        "Damage": 5,
+        "DamageCodes": [
+          "DB",
+          "S"
+        ],
+        "MinimumRange": 3,
+        "ShortRange": 6,
+        "MediumRange": 12,
+        "LongRange": 18,
+        "Ammo": [
+          {
+            "AmmoCount": 20,
+            "Name": "Ammo (AC/5)",
+            "Hits": 1,
+            "Location": "TU",
+            "ID": "46851687-0f46-46b9-a371-d18abab6a2c7"
+          }
+        ],
+        "Name": "AC/5",
+        "Hits": 1,
+        "Location": "TU",
+        "ID": "df950df9-82cc-45b3-9340-ee2e39c9ac79"
+      }
+    ],
+    "CurrentHeatLevel": 0,
+    "HeatSinks": 0,
+    "Quirks": [],
+    "UnitHeader": "Vedette Medium Tank (Standard)",
+    "UnitDetails": "50 tons - BV: 4750",
+    "ID": "48411e2d-f8a8-4190-b9a6-0d74c836d86e"
+  }
+]

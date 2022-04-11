@@ -37,9 +37,10 @@ namespace BattleTechTracking.ViewModels
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
         private Ammunition _selectedAmmo;
-        private List<BattleUnit> _mechList;
+        private List<BattleMech> _mechList;
         private List<IndustrialUnit> _industrialMechList;
         private List<Infantry> _infantryList;
+        private List<CombatVehicle> _combatVehicleList;
         private string _damageCodesCommaSeparated;
         private string _selectedQuirk;
         
@@ -436,9 +437,10 @@ namespace BattleTechTracking.ViewModels
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
             VisibleUnits = new ObservableCollection<IDisplayUnit>();
 
-            _mechList = DataPump.GetPersistedDataForType<BattleUnit>().ToList();
+            _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
             _industrialMechList = DataPump.GetPersistedDataForType<IndustrialUnit>().ToList();
             _infantryList = DataPump.GetPersistedDataForType<Infantry>().ToList();
+            _combatVehicleList = DataPump.GetPersistedDataForType<CombatVehicle>().ToList();
 
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
             VehicleComponentsVisible = true;
@@ -587,6 +589,7 @@ namespace BattleTechTracking.ViewModels
                 DataPump.SavePersistedDataForType(_mechList);
                 DataPump.SavePersistedDataForType(_industrialMechList);
                 DataPump.SavePersistedDataForType(_infantryList);
+                DataPump.SavePersistedDataForType(_combatVehicleList);
                 PageNavigation.PopAsync();
             });
 
@@ -623,8 +626,10 @@ namespace BattleTechTracking.ViewModels
                     return _industrialMechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
                 case UnitTypes.INFANTRY:
                     return new List<IDisplayUnit>();
-                    //return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
-                    //infantry is not a display unit
+                //return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
+                //infantry is not a display unit
+                case UnitTypes.COMBAT_VEHICLE:
+                    return _combatVehicleList.OrderBy(p => p.Name).ThenBy(p => p.Model);
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
             }
@@ -652,10 +657,13 @@ namespace BattleTechTracking.ViewModels
             switch (SelectedUnitFilter)
             {
                 case UnitTypes.BATTLE_MECH:
-                    _mechList = VisibleUnits.Cast<BattleUnit>().ToList();
+                    _mechList = VisibleUnits.Cast<BattleMech>().ToList();
                     break;
                 case UnitTypes.INDUSTRIAL_MECH:
                     _industrialMechList = VisibleUnits.Cast<IndustrialUnit>().ToList();
+                    break;
+                case UnitTypes.COMBAT_VEHICLE:
+                    _combatVehicleList = VisibleUnits.Cast<CombatVehicle>().ToList();
                     break;
                 //infantry is not a display unit
                 default:

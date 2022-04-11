@@ -5,9 +5,9 @@ namespace BattleTechTracking.Factories
 {
     public static class BattleMechFactory
     {
-        public static BattleUnit BuildDefaultBattleMech()
+        public static BattleMech BuildDefaultBattleMech()
         {
-            var mech = new BattleUnit()
+            var mech = new BattleMech()
             {
                 Name = "Unnamed",
                 Tonnage = 20,

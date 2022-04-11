@@ -72,7 +72,7 @@ namespace BattleTechTracking.Factories
 
         private static string GetFileNameForType<T>()
         {
-            if (typeof(T) == typeof(BattleUnit))
+            if (typeof(T) == typeof(BattleMech))
             {
                 return "MasterMech.json";
             }
@@ -85,6 +85,11 @@ namespace BattleTechTracking.Factories
             if (typeof(T) == typeof(Infantry))
             {
                 return "Infantry.json";
+            }
+
+            if (typeof(T) == typeof(CombatVehicle))
+            {
+                return "CombatVehicles.json";
             }
 
             throw new ArgumentException($"The type {typeof(T)} was not found in {nameof(GetFileNameForType)}");
