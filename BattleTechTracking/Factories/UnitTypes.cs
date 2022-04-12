@@ -17,7 +17,7 @@ namespace BattleTechTracking.Factories
         public static ObservableCollection<string> BuildUnitTypesCollection() 
             => new ObservableCollection<string> { BATTLE_MECH, INDUSTRIAL_MECH, COMBAT_VEHICLE, SUPPORT_VEHICLE, VTOL, INFANTRY, AEROSPACE };
 
-        public static IDisplayUnit BuildNewUnitFromType(string unitType)
+        public static IDisplayListView BuildNewUnitFromType(string unitType)
         {
             switch (unitType)
             {

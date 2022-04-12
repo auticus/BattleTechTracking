@@ -6,7 +6,7 @@ namespace BattleTechTracking.Models
     /// <summary>
     /// The base model of all units in the application.
     /// </summary>
-    public abstract class BaseUnit : BaseModel, IDisplayUnit
+    public abstract class BaseUnit : BaseModel, IVehicleDetailView, IDisplayListView
     {
         private string _name;
         private string _model;

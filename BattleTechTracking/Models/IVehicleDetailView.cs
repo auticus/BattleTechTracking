@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace BattleTechTracking.Models
 {
     /// <summary>
-    /// Interface for elements that will be displayed in the Data View list element for mechs.
+    /// Interface for elements that will be displayed in the Data View list element for mechs and vehicles..
     /// </summary>
-    public interface IDisplayUnit
+    public interface IVehicleDetailView
     {
         /// <summary>
         /// Gets the unique ID of the unit.

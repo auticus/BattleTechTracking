@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Dynamic;
 using System.Linq;
 using System.Windows.Input;
 using BattleTechTracking.Factories;
@@ -12,7 +11,7 @@ namespace BattleTechTracking.ViewModels
 {
     internal class DataPageViewModel : BaseViewModel
     {
-        private IDisplayUnit _selectedUnit;
+        private IVehicleDetailView _selectedUnit;
         private string _unitNameFilter;
         private string _selectedUnitFilter;
         private bool _vehicleComponentsVisible;
@@ -26,7 +25,7 @@ namespace BattleTechTracking.ViewModels
         private string _runningLabel;
         private string _jumpingLabel;
 
-        private ObservableCollection<IDisplayUnit> _visibleUnits;
+        private ObservableCollection<IDisplayListView> _visibleUnits;
         private ObservableCollection<UnitComponent> _selectedUnitComponents;
         private ObservableCollection<Equipment> _selectedUnitEquipment;
         private ObservableCollection<Weapon> _selectedUnitWeapons;
@@ -46,7 +45,7 @@ namespace BattleTechTracking.ViewModels
         
         public ObservableCollection<string> UnitFilters { get; }
 
-        public ObservableCollection<IDisplayUnit> VisibleUnits
+        public ObservableCollection<IDisplayListView> VisibleUnits
         {
             get => _visibleUnits;
             private set
@@ -60,7 +59,7 @@ namespace BattleTechTracking.ViewModels
         /// <summary>
         /// Gets or sets the currently selected unit.
         /// </summary>
-        public IDisplayUnit SelectedUnit
+        public IVehicleDetailView SelectedUnit
         {
             get => _selectedUnit;
             set
@@ -435,7 +434,7 @@ namespace BattleTechTracking.ViewModels
         public DataPageViewModel()
         {
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
-            VisibleUnits = new ObservableCollection<IDisplayUnit>();
+            VisibleUnits = new ObservableCollection<IDisplayListView>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
             _industrialMechList = DataPump.GetPersistedDataForType<IndustrialUnit>().ToList();
@@ -612,11 +611,11 @@ namespace BattleTechTracking.ViewModels
 
         private void LoadVisibleUnits()
         {
-            VisibleUnits = new ObservableCollection<IDisplayUnit>(GetAssociatedUnitsByFilterType());
+            VisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
             SetAssociatedViewLabelsByFilterType();
         }
 
-        private IEnumerable<IDisplayUnit> GetAssociatedUnitsByFilterType()
+        private IEnumerable<IDisplayListView> GetAssociatedUnitsByFilterType()
         {
             switch (SelectedUnitFilter)
             {
@@ -625,7 +624,7 @@ namespace BattleTechTracking.ViewModels
                 case UnitTypes.INDUSTRIAL_MECH:
                     return _industrialMechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
                 case UnitTypes.INFANTRY:
-                    return new List<IDisplayUnit>();
+                    return new List<IDisplayListView>();
                 //return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
                 //infantry is not a display unit
                 case UnitTypes.COMBAT_VEHICLE:

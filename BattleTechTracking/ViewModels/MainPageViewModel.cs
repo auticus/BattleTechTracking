@@ -20,7 +20,10 @@ namespace BattleTechTracking.ViewModels
                 await PageNavigation.PushAsync(new DataView());
             });
 
-            CreateNewGame = new Command(() => throw new NotImplementedException());
+            CreateNewGame = new Command(async () =>
+            {
+                await PageNavigation.PushAsync(new MatchView());
+            });
             LoadExistingGame = new Command(() => throw new NotImplementedException());
             ViewSavedGame = new Command(() => throw new NotImplementedException());
         }

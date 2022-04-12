@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
+             x:Class="BattleTechTracking.Views.MatchView"
+             BackgroundColor="Black">
+    <ContentPage.BindingContext>
+        <viewModels:MatchViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Header -->
+            <Grid Margin="0,10,0,0"
+                  HeightRequest="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                       Margin="20,0,0,0"
+                       Text="MATCH RECORDSHEET" TextColor="Gold" 
+                       FontFamily="BattletechFont" 
+                       FontAttributes="Bold" 
+                       FontSize="22"/>
+                <ImageButton Grid.Column="1"
+                             Command="{Binding SettingsCommand}"
+                             BackgroundColor="Black"
+                             HeightRequest="40"
+                             WidthRequest="40"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             Source="settings.png"/>
+                <ImageButton Grid.Column="2"
+                             Command="{Binding OkCommand}"
+                             BackgroundColor="Black"
+                             HeightRequest="40"
+                             WidthRequest="40"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             Source="okIcon.png"/>
+                <ImageButton Grid.Column="3"
+                             Command="{Binding CloseCommand}"
+                             BackgroundColor="Black"
+                             HeightRequest="40"
+                             WidthRequest="40"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             Source="goBack.png"/>
+            </Grid>
+            <!-- Main Content -->
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,0,10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!-- Faction buttons -->
+                <StackLayout Grid.Row="0" 
+                             Grid.Column="0"
+                             Orientation="Horizontal">
+                    <Button Text="{Binding Faction1Name}" WidthRequest="80" TextColor="Gold" Command="{Binding ActivateFaction1Command}"/>
+                    <Button Text="{Binding Faction2Name}" WidthRequest="80" TextColor="Gold" Command="{Binding ActivateFaction2Command}"/>
+                </StackLayout>
+
+                <!-- List View faction units -->
+                <ListView Grid.Row="1" Grid.Column="0" 
+                          Margin="0,10,0,25"
+                          ItemsSource="{Binding ActiveFactionUnits}"
+                          SelectedItem="{Binding SelectedActiveUnit}"
+                          VerticalOptions="FillAndExpand">
+                    <ListView.Header>
+                        <ContentView BackgroundColor="MidnightBlue">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding ActiveFactionName}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       FontSize="Medium" TextColor="Yellow"/>
+                                <ImageButton Grid.Column="1" WidthRequest="32" HeightRequest="32" 
+                                             CornerRadius="20" HorizontalOptions="End" 
+                                             BackgroundColor="Black" Source="plusIcon.jpg"
+                                             Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" 
+                                             Command="{Binding AddUnit}"/>
+                            </Grid>
+                        </ContentView>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="5,5,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"
+                                            Text="{Binding UnitHeader}"
+                                            TextColor="WhiteSmoke"
+                                            VerticalTextAlignment="Center"
+                                            FontAttributes="Bold"/>
+                                    <Label Grid.Column="1"
+                                           Text="{Binding UnitDetails}"
+                                           TextColor="WhiteSmoke"
+                                           FontAttributes="Italic"
+                                           FontSize="Caption"
+                                           VerticalTextAlignment="Center"/>
+                                    <ImageButton Grid.Column="2"
+                                            WidthRequest="32" HeightRequest="32" 
+                                            BackgroundColor="Black" Source="trash.jpg"
+                                            BorderColor="Gold" BorderWidth="1" 
+                                            Command="{Binding DeleteUnit, Source={x:Reference viewModel}}"
+                                            CommandParameter="{Binding ID}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
