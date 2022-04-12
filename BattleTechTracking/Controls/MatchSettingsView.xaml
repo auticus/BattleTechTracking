@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BattleTechTracking.Controls.MatchSettingsView"
+             x:Name="thisView">
+  <ContentView.Content>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                  <RowDefinition Height="50"/>
+                  <RowDefinition Height="500"/>
+              </Grid.RowDefinitions>
+              <!-- Header Bar and Buttons -->
+              <Grid Grid.Row="0">
+                  <Grid.ColumnDefinitions>
+                      <ColumnDefinition Width="*"/>
+                      <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                  <BoxView 
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2"
+                      BackgroundColor="MidnightBlue" 
+                      HorizontalOptions="FillAndExpand"/>
+                  <Label Text="Match Settings" 
+                         Grid.Column="0" 
+                         TextColor="Gold"
+                         HorizontalOptions="CenterAndExpand"
+                         HorizontalTextAlignment="Center" 
+                         VerticalTextAlignment="Center"
+                         FontAttributes="Bold"
+                         FontSize="Medium"/>
+                  <ImageButton Grid.Column="1"
+                               Command="{Binding SettingsOk, Source={x:Reference thisView}}"
+                               BackgroundColor="Transparent"
+                               HeightRequest="32"
+                               WidthRequest="32"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"
+                               Margin="0,0,10,0"
+                               Source="okIcon.png"/>
+              </Grid>
+
+              <!--Settings Detail -->
+              <Grid Grid.Row="1" BackgroundColor="DimGray" Padding="10,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="250"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0"
+                           Grid.Column="0"
+                           TextColor="Gold" 
+                           Margin="10,0,0,0" 
+                           VerticalTextAlignment="Center"
+                           Text="Faction 1"/>
+                    
+                    <Entry Grid.Row="0"
+                           Grid.Column="1"
+                           WidthRequest="100"
+                           MaxLength="25"
+                           VerticalOptions="Center"
+                           Text="{Binding Faction1Name, Source={x:Reference thisView}}"/>
+
+                    <Label Grid.Row="1"
+                           Grid.Column="0"
+                           TextColor="Gold" 
+                           Margin="10,0,0,0" 
+                           VerticalTextAlignment="Center"
+                           Text="Faction 2"/>
+
+                    <Entry Grid.Row="1"
+                           Grid.Column="1"
+                           WidthRequest="100"
+                           MaxLength="25"
+                           VerticalOptions="Center"
+                           Text="{Binding Faction2Name, Source={x:Reference thisView}}"/>
+            </Grid>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

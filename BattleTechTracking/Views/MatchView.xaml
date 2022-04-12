@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
+             xmlns:controls="clr-namespace:BattleTechTracking.Controls;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Views.MatchView"
              BackgroundColor="Black">
     <ContentPage.BindingContext>
@@ -49,8 +50,11 @@
                              HorizontalOptions="Start"
                              Source="goBack.png"/>
             </Grid>
+
             <!-- Main Content -->
-            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="20,0,10,10">
+            <Grid HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand"
+                  Margin="20,0,20,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="400"/>
                     <ColumnDefinition Width="*"/>
@@ -59,12 +63,13 @@
                     <RowDefinition Height="32"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+
                 <!-- Faction buttons -->
                 <StackLayout Grid.Row="0" 
                              Grid.Column="0"
                              Orientation="Horizontal">
-                    <Button Text="{Binding Faction1Name}" WidthRequest="80" TextColor="Gold" Command="{Binding ActivateFaction1Command}"/>
-                    <Button Text="{Binding Faction2Name}" WidthRequest="80" TextColor="Gold" Command="{Binding ActivateFaction2Command}"/>
+                    <Button Text="{Binding Faction1Name}" WidthRequest="190" TextColor="Gold" Command="{Binding ActivateFaction1Command}"/>
+                    <Button Text="{Binding Faction2Name}" WidthRequest="190" TextColor="Gold" Command="{Binding ActivateFaction2Command}"/>
                 </StackLayout>
 
                 <!-- List View faction units -->
@@ -121,6 +126,16 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
+
+                <!-- Right side Panel View -->
+                <controls:MatchSettingsView Margin="10,45,0,0"
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="1"
+                                            IsVisible="{Binding SettingsVisible}"
+                                            SettingsOk="{Binding SettingsOkCommand}"
+                                            Faction1Name="{Binding Faction1Name, Mode=TwoWay}"
+                                            Faction2Name="{Binding Faction2Name, Mode=TwoWay}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

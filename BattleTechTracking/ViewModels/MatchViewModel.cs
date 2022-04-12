@@ -12,6 +12,7 @@ namespace BattleTechTracking.ViewModels
         private const int FACTION_2_INDEX = 1;
 
         private int _activeFaction;
+        private bool _settingsVisible;
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
@@ -75,7 +76,21 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the value indicating if the Settings panel is visible.
+        /// </summary>
+        public bool SettingsVisible
+        {
+            get => _settingsVisible;
+            set
+            {
+                _settingsVisible = value;
+                OnPropertyChanged(nameof(SettingsVisible));
+            }
+        }
+
         public ICommand SettingsCommand { get; }
+        public ICommand SettingsOkCommand { get; }
         public ICommand OkCommand { get; }
         public ICommand CloseCommand { get; }
         public ICommand ActivateFaction1Command { get; }
@@ -116,7 +131,17 @@ namespace BattleTechTracking.ViewModels
 
             AddUnits = new Command(() =>
             {
+                //todo: view to select a unit and add it here
+            });
 
+            SettingsCommand = new Command(() =>
+            {
+                SettingsVisible = true;
+            });
+
+            SettingsOkCommand = new Command(() =>
+            {
+                SettingsVisible = false;
             });
         }
     }
