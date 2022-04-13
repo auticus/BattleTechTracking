@@ -91,7 +91,7 @@
                                              CornerRadius="20" HorizontalOptions="End" 
                                              BackgroundColor="Black" Source="plusIcon.jpg"
                                              Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" 
-                                             Command="{Binding AddUnit}"/>
+                                             Command="{Binding AddUnits}"/>
                             </Grid>
                         </ContentView>
                     </ListView.Header>
@@ -136,6 +136,17 @@
                                             SettingsOk="{Binding SettingsOkCommand}"
                                             Faction1Name="{Binding Faction1Name, Mode=TwoWay}"
                                             Faction2Name="{Binding Faction2Name, Mode=TwoWay}"/>
+
+                <controls:UnitSelectorView Margin="10,5,0,0"
+                                           Grid.Row="0"
+                                           Grid.RowSpan="2"
+                                           Grid.Column="1"
+                                           IsVisible="{Binding UnitSelectorVisible}"
+                                           SelectorOk="{Binding SelectorOkCommand}"
+                                           VisibleUnits="{Binding VisibleUnits}"
+                                           UnitFilters ="{Binding UnitFilters}"
+                                           SelectedUnitFilter ="{Binding SelectedUnitFilter, Mode=TwoWay}"
+                                           SelectedUnit ="{Binding SelectedUnit}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

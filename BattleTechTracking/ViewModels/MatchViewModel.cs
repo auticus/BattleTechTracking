@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
+using BattleTechTracking.Factories;
 using BattleTechTracking.Models;
 using Xamarin.Forms;
 
@@ -10,9 +13,15 @@ namespace BattleTechTracking.ViewModels
     {
         private const int FACTION_1_INDEX = 0;
         private const int FACTION_2_INDEX = 1;
+        
+        private readonly List<BattleMech> _mechList;
+        private readonly List<IndustrialUnit> _industrialMechList;
+        private readonly List<Infantry> _infantryList;
+        private readonly List<CombatVehicle> _combatVehicleList;
 
         private int _activeFaction;
         private bool _settingsVisible;
+        private bool _unitSelectorVisible;
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
@@ -89,6 +98,67 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the value indicating if the Unit Selector is visible.
+        /// </summary>
+        public bool UnitSelectorVisible
+        {
+            get => _unitSelectorVisible;
+            set
+            {
+                _unitSelectorVisible = value;
+                OnPropertyChanged(nameof(UnitSelectorVisible));
+            }
+        }
+
+        /// <summary>
+        /// Gets the unit filters from the unit selector.
+        /// </summary>
+        public ObservableCollection<string> UnitFilters { get; }
+
+        private ObservableCollection<IDisplayListView> _visibleUnits;
+        public ObservableCollection<IDisplayListView> VisibleUnits
+        {
+            get => _visibleUnits;
+            private set
+            {
+                _visibleUnits = value;
+                OnPropertyChanged(nameof(VisibleUnits));
+                SelectedUnit = null;
+            }
+        }
+
+        private IDisplayListView _selectedUnit;
+
+        /// <summary>
+        /// Gets or sets the Selected Unit from the Unit Selector
+        /// </summary>
+        public IDisplayListView SelectedUnit
+        {
+            get => _selectedUnit;
+            set
+            {
+                _selectedUnit = value;
+                OnPropertyChanged(nameof(SelectedUnit));
+            }
+        }
+
+        private string _selectedUnitFilter;
+        /// <summary>
+        /// Gets or sets the value that will filter the List View by what type of item to look at.
+        /// </summary>
+        public string SelectedUnitFilter
+        {
+            get => _selectedUnitFilter;
+            set
+            {
+                if (_selectedUnitFilter == value) return;
+                _selectedUnitFilter = value;
+                OnPropertyChanged(nameof(SelectedUnitFilter));
+                LoadVisibleUnits();
+            }
+        }
+
         public ICommand SettingsCommand { get; }
         public ICommand SettingsOkCommand { get; }
         public ICommand OkCommand { get; }
@@ -96,6 +166,7 @@ namespace BattleTechTracking.ViewModels
         public ICommand ActivateFaction1Command { get; }
         public ICommand ActivateFaction2Command { get; }
         public ICommand AddUnits { get; }
+        public ICommand SelectorOkCommand { get; }
 
         public MatchViewModel()
         {
@@ -103,10 +174,13 @@ namespace BattleTechTracking.ViewModels
             Faction2Name = "Faction 2";
             ActiveFaction = 0;
 
-            SettingsCommand = new Command(() =>
-            {
+            UnitFilters = UnitTypes.BuildUnitTypesCollection();
+            VisibleUnits = new ObservableCollection<IDisplayListView>();
 
-            });
+            _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
+            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialUnit>().ToList();
+            _infantryList = DataPump.GetPersistedDataForType<Infantry>().ToList();
+            _combatVehicleList = DataPump.GetPersistedDataForType<CombatVehicle>().ToList();
 
             OkCommand = new Command(() =>
             {
@@ -131,11 +205,13 @@ namespace BattleTechTracking.ViewModels
 
             AddUnits = new Command(() =>
             {
-                //todo: view to select a unit and add it here
+                SettingsVisible = false;
+                UnitSelectorVisible = true;
             });
 
             SettingsCommand = new Command(() =>
             {
+                UnitSelectorVisible = false;
                 SettingsVisible = true;
             });
 
@@ -143,6 +219,35 @@ namespace BattleTechTracking.ViewModels
             {
                 SettingsVisible = false;
             });
+
+            SelectorOkCommand = new Command(() =>
+            {
+                UnitSelectorVisible = false;
+            });
+        }
+
+        private void LoadVisibleUnits()
+        {
+            VisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
+        }
+
+        private IEnumerable<IDisplayListView> GetAssociatedUnitsByFilterType()
+        {
+            switch (SelectedUnitFilter)
+            {
+                case UnitTypes.BATTLE_MECH:
+                    return _mechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
+                case UnitTypes.INDUSTRIAL_MECH:
+                    return _industrialMechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
+                case UnitTypes.INFANTRY:
+                    return new List<IDisplayListView>();
+                //return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
+                //infantry is not a display unit
+                case UnitTypes.COMBAT_VEHICLE:
+                    return _combatVehicleList.OrderBy(p => p.Name).ThenBy(p => p.Model);
+                default:
+                    throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
+            }
         }
     }
 }
