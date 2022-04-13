@@ -10,7 +10,7 @@ namespace BattleTechTracking.Factories
     /// <summary>
     /// The <see cref="DataPump"/> is responsible for pulling data from app data and passing it back to the application
     /// </summary>
-    public class DataPump
+    public static class DataPump
     {
         /// <summary>
         /// Returns an IEnumerable of the type given in the persisted saved JSON files of the application.
@@ -77,7 +77,7 @@ namespace BattleTechTracking.Factories
                 return "MasterMech.json";
             }
 
-            if (typeof(T) == typeof(IndustrialUnit))
+            if (typeof(T) == typeof(IndustrialMech))
             {
                 return "IndustrialMech.json";
             }

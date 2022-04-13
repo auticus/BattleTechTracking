@@ -37,7 +37,7 @@ namespace BattleTechTracking.ViewModels
         private Weapon _selectedWeapon;
         private Ammunition _selectedAmmo;
         private List<BattleMech> _mechList;
-        private List<IndustrialUnit> _industrialMechList;
+        private List<IndustrialMech> _industrialMechList;
         private List<Infantry> _infantryList;
         private List<CombatVehicle> _combatVehicleList;
         private string _damageCodesCommaSeparated;
@@ -437,7 +437,7 @@ namespace BattleTechTracking.ViewModels
             VisibleUnits = new ObservableCollection<IDisplayListView>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
-            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialUnit>().ToList();
+            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialMech>().ToList();
             _infantryList = DataPump.GetPersistedDataForType<Infantry>().ToList();
             _combatVehicleList = DataPump.GetPersistedDataForType<CombatVehicle>().ToList();
 
@@ -659,7 +659,7 @@ namespace BattleTechTracking.ViewModels
                     _mechList = VisibleUnits.Cast<BattleMech>().ToList();
                     break;
                 case UnitTypes.INDUSTRIAL_MECH:
-                    _industrialMechList = VisibleUnits.Cast<IndustrialUnit>().ToList();
+                    _industrialMechList = VisibleUnits.Cast<IndustrialMech>().ToList();
                     break;
                 case UnitTypes.COMBAT_VEHICLE:
                     _combatVehicleList = VisibleUnits.Cast<CombatVehicle>().ToList();

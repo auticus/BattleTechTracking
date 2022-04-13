@@ -3,24 +3,51 @@ using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Factories
 {
-    public class CombatVehicleFactory
+    public static class CombatVehicleFactory
     {
         public static CombatVehicle BuildDefaultCombatVehicle()
         {
-            var vehicle = new CombatVehicle()
+            var vehicle = new CombatVehicle
             {
                 Name = "Unnamed",
                 Tonnage = 10,
                 Model = "Unknown",
                 TechBase = "Inner Sphere",
-                RulesLevel = "Introductory"
+                RulesLevel = "Introductory",
+                UnitMovement =
+                {
+                    Walking = 5,
+                    Running = 5
+                },
+                Components = GetBasicVehicleLocations(),
+                Equipment = GetBasicStandardEquipmentLoadout()
             };
 
-            vehicle.UnitMovement.Walking = 5;
-            vehicle.UnitMovement.Running = 5;
+            return vehicle;
+        }
 
-            vehicle.Components = GetBasicVehicleLocations();
-            vehicle.Equipment = GetBasicStandardEquipmentLoadout();
+        public static CombatVehicle BuildCombatVehicleFromTemplate(CombatVehicle template)
+        {
+            var vehicle = new CombatVehicle
+            {
+                Name = template.Name,
+                Tonnage = template.Tonnage,
+                Model = template.Model,
+                TechBase = template.TechBase,
+                RulesLevel = template.RulesLevel,
+                BattleValue = template.BattleValue,
+                UnitMovement =
+                {
+                    Walking = template.UnitMovement.Walking,
+                    Running = template.UnitMovement.Running,
+                    Jumping = template.UnitMovement.Jumping
+                },
+                Components = new List<UnitComponent>(template.Components),
+                Equipment = new List<Equipment>(template.Equipment),
+                Weapons = new List<Weapon>(template.Weapons),
+                Quirks = new List<Quirk>(template.Quirks)
+            };
+
             return vehicle;
         }
 

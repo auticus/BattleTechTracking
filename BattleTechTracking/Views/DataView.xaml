@@ -81,8 +81,7 @@
                             AutoSize="Disabled"/>
                 </Grid>
                 <!--Detail list of visible units -->
-                <ListView x:Name="lvDataElements" 
-                          Grid.Row="2" Grid.Column="0" Margin="0,10,0,25"
+                <ListView Grid.Row="2" Grid.Column="0" Margin="0,10,0,25"
                           ItemsSource="{Binding VisibleUnits}"
                           SelectedItem="{Binding SelectedUnit}"
                           VerticalOptions="FillAndExpand">

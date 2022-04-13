@@ -15,7 +15,7 @@ namespace BattleTechTracking.ViewModels
         private const int FACTION_2_INDEX = 1;
         
         private readonly List<BattleMech> _mechList;
-        private readonly List<IndustrialUnit> _industrialMechList;
+        private readonly List<IndustrialMech> _industrialMechList;
         private readonly List<Infantry> _infantryList;
         private readonly List<CombatVehicle> _combatVehicleList;
 
@@ -36,8 +36,13 @@ namespace BattleTechTracking.ViewModels
             get => _activeFaction;
             set
             {
+                //put the current active observable collection into the cache
+                if (ActiveFactionUnits != null) _factionUnits[ActiveFaction] = ActiveFactionUnits.ToList();
+
                 _activeFaction = value;
                 OnPropertyChanged(nameof(ActiveFaction));
+
+                //make the new active observable collection based on the new active faction
                 ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[ActiveFaction]);
                 ActiveFactionName = ActiveFaction == 0 ? Faction1Name : Faction2Name;
             }
@@ -60,6 +65,8 @@ namespace BattleTechTracking.ViewModels
             {
                 _faction1Name = value;
                 OnPropertyChanged(nameof(Faction1Name));
+
+                if (ActiveFaction == 0) ActiveFactionName = value;
             }
         }
 
@@ -70,9 +77,14 @@ namespace BattleTechTracking.ViewModels
             {
                 _faction2Name = value;
                 OnPropertyChanged(nameof(Faction2Name));
+
+                if (ActiveFaction == 1) ActiveFactionName = value;
             }
         }
 
+        /// <summary>
+        /// The item source of the active faction's list of units.
+        /// </summary>
         public ObservableCollection<IDisplayListView> ActiveFactionUnits { get; private set; }
 
         public IDisplayListView SelectedActiveUnit
@@ -159,13 +171,37 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets the command to open the Settings view.
+        /// </summary>
         public ICommand SettingsCommand { get; }
+
+        /// <summary>
+        /// Gets the Ok command for the Settings control.
+        /// </summary>
         public ICommand SettingsOkCommand { get; }
+
+        /// <summary>
+        /// Gets the Ok Command for the Match View screen which should save and close to main screen.
+        /// </summary>
         public ICommand OkCommand { get; }
+
+        /// <summary>
+        /// Gets the Close command for the Match View screen which should simply close to the main screen.
+        /// </summary>
         public ICommand CloseCommand { get; }
+
         public ICommand ActivateFaction1Command { get; }
         public ICommand ActivateFaction2Command { get; }
+        
+        /// <summary>
+        /// Gets the command to add a unit to the selected faction.
+        /// </summary>
         public ICommand AddUnits { get; }
+
+        /// <summary>
+        /// Gets the ok command for the unit selection view.
+        /// </summary>
         public ICommand SelectorOkCommand { get; }
 
         public MatchViewModel()
@@ -178,9 +214,11 @@ namespace BattleTechTracking.ViewModels
             VisibleUnits = new ObservableCollection<IDisplayListView>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
-            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialUnit>().ToList();
+            _industrialMechList = DataPump.GetPersistedDataForType<IndustrialMech>().ToList();
             _infantryList = DataPump.GetPersistedDataForType<Infantry>().ToList();
             _combatVehicleList = DataPump.GetPersistedDataForType<CombatVehicle>().ToList();
+
+            SelectedUnitFilter = UnitTypes.BATTLE_MECH;
 
             OkCommand = new Command(() =>
             {
@@ -223,6 +261,7 @@ namespace BattleTechTracking.ViewModels
             SelectorOkCommand = new Command(() =>
             {
                 UnitSelectorVisible = false;
+                AddUnitToActiveFaction();
             });
         }
 
@@ -240,13 +279,40 @@ namespace BattleTechTracking.ViewModels
                 case UnitTypes.INDUSTRIAL_MECH:
                     return _industrialMechList.OrderBy(p => p.Name).ThenBy(p => p.Model);
                 case UnitTypes.INFANTRY:
-                    return new List<IDisplayListView>();
-                //return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
-                //infantry is not a display unit
+                    return _infantryList.OrderBy(p => p.Name).ThenBy(p => p.Weapon);
                 case UnitTypes.COMBAT_VEHICLE:
                     return _combatVehicleList.OrderBy(p => p.Name).ThenBy(p => p.Model);
                 default:
                     throw new NotImplementedException($"The selected unit type {SelectedUnitFilter} does not exist");
+            }
+        }
+
+        private void AddUnitToActiveFaction()
+        {
+            if (SelectedUnit == null) return;
+
+            if (SelectedUnit is BattleMech)
+            {
+                ActiveFactionUnits.Add(MechFactory.BuildMechFromTemplate((BattleMech)SelectedUnit));
+                return;
+            }
+
+            if (SelectedUnit is IndustrialMech)
+            {
+                ActiveFactionUnits.Add(MechFactory.BuildMechFromTemplate((IndustrialMech)SelectedUnit));
+                return;
+            }
+
+            if (SelectedUnit is CombatVehicle)
+            {
+                ActiveFactionUnits.Add(CombatVehicleFactory.BuildCombatVehicleFromTemplate((CombatVehicle)SelectedUnit));
+                return;
+            }
+
+            if (SelectedUnit is Infantry)
+            {
+                ActiveFactionUnits.Add(InfantryFactory.BuildInfantryFromTemplate((Infantry)SelectedUnit));
+                return;
             }
         }
     }

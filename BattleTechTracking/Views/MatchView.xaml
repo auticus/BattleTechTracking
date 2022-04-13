@@ -146,7 +146,7 @@
                                            VisibleUnits="{Binding VisibleUnits}"
                                            UnitFilters ="{Binding UnitFilters}"
                                            SelectedUnitFilter ="{Binding SelectedUnitFilter, Mode=TwoWay}"
-                                           SelectedUnit ="{Binding SelectedUnit}"/>
+                                           SelectedUnit ="{Binding SelectedUnit, Mode=TwoWay}"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

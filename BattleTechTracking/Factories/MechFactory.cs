@@ -3,26 +3,94 @@ using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Factories
 {
-    public static class BattleMechFactory
+    public static class MechFactory
     {
         public static BattleMech BuildDefaultBattleMech()
-        {
-            var mech = new BattleMech()
+            => new BattleMech
             {
                 Name = "Unnamed",
                 Tonnage = 20,
                 Model = "Unknown",
                 TechBase = "Inner Sphere",
-                RulesLevel = "Introductory"
+                RulesLevel = "Introductory",
+                UnitMovement =
+                {
+                    Walking = 5,
+                    Running = 5
+                },
+                Components = GetBasicBipedMechLocations(),
+                Equipment = GetBasicStandardEquipmentLoadout()
             };
 
-            mech.UnitMovement.Walking = 5;
-            mech.UnitMovement.Running = 5;
+        public static IndustrialMech BuildDefaultIndustrialMech()
+            => new IndustrialMech()
+            {
+                Name = "Unnamed",
+                Tonnage = 20,
+                Model = "Unknown",
+                TechBase = "Inner Sphere",
+                RulesLevel = "Introductory",
+                UnitMovement =
+                {
+                    Walking = 5,
+                    Running = 5
+                },
+                Components = GetBasicBipedMechLocations(),
+                Equipment = GetBasicStandardEquipmentLoadout()
+            };
 
-            mech.Components = GetBasicBipedMechLocations();
-            mech.Equipment = GetBasicStandardEquipmentLoadout();
+        public static BattleMech BuildMechFromTemplate(BattleMech template) 
+        {
+            var mech = new BattleMech
+            {
+                Name = template.Name,
+                Tonnage = template.Tonnage,
+                Model = template.Model,
+                TechBase = template.TechBase,
+                RulesLevel = template.RulesLevel,
+                BattleValue = template.BattleValue,
+                HeatSinks = template.HeatSinks,
+                UnitMovement =
+                {
+                    Walking = template.UnitMovement.Walking,
+                    Running = template.UnitMovement.Running,
+                    Jumping = template.UnitMovement.Jumping
+                },
+                Components = new List<UnitComponent>(template.Components),
+                Equipment = new List<Equipment>(template.Equipment),
+                Weapons = new List<Weapon>(template.Weapons),
+                Quirks = new List<Quirk>(template.Quirks)
+            };
+
             return mech;
         }
+
+        public static IndustrialMech BuildMechFromTemplate(IndustrialMech template)
+        {
+            var mech = new IndustrialMech()
+            {
+                Name = template.Name,
+                Tonnage = template.Tonnage,
+                Model = template.Model,
+                TechBase = template.TechBase,
+                RulesLevel = template.RulesLevel,
+                BattleValue = template.BattleValue,
+                HeatSinks = template.HeatSinks,
+                UnitMovement =
+                {
+                    Walking = template.UnitMovement.Walking,
+                    Running = template.UnitMovement.Running,
+                    Jumping = template.UnitMovement.Jumping
+                },
+                Components = new List<UnitComponent>(template.Components),
+                Equipment = new List<Equipment>(template.Equipment),
+                Weapons = new List<Weapon>(template.Weapons),
+                Quirks = new List<Quirk>(template.Quirks)
+            };
+
+            return mech;
+        }
+
 
         private static IEnumerable<UnitComponent> GetBasicBipedMechLocations()
         {

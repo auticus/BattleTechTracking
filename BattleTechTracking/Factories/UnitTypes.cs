@@ -23,7 +23,7 @@ namespace BattleTechTracking.Factories
             {
                 case BATTLE_MECH:
                 case INDUSTRIAL_MECH:
-                    return BattleMechFactory.BuildDefaultBattleMech();
+                    return MechFactory.BuildDefaultBattleMech();
                 case COMBAT_VEHICLE:
                 case SUPPORT_VEHICLE:
                     return CombatVehicleFactory.BuildDefaultCombatVehicle();

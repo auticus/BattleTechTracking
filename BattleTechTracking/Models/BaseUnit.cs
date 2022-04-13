@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 
 namespace BattleTechTracking.Models
 {
@@ -76,11 +75,6 @@ namespace BattleTechTracking.Models
         // todo: if you want to add details to each piece of gear - don't do it on each mech - need a master list of gear and their details
         public IEnumerable<Equipment> Equipment { get; set; } = new List<Equipment>();
         public IEnumerable<Weapon> Weapons { get; set; } = new List<Weapon>();
-
-        /// <summary>
-        /// The current heat level of the mech in play.
-        /// </summary>
-        public int CurrentHeatLevel { get; set; }
 
         /// <summary>
         /// The amount of heat reduced by heat sinks.

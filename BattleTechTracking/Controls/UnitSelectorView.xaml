@@ -63,11 +63,13 @@
                                         <ColumnDefinition Width="125"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0"
+                                           HeightRequest="32"
                                            Text="{Binding UnitHeader}"
                                            TextColor="WhiteSmoke"
                                            VerticalTextAlignment="Center"
                                            FontAttributes="Bold"/>
                                     <Label Grid.Column="1"
+                                           HeightRequest="32"
                                            Text="{Binding UnitDetails}"
                                            TextColor="WhiteSmoke"
                                            FontAttributes="Italic"

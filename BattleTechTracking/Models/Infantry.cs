@@ -11,7 +11,7 @@
         public int Movement { get; set; }
         public int BattleValue { get; set; }
 
-        public string UnitHeader => $"{Name} ({Weapon})";
+        public string UnitHeader => $"{Name} x{Number} ({Weapon})";
         public string UnitDetails => $"{Number} soldiers - BV: {BattleValue}";
     }
 }
