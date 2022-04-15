@@ -43,6 +43,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="400"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="0"
@@ -54,12 +55,13 @@
 
                 <Label Grid.Row="0"
                        Grid.Column="1"
-                       Grid.ColumnSpan="2"
+                       Grid.ColumnSpan="3"
                        TextColor="White" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="{Binding Quirks, Source={x:Reference thisView}}"/>
-
+                
+                <!-- Hexes Moved -->
                 <Label Grid.Row="1"
                            Grid.Column="0"
                            TextColor="Gold" 
@@ -79,6 +81,25 @@
                         <behaviors:NumericValidationBehavior/>
                     </Entry.Behaviors>
                 </Entry>
+                
+                <!-- Pilot / Mech Warrior Name-->
+                <Label Grid.Row="1"
+                       Grid.Column="2"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Pilot Name"/>
+
+                <Entry Grid.Row="1"
+                       Grid.Column="3"
+                       WidthRequest="200"
+                       MaxLength="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Text="{Binding PilotName, Source={x:Reference thisView}}">
+                </Entry>
+
+                <!--Heat Sinks -->
                 <Label Grid.Row="2"
                        Grid.Column="0"
                        TextColor="Gold" 
@@ -88,7 +109,6 @@
 
                 <Entry Grid.Row="2"
                        Grid.Column="1"
-                       Grid.ColumnSpan="2"
                        WidthRequest="35"
                        MaxLength="2"
                        VerticalOptions="Center"
@@ -98,7 +118,28 @@
                         <behaviors:NumericValidationBehavior/>
                     </Entry.Behaviors>
                 </Entry>
+                
+                <!-- Pilot Skill -->
+                <Label Grid.Row="2"
+                       Grid.Column="2"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Pilot"/>
 
+                <Entry Grid.Row="2"
+                       Grid.Column="3"
+                       WidthRequest="35"
+                       MaxLength="2"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Text="{Binding PilotSkill, Source={x:Reference thisView}}">
+                    <Entry.Behaviors>
+                        <behaviors:NumericValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+                
+                <!--Current Heat-->
                 <Label Grid.Row="3"
                        Grid.Column="0"
                        TextColor="Gold" 
@@ -108,7 +149,6 @@
 
                 <Entry Grid.Row="3"
                        Grid.Column="1"
-                       Grid.ColumnSpan="2"
                        WidthRequest="35"
                        MaxLength="2"
                        VerticalOptions="Center"
@@ -118,7 +158,28 @@
                         <behaviors:NumericValidationBehavior/>
                     </Entry.Behaviors>
                 </Entry>
+                
+                <!-- Pilot Gunnery -->
+                <Label Grid.Row="3"
+                       Grid.Column="2"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Gunnery"/>
 
+                <Entry Grid.Row="3"
+                       Grid.Column="3"
+                       WidthRequest="35"
+                       MaxLength="2"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Text="{Binding PilotGunnerySkill, Source={x:Reference thisView}}">
+                    <Entry.Behaviors>
+                        <behaviors:NumericValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <!-- Walked? -->
                 <Label Grid.Row="4"
                        Grid.Column="0"
                        TextColor="Gold" 
@@ -134,6 +195,27 @@
                         WidthRequest="32"
                         IsToggled="{Binding DidWalk, Source={x:Reference thisView}}"/>
 
+                <!-- Pilot Hits -->
+                <Label Grid.Row="4"
+                       Grid.Column="2"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Hits"/>
+
+                <Entry Grid.Row="4"
+                       Grid.Column="3"
+                       WidthRequest="35"
+                       MaxLength="2"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Start"
+                       Text="{Binding PilotHits, Source={x:Reference thisView}}">
+                    <Entry.Behaviors>
+                        <behaviors:NumericValidationBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+
+                <!--Ran?-->
                 <Label Grid.Row="5"
                        Grid.Column="0"
                        TextColor="Gold" 
@@ -147,7 +229,25 @@
                         ThumbColor="White"
                         VerticalOptions="Center"
                         IsToggled="{Binding DidRun, Source={x:Reference thisView}}"/>
+                
+                <!--Notes-->
+                <Label Grid.Row="5"
+                       Grid.Column="2"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Notes"/>
 
+                <Editor Grid.Row="5"
+                       Grid.RowSpan="3"
+                       Grid.Column="3"
+                       WidthRequest="200"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="Start"
+                       Text="{Binding Notes, Source={x:Reference thisView}}">
+                </Editor>
+
+                <!--Jumped?-->
                 <Label Grid.Row="6"
                        Grid.Column="0"
                        TextColor="Gold" 
@@ -161,7 +261,8 @@
                         ThumbColor="White"
                         VerticalOptions="Center"
                         IsToggled="{Binding DidJump, Source={x:Reference thisView}}"/>
-
+                
+                <!--Prone?-->
                 <Label Grid.Row="7"
                        Grid.Column="0"
                        TextColor="Gold" 
@@ -175,7 +276,8 @@
                         ThumbColor="White"
                         VerticalOptions="Center"
                         IsToggled="{Binding IsProne, Source={x:Reference thisView}}"/>
-
+                
+                <!--Number Elements-->
                 <Label Grid.Row="8"
                        Grid.Column="0"
                        TextColor="Gold" 

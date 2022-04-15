@@ -171,7 +171,12 @@
                                                  DidWalk ="{Binding SelectedActiveUnit.DidWalk, Mode=TwoWay}"
                                                  DidRun="{Binding SelectedActiveUnit.DidRun, Mode=TwoWay}"
                                                  DidJump="{Binding SelectedActiveUnit.DidJump, Mode=TwoWay}"
-                                                 IsProne="{Binding SelectedActiveUnit.IsProne, Mode=TwoWay}"/>
+                                                 IsProne="{Binding SelectedActiveUnit.IsProne, Mode=TwoWay}"
+                                                 PilotName="{Binding SelectedActiveUnit.PilotName, Mode=TwoWay}"
+                                                 PilotSkill="{Binding SelectedActiveUnit.PilotPilotingSkill, Mode=TwoWay}"
+                                                 PilotGunnerySkill="{Binding SelectedActiveUnit.PilotGunnerySkill, Mode=TwoWay}"
+                                                 PilotHits ="{Binding SelectedActiveUnit.PilotHits, Mode=TwoWay}"
+                                                 Notes ="{Binding SelectedActiveUnit.Notes, Mode=TwoWay}"/>
 
                 <controls:VehicleComponentView Margin="10,45,0,0"
                                                Grid.Row="0"
@@ -186,7 +191,7 @@
                                         Grid.Column="1"
                                         Margin="10,45,0,0"
                                         IsVisible="{Binding ActiveUnitEquipmentVisible}"
-                                        ItemSource="{Binding SelectedUnitEquipment}"
+                                        ItemSource="{Binding ActiveUnitEquipment}"
                                         IsDataEditMode="False"/>
 
                 <!--

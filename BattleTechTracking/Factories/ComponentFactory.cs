@@ -12,5 +12,13 @@ namespace BattleTechTracking.Factories
                 RearArmor = template.RearArmor,
                 Structure = template.Structure
             };
+
+        public static Equipment BuildEquipmentFromTemplate(Equipment template)
+            => new Equipment()
+            {
+                Name = template.Name,
+                Hits = template.Hits,
+                Location = template.Location
+            };
     }
 }

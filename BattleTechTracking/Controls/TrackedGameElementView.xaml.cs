@@ -51,6 +51,31 @@ namespace BattleTechTracking.Controls
             typeof(int),
             typeof(MatchSettingsView));
 
+        public static readonly BindableProperty PilotNameProperty = BindableProperty.Create(
+            nameof(PilotName),
+            typeof(string),
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty PilotSkillProperty = BindableProperty.Create(
+            nameof(PilotSkill),
+            typeof(int),
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty PilotGunnerySkillProperty = BindableProperty.Create(
+            nameof(PilotGunnerySkill),
+            typeof(int),
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty PilotHitsProperty = BindableProperty.Create(
+            nameof(PilotHits),
+            typeof(int),
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty NotesProperty = BindableProperty.Create(
+            nameof(Notes),
+            typeof(string),
+            typeof(MatchSettingsView));
+
         public string Quirks
         {
             get => (string)GetValue(TrackedGameElementView.QuirksProperty);
@@ -103,6 +128,36 @@ namespace BattleTechTracking.Controls
         {
             get => (int)GetValue(TrackedGameElementView.NumberOfElementsProperty);
             set => SetValue(TrackedGameElementView.NumberOfElementsProperty, value);
+        }
+
+        public string PilotName
+        {
+            get => (string)GetValue(TrackedGameElementView.PilotNameProperty);
+            set => SetValue(TrackedGameElementView.PilotNameProperty, value);
+        }
+
+        public string Notes
+        {
+            get => (string)GetValue(TrackedGameElementView.NotesProperty);
+            set => SetValue(TrackedGameElementView.NotesProperty, value);
+        }
+
+        public int PilotSkill
+        {
+            get => (int)GetValue(TrackedGameElementView.PilotSkillProperty);
+            set => SetValue(TrackedGameElementView.PilotSkillProperty, value);
+        }
+
+        public int PilotGunnerySkill
+        {
+            get => (int)GetValue(TrackedGameElementView.PilotGunnerySkillProperty);
+            set => SetValue(TrackedGameElementView.PilotGunnerySkillProperty, value);
+        }
+
+        public int PilotHits
+        {
+            get => (int)GetValue(TrackedGameElementView.PilotHitsProperty);
+            set => SetValue(TrackedGameElementView.PilotHitsProperty, value);
         }
 
         public TrackedGameElementView()

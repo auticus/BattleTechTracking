@@ -7,6 +7,7 @@
              x:Name="thisView">
     <ContentView.Resources>
         <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
+        <converters:LocationCodeToStringConverter x:Key="KeycodeConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <ListView VerticalOptions="FillAndExpand"
@@ -20,8 +21,13 @@
                             <ColumnDefinition Width="0.95*"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Label Text="Equipment" HorizontalTextAlignment="Center" Margin="20,5,0,0"
-                               HorizontalOptions="Center" FontSize="Medium" TextColor="Yellow"
+                        <Label Text="Equipment" 
+                               HorizontalTextAlignment="Center" 
+                               HorizontalOptions="Center"
+                               VerticalTextAlignment="Center"
+                               Margin="20,5,0,0"
+                                FontSize="Medium" 
+                               TextColor="Gold"
                                Grid.Column="0"/>
                         <ImageButton WidthRequest="32" HeightRequest="32" 
                                    CornerRadius="120" HorizontalOptions="End" 
@@ -94,8 +100,10 @@
                                      IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                      Focused="VisualElement_OnFocused">
                                 </Entry>
-                                <Label Text="{Binding Location}"
+                                <Label Text="{Binding Location,
+                                                Converter={StaticResource KeycodeConverter}}"
                                        Grid.Column="4"
+                                       Grid.ColumnSpan="3"
                                        TextColor="WhiteSmoke"
                                         IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},

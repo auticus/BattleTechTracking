@@ -33,6 +33,9 @@ namespace BattleTechTracking.ViewModels
         private readonly List<IDisplayListView>[] _factionUnits = {new List<IDisplayListView>(), new List<IDisplayListView>()};
         private ObservableCollection<IDisplayListView> _activeFactionUnits;
         private ObservableCollection<UnitComponent> _activeUnitComponents;
+        private ObservableCollection<Equipment> _activeUnitEquipment;
+        private ObservableCollection<Weapon> _activeUnitWeapons;
+        private ObservableCollection<Ammunition> _activeUnitAmmunition;
         private TrackedGameElement _selectedActiveUnit;
 
         /// <summary>
@@ -117,6 +120,36 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public ObservableCollection<Equipment> ActiveUnitEquipment
+        {
+            get => _activeUnitEquipment;
+            set
+            {
+                _activeUnitEquipment = value;
+                OnPropertyChanged(nameof(ActiveUnitEquipment));
+            }
+        }
+
+        public ObservableCollection<Weapon> ActiveUnitWeapons
+        {
+            get => _activeUnitWeapons;
+            set
+            {
+                _activeUnitWeapons = value;
+                OnPropertyChanged(nameof(ActiveUnitWeapons));
+            }
+        }
+
+        public ObservableCollection<Ammunition> ActiveUnitAmmunition
+        {
+            get => _activeUnitAmmunition;
+            set
+            {
+                _activeUnitAmmunition = value;
+                OnPropertyChanged(nameof(ActiveUnitAmmunition));
+            }
+        }
+
         /// <summary>
         /// Gets or sets the selected faction unit.
         /// </summary>
@@ -136,10 +169,12 @@ namespace BattleTechTracking.ViewModels
                 if (_selectedActiveUnit == null)
                 {
                     ActiveUnitComponents = null;
+                    ActiveUnitEquipment = null;
                 }
                 else
                 {
                     ActiveUnitComponents = new ObservableCollection<UnitComponent>(_selectedActiveUnit.UnitComponents.ToList());
+                    ActiveUnitEquipment = new ObservableCollection<Equipment>(_selectedActiveUnit.UnitEquipment.ToList());
                 }
             }
         }
@@ -316,6 +351,7 @@ namespace BattleTechTracking.ViewModels
         public ICommand ViewActiveUnitEquipment { get; }
         public ICommand ViewActiveUnitWeapons { get; }
         public ICommand ViewActiveUnitAmmo { get; }
+        public ICommand DeleteComponent { get; }
 
         public MatchViewModel()
         {

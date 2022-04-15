@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using BattleTechTracking.Factories;
+using Xamarin.Forms;
 
 namespace BattleTechTracking.Models
 {
@@ -21,6 +22,11 @@ namespace BattleTechTracking.Models
         private int _currentHeatSinks;
         private string _quirks;
         private int _numberOfElements;
+        private string _pilotName;
+        private int _pilotPilotingSkill;
+        private int _pilotGunnerySkill;
+        private int _pilotHits;
+        private string _notes;
 
         /// <summary>
         /// Gets or sets the Game Element represented.
@@ -128,10 +134,60 @@ namespace BattleTechTracking.Models
             }
         }
 
-        public ObservableCollection<UnitComponent> UnitComponents { get; } = new ObservableCollection<UnitComponent>();
-        public ObservableCollection<TrackedEquipment> UnitEquipment { get; } = new ObservableCollection<TrackedEquipment>();
-        public ObservableCollection<TrackedWeapon> UnitWeapons { get; } = new ObservableCollection<TrackedWeapon>();
-        public ObservableCollection<TrackedAmmunition> UnitAmmunition { get; } = new ObservableCollection<TrackedAmmunition>();
+        public string PilotName
+        {
+            get => _pilotName;
+            set
+            {
+                _pilotName = value;
+                OnPropertyChanged(nameof(PilotName));
+            }
+        }
+
+        public int PilotPilotingSkill
+        {
+            get => _pilotPilotingSkill;
+            set
+            {
+                _pilotPilotingSkill = value;
+                OnPropertyChanged(nameof(PilotPilotingSkill));
+            }
+        }
+
+        public int PilotGunnerySkill
+        {
+            get => _pilotGunnerySkill;
+            set
+            {
+                _pilotGunnerySkill = value;
+                OnPropertyChanged(nameof(PilotGunnerySkill));
+            }
+        }
+
+        public int PilotHits
+        {
+            get => _pilotHits;
+            set
+            {
+                _pilotHits = value;
+                OnPropertyChanged(nameof(PilotHits));
+            }
+        }
+
+        public string Notes
+        {
+            get => _notes;
+            set
+            {
+                _notes = value;
+                OnPropertyChanged(nameof(Notes));
+            }
+        }
+
+        public IEnumerable<UnitComponent> UnitComponents { get; } = new List<UnitComponent>();
+        public IEnumerable<Equipment> UnitEquipment { get; } = new List<Equipment>();
+        public IEnumerable<TrackedWeapon> UnitWeapons { get; } = new List<TrackedWeapon>();
+        public IEnumerable<TrackedAmmunition> UnitAmmunition { get; } = new List<TrackedAmmunition>();
 
 
         public TrackedGameElement(IDisplayListView gameElement)
@@ -140,6 +196,18 @@ namespace BattleTechTracking.Models
             Quirks = string.Join(", ", GetQuirksFromElement().Select(x => x.Name).ToArray());
             CurrentHeatSinks = GetHeatSinksFromElement();
             NumberOfElements = GetNumberOfElementsFromGameElement();
+            PilotName = "Unknown";
+            
+            switch (gameElement)
+            {
+                case BattleMech _:
+                    PilotHits = 6;
+                    break;
+                case CombatVehicle _:
+                    PilotHits = 1;
+                    break;
+            }
+
             PopulateComponents();
             PopulateEquipment();
             PopulateWeapons();
@@ -211,7 +279,7 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var component in element.Components)
             {
-                UnitComponents.Add(ComponentFactory.BuildComponentFromTemplate(component));
+                ((List<UnitComponent>)UnitComponents).Add(ComponentFactory.BuildComponentFromTemplate(component));
             }
         }
 
@@ -223,7 +291,7 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var equipment in element.Equipment)
             {
-                UnitEquipment.Add(new TrackedEquipment(equipment));
+                ((List<Equipment>)UnitEquipment).Add(ComponentFactory.BuildEquipmentFromTemplate(equipment));
             }
         }
 
@@ -241,7 +309,7 @@ namespace BattleTechTracking.Models
                     CurrentHeatLevel += heat;
                 };
 
-                UnitWeapons.Add(wpn);
+                ((List<TrackedWeapon>)UnitWeapons).Add(wpn);
             }
         }
 
@@ -254,7 +322,7 @@ namespace BattleTechTracking.Models
             {
                 foreach (var ammo in weapon.Ammo)
                 {
-                    UnitAmmunition.Add(new TrackedAmmunition(ammo));
+                    ((List<TrackedAmmunition>)UnitAmmunition).Add(new TrackedAmmunition(ammo));
                 }
             }
         }
