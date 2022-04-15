@@ -1,6 +1,6 @@
 ﻿namespace BattleTechTracking.Models
 {
-    public class Equipment : BaseModel
+    public class Equipment : BaseModel, IDamageableComponent
     {
         public string Name { get; set; }
         public int Hits { get; set; }

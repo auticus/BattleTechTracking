@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Input;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Models;
@@ -22,11 +23,13 @@ namespace BattleTechTracking.ViewModels
         private int _activeFaction;
         private bool _settingsVisible;
         private bool _unitSelectorVisible;
+        private bool _matchTrackingViewVisible;
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
         private readonly List<IDisplayListView>[] _factionUnits = {new List<IDisplayListView>(), new List<IDisplayListView>()};
-        private IDisplayListView _selectedActiveUnit;
+        private ObservableCollection<IDisplayListView> _activeFactionUnits;
+        private TrackedGameElement _selectedActiveUnit;
 
         /// <summary>
         /// Gets or sets the active faction index.
@@ -85,15 +88,28 @@ namespace BattleTechTracking.ViewModels
         /// <summary>
         /// The item source of the active faction's list of units.
         /// </summary>
-        public ObservableCollection<IDisplayListView> ActiveFactionUnits { get; private set; }
+        public ObservableCollection<IDisplayListView> ActiveFactionUnits
+        {
+            get => _activeFactionUnits;
+            set
+            {
+                _activeFactionUnits = value;
+                OnPropertyChanged(nameof(ActiveFactionUnits));
+            }
+        }
 
-        public IDisplayListView SelectedActiveUnit
+        /// <summary>
+        /// Gets or sets the selected faction unit.
+        /// </summary>
+        public TrackedGameElement SelectedActiveUnit
         {
             get => _selectedActiveUnit;
             set
             {
                 _selectedActiveUnit = value;
                 OnPropertyChanged(nameof(SelectedActiveUnit));
+
+                if (_selectedActiveUnit != null) MatchTrackingViewVisible = true;
             }
         }
 
@@ -123,35 +139,45 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public bool MatchTrackingViewVisible
+        {
+            get => _matchTrackingViewVisible;
+            set
+            {
+                _matchTrackingViewVisible = value;
+                OnPropertyChanged(nameof(MatchTrackingViewVisible));
+            }
+        }
+
         /// <summary>
         /// Gets the unit filters from the unit selector.
         /// </summary>
         public ObservableCollection<string> UnitFilters { get; }
 
-        private ObservableCollection<IDisplayListView> _visibleUnits;
-        public ObservableCollection<IDisplayListView> VisibleUnits
+        private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
+        public ObservableCollection<IDisplayListView> SelectorViewVisibleUnits
         {
-            get => _visibleUnits;
+            get => _selectorViewVisibleUnits;
             private set
             {
-                _visibleUnits = value;
-                OnPropertyChanged(nameof(VisibleUnits));
-                SelectedUnit = null;
+                _selectorViewVisibleUnits = value;
+                OnPropertyChanged(nameof(SelectorViewVisibleUnits));
+                SelectorViewSelectedUnit = null;
             }
         }
 
-        private IDisplayListView _selectedUnit;
+        private IDisplayListView _selectorViewSelectedUnit;
 
         /// <summary>
         /// Gets or sets the Selected Unit from the Unit Selector
         /// </summary>
-        public IDisplayListView SelectedUnit
+        public IDisplayListView SelectorViewSelectedUnit
         {
-            get => _selectedUnit;
+            get => _selectorViewSelectedUnit;
             set
             {
-                _selectedUnit = value;
-                OnPropertyChanged(nameof(SelectedUnit));
+                _selectorViewSelectedUnit = value;
+                OnPropertyChanged(nameof(SelectorViewSelectedUnit));
             }
         }
 
@@ -200,9 +226,25 @@ namespace BattleTechTracking.ViewModels
         public ICommand AddUnits { get; }
 
         /// <summary>
+        /// Gets the command to delete a unit from the active faction.
+        /// </summary>
+        public ICommand DeleteUnit { get; }
+
+        /// <summary>
         /// Gets the ok command for the unit selection view.
         /// </summary>
         public ICommand SelectorOkCommand { get; }
+
+        /// <summary>
+        /// Gets the command to start a new round.
+        /// </summary>
+        public ICommand BeginNewRound { get; }
+
+        public ICommand ViewTrackGameElementDetails { get; }
+        public ICommand ViewActiveUnitComponents { get; }
+        public ICommand ViewActiveUnitEquipment { get; }
+        public ICommand ViewActiveUnitWeapons { get; }
+        public ICommand ViewActiveUnitAmmo { get; }
 
         public MatchViewModel()
         {
@@ -211,7 +253,7 @@ namespace BattleTechTracking.ViewModels
             ActiveFaction = 0;
 
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
-            VisibleUnits = new ObservableCollection<IDisplayListView>();
+            SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
             _industrialMechList = DataPump.GetPersistedDataForType<IndustrialMech>().ToList();
@@ -243,31 +285,87 @@ namespace BattleTechTracking.ViewModels
 
             AddUnits = new Command(() =>
             {
-                SettingsVisible = false;
+                SetAllPanelsInvisible();
                 UnitSelectorVisible = true;
+            });
+
+            DeleteUnit = new Command<Guid>((id) =>
+            {
+                var unit = ActiveFactionUnits.FirstOrDefault(x => x.ID == id);
+                if (unit == null) return;
+                ActiveFactionUnits.Remove(unit);
             });
 
             SettingsCommand = new Command(() =>
             {
-                UnitSelectorVisible = false;
+                SetAllPanelsInvisible();
                 SettingsVisible = true;
             });
 
             SettingsOkCommand = new Command(() =>
             {
                 SettingsVisible = false;
+                if (SelectedActiveUnit != null) MatchTrackingViewVisible = true;
             });
 
             SelectorOkCommand = new Command(() =>
             {
                 UnitSelectorVisible = false;
+                if (SelectedActiveUnit != null) MatchTrackingViewVisible = true;
                 AddUnitToActiveFaction();
             });
+
+            BeginNewRound = new Command(() =>
+            {
+                var nonActiveFaction = ActiveFaction == 1 ? 0 : 1;
+                foreach (var element in _factionUnits[nonActiveFaction])
+                {
+                    ((TrackedGameElement)element).NextRound();
+                }
+
+                foreach (var element in ActiveFactionUnits)
+                {
+                    ((TrackedGameElement)element).NextRound();
+                }
+            });
+
+            ViewTrackGameElementDetails = new Command(() =>
+            {
+                SetAllPanelsInvisible();
+                MatchTrackingViewVisible = true;
+            });
+
+            ViewActiveUnitComponents = new Command(() =>
+            {
+                SetAllPanelsInvisible();
+            });
+
+            ViewActiveUnitEquipment = new Command(() =>
+            {
+                SetAllPanelsInvisible();
+            });
+
+            ViewActiveUnitWeapons = new Command(() =>
+            {
+                SetAllPanelsInvisible();
+            });
+
+            ViewActiveUnitAmmo = new Command(() =>
+            {
+                SetAllPanelsInvisible();
+            });
+        }
+
+        private void SetAllPanelsInvisible()
+        {
+            UnitSelectorVisible = false;
+            SettingsVisible = false;
+            MatchTrackingViewVisible = false;
         }
 
         private void LoadVisibleUnits()
         {
-            VisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
+            SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
         }
 
         private IEnumerable<IDisplayListView> GetAssociatedUnitsByFilterType()
@@ -289,30 +387,22 @@ namespace BattleTechTracking.ViewModels
 
         private void AddUnitToActiveFaction()
         {
-            if (SelectedUnit == null) return;
-
-            if (SelectedUnit is BattleMech)
+            switch (SelectorViewSelectedUnit)
             {
-                ActiveFactionUnits.Add(MechFactory.BuildMechFromTemplate((BattleMech)SelectedUnit));
-                return;
-            }
-
-            if (SelectedUnit is IndustrialMech)
-            {
-                ActiveFactionUnits.Add(MechFactory.BuildMechFromTemplate((IndustrialMech)SelectedUnit));
-                return;
-            }
-
-            if (SelectedUnit is CombatVehicle)
-            {
-                ActiveFactionUnits.Add(CombatVehicleFactory.BuildCombatVehicleFromTemplate((CombatVehicle)SelectedUnit));
-                return;
-            }
-
-            if (SelectedUnit is Infantry)
-            {
-                ActiveFactionUnits.Add(InfantryFactory.BuildInfantryFromTemplate((Infantry)SelectedUnit));
-                return;
+                case null:
+                    return;
+                case IndustrialMech _:
+                    ActiveFactionUnits.Add(MechFactory.BuildTrackedGameElement((IndustrialMech)SelectorViewSelectedUnit));
+                    return;
+                case BattleMech _:
+                    ActiveFactionUnits.Add(MechFactory.BuildTrackedGameElement((BattleMech)SelectorViewSelectedUnit));
+                    return;
+                case CombatVehicle _:
+                    ActiveFactionUnits.Add(CombatVehicleFactory.BuildTrackedGameElement((CombatVehicle)SelectorViewSelectedUnit));
+                    return;
+                case Infantry _:
+                    ActiveFactionUnits.Add(InfantryFactory.BuildTrackedGameElement((Infantry)SelectorViewSelectedUnit));
+                    return;
             }
         }
     }

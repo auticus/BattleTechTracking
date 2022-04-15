@@ -39,7 +39,17 @@ namespace BattleTechTracking.Factories
                 Equipment = GetBasicStandardEquipmentLoadout()
             };
 
-        public static BattleMech BuildMechFromTemplate(BattleMech template) 
+        public static TrackedGameElement BuildTrackedGameElement(BattleMech template)
+        {
+            return new TrackedGameElement(BuildMechFromTemplate(template));
+        }
+
+        public static TrackedGameElement BuildTrackedGameElement(IndustrialMech template)
+        {
+            return new TrackedGameElement(BuildMechFromTemplate(template));
+        }
+
+        private static BattleMech BuildMechFromTemplate(BattleMech template) 
         {
             var mech = new BattleMech
             {
@@ -65,7 +75,7 @@ namespace BattleTechTracking.Factories
             return mech;
         }
 
-        public static IndustrialMech BuildMechFromTemplate(IndustrialMech template)
+        private static IndustrialMech BuildMechFromTemplate(IndustrialMech template)
         {
             var mech = new IndustrialMech()
             {

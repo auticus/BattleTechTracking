@@ -4,7 +4,11 @@ namespace BattleTechTracking.Factories
 {
     public static class InfantryFactory
     {
-        public static Infantry BuildInfantryFromTemplate(Infantry template)
+        public static TrackedGameElement BuildTrackedGameElement(Infantry template)
+        {
+            return new TrackedGameElement(BuildInfantryFromTemplate(template));
+        }
+        private static Infantry BuildInfantryFromTemplate(Infantry template)
         {
             return new Infantry()
             {

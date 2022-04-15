@@ -109,6 +109,7 @@
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="copy.png" />
     <Content Include="goBack.png" />
+    <Content Include="Next.ico" />
     <Content Include="okIcon.png" />
     <Content Include="plusIcon.jpg" />
     <Content Include="dataBackground.jpg" />

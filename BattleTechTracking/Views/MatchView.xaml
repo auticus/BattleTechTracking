@@ -18,6 +18,7 @@
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="50"/>
                     <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0"
                        Margin="20,0,0,0"
@@ -26,6 +27,14 @@
                        FontAttributes="Bold" 
                        FontSize="22"/>
                 <ImageButton Grid.Column="1"
+                             Command="{Binding BeginNewRound}"
+                             BackgroundColor="Black"
+                             HeightRequest="40"
+                             WidthRequest="40"
+                             VerticalOptions="Start"
+                             HorizontalOptions="Start"
+                             Source="Next.ico"/>
+                <ImageButton Grid.Column="2"
                              Command="{Binding SettingsCommand}"
                              BackgroundColor="Black"
                              HeightRequest="40"
@@ -33,7 +42,7 @@
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
                              Source="settings.png"/>
-                <ImageButton Grid.Column="2"
+                <ImageButton Grid.Column="3"
                              Command="{Binding OkCommand}"
                              BackgroundColor="Black"
                              HeightRequest="40"
@@ -41,7 +50,7 @@
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
                              Source="okIcon.png"/>
-                <ImageButton Grid.Column="3"
+                <ImageButton Grid.Column="4"
                              Command="{Binding CloseCommand}"
                              BackgroundColor="Black"
                              HeightRequest="40"
@@ -62,6 +71,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32"/>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
                 <!-- Faction buttons -->
@@ -143,10 +153,40 @@
                                            Grid.Column="1"
                                            IsVisible="{Binding UnitSelectorVisible}"
                                            SelectorOk="{Binding SelectorOkCommand}"
-                                           VisibleUnits="{Binding VisibleUnits}"
+                                           VisibleUnits="{Binding SelectorViewVisibleUnits}"
                                            UnitFilters ="{Binding UnitFilters}"
                                            SelectedUnitFilter ="{Binding SelectedUnitFilter, Mode=TwoWay}"
-                                           SelectedUnit ="{Binding SelectedUnit, Mode=TwoWay}"/>
+                                           SelectedUnit ="{Binding SelectorViewSelectedUnit, Mode=TwoWay}"/>
+
+                <controls:TrackedGameElementView Margin="10,45,0,0"
+                                                 Grid.Row="0"
+                                                 Grid.RowSpan="2"
+                                                 Grid.Column="1"
+                                                 IsVisible="{Binding MatchTrackingViewVisible}"
+                                                 Quirks="{Binding SelectedActiveUnit.Quirks}"
+                                                 HexesMoved="{Binding SelectedActiveUnit.HexesMoved, Mode=TwoWay}"
+                                                 CurrentHeatSinks="{Binding SelectedActiveUnit.CurrentHeatSinks, Mode=TwoWay}"
+                                                 CurrentHeatLevel="{Binding SelectedActiveUnit.CurrentHeatLevel, Mode=TwoWay}"
+                                                 NumberOfElements="{Binding SelectedActiveUnit.NumberOfElements, Mode=TwoWay}"
+                                                 DidWalk ="{Binding SelectedActiveUnit.DidWalk, Mode=TwoWay}"
+                                                 DidRun="{Binding SelectedActiveUnit.DidRun, Mode=TwoWay}"
+                                                 DidJump="{Binding SelectedActiveUnit.DidJump, Mode=TwoWay}"
+                                                 IsProne="{Binding SelectedActiveUnit.IsProne, Mode=TwoWay}"/>
+
+                <StackLayout Grid.Row="2"
+                             Grid.Column="1"
+                             Orientation="Horizontal">
+                    <Button Text="Element Details" TextColor="White"
+                            Margin="20,0,0,10" Command="{Binding ViewTrackGameElementDetails }"/>
+                    <Button Text="Unit Components" TextColor="White" 
+                            Margin="20,0,0,10" Command="{Binding ViewActiveUnitComponents }"/>
+                    <Button Text="Equipment" TextColor="White" 
+                            Margin="20,0,0,10" Command="{Binding ViewActiveUnitEquipment}"/>
+                    <Button Text="Weapons" TextColor="White"
+                            Margin="20,0,0,10" Command="{Binding ViewActiveUnitWeapons }"/>
+                    <Button Text="Ammo" TextColor="White"
+                            Margin="20,0,0,10" Command="{Binding ViewActiveUnitAmmo }"/>
+                </StackLayout>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

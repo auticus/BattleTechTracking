@@ -26,7 +26,12 @@ namespace BattleTechTracking.Factories
             return vehicle;
         }
 
-        public static CombatVehicle BuildCombatVehicleFromTemplate(CombatVehicle template)
+        public static TrackedGameElement BuildTrackedGameElement(CombatVehicle template)
+        {
+            return new TrackedGameElement(BuildCombatVehicleFromTemplate(template));
+        }
+
+        private static CombatVehicle BuildCombatVehicleFromTemplate(CombatVehicle template)
         {
             var vehicle = new CombatVehicle
             {
