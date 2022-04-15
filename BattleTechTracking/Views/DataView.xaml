@@ -341,14 +341,16 @@
                                                        ItemSource="{Binding SelectedUnitComponents}"
                                                        SelectedComponent="{Binding SelectedComponent, Mode=TwoWay}"
                                                        NewComponent="{Binding NewComponent}"
-                                                       DeleteComponent ="{Binding DeleteComponent}"/>
+                                                       DeleteComponent ="{Binding DeleteComponent}"
+                                                       IsDataEditMode="True"/>
                         <controls:EquipmentView Margin="10,30,15,10"
                                                 IsVisible="{Binding EquipmentVisible}"
                                                 ItemSource="{Binding SelectedUnitEquipment}"
                                                 SelectedEquipment="{Binding SelectedEquipment, Mode=TwoWay}"
                                                 NewEquipment="{Binding NewEquipment}"
                                                 DeleteEquipment ="{Binding DeleteEquipment}"
-                                                CopyEquipment="{Binding CopyEquipment}"/>
+                                                CopyEquipment="{Binding CopyEquipment}"
+                                                IsDataEditMode="True"/>
 
                         <controls:WeaponsView Margin="10,30,15,10"
                                               IsVisible="{Binding WeaponsVisible}"
@@ -358,7 +360,8 @@
                                               DeleteWeapon="{Binding DeleteWeapon}"
                                               CopyWeapon ="{Binding CopyWeapon}"
                                               OpenDamageCodes ="{Binding OpenDamageCodes}"
-                                              OpenAmmo="{Binding OpenAmmo}"/>
+                                              OpenAmmo="{Binding OpenAmmo}"
+                                              IsDataEditMode="True"/>
 
                         <controls:DamageCodesView Margin="10,30,15,10"
                                                   IsVisible="{Binding DamageCodesVisible}"
@@ -373,6 +376,7 @@
                                                  NewAmmo="{Binding NewAmmo}"
                                                  DeleteAmmo="{Binding DeleteAmmo}"
                                                  OkCommand="{Binding AmmunitionOkCommand}"
+                                                 IsDataEditMode="True"
                                                  />
                         <controls:QuirksView Margin="10,30,15,10"
                                              IsVisible = "{Binding QuirksVisible}"

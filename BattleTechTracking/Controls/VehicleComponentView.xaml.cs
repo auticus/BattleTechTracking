@@ -30,6 +30,11 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(VehicleComponentView));
 
+        public static readonly BindableProperty IsDataEditModeProperty = BindableProperty.Create(
+            nameof(IsDataEditMode),
+            typeof(bool),
+            typeof(VehicleComponentView));
+
         public ObservableCollection<UnitComponent> ItemSource
         {
             get => (ObservableCollection<UnitComponent>)GetValue(VehicleComponentView.ItemSourceProperty);
@@ -52,6 +57,12 @@ namespace BattleTechTracking.Controls
         {
             get => (Command)GetValue(VehicleComponentView.DeleteComponentProperty);
             set => SetValue(VehicleComponentView.DeleteComponentProperty, value);
+        }
+
+        public bool IsDataEditMode
+        {
+            get => (bool)GetValue(VehicleComponentView.IsDataEditModeProperty);
+            set => SetValue(VehicleComponentView.IsDataEditModeProperty, value);
         }
 
         public VehicleComponentView()

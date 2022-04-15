@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using BattleTechTracking.Factories;
 
 namespace BattleTechTracking.Models
 {
@@ -127,7 +128,7 @@ namespace BattleTechTracking.Models
             }
         }
 
-        public ObservableCollection<TrackedUnitComponent> UnitComponents { get; } = new ObservableCollection<TrackedUnitComponent>();
+        public ObservableCollection<UnitComponent> UnitComponents { get; } = new ObservableCollection<UnitComponent>();
         public ObservableCollection<TrackedEquipment> UnitEquipment { get; } = new ObservableCollection<TrackedEquipment>();
         public ObservableCollection<TrackedWeapon> UnitWeapons { get; } = new ObservableCollection<TrackedWeapon>();
         public ObservableCollection<TrackedAmmunition> UnitAmmunition { get; } = new ObservableCollection<TrackedAmmunition>();
@@ -210,7 +211,7 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var component in element.Components)
             {
-                UnitComponents.Add(new TrackedUnitComponent(component));
+                UnitComponents.Add(ComponentFactory.BuildComponentFromTemplate(component));
             }
         }
 

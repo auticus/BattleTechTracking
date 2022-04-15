@@ -37,8 +37,12 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty AmmunitionViewHeaderProperty = BindableProperty.Create(
             nameof(AmmunitionViewHeader),
             typeof(string),
-            typeof(AmmunitionView)
-        );
+            typeof(AmmunitionView));
+
+        public static readonly BindableProperty IsDataEditModeProperty = BindableProperty.Create(
+            nameof(IsDataEditMode),
+            typeof(bool),
+            typeof(AmmunitionView));
 
         public ObservableCollection<Ammunition> AmmunitionList
         {
@@ -74,6 +78,12 @@ namespace BattleTechTracking.Controls
         {
             get => (string)GetValue(AmmunitionView.AmmunitionViewHeaderProperty);
             set => SetValue(AmmunitionView.AmmunitionViewHeaderProperty, value);
+        }
+
+        public bool IsDataEditMode
+        {
+            get => (bool)GetValue(AmmunitionView.IsDataEditModeProperty);
+            set => SetValue(AmmunitionView.IsDataEditModeProperty, value);
         }
 
         public AmmunitionView()

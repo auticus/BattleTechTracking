@@ -2,8 +2,12 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
+             xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.EquipmentView"
              x:Name="thisView">
+    <ContentView.Resources>
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
+    </ContentView.Resources>
     <ContentView.Content>
         <ListView VerticalOptions="FillAndExpand"
                 BindingContext="{x:Reference thisView}"
@@ -23,6 +27,7 @@
                                    CornerRadius="120" HorizontalOptions="End" 
                                    BackgroundColor="Black" Source="plusIcon.jpg"
                                    Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
+                                   IsVisible="{Binding IsDataEditMode}"
                                    Command="{Binding NewEquipment, Source={x:Reference thisView}}"/>
                     </Grid>
                 </ContentView>
@@ -48,7 +53,16 @@
                                      Margin="5,0,10,0"
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
+                                     IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                      Focused="VisualElement_OnFocused"/>
+                                <Label Text="{Binding Name}"
+                                       Grid.Column="0"
+                                       TextColor="Gold"
+                                       FontAttributes="Bold"
+                                       VerticalTextAlignment="Center"
+                                       IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert}, 
+                                            Source={x:Reference thisView}}"/>
                                 <Label Text="Hits"
                                      Grid.Column="1"
                                      TextColor="WhiteSmoke"
@@ -68,7 +82,7 @@
                                 <Label Text="Location"
                                      Margin="5,0,0,0"
                                      Grid.Column="3"
-                                     TextColor="WhiteSmoke"
+                                     TextColor="Gold"
                                      FontAttributes="Italic"
                                      FontSize="Caption"
                                      VerticalTextAlignment="Center"/>
@@ -77,16 +91,26 @@
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
                                      MaxLength="2"
+                                     IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                      Focused="VisualElement_OnFocused">
                                 </Entry>
+                                <Label Text="{Binding Location}"
+                                       Grid.Column="4"
+                                       TextColor="WhiteSmoke"
+                                        IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"
+                                       VerticalTextAlignment="Center"/>
                                 <ImageButton WidthRequest="32" HeightRequest="32" Margin="10,0,0,0"
                                            BackgroundColor="Black" Source="copy.png" HorizontalOptions="Center"
                                            BorderColor="Gold" BorderWidth="1" Grid.Column="5"
+                                           IsVisible ="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                            Command="{Binding CopyEquipment, Source={x:Reference thisView}}"
                                            CommandParameter="{Binding ID}"/>
                                 <ImageButton WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="Center"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="6"
+                                             IsVisible ="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                              Command="{Binding DeleteEquipment, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
                             </Grid>

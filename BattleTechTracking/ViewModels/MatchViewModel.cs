@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Input;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Models;
@@ -24,11 +23,16 @@ namespace BattleTechTracking.ViewModels
         private bool _settingsVisible;
         private bool _unitSelectorVisible;
         private bool _matchTrackingViewVisible;
+        private bool _activeComponentsVisible;
+        private bool _activeUnitEquipmentVisible;
+        private bool _activeUnitWeaponsVisible;
+        private bool _activeUnitAmmoVisible;
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
         private readonly List<IDisplayListView>[] _factionUnits = {new List<IDisplayListView>(), new List<IDisplayListView>()};
         private ObservableCollection<IDisplayListView> _activeFactionUnits;
+        private ObservableCollection<UnitComponent> _activeUnitComponents;
         private TrackedGameElement _selectedActiveUnit;
 
         /// <summary>
@@ -48,6 +52,11 @@ namespace BattleTechTracking.ViewModels
                 //make the new active observable collection based on the new active faction
                 ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[ActiveFaction]);
                 ActiveFactionName = ActiveFaction == 0 ? Faction1Name : Faction2Name;
+
+                // this is a turbo hack - but UWP for whatever reason gets really angry if there is only one element that gets set null
+                // it no longer registers selections and the add button stops working
+                SelectedActiveUnit = ActiveFactionUnits.Count == 1 ? (TrackedGameElement)ActiveFactionUnits[0] : null;
+                MatchTrackingViewVisible = SelectedActiveUnit != null;
             }
         }
 
@@ -98,6 +107,16 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public ObservableCollection<UnitComponent> ActiveUnitComponents
+        {
+            get => _activeUnitComponents;
+            set
+            {
+                _activeUnitComponents = value;
+                OnPropertyChanged(nameof(ActiveUnitComponents));
+            }
+        }
+
         /// <summary>
         /// Gets or sets the selected faction unit.
         /// </summary>
@@ -109,7 +128,19 @@ namespace BattleTechTracking.ViewModels
                 _selectedActiveUnit = value;
                 OnPropertyChanged(nameof(SelectedActiveUnit));
 
-                if (_selectedActiveUnit != null) MatchTrackingViewVisible = true;
+                if (_selectedActiveUnit != null)
+                {
+                    SetAllPanelsInvisible();
+                    MatchTrackingViewVisible = true;
+                }
+                if (_selectedActiveUnit == null)
+                {
+                    ActiveUnitComponents = null;
+                }
+                else
+                {
+                    ActiveUnitComponents = new ObservableCollection<UnitComponent>(_selectedActiveUnit.UnitComponents.ToList());
+                }
             }
         }
 
@@ -146,6 +177,46 @@ namespace BattleTechTracking.ViewModels
             {
                 _matchTrackingViewVisible = value;
                 OnPropertyChanged(nameof(MatchTrackingViewVisible));
+            }
+        }
+
+        public bool ActiveComponentsVisible
+        {
+            get => _activeComponentsVisible;
+            set
+            {
+                _activeComponentsVisible = value;
+                OnPropertyChanged(nameof(ActiveComponentsVisible));
+            }
+        }
+
+        public bool ActiveUnitEquipmentVisible
+        {
+            get => _activeUnitEquipmentVisible;
+            set
+            {
+                _activeUnitEquipmentVisible = value;
+                OnPropertyChanged(nameof(ActiveUnitEquipmentVisible));
+            }
+        }
+
+        public bool ActiveUnitWeaponsVisible
+        {
+            get => _activeUnitWeaponsVisible;
+            set
+            {
+                _activeUnitWeaponsVisible = value;
+                OnPropertyChanged(nameof(ActiveUnitWeaponsVisible));
+            }
+        }
+
+        public bool ActiveUnitAmmoVisible
+        {
+            get => _activeUnitAmmoVisible;
+            set
+            {
+                _activeUnitAmmoVisible = value;
+                OnPropertyChanged(nameof(ActiveUnitAmmoVisible));
             }
         }
 
@@ -338,21 +409,25 @@ namespace BattleTechTracking.ViewModels
             ViewActiveUnitComponents = new Command(() =>
             {
                 SetAllPanelsInvisible();
+                ActiveComponentsVisible = true;
             });
 
             ViewActiveUnitEquipment = new Command(() =>
             {
                 SetAllPanelsInvisible();
+                ActiveUnitEquipmentVisible = true;
             });
 
             ViewActiveUnitWeapons = new Command(() =>
             {
                 SetAllPanelsInvisible();
+                ActiveUnitWeaponsVisible = true;
             });
 
             ViewActiveUnitAmmo = new Command(() =>
             {
                 SetAllPanelsInvisible();
+                ActiveUnitAmmoVisible = true;
             });
         }
 
@@ -361,6 +436,10 @@ namespace BattleTechTracking.ViewModels
             UnitSelectorVisible = false;
             SettingsVisible = false;
             MatchTrackingViewVisible = false;
+            ActiveComponentsVisible = false;
+            ActiveUnitEquipmentVisible = false;
+            ActiveUnitWeaponsVisible = false;
+            ActiveUnitAmmoVisible = false;
         }
 
         private void LoadVisibleUnits()

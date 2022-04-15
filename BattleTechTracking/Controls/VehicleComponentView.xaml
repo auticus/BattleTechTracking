@@ -2,8 +2,12 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
+             xmlns:Converter="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.VehicleComponentView"
              x:Name="thisView">
+    <ContentView.Resources>
+        <Converter:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
+    </ContentView.Resources>
     <ContentView.Content>
       <ListView VerticalOptions="FillAndExpand"
                 BindingContext="{x:Reference thisView}"
@@ -16,14 +20,20 @@
                             <ColumnDefinition Width="0.95*"/>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <Label Text="Unit Components" HorizontalTextAlignment="Center" Margin="20,5,0,0"
-                               HorizontalOptions="Center" FontSize="Medium" TextColor="Yellow"
+                        <Label Text="Unit Components" 
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Center"
+                               Margin="20,5,0,0"
+                               HorizontalOptions="CenterAndExpand" 
+                               FontSize="Medium" 
+                               TextColor="Gold"
                                Grid.Column="0"/>
                         <ImageButton WidthRequest="32" HeightRequest="32" 
-                                   CornerRadius="120" HorizontalOptions="End" 
-                                   BackgroundColor="Black" Source="plusIcon.jpg"
-                                   Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
-                                   Command="{Binding NewComponent, Source={x:Reference thisView}}"/>
+                                     CornerRadius="120" HorizontalOptions="End" 
+                                     BackgroundColor="Black" Source="plusIcon.jpg"
+                                     Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
+                                     IsVisible="{Binding IsDataEditMode}"
+                                     Command="{Binding NewComponent, Source={x:Reference thisView}}"/>
                     </Grid>
                 </ContentView>
           </ListView.Header>
@@ -43,6 +53,7 @@
                                   <ColumnDefinition Width="75"/>
                                 </Grid.ColumnDefinitions>
                               <Entry Text="{Binding Name}"
+                                     IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                      WidthRequest="200"
                                      Grid.Column="0"
                                      MaxLength="50"
@@ -50,6 +61,15 @@
                                      VerticalOptions="Center"
                                      VerticalTextAlignment="Center"
                                      Focused="VisualElement_OnFocused"/>
+                              <Label  Grid.Column="0"
+                                      Margin="5,0,10,0"
+                                      VerticalOptions="Center"
+                                      Text="{Binding Name}"
+                                      TextColor="Gold"
+                                      FontAttributes="Bold"
+                                      IsVisible="{Binding IsDataEditMode, 
+                                        Converter={StaticResource InvertedBoolConvert}, 
+                                        Source={x:Reference thisView}}"/>
                               <Label Text="Armor"
                                      Grid.Column="1"
                                      TextColor="WhiteSmoke"
@@ -101,6 +121,7 @@
                                     </Entry.Behaviors>
                                 </Entry>
                               <ImageButton WidthRequest="32" HeightRequest="32" 
+                                           IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                            BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
                                            BorderColor="Gold" BorderWidth="1" Grid.Column="7"
                                            Command="{Binding DeleteComponent, Source={x:Reference thisView}}"

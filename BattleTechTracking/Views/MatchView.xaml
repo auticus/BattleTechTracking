@@ -173,6 +173,56 @@
                                                  DidJump="{Binding SelectedActiveUnit.DidJump, Mode=TwoWay}"
                                                  IsProne="{Binding SelectedActiveUnit.IsProne, Mode=TwoWay}"/>
 
+                <controls:VehicleComponentView Margin="10,45,0,0"
+                                               Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               Grid.Column="1"
+                                               IsVisible="{Binding ActiveComponentsVisible}"
+                                               ItemSource ="{Binding ActiveUnitComponents, Mode=TwoWay}"
+                                               IsDataEditMode="False"/>
+
+                <controls:EquipmentView Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="1"
+                                        Margin="10,45,0,0"
+                                        IsVisible="{Binding ActiveUnitEquipmentVisible}"
+                                        ItemSource="{Binding SelectedUnitEquipment}"
+                                        IsDataEditMode="False"/>
+
+                <!--
+                        <controls:EquipmentView Margin="10,30,15,10"
+                                                IsVisible="{Binding EquipmentVisible}"
+                                                ItemSource="{Binding SelectedUnitEquipment}"
+                                                SelectedEquipment="{Binding SelectedEquipment, Mode=TwoWay}"
+                                                NewEquipment="{Binding NewEquipment}"
+                                                DeleteEquipment ="{Binding DeleteEquipment}"
+                                                CopyEquipment="{Binding CopyEquipment}"/>
+
+                        <controls:WeaponsView Margin="10,30,15,10"
+                                              IsVisible="{Binding WeaponsVisible}"
+                                              ItemSource="{Binding SelectedUnitWeapons}"
+                                              SelectedWeapon ="{Binding SelectedWeapon, Mode=TwoWay}"
+                                              NewWeapon ="{Binding NewWeapon}"
+                                              DeleteWeapon="{Binding DeleteWeapon}"
+                                              CopyWeapon ="{Binding CopyWeapon}"
+                                              OpenDamageCodes ="{Binding OpenDamageCodes}"
+                                              OpenAmmo="{Binding OpenAmmo}"/>
+
+                        <controls:DamageCodesView Margin="10,30,15,10"
+                                                  IsVisible="{Binding DamageCodesVisible}"
+                                                  DamageCodes="{Binding DamageCodesCommaSeparated, Mode=TwoWay}"
+                                                  OkCommand ="{Binding DamageCodesOkCommand}"/>
+
+                        <controls:AmmunitionView Margin="10,30,15,10"
+                                                 IsVisible="{Binding AmmoVisible}"
+                                                 AmmunitionViewHeader="{Binding AmmunitionViewHeader}"
+                                                 AmmunitionList="{Binding SelectedWeaponAmmunition}"
+                                                 SelectedAmmo ="{Binding SelectedAmmunition}"
+                                                 NewAmmo="{Binding NewAmmo}"
+                                                 DeleteAmmo="{Binding DeleteAmmo}"
+                                                 OkCommand="{Binding AmmunitionOkCommand}"
+                -->
+
                 <StackLayout Grid.Row="2"
                              Grid.Column="1"
                              Orientation="Horizontal">

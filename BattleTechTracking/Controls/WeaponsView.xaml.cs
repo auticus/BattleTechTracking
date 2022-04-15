@@ -46,6 +46,11 @@ namespace BattleTechTracking.Controls
             typeof(WeaponsView)
         );
 
+        public static readonly BindableProperty IsDataEditModeProperty = BindableProperty.Create(
+            nameof(IsDataEditMode),
+            typeof(bool),
+            typeof(WeaponsView));
+
         public ObservableCollection<Weapon> ItemSource
         {
             get => (ObservableCollection<Weapon>)GetValue(WeaponsView.ItemSourceProperty);
@@ -85,6 +90,12 @@ namespace BattleTechTracking.Controls
         {
             get => (Command)GetValue(WeaponsView.OpenAmmoProperty);
             set => SetValue(WeaponsView.OpenAmmoProperty, value);
+        }
+
+        public bool IsDataEditMode
+        {
+            get => (bool)GetValue(WeaponsView.IsDataEditModeProperty);
+            set => SetValue(WeaponsView.IsDataEditModeProperty, value);
         }
 
         public WeaponsView()
