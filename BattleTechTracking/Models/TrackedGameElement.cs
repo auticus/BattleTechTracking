@@ -189,6 +189,13 @@ namespace BattleTechTracking.Models
         public IEnumerable<Weapon> UnitWeapons { get; } = new List<Weapon>();
         public IEnumerable<Ammunition> UnitAmmunition { get; } = new List<Ammunition>();
 
+        /// <summary>
+        /// Default constructor for serialization.
+        /// </summary>
+        public TrackedGameElement()
+        {
+
+        }
 
         public TrackedGameElement(IDisplayListView gameElement)
         {
