@@ -1,0 +1,32 @@
+[
+  {
+    "Code": "DE",
+    "Name": "Direct-Fire Energy",
+    "Detail": "Can use a targeting computer when making attacks (p.143)",
+    "Rulebook": "TW113"
+  },
+  {
+    "Code": "DB",
+    "Name": "Direct-Fire Ballistic",
+    "Detail": "Can use a targeting computer when making attacks (p.143)",
+    "Rulebook": "TW113"
+  },
+  {
+    "Code": "C",
+    "Name": "Cluster Weapon",
+    "Detail": "Rolls on the cluster hit table to determine damage.  LB-X weapons may fire as a direct-fire ballistic or a cluster weapon.",
+    "Rulebook": "TW113" 
+  },
+  {
+    "Code": "M",
+    "Name": "Missile Weapon",
+    "Detail": "Deliver damage equal to each missile hit times the damage per missile.  Once rollilng on cluster hit table, divide damage into groupings.",
+    "Rulebook": "TW113" 
+  },
+  {
+    "Code": "S",
+    "Name": "Switchable Ammo Supply",
+    "Detail": "This type of weapon may choose from multiple ammo types.  (p.140)",
+    "Rulebook": "TW114" 
+  }
+]
