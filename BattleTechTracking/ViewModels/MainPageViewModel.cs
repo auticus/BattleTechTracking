@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
+using BattleTechTracking.Factories;
 using BattleTechTracking.Views;
 using Xamarin.Forms;
 
@@ -24,7 +25,12 @@ namespace BattleTechTracking.ViewModels
             {
                 await PageNavigation.PushAsync(new MatchView());
             });
-            LoadExistingGame = new Command(() => throw new NotImplementedException());
+            LoadExistingGame = new Command(async () =>
+            {
+                var matchState = DataPump.LoadMatchState("SavedMatchState.json");
+                await PageNavigation.PushAsync(new MatchView(matchState));
+            });
+
             ViewSavedGame = new Command(() => throw new NotImplementedException());
         }
     }

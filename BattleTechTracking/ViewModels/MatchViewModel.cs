@@ -30,7 +30,7 @@ namespace BattleTechTracking.ViewModels
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
-        private readonly List<IDisplayListView>[] _factionUnits = {new List<IDisplayListView>(), new List<IDisplayListView>()};
+        private List<IDisplayListView>[] _factionUnits = {new List<IDisplayListView>(), new List<IDisplayListView>()};
         private ObservableCollection<IDisplayListView> _activeFactionUnits;
         private ObservableCollection<UnitComponent> _activeUnitComponents;
         private ObservableCollection<Equipment> _activeUnitEquipment;
@@ -375,7 +375,16 @@ namespace BattleTechTracking.ViewModels
 
             OkCommand = new Command(() =>
             {
-                //todo: save code goes here
+                //make sure our active faction is saved out to the cache
+                _factionUnits[ActiveFaction] = ActiveFactionUnits.ToList();
+
+                var matchState = new MatchState()
+                {
+                    Faction1Name = this.Faction1Name,
+                    Faction2Name = this.Faction2Name,
+                    Factions = _factionUnits
+                };
+                DataPump.SaveMatchState(matchState, "SavedMatchState.json");
                 PageNavigation.PopAsync();
             });
 
@@ -470,6 +479,17 @@ namespace BattleTechTracking.ViewModels
                 SetAllPanelsInvisible();
                 ActiveUnitAmmoVisible = true;
             });
+        }
+
+        public void LoadMatchState(MatchState state)
+        {
+            if (state == null) return;
+
+            Faction1Name = state.Faction1Name;
+            Faction2Name = state.Faction2Name;
+
+            _factionUnits = state.Factions;
+            ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[0]);
         }
 
         private void SetAllPanelsInvisible()

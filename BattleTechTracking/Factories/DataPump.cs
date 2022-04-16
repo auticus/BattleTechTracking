@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using BattleTechTracking.Models;
@@ -43,7 +44,54 @@ namespace BattleTechTracking.Factories
                 serializer.Serialize(file, data);
             }
         }
-        
+
+        public static void SaveMatchState(MatchState factions, string fileName)
+        {
+            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}";
+
+            try
+            {
+                using (var file = File.CreateText(filePath))
+                {
+                    var json = JsonConvert.SerializeObject(factions, Formatting.Indented, new JsonSerializerSettings()
+                    {
+                        TypeNameHandling = TypeNameHandling.All
+                    });
+                    
+                    file.Write(json);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"ERROR WRITING FILE - {e}");
+            }
+        }
+
+        public static MatchState LoadMatchState(string fileName)
+        {
+            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}";
+            try
+            {
+                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (var rdr = new StreamReader(stream))
+                    {
+                        var json = rdr.ReadToEnd();
+                        return JsonConvert.DeserializeObject<MatchState>(json, new JsonSerializerSettings()
+                        {
+                            TypeNameHandling = TypeNameHandling.All
+                        });
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"ERROR Reading File {e}");
+            }
+
+            return null;
+        }
+
         /// <summary>
         /// Returns an IEnumerable of the type given in the embedded JSON files of the application.
         /// </summary>

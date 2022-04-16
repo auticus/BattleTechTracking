@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using BattleTechTracking.Models;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace BattleTechTracking.Views
@@ -9,6 +10,11 @@ namespace BattleTechTracking.Views
         public MatchView()
         {
             InitializeComponent();
+        }
+
+        public MatchView(MatchState state) : this()
+        {
+            viewModel.LoadMatchState(state);
         }
     }
 }
