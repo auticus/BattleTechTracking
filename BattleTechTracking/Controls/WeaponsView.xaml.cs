@@ -51,6 +51,11 @@ namespace BattleTechTracking.Controls
             typeof(bool),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty HitsProperty = BindableProperty.Create(
+            nameof(Hits),
+            typeof(int),
+            typeof(WeaponsView));
+
         public ObservableCollection<Weapon> ItemSource
         {
             get => (ObservableCollection<Weapon>)GetValue(WeaponsView.ItemSourceProperty);
@@ -96,6 +101,12 @@ namespace BattleTechTracking.Controls
         {
             get => (bool)GetValue(WeaponsView.IsDataEditModeProperty);
             set => SetValue(WeaponsView.IsDataEditModeProperty, value);
+        }
+
+        public int Hits
+        {
+            get => (int)GetValue(WeaponsView.HitsProperty);
+            set => SetValue(WeaponsView.HitsProperty, value);
         }
 
         public WeaponsView()

@@ -170,11 +170,15 @@ namespace BattleTechTracking.ViewModels
                 {
                     ActiveUnitComponents = null;
                     ActiveUnitEquipment = null;
+                    ActiveUnitWeapons = null;
+                    ActiveUnitAmmunition = null;
                 }
                 else
                 {
                     ActiveUnitComponents = new ObservableCollection<UnitComponent>(_selectedActiveUnit.UnitComponents.ToList());
                     ActiveUnitEquipment = new ObservableCollection<Equipment>(_selectedActiveUnit.UnitEquipment.ToList());
+                    ActiveUnitWeapons = new ObservableCollection<Weapon>(_selectedActiveUnit.UnitWeapons.ToList());
+                    ActiveUnitAmmunition = new ObservableCollection<Ammunition>(_selectedActiveUnit.UnitAmmunition.ToList());
                 }
             }
         }
@@ -401,6 +405,7 @@ namespace BattleTechTracking.ViewModels
                 var unit = ActiveFactionUnits.FirstOrDefault(x => x.ID == id);
                 if (unit == null) return;
                 ActiveFactionUnits.Remove(unit);
+                SelectedActiveUnit = null;
             });
 
             SettingsCommand = new Command(() =>

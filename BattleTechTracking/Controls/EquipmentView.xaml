@@ -25,8 +25,8 @@
                                HorizontalTextAlignment="Center" 
                                HorizontalOptions="Center"
                                VerticalTextAlignment="Center"
-                               Margin="20,5,0,0"
-                                FontSize="Medium" 
+                               Margin="75,0,0,0"
+                               FontSize="Medium" 
                                TextColor="Gold"
                                Grid.Column="0"/>
                         <ImageButton WidthRequest="32" HeightRequest="32" 

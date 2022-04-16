@@ -2,9 +2,13 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
+             xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.AmmunitionView"
-             x:Name="thisView"
-             BackgroundColor="#C0808080">
+             x:Name="thisView">
+    <ContentView.Resources>
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
+        <converters:LocationCodeToStringConverter x:Key="KeycodeConverter"/>
+    </ContentView.Resources>
     <ContentView.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -24,7 +28,8 @@
                               WidthRequest="32" HeightRequest="32" 
                               CornerRadius="20" HorizontalOptions="End" 
                               BackgroundColor="#C0808080" Source="plusIcon.jpg"
-                              Margin="0,10,0,5" 
+                              Margin="0,10,0,5"
+                              IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                               Command="{Binding NewAmmo, Source={x:Reference thisView}}"/>
 
                 <!--OK Button-->
@@ -36,6 +41,7 @@
                              WidthRequest="32"
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
+                             IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                              Source="okIcon.png"/>
             </Grid>
             <ListView Grid.Row="0"  VerticalOptions="FillAndExpand"
@@ -44,8 +50,12 @@
                       SelectedItem="{Binding SelectedAmmo, Source={x:Reference thisView}}">
                 <ListView.Header>
                     <ContentView BackgroundColor="MidnightBlue">
-                            <Label Text="{Binding AmmunitionViewHeader}" HorizontalTextAlignment="Center" Margin="20,5,0,0"
-                               HorizontalOptions="Center" FontSize="Medium" TextColor="Yellow"/>
+                            <Label Text="{Binding AmmunitionViewHeader}" 
+                                   HorizontalTextAlignment="Center" 
+                                   Margin="20,5,0,0"
+                                    HorizontalOptions="Center" 
+                                   FontSize="Medium" 
+                                   TextColor="Gold"/>
                     </ContentView>
                 </ListView.Header>
                 <ListView.ItemTemplate>
@@ -63,65 +73,138 @@
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="75"/>
                                     </Grid.ColumnDefinitions>
+                                    <!-- Edit Mode Ammo Name - Column 0 -->
                                     <Entry Text="{Binding Name}"
-                                     WidthRequest="200"
-                                     MaxLength="50"
-                                     Grid.Column="0"
-                                     Margin="5,0,10,0"
-                                     VerticalOptions="Center"
-                                     VerticalTextAlignment="Center"
-                                     Focused="VisualElement_OnFocused"/>
+                                         WidthRequest="200"
+                                         MaxLength="50"
+                                         Grid.Column="0"
+                                         Margin="5,0,10,0"
+                                         VerticalOptions="Center"
+                                         VerticalTextAlignment="Center"
+                                         Focused="VisualElement_OnFocused"
+                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
+
+                                    <!-- Tracking mode Ammo Name Column 0-->
+                                    <Label Text="{Binding Name}"
+                                           Grid.Column="0"
+                                           TextColor="Gold"
+                                           Margin="5,0,0,0"
+                                           VerticalTextAlignment="Center"
+                                           IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"/>
+
+                                    <!-- Edit and Tracking Mode - Hits -->
                                     <Label Text="Hits"
-                                     Grid.Column="1"
-                                     TextColor="WhiteSmoke"
-                                     FontAttributes="Italic"
-                                     FontSize="Caption"
-                                     VerticalTextAlignment="Center"/>
+                                         Grid.Column="1"
+                                         TextColor="WhiteSmoke"
+                                         FontAttributes="Italic"
+                                         FontSize="Caption"
+                                         VerticalTextAlignment="Center"/>
                                     <Entry Text="{Binding Hits}"
-                                     Grid.Column="2"
-                                     VerticalOptions="Center"
-                                     VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     Focused="VisualElement_OnFocused">
+                                         Grid.Column="2"
+                                         VerticalOptions="Center"
+                                         VerticalTextAlignment="Center"
+                                         MaxLength="2"
+                                         Focused="VisualElement_OnFocused">
+                                            <Entry.Behaviors>
+                                                <behaviors:NumericValidationBehavior/>
+                                            </Entry.Behaviors>
+                                        </Entry>
+                                    
+                                    <!-- Edit Location Columns 3 & 4 -->
+                                    <Label Text="Location"
+                                         Margin="5,0,0,0"
+                                         Grid.Column="3"
+                                         TextColor="WhiteSmoke"
+                                         FontAttributes="Italic"
+                                         FontSize="Caption"
+                                         VerticalTextAlignment="Center"
+                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
+                                    
+                                    <Entry Text="{Binding Location}"
+                                           Grid.Column="4"
+                                           VerticalOptions="Center"
+                                           VerticalTextAlignment="Center"
+                                           MaxLength="2"
+                                           IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
+                                           Focused="VisualElement_OnFocused">
+                                    </Entry>
+                                    
+                                    <!--Tracking View Count Columns 3 & 4-->
+                                    <Label Text="Count"
+                                           Margin="5,0,0,0"
+                                           Grid.Column="3"
+                                           TextColor="WhiteSmoke"
+                                           FontAttributes="Italic"
+                                           FontSize="Caption"
+                                           VerticalTextAlignment="Center"
+                                           IsVisible="{Binding IsDataEditMode,
+                                                Converter={StaticResource InvertedBoolConvert},
+                                                Source={x:Reference thisView}}"/>
+
+                                    <Entry Text="{Binding AmmoCount}"
+                                           Grid.Column="4"
+                                           VerticalOptions="Center"
+                                           VerticalTextAlignment="Center"
+                                           MaxLength="4"
+                                           IsVisible="{Binding IsDataEditMode,
+                                                Converter={StaticResource InvertedBoolConvert},
+                                                Source={x:Reference thisView}}"
+                                           Focused="VisualElement_OnFocused">
                                         <Entry.Behaviors>
                                             <behaviors:NumericValidationBehavior/>
                                         </Entry.Behaviors>
                                     </Entry>
-                                    <Label Text="Location"
-                                     Margin="5,0,0,0"
-                                     Grid.Column="3"
-                                     TextColor="WhiteSmoke"
-                                     FontAttributes="Italic"
-                                     FontSize="Caption"
-                                     VerticalTextAlignment="Center"/>
-                                    <Entry Text="{Binding Location}"
-                                     Grid.Column="4"
-                                     VerticalOptions="Center"
-                                     VerticalTextAlignment="Center"
-                                     MaxLength="2"
-                                     Focused="VisualElement_OnFocused">
-                                    </Entry>
+
+                                    <!--Edit View Count Columns 5 & 6-->
                                     <Label Text="Count"
-                                       Margin="5,0,0,0"
-                                       Grid.Column="5"
-                                       TextColor="WhiteSmoke"
-                                       FontAttributes="Italic"
-                                       FontSize="Caption"
-                                       VerticalTextAlignment="Center"/>
+                                           Margin="5,0,0,0"
+                                           Grid.Column="5"
+                                           TextColor="WhiteSmoke"
+                                           FontAttributes="Italic"
+                                           FontSize="Caption"
+                                           VerticalTextAlignment="Center"
+                                           IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
+
                                     <Entry Text="{Binding AmmoCount}"
                                        Grid.Column="6"
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
                                        MaxLength="4"
+                                       IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                        Focused="VisualElement_OnFocused">
                                         <Entry.Behaviors>
                                             <behaviors:NumericValidationBehavior/>
                                         </Entry.Behaviors>
                                     </Entry>
+
+                                    <!-- Tracking View Location Columns 5 & 6 -->
+                                    <Label Text="Location"
+                                           Grid.Column="5"
+                                           TextColor="WhiteSmoke"
+                                           VerticalTextAlignment="Center"
+                                           FontSize="Caption"
+                                           FontAttributes="Italic"
+                                           Margin="5,0,0,0"
+                                           IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"/>
+                                    <Label Text="{Binding Location, Converter={StaticResource KeycodeConverter}}"
+                                           Grid.Column="6"
+                                           Grid.ColumnSpan="2"
+                                           TextColor="WhiteSmoke"
+                                           VerticalTextAlignment="Center"
+                                           Margin="5,0,0,0"
+                                           IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"/>
+
                                     <ImageButton WidthRequest="32" HeightRequest="32" 
                                            BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
                                            BorderColor="Gold" BorderWidth="1" Grid.Column="7"
                                            Command="{Binding DeleteAmmo, Source={x:Reference thisView}}"
+                                           IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                            CommandParameter="{Binding ID}"/>
                                 </Grid>
                                 <!-- underline of the item -->

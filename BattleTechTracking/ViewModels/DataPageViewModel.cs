@@ -494,7 +494,7 @@ namespace BattleTechTracking.ViewModels
             {
                 var weapon = SelectedUnitWeapons.FirstOrDefault(x => x.ID == id);
                 if (weapon == null) return;
-                SelectedUnitWeapons.Add(weapon.Copy());
+                SelectedUnitWeapons.Add(ComponentFactory.BuildWeaponFromTemplate(weapon));
             });
 
             UnitComponentCommand = new Command(() =>

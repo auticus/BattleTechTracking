@@ -186,8 +186,8 @@ namespace BattleTechTracking.Models
 
         public IEnumerable<UnitComponent> UnitComponents { get; } = new List<UnitComponent>();
         public IEnumerable<Equipment> UnitEquipment { get; } = new List<Equipment>();
-        public IEnumerable<TrackedWeapon> UnitWeapons { get; } = new List<TrackedWeapon>();
-        public IEnumerable<TrackedAmmunition> UnitAmmunition { get; } = new List<TrackedAmmunition>();
+        public IEnumerable<Weapon> UnitWeapons { get; } = new List<Weapon>();
+        public IEnumerable<Ammunition> UnitAmmunition { get; } = new List<Ammunition>();
 
 
         public TrackedGameElement(IDisplayListView gameElement)
@@ -303,13 +303,7 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var weapon in element.Weapons)
             {
-                var wpn = new TrackedWeapon(weapon);
-                wpn.OnHeatGenerated += (sender, heat) =>
-                {
-                    CurrentHeatLevel += heat;
-                };
-
-                ((List<TrackedWeapon>)UnitWeapons).Add(wpn);
+                ((List<Weapon>)UnitWeapons).Add(ComponentFactory.BuildWeaponFromTemplate(weapon));
             }
         }
 
@@ -322,7 +316,7 @@ namespace BattleTechTracking.Models
             {
                 foreach (var ammo in weapon.Ammo)
                 {
-                    ((List<TrackedAmmunition>)UnitAmmunition).Add(new TrackedAmmunition(ammo));
+                    ((List<Ammunition>)UnitAmmunition).Add(ComponentFactory.BuildAmmoFromTemplate(ammo));
                 }
             }
         }

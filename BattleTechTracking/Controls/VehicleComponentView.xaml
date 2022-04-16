@@ -23,7 +23,7 @@
                         <Label Text="Unit Components" 
                                HorizontalTextAlignment="Center" 
                                VerticalTextAlignment="Center"
-                               Margin="20,5,0,0"
+                               Margin="75,0,0,0"
                                HorizontalOptions="CenterAndExpand" 
                                FontSize="Medium" 
                                TextColor="Gold"

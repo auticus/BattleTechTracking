@@ -17,11 +17,16 @@ namespace BattleTechTracking.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return _locationCodes[value.ToString()];
+            return string.IsNullOrEmpty(value?.ToString()) ? "?" : _locationCodes[value.ToString()];
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value.ToString() == "?")
+            {
+                return string.Empty;
+            }
+
             foreach (var kvp in _locationCodes.Where(kvp => kvp.Value == value.ToString()))
             {
                 return kvp.Key;
