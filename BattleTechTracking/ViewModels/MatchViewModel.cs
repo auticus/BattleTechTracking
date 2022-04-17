@@ -30,8 +30,8 @@ namespace BattleTechTracking.ViewModels
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
-        private List<IDisplayListView>[] _factionUnits = {new List<IDisplayListView>(), new List<IDisplayListView>()};
-        private ObservableCollection<IDisplayListView> _activeFactionUnits;
+        private List<IDisplayMatchedListView>[] _factionUnits = {new List<IDisplayMatchedListView>(), new List<IDisplayMatchedListView>()};
+        private ObservableCollection<IDisplayMatchedListView> _activeFactionUnits;
         private ObservableCollection<UnitComponent> _activeUnitComponents;
         private ObservableCollection<Equipment> _activeUnitEquipment;
         private ObservableCollection<Weapon> _activeUnitWeapons;
@@ -53,7 +53,7 @@ namespace BattleTechTracking.ViewModels
                 OnPropertyChanged(nameof(ActiveFaction));
 
                 //make the new active observable collection based on the new active faction
-                ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[ActiveFaction].OrderBy(p=>p.UnitHeader));
+                ActiveFactionUnits = new ObservableCollection<IDisplayMatchedListView>(_factionUnits[ActiveFaction].OrderBy(p=>p.UnitHeader));
                 ActiveFactionName = ActiveFaction == 0 ? Faction1Name : Faction2Name;
 
                 // this is a turbo hack - but UWP for whatever reason gets really angry if there is only one element that gets set null
@@ -100,7 +100,7 @@ namespace BattleTechTracking.ViewModels
         /// <summary>
         /// The item source of the active faction's list of units.
         /// </summary>
-        public ObservableCollection<IDisplayListView> ActiveFactionUnits
+        public ObservableCollection<IDisplayMatchedListView> ActiveFactionUnits
         {
             get => _activeFactionUnits;
             set
@@ -247,6 +247,8 @@ namespace BattleTechTracking.ViewModels
         /// </summary>
         public ObservableCollection<string> UnitFilters { get; }
 
+        public List<string> UnitActions { get; }
+
         private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
         public ObservableCollection<IDisplayListView> SelectorViewVisibleUnits
         {
@@ -347,6 +349,7 @@ namespace BattleTechTracking.ViewModels
             ActiveFaction = 0;
 
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
+            UnitActions = ActionsFactory.BuildActionsList().ToList();
             SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
@@ -472,7 +475,7 @@ namespace BattleTechTracking.ViewModels
             Faction2Name = state.Faction2Name;
 
             _factionUnits = state.Factions;
-            ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[0].OrderBy(p=>p.UnitHeader));
+            ActiveFactionUnits = new ObservableCollection<IDisplayMatchedListView>(_factionUnits[0].OrderBy(p=>p.UnitHeader));
         }
 
         private void SetAllPanelsInvisible()
@@ -533,7 +536,7 @@ namespace BattleTechTracking.ViewModels
             var activeFactionUnits = ActiveFactionUnits.ToList();
             activeFactionUnits.Add(gameElement);
 
-            ActiveFactionUnits = new ObservableCollection<IDisplayListView>(activeFactionUnits.OrderBy(p => p.UnitHeader));
+            ActiveFactionUnits = new ObservableCollection<IDisplayMatchedListView>(activeFactionUnits.OrderBy(p => p.UnitHeader));
             SelectedActiveUnit = gameElement;
         }
 

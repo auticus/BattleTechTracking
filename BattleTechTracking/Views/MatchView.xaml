@@ -91,7 +91,16 @@
                           Margin="0,10,0,25"
                           ItemsSource="{Binding ActiveFactionUnits}"
                           SelectedItem="{Binding SelectedActiveUnit}"
-                          VerticalOptions="FillAndExpand">
+                          VerticalOptions="FillAndExpand"
+                          IsGroupingEnabled="True">
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label FontAttributes="Bold"
+                                       Text="{Binding UnitAction}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
                     <ListView.Header>
                         <ContentView BackgroundColor="MidnightBlue">
                             <Grid>
@@ -168,6 +177,8 @@
                                                  Grid.Column="1"
                                                  IsVisible="{Binding MatchTrackingViewVisible}"
                                                  TrackedElementHeader ="{Binding SelectedActiveUnit.UnitHeader}"
+                                                 UnitActions="{Binding UnitActions}"
+                                                 SelectedUnitAction="{Binding SelectedActiveUnit.UnitAction}"
                                                  Quirks="{Binding SelectedActiveUnit.Quirks}"
                                                  Movement="{Binding SelectedActiveUnit.MovementDetails}"
                                                  HexesMoved="{Binding SelectedActiveUnit.HexesMoved, Mode=TwoWay}"

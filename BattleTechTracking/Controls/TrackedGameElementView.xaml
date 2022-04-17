@@ -40,6 +40,7 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -48,15 +49,30 @@
                     <ColumnDefinition Width="400"/>
                 </Grid.ColumnDefinitions>
                 
-                <!-- Quirks Row 0 -->
+                <!-- Unit Action Drop Down -->
                 <Label Grid.Row="0"
+                       Grid.Column="0"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Last Action"/>
+
+                <Picker Grid.Row ="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        WidthRequest="100" 
+                        ItemsSource="{Binding UnitActions, Source={x:Reference thisView}}" 
+                        SelectedItem="{Binding SelectedUnitAction, Source={x:Reference thisView}}"/>
+
+                <!-- Quirks Row 1 -->
+                <Label Grid.Row="1"
                            Grid.Column="0"
                            TextColor="Gold" 
                            Margin="10,0,0,0" 
                            VerticalTextAlignment="Center"
                            Text="Quirks"/>
 
-                <Label Grid.Row="0"
+                <Label Grid.Row="1"
                        Grid.Column="1"
                        Grid.ColumnSpan="3"
                        TextColor="White" 
@@ -64,15 +80,15 @@
                        VerticalTextAlignment="Center"
                        Text="{Binding Quirks, Source={x:Reference thisView}}"/>
                 
-                <!-- Movement Scores Row 1 -->
-                <Label Grid.Row="1"
+                <!-- Movement Scores Row 2 -->
+                <Label Grid.Row="2"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Movement"/>
 
-                <Label Grid.Row="1"
+                <Label Grid.Row="2"
                        Grid.Column="1"
                        Grid.ColumnSpan="3"
                        TextColor="White" 
@@ -80,15 +96,15 @@
                        VerticalTextAlignment="Center"
                        Text="{Binding Movement, Source={x:Reference thisView}}"/>
 
-                <!-- Hexes Moved Row 2 -->
-                <Label Grid.Row="2"
+                <!-- Hexes Moved Row 3 -->
+                <Label Grid.Row="3"
                            Grid.Column="0"
                            TextColor="Gold" 
                            Margin="10,0,0,0" 
                            VerticalTextAlignment="Center"
                            Text="Hexes Moved"/>
 
-                <Entry Grid.Row="2"
+                <Entry Grid.Row="3"
                            Grid.Column="1"
                            Grid.ColumnSpan="2"
                            WidthRequest="35"
@@ -102,14 +118,14 @@
                 </Entry>
                 
                 <!-- Pilot / Mech Warrior Name-->
-                <Label Grid.Row="2"
+                <Label Grid.Row="3"
                        Grid.Column="2"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Pilot Name"/>
 
-                <Entry Grid.Row="2"
+                <Entry Grid.Row="3"
                        Grid.Column="3"
                        WidthRequest="200"
                        MaxLength="20"
@@ -118,15 +134,15 @@
                        Text="{Binding PilotName, Source={x:Reference thisView}}">
                 </Entry>
 
-                <!--Heat Sinks Row 3-->
-                <Label Grid.Row="3"
+                <!--Heat Sinks Row 4-->
+                <Label Grid.Row="4"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Heat Sinks"/>
 
-                <Entry Grid.Row="3"
+                <Entry Grid.Row="4"
                        Grid.Column="1"
                        WidthRequest="35"
                        MaxLength="2"
@@ -139,14 +155,14 @@
                 </Entry>
                 
                 <!-- Pilot Skill -->
-                <Label Grid.Row="3"
+                <Label Grid.Row="4"
                        Grid.Column="2"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Pilot"/>
 
-                <Entry Grid.Row="3"
+                <Entry Grid.Row="4"
                        Grid.Column="3"
                        WidthRequest="35"
                        MaxLength="2"
@@ -159,14 +175,14 @@
                 </Entry>
                 
                 <!--Current Heat-->
-                <Label Grid.Row="4"
+                <Label Grid.Row="5"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Current Heat"/>
 
-                <Entry Grid.Row="4"
+                <Entry Grid.Row="5"
                        Grid.Column="1"
                        WidthRequest="35"
                        MaxLength="2"
@@ -179,14 +195,14 @@
                 </Entry>
                 
                 <!-- Pilot Gunnery -->
-                <Label Grid.Row="4"
+                <Label Grid.Row="5"
                        Grid.Column="2"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Gunnery"/>
 
-                <Entry Grid.Row="4"
+                <Entry Grid.Row="5"
                        Grid.Column="3"
                        WidthRequest="35"
                        MaxLength="2"
@@ -199,13 +215,13 @@
                 </Entry>
 
                 <!-- Walked? -->
-                <Label Grid.Row="5"
+                <Label Grid.Row="6"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Walked?"/>
-                <Switch Grid.Row="5"
+                <Switch Grid.Row="6"
                         Grid.Column="1"
                         BackgroundColor="LightSlateGray"
                         OnColor="Gold"
@@ -215,14 +231,14 @@
                         IsToggled="{Binding DidWalk, Source={x:Reference thisView}}"/>
 
                 <!-- Pilot Hits -->
-                <Label Grid.Row="5"
+                <Label Grid.Row="6"
                        Grid.Column="2"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Hits"/>
 
-                <Entry Grid.Row="5"
+                <Entry Grid.Row="6"
                        Grid.Column="3"
                        WidthRequest="35"
                        MaxLength="2"
@@ -235,13 +251,13 @@
                 </Entry>
 
                 <!--Ran?-->
-                <Label Grid.Row="6"
+                <Label Grid.Row="7"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Ran?"/>
-                <Switch Grid.Row="6"
+                <Switch Grid.Row="7"
                         Grid.Column="1"
                         BackgroundColor="LightSlateGray"
                         OnColor="Gold"
@@ -250,14 +266,14 @@
                         IsToggled="{Binding DidRun, Source={x:Reference thisView}}"/>
                 
                 <!--Notes-->
-                <Label Grid.Row="6"
+                <Label Grid.Row="7"
                        Grid.Column="2"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Notes"/>
 
-                <Editor Grid.Row="6"
+                <Editor Grid.Row="7"
                        Grid.RowSpan="3"
                        Grid.Column="3"
                        WidthRequest="200"
@@ -267,13 +283,13 @@
                 </Editor>
 
                 <!--Jumped?-->
-                <Label Grid.Row="7"
+                <Label Grid.Row="8"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Jumped?"/>
-                <Switch Grid.Row="7"
+                <Switch Grid.Row="8"
                         Grid.Column="1"
                         BackgroundColor="LightSlateGray"
                         OnColor="Gold"
@@ -282,13 +298,13 @@
                         IsToggled="{Binding DidJump, Source={x:Reference thisView}}"/>
                 
                 <!--Prone?-->
-                <Label Grid.Row="8"
+                <Label Grid.Row="9"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Is Prone"/>
-                <Switch Grid.Row="8"
+                <Switch Grid.Row="9"
                         Grid.Column="1"
                         BackgroundColor="LightSlateGray"
                         OnColor="Gold"
@@ -297,14 +313,14 @@
                         IsToggled="{Binding IsProne, Source={x:Reference thisView}}"/>
                 
                 <!--Number Elements-->
-                <Label Grid.Row="9"
+                <Label Grid.Row="10"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Number Elements"/>
 
-                <Entry Grid.Row="9"
+                <Entry Grid.Row="10"
                        Grid.Column="1"
                        Grid.ColumnSpan="2"
                        WidthRequest="35"

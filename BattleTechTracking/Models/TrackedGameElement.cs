@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using BattleTechTracking.Factories;
-using Xamarin.Forms;
 
 namespace BattleTechTracking.Models
 {
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayListView
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;
@@ -27,6 +25,7 @@ namespace BattleTechTracking.Models
         private int _pilotGunnerySkill;
         private int _pilotHits;
         private string _notes;
+        private string _unitAction;
 
         /// <summary>
         /// Gets or sets the Game Element represented.
@@ -209,6 +208,16 @@ namespace BattleTechTracking.Models
             }
         }
 
+        public string UnitAction
+        {
+            get => string.IsNullOrEmpty(_unitAction) ? ActionsFactory.READY : _unitAction;
+            set
+            {
+                _unitAction = value;
+                OnPropertyChanged(nameof(UnitAction));
+            }
+        }
+
         public IEnumerable<UnitComponent> UnitComponents { get; } = new List<UnitComponent>();
         public IEnumerable<Equipment> UnitEquipment { get; } = new List<Equipment>();
         public IEnumerable<Weapon> UnitWeapons { get; } = new List<Weapon>();
@@ -229,6 +238,7 @@ namespace BattleTechTracking.Models
             CurrentHeatSinks = GetHeatSinksFromElement();
             NumberOfElements = GetNumberOfElementsFromGameElement();
             PilotName = "Unknown";
+            UnitAction = ActionsFactory.READY;
             
             switch (gameElement)
             {

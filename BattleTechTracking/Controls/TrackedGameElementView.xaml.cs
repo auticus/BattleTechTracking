@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace BattleTechTracking.Controls
@@ -8,6 +9,16 @@ namespace BattleTechTracking.Controls
     {
         public static readonly BindableProperty TrackedElementHeaderProperty = BindableProperty.Create(
             nameof(TrackedElementHeader),
+            typeof(string),
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty UnitActionsProperty = BindableProperty.Create(
+            nameof(UnitActions),
+            typeof(List<string>),
+            typeof(UnitSelectorView));
+
+        public static readonly BindableProperty SelectedUnitActionProperty = BindableProperty.Create(
+            nameof(SelectedUnitAction),
             typeof(string),
             typeof(MatchSettingsView));
 
@@ -180,6 +191,18 @@ namespace BattleTechTracking.Controls
         {
             get => (string)GetValue(TrackedGameElementView.MovementProperty);
             set => SetValue(TrackedGameElementView.MovementProperty, value);
+        }
+
+        public List<string> UnitActions
+        {
+            get => (List<string>)GetValue(TrackedGameElementView.UnitActionsProperty);
+            set => SetValue(TrackedGameElementView.UnitActionsProperty, value);
+        }
+
+        public string SelectedUnitAction
+        {
+            get => (string)GetValue(TrackedGameElementView.SelectedUnitActionProperty);
+            set => SetValue(TrackedGameElementView.SelectedUnitActionProperty, value);
         }
 
         public TrackedGameElementView()
