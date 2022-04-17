@@ -169,6 +169,7 @@
                                                  IsVisible="{Binding MatchTrackingViewVisible}"
                                                  TrackedElementHeader ="{Binding SelectedActiveUnit.UnitHeader}"
                                                  Quirks="{Binding SelectedActiveUnit.Quirks}"
+                                                 Movement="{Binding SelectedActiveUnit.MovementDetails}"
                                                  HexesMoved="{Binding SelectedActiveUnit.HexesMoved, Mode=TwoWay}"
                                                  CurrentHeatSinks="{Binding SelectedActiveUnit.CurrentHeatSinks, Mode=TwoWay}"
                                                  CurrentHeatLevel="{Binding SelectedActiveUnit.CurrentHeatLevel, Mode=TwoWay}"

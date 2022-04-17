@@ -81,6 +81,11 @@ namespace BattleTechTracking.Controls
             typeof(string),
             typeof(MatchSettingsView));
 
+        public static readonly BindableProperty MovementProperty = BindableProperty.Create(
+            nameof(Movement),
+            typeof(string),
+            typeof(MatchSettingsView));
+
         public string TrackedElementHeader
         {
             get => (string)GetValue(TrackedGameElementView.TrackedElementHeaderProperty);
@@ -169,6 +174,12 @@ namespace BattleTechTracking.Controls
         {
             get => (int)GetValue(TrackedGameElementView.PilotHitsProperty);
             set => SetValue(TrackedGameElementView.PilotHitsProperty, value);
+        }
+
+        public string Movement
+        {
+            get => (string)GetValue(TrackedGameElementView.MovementProperty);
+            set => SetValue(TrackedGameElementView.MovementProperty, value);
         }
 
         public TrackedGameElementView()

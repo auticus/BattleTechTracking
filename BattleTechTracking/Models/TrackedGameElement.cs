@@ -184,6 +184,31 @@ namespace BattleTechTracking.Models
             }
         }
 
+        public string MovementDetails
+        {
+            get
+            {
+                if (!(GameElement is BaseUnit element))
+                {
+                    var infantry = GameElement as Infantry;
+                    return GetInfantryMovementDetails(infantry);
+                }
+
+                if (element is BattleMech)
+                {
+                    return GetMechMovementDetails(element);
+                }
+
+                if (element is CombatVehicle)
+                {
+                    return GetVehicleMovementDetails(element);
+                }
+
+                throw new ArgumentException(
+                    "Unknown element type given for GameElement in TrackedGameElement::MovementDetails");
+            }
+        }
+
         public IEnumerable<UnitComponent> UnitComponents { get; } = new List<UnitComponent>();
         public IEnumerable<Equipment> UnitEquipment { get; } = new List<Equipment>();
         public IEnumerable<Weapon> UnitWeapons { get; } = new List<Weapon>();
@@ -200,7 +225,7 @@ namespace BattleTechTracking.Models
         public TrackedGameElement(IDisplayListView gameElement)
         {
             GameElement = gameElement;
-            Quirks = string.Join(", ", GetQuirksFromElement().Select(x => x.Name).ToArray());
+            Quirks = GetQuirks();
             CurrentHeatSinks = GetHeatSinksFromElement();
             NumberOfElements = GetNumberOfElementsFromGameElement();
             PilotName = "Unknown";
@@ -329,6 +354,24 @@ namespace BattleTechTracking.Models
                     ((List<Ammunition>)UnitAmmunition).Add(ComponentFactory.BuildAmmoFromTemplate(ammo));
                 }
             }
+        }
+
+        private string GetMechMovementDetails(BaseUnit element)
+            => $"Walking: {element.UnitMovement.Walking}  Running: {element.UnitMovement.Running}  Jumping: {element.UnitMovement.Jumping}";
+        
+
+        private string GetVehicleMovementDetails(BaseUnit element)
+            => $"Cruising: {element.UnitMovement.Walking}  Flanking: {element.UnitMovement.Running}  Flying: {element.UnitMovement.Jumping}";
+
+        private string GetInfantryMovementDetails(Infantry element)
+            => $"Movement MP: {element.Movement}";
+
+        private string GetQuirks()
+        {
+            var quirks = GetQuirksFromElement().Select(x => x.Name).ToList();
+            if (!quirks.Any()) return "None";
+
+            return string.Join(", ", quirks);
         }
     }
 }
