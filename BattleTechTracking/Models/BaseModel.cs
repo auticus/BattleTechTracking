@@ -8,7 +8,20 @@ namespace BattleTechTracking.Models
     /// </summary>
     public abstract class BaseModel : INotifyPropertyChanged
     {
+        private bool _isSelected;
+
         public Guid ID { get; }
+
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set
+            {
+                _isSelected = value;
+                OnPropertyChanged(nameof(IsSelected));
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected BaseModel()

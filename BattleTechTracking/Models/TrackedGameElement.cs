@@ -244,7 +244,10 @@ namespace BattleTechTracking.Models
 
             if (element == null) return;
 
-            CurrentHeatLevel -= element.HeatSinks;
+            //current heat level = 8
+            //current heat sinks = 5
+            var newHeat = CurrentHeatLevel - CurrentHeatSinks;
+            CurrentHeatLevel = CurrentHeatLevel - CurrentHeatSinks;
             if (CurrentHeatLevel < 0) CurrentHeatLevel = 0;
         }
 

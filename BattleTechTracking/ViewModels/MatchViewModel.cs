@@ -53,7 +53,7 @@ namespace BattleTechTracking.ViewModels
                 OnPropertyChanged(nameof(ActiveFaction));
 
                 //make the new active observable collection based on the new active faction
-                ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[ActiveFaction]);
+                ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[ActiveFaction].OrderBy(p=>p.UnitHeader));
                 ActiveFactionName = ActiveFaction == 0 ? Faction1Name : Faction2Name;
 
                 // this is a turbo hack - but UWP for whatever reason gets really angry if there is only one element that gets set null
@@ -160,26 +160,9 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedActiveUnit = value;
                 OnPropertyChanged(nameof(SelectedActiveUnit));
-
-                if (_selectedActiveUnit != null)
-                {
-                    SetAllPanelsInvisible();
-                    MatchTrackingViewVisible = true;
-                }
-                if (_selectedActiveUnit == null)
-                {
-                    ActiveUnitComponents = null;
-                    ActiveUnitEquipment = null;
-                    ActiveUnitWeapons = null;
-                    ActiveUnitAmmunition = null;
-                }
-                else
-                {
-                    ActiveUnitComponents = new ObservableCollection<UnitComponent>(_selectedActiveUnit.UnitComponents.ToList());
-                    ActiveUnitEquipment = new ObservableCollection<Equipment>(_selectedActiveUnit.UnitEquipment.ToList());
-                    ActiveUnitWeapons = new ObservableCollection<Weapon>(_selectedActiveUnit.UnitWeapons.ToList());
-                    ActiveUnitAmmunition = new ObservableCollection<Ammunition>(_selectedActiveUnit.UnitAmmunition.ToList());
-                }
+                SetActiveFlagOnSelectedElement();
+                SetDefaultPanelVisible();
+                PopulateDataStructuresWithActiveUnit();
             }
         }
 
@@ -489,7 +472,7 @@ namespace BattleTechTracking.ViewModels
             Faction2Name = state.Faction2Name;
 
             _factionUnits = state.Factions;
-            ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[0]);
+            ActiveFactionUnits = new ObservableCollection<IDisplayListView>(_factionUnits[0].OrderBy(p=>p.UnitHeader));
         }
 
         private void SetAllPanelsInvisible()
@@ -527,22 +510,70 @@ namespace BattleTechTracking.ViewModels
 
         private void AddUnitToActiveFaction()
         {
+            TrackedGameElement gameElement = null;
+
             switch (SelectorViewSelectedUnit)
             {
                 case null:
                     return;
                 case IndustrialMech _:
-                    ActiveFactionUnits.Add(MechFactory.BuildTrackedGameElement((IndustrialMech)SelectorViewSelectedUnit));
-                    return;
+                    gameElement = MechFactory.BuildTrackedGameElement((IndustrialMech)SelectorViewSelectedUnit);
+                    break;
                 case BattleMech _:
-                    ActiveFactionUnits.Add(MechFactory.BuildTrackedGameElement((BattleMech)SelectorViewSelectedUnit));
-                    return;
+                    gameElement = MechFactory.BuildTrackedGameElement((BattleMech)SelectorViewSelectedUnit);
+                    break;
                 case CombatVehicle _:
-                    ActiveFactionUnits.Add(CombatVehicleFactory.BuildTrackedGameElement((CombatVehicle)SelectorViewSelectedUnit));
-                    return;
+                    gameElement = CombatVehicleFactory.BuildTrackedGameElement((CombatVehicle)SelectorViewSelectedUnit);
+                    break;
                 case Infantry _:
-                    ActiveFactionUnits.Add(InfantryFactory.BuildTrackedGameElement((Infantry)SelectorViewSelectedUnit));
-                    return;
+                    gameElement = InfantryFactory.BuildTrackedGameElement((Infantry)SelectorViewSelectedUnit);
+                    break;
+            }
+
+            var activeFactionUnits = ActiveFactionUnits.ToList();
+            activeFactionUnits.Add(gameElement);
+
+            ActiveFactionUnits = new ObservableCollection<IDisplayListView>(activeFactionUnits.OrderBy(p => p.UnitHeader));
+            SelectedActiveUnit = gameElement;
+        }
+
+        private void SetActiveFlagOnSelectedElement()
+        {
+            // while the SelectedItem binding works fine, the visuals in UWP do not.  This flag was set on the base model to change text
+            // colors around when items are selected.
+            foreach (var element in ActiveFactionUnits)
+            {
+                element.IsSelected = false;
+            }
+
+            if (SelectedActiveUnit == null) return;
+            SelectedActiveUnit.IsSelected = true;
+        }
+
+        private void SetDefaultPanelVisible()
+        {
+            if (_selectedActiveUnit != null)
+            {
+                SetAllPanelsInvisible();
+                MatchTrackingViewVisible = true;
+            }
+        }
+
+        private void PopulateDataStructuresWithActiveUnit()
+        {
+            if (SelectedActiveUnit == null)
+            {
+                ActiveUnitComponents = null;
+                ActiveUnitEquipment = null;
+                ActiveUnitWeapons = null;
+                ActiveUnitAmmunition = null;
+            }
+            else
+            {
+                ActiveUnitComponents = new ObservableCollection<UnitComponent>(SelectedActiveUnit.UnitComponents.ToList());
+                ActiveUnitEquipment = new ObservableCollection<Equipment>(SelectedActiveUnit.UnitEquipment.ToList());
+                ActiveUnitWeapons = new ObservableCollection<Weapon>(SelectedActiveUnit.UnitWeapons.ToList());
+                ActiveUnitAmmunition = new ObservableCollection<Ammunition>(SelectedActiveUnit.UnitAmmunition.ToList());
             }
         }
     }

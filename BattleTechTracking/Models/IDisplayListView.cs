@@ -8,6 +8,7 @@ namespace BattleTechTracking.Models
     public interface IDisplayListView
     {
         Guid ID { get; }
+        bool IsSelected { get; set; }
         string UnitHeader { get; }
         string UnitDetails { get; }
     }

@@ -17,7 +17,7 @@
                       Grid.Column="0"
                       BackgroundColor="MidnightBlue" 
                       HorizontalOptions="FillAndExpand"/>
-                <Label Text="Game Element" 
+                <Label Text="{Binding TrackedElementHeader, Source={x:Reference thisView}}" 
                          Grid.Column="0" 
                          TextColor="Gold"
                          HorizontalOptions="CenterAndExpand"

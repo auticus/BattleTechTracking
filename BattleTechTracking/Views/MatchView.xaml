@@ -3,11 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
              xmlns:controls="clr-namespace:BattleTechTracking.Controls;assembly=BattleTechTracking"
+             xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Views.MatchView"
              BackgroundColor="Black">
     <ContentPage.BindingContext>
         <viewModels:MatchViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <converters:SelectedBoolToColorConverter x:Key="BoolToColorConverter"/>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <!-- Header -->
@@ -116,12 +120,12 @@
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0"
                                             Text="{Binding UnitHeader}"
-                                            TextColor="WhiteSmoke"
+                                            TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
                                             VerticalTextAlignment="Center"
                                             FontAttributes="Bold"/>
                                     <Label Grid.Column="1"
                                            Text="{Binding UnitDetails}"
-                                           TextColor="WhiteSmoke"
+                                           TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
                                            FontAttributes="Italic"
                                            FontSize="Caption"
                                            VerticalTextAlignment="Center"/>
@@ -163,6 +167,7 @@
                                                  Grid.RowSpan="2"
                                                  Grid.Column="1"
                                                  IsVisible="{Binding MatchTrackingViewVisible}"
+                                                 TrackedElementHeader ="{Binding SelectedActiveUnit.UnitHeader}"
                                                  Quirks="{Binding SelectedActiveUnit.Quirks}"
                                                  HexesMoved="{Binding SelectedActiveUnit.HexesMoved, Mode=TwoWay}"
                                                  CurrentHeatSinks="{Binding SelectedActiveUnit.CurrentHeatSinks, Mode=TwoWay}"

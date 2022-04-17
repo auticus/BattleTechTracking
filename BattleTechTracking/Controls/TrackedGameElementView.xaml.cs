@@ -6,6 +6,11 @@ namespace BattleTechTracking.Controls
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TrackedGameElementView : ContentView
     {
+        public static readonly BindableProperty TrackedElementHeaderProperty = BindableProperty.Create(
+            nameof(TrackedElementHeader),
+            typeof(string),
+            typeof(MatchSettingsView));
+
         public static readonly BindableProperty QuirksProperty = BindableProperty.Create(
             nameof(Quirks),
             typeof(string),
@@ -75,6 +80,12 @@ namespace BattleTechTracking.Controls
             nameof(Notes),
             typeof(string),
             typeof(MatchSettingsView));
+
+        public string TrackedElementHeader
+        {
+            get => (string)GetValue(TrackedGameElementView.TrackedElementHeaderProperty);
+            set => SetValue(TrackedGameElementView.TrackedElementHeaderProperty, value);
+        }
 
         public string Quirks
         {
