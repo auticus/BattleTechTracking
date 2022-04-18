@@ -27,6 +27,8 @@ namespace BattleTechTracking.Models
         private string _notes;
         private string _unitAction;
 
+        public EventHandler Invalidated { get; set; }
+
         /// <summary>
         /// Gets or sets the Game Element represented.
         /// </summary>
@@ -210,11 +212,13 @@ namespace BattleTechTracking.Models
 
         public string UnitAction
         {
-            get => string.IsNullOrEmpty(_unitAction) ? ActionsFactory.READY : _unitAction;
+            get => string.IsNullOrEmpty(_unitAction) ? ActionsFactory.NO_ACTION : _unitAction;
             set
             {
+                if (_unitAction == value) return;
                 _unitAction = value;
                 OnPropertyChanged(nameof(UnitAction));
+                Invalidated?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -238,7 +242,7 @@ namespace BattleTechTracking.Models
             CurrentHeatSinks = GetHeatSinksFromElement();
             NumberOfElements = GetNumberOfElementsFromGameElement();
             PilotName = "Unknown";
-            UnitAction = ActionsFactory.READY;
+            UnitAction = ActionsFactory.NO_ACTION;
             
             switch (gameElement)
             {
@@ -268,6 +272,7 @@ namespace BattleTechTracking.Models
             //prone intentionally not reset
 
             HandleHeat();
+            UnitAction = ActionsFactory.NO_ACTION;
         }
 
         private void HandleHeat()

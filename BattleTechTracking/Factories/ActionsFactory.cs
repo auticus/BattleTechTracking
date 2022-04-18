@@ -4,7 +4,7 @@ namespace BattleTechTracking.Factories
 {
     public static class ActionsFactory
     {
-        public const string READY = "Ready";
+        public const string NO_ACTION = "No Action Taken";
         public const string MOVED = "Moved";
         public const string WEAPONS_SHOT = "Weapons Shot";
         public const string MELEE = "Melee";
@@ -12,7 +12,7 @@ namespace BattleTechTracking.Factories
         public static IEnumerable<string> BuildActionsList()
             => new List<string>()
                 {
-                    READY,
+                    NO_ACTION,
                     MOVED,
                     WEAPONS_SHOT,
                     MELEE

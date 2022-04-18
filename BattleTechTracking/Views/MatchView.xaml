@@ -97,7 +97,9 @@
                         <DataTemplate>
                             <ViewCell>
                                 <Label FontAttributes="Bold"
-                                       Text="{Binding UnitAction}"/>
+                                       TextColor="Gray"
+                                       FontSize="Medium"
+                                       Text="{Binding Key}"/>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.GroupHeaderTemplate>
@@ -178,7 +180,7 @@
                                                  IsVisible="{Binding MatchTrackingViewVisible}"
                                                  TrackedElementHeader ="{Binding SelectedActiveUnit.UnitHeader}"
                                                  UnitActions="{Binding UnitActions}"
-                                                 SelectedUnitAction="{Binding SelectedActiveUnit.UnitAction}"
+                                                 SelectedUnitAction="{Binding SelectedActiveUnit.UnitAction, Mode=TwoWay}"
                                                  Quirks="{Binding SelectedActiveUnit.Quirks}"
                                                  Movement="{Binding SelectedActiveUnit.MovementDetails}"
                                                  HexesMoved="{Binding SelectedActiveUnit.HexesMoved, Mode=TwoWay}"
