@@ -16,6 +16,7 @@ namespace BattleTechTracking.Models
         private bool _didRun;
         private bool _didJump;
         private bool _isProne;
+        private bool _isCrippled;
         private int _currentHeatLevel;
         private int _currentHeatSinks;
         private string _quirks;
@@ -26,6 +27,7 @@ namespace BattleTechTracking.Models
         private int _pilotHits;
         private string _notes;
         private string _unitAction;
+        private string _unitStatus;
 
         public EventHandler Invalidated { get; set; }
 
@@ -92,6 +94,16 @@ namespace BattleTechTracking.Models
             {
                 _isProne = value;
                 OnPropertyChanged(nameof(IsProne));
+            }
+        }
+
+        public bool IsCrippled
+        {
+            get => _isCrippled;
+            set
+            {
+                _isCrippled = value;
+                OnPropertyChanged(nameof(IsCrippled));
             }
         }
 
@@ -219,6 +231,17 @@ namespace BattleTechTracking.Models
                 _unitAction = value;
                 OnPropertyChanged(nameof(UnitAction));
                 Invalidated?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        public string UnitStatus
+        {
+            get => string.IsNullOrEmpty(_unitStatus) ? UnitStatusFactory.UNDAMAGED : _unitStatus;
+            set
+            {
+                if (_unitStatus == value) return;
+                _unitStatus = value;
+                OnPropertyChanged(nameof(UnitStatus));
             }
         }
 

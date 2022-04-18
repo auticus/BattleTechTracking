@@ -11,6 +11,9 @@
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <converters:SelectedBoolToColorConverter x:Key="BoolToColorConverter"/>
+        <converters:StatusToColorConverter x:Key="StatusToColorConverter"/>
+        <converters:StatusToTextDecorationConverter x:Key="StatusToDecorationConverter"/>
+        <converters:StatusToFontStyleConverter x:Key="StatusToFontStyleConverter"/>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
@@ -123,7 +126,8 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Margin="5,5,0,0">
+                                <Grid Margin="5,5,0,0"
+                                      BackgroundColor="{Binding UnitStatus, Converter={StaticResource StatusToColorConverter}}">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="200"/>
                                         <ColumnDefinition Width="125"/>
@@ -133,10 +137,12 @@
                                             Text="{Binding UnitHeader}"
                                             TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
                                             VerticalTextAlignment="Center"
-                                            FontAttributes="Bold"/>
+                                            FontAttributes="{Binding UnitStatus, Converter={StaticResource StatusToFontStyleConverter}}"
+                                            TextDecorations="{Binding UnitStatus, Converter={StaticResource StatusToDecorationConverter}}"/>
                                     <Label Grid.Column="1"
                                            Text="{Binding UnitDetails}"
                                            TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
+                                           TextDecorations="{Binding UnitStatus, Converter={StaticResource StatusToDecorationConverter}}"
                                            FontAttributes="Italic"
                                            FontSize="Caption"
                                            VerticalTextAlignment="Center"/>
@@ -181,6 +187,8 @@
                                                  TrackedElementHeader ="{Binding SelectedActiveUnit.UnitHeader}"
                                                  UnitActions="{Binding UnitActions}"
                                                  SelectedUnitAction="{Binding SelectedActiveUnit.UnitAction, Mode=TwoWay}"
+                                                 UnitStatuses="{Binding UnitStatuses}"
+                                                 SelectedUnitStatus="{Binding SelectedActiveUnit.UnitStatus, Mode=TwoWay}"
                                                  Quirks="{Binding SelectedActiveUnit.Quirks}"
                                                  Movement="{Binding SelectedActiveUnit.MovementDetails}"
                                                  HexesMoved="{Binding SelectedActiveUnit.HexesMoved, Mode=TwoWay}"

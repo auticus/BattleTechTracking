@@ -64,6 +64,17 @@
                         ItemsSource="{Binding UnitActions, Source={x:Reference thisView}}" 
                         SelectedItem="{Binding SelectedUnitAction, Source={x:Reference thisView}}"/>
 
+                <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal">
+                    <Label TextColor="Gold" 
+                           Margin="10,0,0,0" 
+                           VerticalTextAlignment="Center"
+                           Text="Status"/>
+                    <Picker Margin="10,0,0,0"
+                            WidthRequest="200"
+                            ItemsSource="{Binding UnitStatuses, Source={x:Reference thisView}}"
+                            SelectedItem="{Binding SelectedUnitStatus, Source={x:Reference thisView}}"/>
+                </StackLayout>
+
                 <!-- Quirks Row 1 -->
                 <Label Grid.Row="1"
                            Grid.Column="0"

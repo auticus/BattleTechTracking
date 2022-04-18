@@ -15,10 +15,20 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty UnitActionsProperty = BindableProperty.Create(
             nameof(UnitActions),
             typeof(List<string>),
-            typeof(UnitSelectorView));
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty UnitStatusesProperty = BindableProperty.Create(
+            nameof(UnitStatuses),
+            typeof(List<string>),
+            typeof(MatchSettingsView));
 
         public static readonly BindableProperty SelectedUnitActionProperty = BindableProperty.Create(
             nameof(SelectedUnitAction),
+            typeof(string),
+            typeof(MatchSettingsView));
+
+        public static readonly BindableProperty SelectedUnitStatusProperty = BindableProperty.Create(
+            nameof(SelectedUnitStatus),
             typeof(string),
             typeof(MatchSettingsView));
 
@@ -199,10 +209,22 @@ namespace BattleTechTracking.Controls
             set => SetValue(TrackedGameElementView.UnitActionsProperty, value);
         }
 
+        public List<string> UnitStatuses
+        {
+            get => (List<string>)GetValue(TrackedGameElementView.UnitStatusesProperty);
+            set => SetValue(TrackedGameElementView.UnitStatusesProperty, value);
+        }
+
         public string SelectedUnitAction
         {
             get => (string)GetValue(TrackedGameElementView.SelectedUnitActionProperty);
             set => SetValue(TrackedGameElementView.SelectedUnitActionProperty, value);
+        }
+
+        public string SelectedUnitStatus
+        {
+            get => (string)GetValue(TrackedGameElementView.SelectedUnitStatusProperty);
+            set => SetValue(TrackedGameElementView.SelectedUnitStatusProperty, value);
         }
 
         public TrackedGameElementView()

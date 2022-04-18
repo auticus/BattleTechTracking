@@ -258,6 +258,7 @@ namespace BattleTechTracking.ViewModels
         public ObservableCollection<string> UnitFilters { get; }
 
         public List<string> UnitActions { get; }
+        public List<string> UnitStatuses { get; }
 
         private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
 
@@ -362,6 +363,7 @@ namespace BattleTechTracking.ViewModels
 
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
             UnitActions = ActionsFactory.BuildActionsList().ToList();
+            UnitStatuses = UnitStatusFactory.BuildStatusList().ToList();
             SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>();
 
             _mechList = DataPump.GetPersistedDataForType<BattleMech>().ToList();
