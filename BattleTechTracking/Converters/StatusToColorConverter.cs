@@ -18,7 +18,7 @@ namespace BattleTechTracking.Converters
                 case UnitStatusFactory.CRIPPLED:
                     return Color.DarkRed;
                 case UnitStatusFactory.DESTROYED:
-                    return Color.FromHex("#343b35");
+                    return Color.FromHex("#202421");
             }
 
             return Color.Default;

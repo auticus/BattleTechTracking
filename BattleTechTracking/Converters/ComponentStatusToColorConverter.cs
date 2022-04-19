@@ -22,7 +22,7 @@ namespace BattleTechTracking.Converters
                 case UnitComponentStatus.StructuralDamage:
                     return Color.DarkRed;
                 case UnitComponentStatus.Destroyed:
-                    return Color.DimGray;
+                    return Color.FromHex("#202421");
                 default:
                     throw new ArgumentException(
                         "Enum value UnitComponentStatus contains values not developed for converter");
