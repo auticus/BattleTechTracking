@@ -18,15 +18,20 @@ namespace BattleTechTracking.Factories
             };
 
         public static Equipment BuildEquipmentFromTemplate(Equipment template)
-            => new Equipment()
+        {
+            var equipment = new Equipment()
             {
                 Name = template.Name,
                 Hits = template.Hits,
                 Location = template.Location
             };
+            equipment.CacheLocation();
+            return equipment;
+        }
 
         public static Weapon BuildWeaponFromTemplate(Weapon template)
-            => new Weapon()
+        {
+            var wpn = new Weapon()
             {
                 Ammo = new List<Ammunition>(template.Ammo),
                 Damage = template.Damage,
@@ -40,14 +45,21 @@ namespace BattleTechTracking.Factories
                 Name = template.Name,
                 ShortRange = template.ShortRange
             };
+            wpn.CacheLocation();
+            return wpn;
+        }
 
         public static Ammunition BuildAmmoFromTemplate(Ammunition template)
-            => new Ammunition()
+        {
+            var ammo = new Ammunition()
             {
                 AmmoCount = template.AmmoCount,
                 Hits = template.Hits,
                 Location = template.Location,
                 Name = template.Name
             };
+            ammo.CacheLocation();
+            return ammo;
+        }
     }
 }

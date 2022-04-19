@@ -54,7 +54,6 @@ namespace BattleTechTracking.Factories
             };
 
             foreach(var component in vehicle.Components) component.SetOriginalValuesFromCurrentValues();
-
             return vehicle;
         }
 

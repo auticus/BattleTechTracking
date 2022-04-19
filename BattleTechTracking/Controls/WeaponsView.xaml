@@ -8,6 +8,9 @@
     <ContentView.Resources>
         <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
         <converters:LocationCodeToStringConverter x:Key="KeycodeConverter"/>
+        <converters:IntToColorStatusConverter x:Key="IntToColorConverter"/>
+        <converters:IntToTextDecoratorConverter x:Key="IntToTextDecoratorConverter"/>
+        <converters:IntToFontStyleConverter x:Key="IntToFontStyleConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <ListView VerticalOptions="FillAndExpand"
@@ -37,7 +40,8 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
-                            <Grid Margin="5, 5, 0, 0">
+                            <Grid Margin="5, 5, 0, 0"
+                                  BackgroundColor="{Binding Hits, Converter={StaticResource IntToColorConverter}}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="50"/>
@@ -77,7 +81,8 @@
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
                                        TextColor="Gold"
-                                       FontAttributes="Bold"
+                                       TextDecorations="{Binding Hits, Converter={StaticResource IntToTextDecoratorConverter}}"
+                                       FontAttributes="{Binding Hits, Converter={StaticResource IntToFontStyleConverter}}"
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
