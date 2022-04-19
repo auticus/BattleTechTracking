@@ -1,4 +1,6 @@
-﻿namespace BattleTechTracking.Models
+﻿using BattleTechTracking.Factories;
+
+namespace BattleTechTracking.Models
 {
     public class Equipment : BaseModel, IDamageableComponent
     {
@@ -18,7 +20,7 @@
                 if (_hits < 0) _hits = 0;
                 OnPropertyChanged(nameof(Hits));
 
-                if (_hits == 0) Location = "DESTROYED";
+                if (_hits == 0) DestroyItem();
             }
         }
 
@@ -47,6 +49,11 @@
         public void CacheLocation()
         {
             _cachedLocation = Location;
+        }
+
+        public void DestroyItem()
+        {
+            Location = UnitStatusFactory.DESTROYED;
         }
     }
 }

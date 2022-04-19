@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace BattleTechTracking.Models
 {
@@ -20,17 +19,44 @@ namespace BattleTechTracking.Models
         private int _originalArmor;
         private int? _originalRearArmor;
         private int _originalStructure;
+        private bool _removed;
+
+        public const string HEAD_CODE = "H";
+        public const string CENTER_TORSO_CODE = "CT";
+        public const string RIGHT_TORSO_CODE = "RT";
+        public const string LEFT_TORSO_CODE = "LT";
+        public const string RIGHT_ARM_CODE = "RA";
+        public const string LEFT_ARM_CODE = "LA";
+        public const string RIGHT_LEG_CODE = "RL";
+        public const string LEFT_LEG_CODE = "LL";
+        public const string TURRET_CODE = "TU";
+        public const string FRONT_CODE = "F";
+        public const string REAR_CODE = "R";
+        public const string RIGHT_SIDE_CODE = "RS";
+        public const string LEFT_SIDE_CODE = "LS";
+        public const string REAR_SIDE_CODE = "R+S";
+        public const string ALL_VEHICLE = "XX";
 
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets and sets the event that will fire when a component is set to destroyed.
+        /// </summary>
+        public EventHandler OnComponentDestroyed { get; set; }
+        public EventHandler OnComponentArmorRemoved { get; set; }
 
         public int Armor
         {
             get => _armor;
             set
             {
+                if (_armor == value) return;
                 _armor = value;
+                if (_armor < 0) _armor = 0;
+
                 OnPropertyChanged(nameof(Armor));
                 OnPropertyChanged(nameof(ComponentStatus));
+                if (_armor == 0) OnComponentArmorRemoved?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -86,6 +112,20 @@ namespace BattleTechTracking.Models
             }
         }
 
+        /// <summary>
+        /// Gets or sets the value indicating if the component was removed from the main body (ie blown off via crit).
+        /// </summary>
+        public bool Removed
+        {
+            get => _removed;
+            set
+            {
+                _removed = value;
+                OnPropertyChanged(nameof(Removed));
+                OnPropertyChanged(nameof(ComponentStatus));
+            }
+        }
+
         public UnitComponentStatus ComponentStatus
         {
             // the only way that the Original Armor etc are ever set is through the tracked element factory
@@ -93,12 +133,17 @@ namespace BattleTechTracking.Models
             get
             {
                 if (OriginalArmor == 0 && OriginalStructure == 0) return UnitComponentStatus.Undamaged;
+                if (Removed) return UnitComponentStatus.Destroyed;
                 if (IsUndamaged()) return UnitComponentStatus.Undamaged;
                 if (IsLightlyDamaged()) return UnitComponentStatus.LightlyDamage;
                 if (IsModeratelyDamaged()) return UnitComponentStatus.ModeratelyDamaged;
                 if (IsHeavilyDamaged()) return UnitComponentStatus.StructuralDamage;
-                if (IsDestroyed()) return UnitComponentStatus.Destroyed;
-
+                if (IsDestroyed())
+                {
+                    OnComponentDestroyed?.Invoke(this, EventArgs.Empty);
+                    return UnitComponentStatus.Destroyed;
+                }
+                
                 throw new ArgumentException("Component Status cannot be determined by current values");
             }
         }

@@ -73,15 +73,16 @@ namespace BattleTechTracking.Factories
         {
             return new List<Equipment>
             {
-                new Equipment(){Name = "ICE Engine", Hits=1, Location="R"},
-                new Equipment(){Name = "Turret", Hits=1, Location="TU"},
-                new Equipment(){Name = "Sensors", Hits=4, Location=""},
-                new Equipment(){Name = "Motive System", Hits=3, Location=""},
-                new Equipment(){Name = "Front Stabalizer", Hits=1, Location="F"},
-                new Equipment(){Name = "Rear Stabalizer", Hits=1, Location="R"},
-                new Equipment(){Name = "Left Stabalizer", Hits=1, Location="LS"},
-                new Equipment(){Name = "Right Stabalizer", Hits=1, Location="RS"},
-                new Equipment(){Name = "Turret Stabalizer", Hits=1, Location="F"}
+                //note: engines can be hurt from the side or rear but just putting it in here to have a location
+                new Equipment(){Name = "ICE Engine", Hits=1, Location=UnitComponent.REAR_SIDE_CODE},
+                new Equipment(){Name = "Turret", Hits=1, Location=UnitComponent.TURRET_CODE},
+                new Equipment(){Name = "Sensors", Hits=4, Location=UnitComponent.FRONT_CODE},
+                new Equipment(){Name = "Motive System", Hits=3, Location=UnitComponent.ALL_VEHICLE},
+                new Equipment(){Name = "Front Stabalizer", Hits=1, Location=UnitComponent.FRONT_CODE},
+                new Equipment(){Name = "Rear Stabalizer", Hits=1, Location=UnitComponent.REAR_CODE},
+                new Equipment(){Name = "Left Stabalizer", Hits=1, Location= UnitComponent.LEFT_SIDE_CODE},
+                new Equipment(){Name = "Right Stabalizer", Hits=1, Location=UnitComponent.RIGHT_SIDE_CODE},
+                new Equipment(){Name = "Turret Stabalizer", Hits=1, Location = UnitComponent.FRONT_CODE}
             };
         }
     }

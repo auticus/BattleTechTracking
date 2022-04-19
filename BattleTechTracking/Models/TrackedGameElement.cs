@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using BattleTechTracking.Converters;
 using BattleTechTracking.Factories;
 
 namespace BattleTechTracking.Models
@@ -28,6 +29,8 @@ namespace BattleTechTracking.Models
         private string _notes;
         private string _unitAction;
         private string _unitStatus;
+
+        private LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
 
         public EventHandler Invalidated { get; set; }
 
@@ -352,8 +355,50 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var component in element.Components)
             {
-                ((List<UnitComponent>)UnitComponents).Add(ComponentFactory.BuildComponentFromTemplate(component));
+                var trackedComponent = ComponentFactory.BuildComponentFromTemplate(component);
+                trackedComponent.OnComponentDestroyed += OnComponentDestroyed;
+                trackedComponent.OnComponentArmorRemoved += OnComponentArmorRemoved;
+                ((List<UnitComponent>)UnitComponents).Add(trackedComponent);
             }
+        }
+
+        private void OnComponentArmorRemoved(object sender, EventArgs e)
+        {
+            //this will fire off anytime a component's armor value is set to 0
+            var locCode = GetLocationCodeFromDestroyedComponent(sender);
+            AdjustUnitStatusForArmorDestroyed(locCode);
+        }
+
+        private void OnComponentDestroyed(object sender, EventArgs e)
+        {
+            // this will fire off anytime a vehicular or mech component is listed as destroyed
+            // set all locations of equipment, weapons, and ammo in that specific component to be listed as destroyed
+            var locCode = GetLocationCodeFromDestroyedComponent(sender);
+            DestroyEquipmentInLocation(locCode);
+            DestroyWeaponsInLocation(locCode);
+            DestroyAmmoInLocation(locCode);
+            AdjustUnitStatusForDestroyed(locCode);
+        }
+
+        private string GetLocationCodeFromDestroyedComponent(object location)
+        {
+            var destroyedLocation = ((UnitComponent)location).Name;
+            return _codeToLocationConverter.ConvertBack(destroyedLocation, typeof(string), null, null).ToString();
+        }
+
+        private void DestroyEquipmentInLocation(string locCode)
+        {
+            foreach (var equipment in UnitEquipment.Where(equip => equip.Location == locCode)) equipment.DestroyItem();
+        }
+
+        private void DestroyWeaponsInLocation(string locCode)
+        {
+            foreach (var weapon in UnitWeapons.Where(wpn => wpn.Location == locCode)) weapon.DestroyItem();
+        }
+
+        private void DestroyAmmoInLocation(string locCode)
+        {
+            foreach (var ammo in UnitAmmunition.Where(a => a.Location == locCode)) ammo.DestroyItem();
         }
 
         private void PopulateEquipment()
@@ -410,6 +455,42 @@ namespace BattleTechTracking.Models
             if (!quirks.Any()) return "None";
 
             return string.Join(", ", quirks);
+        }
+
+        private void AdjustUnitStatusForDestroyed(string locCode)
+        {
+            if (GameElement is CombatVehicle) AdjustCombatvehicleForComponentDestroyed();
+            if (GameElement is BattleMech) AdjustMechForComponentDestroyed(locCode);
+        }
+
+        private void AdjustCombatvehicleForComponentDestroyed()
+            //Combat vehicles are considered destroyed if any of their components are destroyed
+            => this.UnitStatus = UnitStatusFactory.DESTROYED;
+        
+
+        private void AdjustMechForComponentDestroyed(string locCode)
+        {
+            // Center Torso destroyed == destroyed for all mechs
+            // Left or Right Torso destroyed == crippled for all mechs
+            if (locCode == UnitComponent.CENTER_TORSO_CODE)
+            {
+                this.UnitStatus = UnitStatusFactory.DESTROYED;
+                return;
+            }
+
+            if (locCode == UnitComponent.LEFT_TORSO_CODE || locCode == UnitComponent.RIGHT_TORSO_CODE)
+            {
+                this.UnitStatus = UnitStatusFactory.CRIPPLED;
+            }
+        }
+
+        private void AdjustUnitStatusForArmorDestroyed(string locCode)
+        {
+            // Any component armor removed for vehicle == crippled, but if its already crippled or destroyed don't bother setting
+            if (!(GameElement is CombatVehicle vehicle)) return;
+
+            if (this.UnitStatus == UnitStatusFactory.CRIPPLED || this.UnitStatus == UnitStatusFactory.DESTROYED) return;
+            this.UnitStatus = UnitStatusFactory.CRIPPLED;
         }
     }
 }

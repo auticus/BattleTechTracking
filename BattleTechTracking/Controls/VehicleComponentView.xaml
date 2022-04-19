@@ -55,6 +55,7 @@
                                   <ColumnDefinition Width="60"/>
                                   <ColumnDefinition Width="35"/>
                                   <ColumnDefinition Width="75"/>
+                                  <ColumnDefinition Width="150"/>
                                 </Grid.ColumnDefinitions>
                               <Entry Text="{Binding Name}"
                                      IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
@@ -125,12 +126,29 @@
                                         <behaviors:NumericValidationBehavior/>
                                     </Entry.Behaviors>
                                 </Entry>
-                              <ImageButton WidthRequest="32" HeightRequest="32" 
-                                           BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
-                                           BorderColor="Gold" BorderWidth="1" Grid.Column="7"
-                                           Command="{Binding DeleteComponent, Source={x:Reference thisView}}"
-                                           IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
-                                           CommandParameter="{Binding ID}"/>
+                                <ImageButton Grid.Column="7"
+                                             WidthRequest="32" 
+                                             HeightRequest="32" 
+                                             BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
+                                             BorderColor="Gold" BorderWidth="1" 
+                                             Command="{Binding DeleteComponent, Source={x:Reference thisView}}"
+                                             IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
+                                             CommandParameter="{Binding ID}"/>
+                                <StackLayout Grid.Column="7" Grid.ColumnSpan="2" Orientation="Horizontal"
+                                             IsVisible="{Binding IsDataEditMode, 
+                                                            Source={x:Reference thisView},
+                                                            Converter={StaticResource InvertedBoolConvert}}">
+                                    <Label TextColor="Gold" 
+                                           Margin="10,0,0,0" 
+                                           VerticalTextAlignment="Center"
+                                           Text="Removed?"/>
+                                    <Switch BackgroundColor="LightSlateGray"
+                                            OnColor="DarkRed"
+                                            ThumbColor="White"
+                                            VerticalOptions="Center"
+                                            WidthRequest="45"
+                                            IsToggled="{Binding Removed}"/>
+                                </StackLayout>
                             </Grid>
                           <!-- underline of the item -->
                           <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
