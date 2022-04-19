@@ -53,6 +53,8 @@ namespace BattleTechTracking.Factories
                 Quirks = new List<Quirk>(template.Quirks)
             };
 
+            foreach(var component in vehicle.Components) component.SetOriginalValuesFromCurrentValues();
+
             return vehicle;
         }
 

@@ -7,6 +7,9 @@
              x:Name="thisView">
     <ContentView.Resources>
         <Converter:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
+        <Converter:ComponentStatusToColorConverter x:Key="ComponentStatusToColorConverter"/>
+        <Converter:ComponentStatusToTextDecoratorConverter x:Key="ComponentStatusToTextDecorator"/>
+        <Converter:ComponentStatusToFontStyleConverter x:Key="ComponentStatusToFontStyle"/>
     </ContentView.Resources>
     <ContentView.Content>
       <ListView VerticalOptions="FillAndExpand"
@@ -41,7 +44,8 @@
               <DataTemplate>
                   <ViewCell>
                       <StackLayout>
-                          <Grid Margin="5, 5, 0, 0">
+                          <Grid Margin="5, 5, 0, 0"
+                                BackgroundColor="{Binding ComponentStatus, Converter={StaticResource ComponentStatusToColorConverter}}">
                               <Grid.ColumnDefinitions>
                                   <ColumnDefinition Width="200"/>
                                   <ColumnDefinition Width="50"/>
@@ -66,7 +70,8 @@
                                       VerticalOptions="Center"
                                       Text="{Binding Name}"
                                       TextColor="Gold"
-                                      FontAttributes="Bold"
+                                      TextDecorations="{Binding ComponentStatus, Converter={StaticResource ComponentStatusToTextDecorator }}"
+                                      FontAttributes="{Binding ComponentStatus, Converter={StaticResource ComponentStatusToFontStyle}}"
                                       IsVisible="{Binding IsDataEditMode, 
                                         Converter={StaticResource InvertedBoolConvert}, 
                                         Source={x:Reference thisView}}"/>

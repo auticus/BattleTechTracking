@@ -72,6 +72,8 @@ namespace BattleTechTracking.Factories
                 Quirks = new List<Quirk>(template.Quirks)
             };
 
+            foreach(var component in mech.Components) component.SetOriginalValuesFromCurrentValues();
+
             return mech;
         }
 
