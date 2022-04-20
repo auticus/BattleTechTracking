@@ -4,11 +4,11 @@ using Xamarin.Forms;
 
 namespace BattleTechTracking.Converters
 {
-    internal class IntToFontStyleConverter : IValueConverter
+    internal class EquipmentLocationToFontStyleConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (int)value == 0 ? FontAttributes.None : FontAttributes.Bold;
+            return value.ToString() == EquipmentStatus.DESTROYED ? FontAttributes.None : FontAttributes.Bold;
         }
 
 

@@ -18,7 +18,7 @@ namespace BattleTechTracking.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value?.ToString() == UnitStatusFactory.DESTROYED) return UnitStatusFactory.DESTROYED;
+            if (value?.ToString() == EquipmentStatus.DESTROYED) return EquipmentStatus.DESTROYED;
             return string.IsNullOrEmpty(value?.ToString()) ? "?" : _locationCodes[value.ToString()];
         }
 

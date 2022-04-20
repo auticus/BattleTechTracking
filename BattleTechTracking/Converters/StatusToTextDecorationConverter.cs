@@ -11,11 +11,11 @@ namespace BattleTechTracking.Converters
         {
             switch (value.ToString())
             {
-                case UnitStatusFactory.UNDAMAGED:
-                case UnitStatusFactory.DAMAGED:
-                case UnitStatusFactory.CRIPPLED:
+                case EquipmentStatus.UNDAMAGED:
+                case EquipmentStatus.DAMAGED:
+                case EquipmentStatus.CRIPPLED:
                     return TextDecorations.None;
-                case UnitStatusFactory.DESTROYED:
+                case EquipmentStatus.DESTROYED:
                     return TextDecorations.Strikethrough;
             }
 

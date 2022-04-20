@@ -8,9 +8,9 @@
     <ContentView.Resources>
         <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
         <converters:LocationCodeToStringConverter x:Key="KeycodeConverter"/>
-        <converters:IntToColorStatusConverter x:Key="IntToColorConverter"/>
-        <converters:IntToTextDecoratorConverter x:Key="IntToTextDecoratorConverter"/>
-        <converters:IntToFontStyleConverter x:Key="IntToFontStyleConverter"/>
+        <converters:EquipmentLocationToColorStatusConverter x:Key="LocToColorConverter"/>
+        <converters:EquipmentLocationToTextDecoratorConverter x:Key="LocToDecoratorConverter"/>
+        <converters:EquipmentLocationToFontStyleConverter x:Key="LocToFontStyleConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <ListView VerticalOptions="FillAndExpand"
@@ -46,7 +46,7 @@
                     <ViewCell>
                         <StackLayout>
                             <Grid Margin="5, 5, 0, 0" 
-                                  BackgroundColor="{Binding Hits, Converter={StaticResource IntToColorConverter}}">
+                                  BackgroundColor="{Binding Location, Converter={StaticResource LocToColorConverter}}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="200"/>
                                     <ColumnDefinition Width="50"/>
@@ -68,8 +68,8 @@
                                 <Label Text="{Binding Name}"
                                        Grid.Column="0"
                                        TextColor="Gold"
-                                       FontAttributes="{Binding Hits, Converter={StaticResource IntToFontStyleConverter}}"
-                                       TextDecorations="{Binding Hits, Converter={StaticResource IntToTextDecoratorConverter}}"
+                                       FontAttributes="{Binding Location, Converter={StaticResource LocToFontStyleConverter}}"
+                                       TextDecorations="{Binding Location, Converter={StaticResource LocToDecoratorConverter}}"
                                        VerticalTextAlignment="Center"
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert}, 

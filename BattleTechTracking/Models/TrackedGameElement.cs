@@ -239,7 +239,7 @@ namespace BattleTechTracking.Models
 
         public string UnitStatus
         {
-            get => string.IsNullOrEmpty(_unitStatus) ? UnitStatusFactory.UNDAMAGED : _unitStatus;
+            get => string.IsNullOrEmpty(_unitStatus) ? EquipmentStatus.UNDAMAGED : _unitStatus;
             set
             {
                 if (_unitStatus == value) return;
@@ -465,7 +465,7 @@ namespace BattleTechTracking.Models
 
         private void AdjustCombatvehicleForComponentDestroyed()
             //Combat vehicles are considered destroyed if any of their components are destroyed
-            => this.UnitStatus = UnitStatusFactory.DESTROYED;
+            => this.UnitStatus = EquipmentStatus.DESTROYED;
         
 
         private void AdjustMechForComponentDestroyed(string locCode)
@@ -474,13 +474,13 @@ namespace BattleTechTracking.Models
             // Left or Right Torso destroyed == crippled for all mechs
             if (locCode == UnitComponent.CENTER_TORSO_CODE)
             {
-                this.UnitStatus = UnitStatusFactory.DESTROYED;
+                this.UnitStatus = EquipmentStatus.DESTROYED;
                 return;
             }
 
             if (locCode == UnitComponent.LEFT_TORSO_CODE || locCode == UnitComponent.RIGHT_TORSO_CODE)
             {
-                this.UnitStatus = UnitStatusFactory.CRIPPLED;
+                this.UnitStatus = EquipmentStatus.CRIPPLED;
             }
         }
 
@@ -489,8 +489,8 @@ namespace BattleTechTracking.Models
             // Any component armor removed for vehicle == crippled, but if its already crippled or destroyed don't bother setting
             if (!(GameElement is CombatVehicle vehicle)) return;
 
-            if (this.UnitStatus == UnitStatusFactory.CRIPPLED || this.UnitStatus == UnitStatusFactory.DESTROYED) return;
-            this.UnitStatus = UnitStatusFactory.CRIPPLED;
+            if (this.UnitStatus == EquipmentStatus.CRIPPLED || this.UnitStatus == EquipmentStatus.DESTROYED) return;
+            this.UnitStatus = EquipmentStatus.CRIPPLED;
         }
     }
 }

@@ -8,9 +8,9 @@
     <ContentView.Resources>
         <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
         <converters:LocationCodeToStringConverter x:Key="KeycodeConverter"/>
-        <converters:IntToColorStatusConverter x:Key="IntToColorConverter"/>
-        <converters:IntToTextDecoratorConverter x:Key="IntToTextDecoratorConverter"/>
-        <converters:IntToFontStyleConverter x:Key="IntToFontStyleConverter"/>
+        <converters:EquipmentLocationToColorStatusConverter x:Key="LocToColorConverter"/>
+        <converters:EquipmentLocationToFontStyleConverter x:Key="LocToFontStyleConverter"/>
+        <converters:EquipmentLocationToTextDecoratorConverter x:Key="LocToTextDecoratorConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <ListView VerticalOptions="FillAndExpand"
@@ -41,7 +41,7 @@
                     <ViewCell>
                         <StackLayout>
                             <Grid Margin="5, 5, 0, 0"
-                                  BackgroundColor="{Binding Hits, Converter={StaticResource IntToColorConverter}}">
+                                  BackgroundColor="{Binding Location, Converter={StaticResource LocToColorConverter}}">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50"/>
                                     <ColumnDefinition Width="50"/>
@@ -81,8 +81,8 @@
                                        VerticalOptions="Center"
                                        VerticalTextAlignment="Center"
                                        TextColor="Gold"
-                                       TextDecorations="{Binding Hits, Converter={StaticResource IntToTextDecoratorConverter}}"
-                                       FontAttributes="{Binding Hits, Converter={StaticResource IntToFontStyleConverter}}"
+                                       TextDecorations="{Binding Location, Converter={StaticResource LocToTextDecoratorConverter}}"
+                                       FontAttributes="{Binding Location, Converter={StaticResource LocToFontStyleConverter}}"
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>

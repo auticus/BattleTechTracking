@@ -53,7 +53,7 @@ namespace BattleTechTracking.Models
 
         public void DestroyItem()
         {
-            Location = UnitStatusFactory.DESTROYED;
+            Location = EquipmentStatus.DESTROYED;
         }
     }
 }

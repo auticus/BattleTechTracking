@@ -123,6 +123,8 @@ namespace BattleTechTracking.Models
                 _removed = value;
                 OnPropertyChanged(nameof(Removed));
                 OnPropertyChanged(nameof(ComponentStatus));
+
+                if (_removed) OnComponentDestroyed?.Invoke(this, EventArgs.Empty);
             }
         }
 

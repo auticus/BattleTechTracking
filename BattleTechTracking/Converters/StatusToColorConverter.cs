@@ -11,13 +11,13 @@ namespace BattleTechTracking.Converters
         {
             switch (value.ToString())
             {
-                case UnitStatusFactory.UNDAMAGED:
+                case EquipmentStatus.UNDAMAGED:
                     return Color.Default;
-                case UnitStatusFactory.DAMAGED:
+                case EquipmentStatus.DAMAGED:
                     return Color.Olive;
-                case UnitStatusFactory.CRIPPLED:
+                case EquipmentStatus.CRIPPLED:
                     return Color.DarkRed;
-                case UnitStatusFactory.DESTROYED:
+                case EquipmentStatus.DESTROYED:
                     return Color.FromHex("#202421");
             }
 

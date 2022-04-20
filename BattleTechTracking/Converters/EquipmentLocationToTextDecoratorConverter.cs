@@ -4,11 +4,11 @@ using Xamarin.Forms;
 
 namespace BattleTechTracking.Converters
 {
-    public class IntToColorStatusConverter : IValueConverter
+    internal class EquipmentLocationToTextDecoratorConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return (int)value == 0 ? Color.FromHex("#202421") : Color.Default;
+            return value.ToString() == EquipmentStatus.DESTROYED ? TextDecorations.Strikethrough : TextDecorations.None;
         }
 
 
