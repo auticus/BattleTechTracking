@@ -19,62 +19,12 @@
     <ContentPage.Content>
         <StackLayout>
             <!-- Header -->
-            <Grid Margin="0,10,0,0"
-                  HeightRequest="50">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="50"/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Column="0"
-                       Margin="20,0,0,0"
-                       Text="MATCH RECORDSHEET" TextColor="Gold" 
-                       FontFamily="BattletechFont" 
-                       FontAttributes="Bold" 
-                       FontSize="22"/>
-                <ImageButton Grid.Column="1"
-                             Command="{Binding BeginNewRound}"
-                             BackgroundColor="Black"
-                             HeightRequest="40"
-                             WidthRequest="40"
-                             VerticalOptions="Start"
-                             HorizontalOptions="Start"
-                             Source="Next.ico"
-                             effects:TooltipEffect.Position="Bottom"
-                             effects:TooltipEffect.Text="Begin New Round"/>
-                <ImageButton Grid.Column="2"
-                             Command="{Binding SettingsCommand}"
-                             BackgroundColor="Black"
-                             HeightRequest="40"
-                             WidthRequest="40"
-                             VerticalOptions="Start"
-                             HorizontalOptions="Start"
-                             Source="settings.png"
-                             effects:TooltipEffect.Position="Bottom"
-                             effects:TooltipEffect.Text="Open Match Settings"/>
-                <ImageButton Grid.Column="3"
-                             Command="{Binding OkCommand}"
-                             BackgroundColor="Black"
-                             HeightRequest="40"
-                             WidthRequest="40"
-                             VerticalOptions="Start"
-                             HorizontalOptions="Start"
-                             Source="okIcon.png"
-                             effects:TooltipEffect.Position="Bottom"
-                             effects:TooltipEffect.Text="Save Match and Close"/>
-                <ImageButton Grid.Column="4"
-                             Command="{Binding CloseCommand}"
-                             BackgroundColor="Black"
-                             HeightRequest="40"
-                             WidthRequest="40"
-                             VerticalOptions="Start"
-                             HorizontalOptions="Start"
-                             Source="goBack.png"
-                             effects:TooltipEffect.Position="Bottom"
-                             effects:TooltipEffect.Text="Close Match without Saving"/>
-            </Grid>
+            <controls:MatchViewHeaderBar Margin="0,10,0,0"
+                                         CloseCommand="{Binding CloseCommand}"
+                                         OkCommand="{Binding OkCommand}"
+                                         SettingsCommand="{Binding SettingsCommand}"
+                                         NewRoundCommand="{Binding BeginNewRound}"
+                                         ReportsCommand="{Binding ReportsCommand}"/>
 
             <!-- Main Content -->
             <Grid HorizontalOptions="FillAndExpand"
