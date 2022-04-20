@@ -4,6 +4,7 @@
              xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
              xmlns:controls="clr-namespace:BattleTechTracking.Controls;assembly=BattleTechTracking"
              xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
+             xmlns:effects="clr-namespace:BattleTechTracking.Effects;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Views.MatchView"
              BackgroundColor="Black">
     <ContentPage.BindingContext>
@@ -40,7 +41,9 @@
                              WidthRequest="40"
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
-                             Source="Next.ico"/>
+                             Source="Next.ico"
+                             effects:TooltipEffect.Position="Bottom"
+                             effects:TooltipEffect.Text="Begin New Round"/>
                 <ImageButton Grid.Column="2"
                              Command="{Binding SettingsCommand}"
                              BackgroundColor="Black"
@@ -48,7 +51,9 @@
                              WidthRequest="40"
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
-                             Source="settings.png"/>
+                             Source="settings.png"
+                             effects:TooltipEffect.Position="Bottom"
+                             effects:TooltipEffect.Text="Open Match Settings"/>
                 <ImageButton Grid.Column="3"
                              Command="{Binding OkCommand}"
                              BackgroundColor="Black"
@@ -56,7 +61,9 @@
                              WidthRequest="40"
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
-                             Source="okIcon.png"/>
+                             Source="okIcon.png"
+                             effects:TooltipEffect.Position="Bottom"
+                             effects:TooltipEffect.Text="Save Match and Close"/>
                 <ImageButton Grid.Column="4"
                              Command="{Binding CloseCommand}"
                              BackgroundColor="Black"
@@ -64,7 +71,9 @@
                              WidthRequest="40"
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
-                             Source="goBack.png"/>
+                             Source="goBack.png"
+                             effects:TooltipEffect.Position="Bottom"
+                             effects:TooltipEffect.Text="Close Match without Saving"/>
             </Grid>
 
             <!-- Main Content -->
