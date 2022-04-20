@@ -43,6 +43,7 @@ namespace BattleTechTracking.Models
         /// Gets and sets the event that will fire when a component is set to destroyed.
         /// </summary>
         public EventHandler OnComponentDestroyed { get; set; }
+        public EventHandler OnComponentRestored { get; set; }
         public EventHandler OnComponentArmorRemoved { get; set; }
 
         public int Armor
@@ -120,11 +121,13 @@ namespace BattleTechTracking.Models
             get => _removed;
             set
             {
+                if (_removed == value) return;
                 _removed = value;
                 OnPropertyChanged(nameof(Removed));
                 OnPropertyChanged(nameof(ComponentStatus));
 
                 if (_removed) OnComponentDestroyed?.Invoke(this, EventArgs.Empty);
+                else OnComponentRestored?.Invoke(this, EventArgs.Empty);
             }
         }
 

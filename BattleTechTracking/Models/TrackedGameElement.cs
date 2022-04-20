@@ -357,15 +357,24 @@ namespace BattleTechTracking.Models
             {
                 var trackedComponent = ComponentFactory.BuildComponentFromTemplate(component);
                 trackedComponent.OnComponentDestroyed += OnComponentDestroyed;
+                trackedComponent.OnComponentRestored += OnComponentRestored;
                 trackedComponent.OnComponentArmorRemoved += OnComponentArmorRemoved;
                 ((List<UnitComponent>)UnitComponents).Add(trackedComponent);
             }
         }
 
+        private void OnComponentRestored(object sender, EventArgs e)
+        {
+            var locCode = GetLocationCodeFromComponent(sender);
+            RestoreEquipmentInLocation(locCode);
+            RestoreWeaponsInLocation(locCode);
+            RestoreAmmoInLocation(locCode);
+        }
+
         private void OnComponentArmorRemoved(object sender, EventArgs e)
         {
             //this will fire off anytime a component's armor value is set to 0
-            var locCode = GetLocationCodeFromDestroyedComponent(sender);
+            var locCode = GetLocationCodeFromComponent(sender);
             AdjustUnitStatusForArmorDestroyed(locCode);
         }
 
@@ -373,14 +382,14 @@ namespace BattleTechTracking.Models
         {
             // this will fire off anytime a vehicular or mech component is listed as destroyed
             // set all locations of equipment, weapons, and ammo in that specific component to be listed as destroyed
-            var locCode = GetLocationCodeFromDestroyedComponent(sender);
+            var locCode = GetLocationCodeFromComponent(sender);
             DestroyEquipmentInLocation(locCode);
             DestroyWeaponsInLocation(locCode);
             DestroyAmmoInLocation(locCode);
             AdjustUnitStatusForDestroyed(locCode);
         }
 
-        private string GetLocationCodeFromDestroyedComponent(object location)
+        private string GetLocationCodeFromComponent(object location)
         {
             var destroyedLocation = ((UnitComponent)location).Name;
             return _codeToLocationConverter.ConvertBack(destroyedLocation, typeof(string), null, null).ToString();
@@ -399,6 +408,21 @@ namespace BattleTechTracking.Models
         private void DestroyAmmoInLocation(string locCode)
         {
             foreach (var ammo in UnitAmmunition.Where(a => a.Location == locCode)) ammo.DestroyItem();
+        }
+
+        private void RestoreEquipmentInLocation(string locCode)
+        {
+            foreach (var equipment in UnitEquipment.Where(equip => equip.OriginalLocation == locCode)) equipment.TryRestoreItem();
+        }
+
+        private void RestoreWeaponsInLocation(string locCode)
+        {
+            foreach (var weapon in UnitWeapons.Where(wpn => wpn.OriginalLocation == locCode)) weapon.TryRestoreItem();
+        }
+
+        private void RestoreAmmoInLocation(string locCode)
+        {
+            foreach (var ammo in UnitAmmunition.Where(a => a.OriginalLocation == locCode)) ammo.TryRestoreItem();
         }
 
         private void PopulateEquipment()
