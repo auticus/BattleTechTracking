@@ -243,6 +243,7 @@
             "Name": "Ammo (SRM 4)",
             "Hits": 1,
             "Location": "LT",
+            "WeaponDamage": 8, 
             "ID": "3b2c55f9-2bb4-4933-aa51-ac1dbcc8a868"
           }
         ],
@@ -269,6 +270,7 @@
             "Name": "Ammo (LRM 5)",
             "Hits": 1,
             "Location": "LT",
+            "WeaponDamage": 5,
             "ID": "67785c23-9b53-4499-a9a8-148b62ce3ec7"
           }
         ],
@@ -294,6 +296,7 @@
             "Name": "Ammo (Machine Gun)",
             "Hits": 1,
             "Location": "RT",
+            "WeaponDamage": 2,
             "ID": "fb2271b3-b2e8-4f18-8189-ee8d8370292f"
           }
         ],

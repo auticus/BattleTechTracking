@@ -19,7 +19,12 @@ namespace BattleTechTracking.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value?.ToString() == EquipmentStatus.DESTROYED) return EquipmentStatus.DESTROYED;
-            return string.IsNullOrEmpty(value?.ToString()) ? "?" : _locationCodes[value.ToString()];
+
+            // if the user is keying in a location, it may not yet exist - so need to take into consideration locs that don't yet exist
+            if (string.IsNullOrEmpty(value?.ToString())) return "?";
+            _locationCodes.TryGetValue(value.ToString(), out var location);
+
+            return string.IsNullOrEmpty(location) ? "?" : location;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

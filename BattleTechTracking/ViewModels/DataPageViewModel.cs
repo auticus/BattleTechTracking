@@ -550,7 +550,11 @@ namespace BattleTechTracking.ViewModels
             NewAmmo = new Command(() =>
             {
                 if (SelectedWeaponAmmunition == null) return;
-                SelectedWeaponAmmunition.Add(new Ammunition(){Name=$"Ammo ({SelectedWeapon.Name})", Hits = 1, Location="CT", AmmoCount = 10});
+                SelectedWeaponAmmunition.Add(new Ammunition(){Name=$"Ammo ({SelectedWeapon.Name})", 
+                    Hits = 1, 
+                    Location="CT",
+                    AmmoCount = 10,
+                    WeaponDamage = ComponentFactory.GetAmmunitionDamagePerShotFromName(SelectedWeapon)});
             });
 
             DeleteAmmo = new Command<Guid>((id) =>

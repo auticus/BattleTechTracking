@@ -11,6 +11,7 @@
         <converters:EquipmentLocationToColorStatusConverter x:Key="LocToColorConverter"/>
         <converters:EquipmentLocationToFontStyleConverter x:Key="LocToFontStyleConverter"/>
         <converters:EquipmentLocationToTextDecoratorConverter x:Key="LocToTextDecoratorConverter"/>
+        <converters:AmmoDamageToStringConverter x:Key="AmmoDamageToStringConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <Grid>
@@ -76,6 +77,7 @@
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="50"/>
                                         <ColumnDefinition Width="75"/>
+                                        <ColumnDefinition Width="200"/>
                                     </Grid.ColumnDefinitions>
                                     <!-- Edit Mode Ammo Name - Column 0 -->
                                     <Entry Text="{Binding Name}"
@@ -206,6 +208,18 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
+                                   
+                                    <Label Text="{Binding AmmoExplosionDamage,
+                                                    Converter={StaticResource AmmoDamageToStringConverter}}"
+                                           Grid.Column="8"
+                                           TextColor="WhiteSmoke"
+                                           VerticalTextAlignment="Center"
+                                           Margin="5,0,0,0"
+                                           IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"/>
+                                   
+                                    <!-- Edit mode delete button -->
                                     <ImageButton WidthRequest="32" HeightRequest="32" 
                                            BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="End"
                                            BorderColor="Gold" BorderWidth="1" Grid.Column="7"

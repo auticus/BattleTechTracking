@@ -12,216 +12,364 @@
       "Walking": 4,
       "Running": 6,
       "Jumping": 4,
-      "ID": "e421d9e4-543e-4a24-b22b-2aa0185f1dcf"
+      "ID": "bba29568-dd30-4084-a651-c09f16c1b7ca",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 9,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "1acae214-0817-4fd2-8cc7-eb7fb4b875b3"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "b8f6e700-5651-4ee4-9f08-dba126a570fc",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 18,
         "RearArmor": 9,
         "Structure": 14,
-        "ID": "a98060d3-4ea1-4b9f-9d7f-57d33a4872d8"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "9241c053-cca9-4231-80ad-e0d668a28627",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": 6,
         "Structure": 11,
-        "ID": "d4f66d6d-52d6-4fa7-9eb0-00e28bab168b"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f4bf2b14-dbd2-4e93-884a-d2abf9303f6c",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": 6,
         "Structure": 11,
-        "ID": "ee0333d0-30ec-494a-92bb-02274fb339fc"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f12692f0-d1dd-4c45-b445-271891ee176b",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 12,
         "RearArmor": null,
         "Structure": 7,
-        "ID": "d010be8c-1158-4d76-8c42-21c5a38e067d"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "9a505087-27b0-4366-81c7-07185ae27eb4",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 12,
         "RearArmor": null,
         "Structure": 7,
-        "ID": "2f0e9c98-743c-491c-a3e5-78f89fd4e791"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "82fe8042-be9f-4a54-b657-110154e10ca6",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 17,
         "RearArmor": null,
         "Structure": 11,
-        "ID": "7e4ece39-5a5a-4eff-9367-53fa0301c6e2"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "47ada527-fc07-4a07-aa83-8aa693129d94",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 17,
         "RearArmor": null,
         "Structure": 11,
-        "ID": "f2760c54-3415-447f-92a4-14b77f7672b4"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "63eacba0-774d-4c53-891f-8af27ff9b5c9",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "bc2bc276-86f9-49fc-8167-d1b51223ddfc"
+        "OriginalLocation": null,
+        "ID": "b39db25e-f0a4-4c43-b5d3-00db096e5fac",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "08377ae4-4162-4004-8218-5368ad4ff6d6"
+        "OriginalLocation": null,
+        "ID": "73aa3d25-b5c7-408e-b637-b5fc77899759",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "39c0c3d8-a0f5-4856-a979-15edf4b6f90b"
+        "OriginalLocation": null,
+        "ID": "23f1db53-99e9-483b-bb46-af8a1c8fa725",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "452e5582-2dcd-43e2-9d53-a65c3c1b37ee"
+        "OriginalLocation": null,
+        "ID": "4d95105e-ec49-47b7-8b9f-3787ca1e0a83",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "081ab44b-a62f-425a-abad-6091aefca09f"
+        "OriginalLocation": null,
+        "ID": "25478d4c-0be7-4aa4-a00f-9072378d54b8",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "5d226300-01e4-4c3b-923a-965b5a22277c"
+        "OriginalLocation": null,
+        "ID": "bed1fd20-1a37-4ce3-9362-2a235694c9cc",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "ceeb2fc9-feff-4bef-a48c-4c2b59ffacde"
+        "OriginalLocation": null,
+        "ID": "c3fe3ee1-9334-45dd-8b0b-6da92c274e1f",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "7447a8fe-0453-4dd6-ac6e-1d578e385a52"
+        "OriginalLocation": null,
+        "ID": "2ea1530f-b62e-4d65-8380-e33d3aeed25c",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "a0e124a8-3ba3-4519-b7b4-cf431f0b311d"
+        "OriginalLocation": null,
+        "ID": "cb15aa43-78bb-458c-bf65-dfb300421d84",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "1d490935-813c-4c0e-8b5d-43dabca496bb"
+        "OriginalLocation": null,
+        "ID": "67974719-a603-4c27-933d-72a86d423ded",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "4feb9be8-f73d-4a85-8eb4-b92849027b46"
+        "OriginalLocation": null,
+        "ID": "3d1bd12d-aa69-489a-bb36-1b768009123b",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "e8cff4e9-55b1-4ae2-a0ff-48b59fc5ac48"
+        "OriginalLocation": null,
+        "ID": "b8255ffd-99f1-4c25-a796-351445110e0b",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "13a6b759-398f-4396-acf9-2efec4c1e288"
+        "OriginalLocation": null,
+        "ID": "b7640aad-50a0-4d19-86f0-ba5cab952b16",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "0e06f68f-ce8e-41fa-b956-54618ade9858"
+        "OriginalLocation": null,
+        "ID": "5bcd0b26-dd6e-46c8-a91a-c2423b188bb9",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "5e740829-c47f-43ee-9146-a8f692b6edd2"
+        "OriginalLocation": null,
+        "ID": "e3e2b365-5226-4d37-8b93-22458135647b",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "e05a7c92-7ae4-4a39-8d08-7b5ebf359741"
+        "OriginalLocation": null,
+        "ID": "9dda59fd-53c0-4574-b1ff-692bd2498c8d",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "d4a4defa-8b79-45c6-a458-3a04d52f01a2"
+        "OriginalLocation": null,
+        "ID": "1570ebf0-0cd3-461c-93ef-4f91ea53853f",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "2dccedb6-981c-48be-a9fc-a64a34f94694"
+        "OriginalLocation": null,
+        "ID": "4c566224-9404-4c24-ae73-3fa33e5febcf",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "8b74395b-c8bf-41a7-9a99-060be2e0b246"
+        "OriginalLocation": null,
+        "ID": "cd08d03e-25d2-4ac8-b3b3-b8640e5e955e",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "89626c59-f99e-4ef7-9a28-b512e9518737"
+        "OriginalLocation": null,
+        "ID": "c62e8fee-d73f-4ab5-b13b-727c8fb04eac",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "77d3bac7-6b88-4bb3-8035-07b352a593b1"
+        "OriginalLocation": null,
+        "ID": "7164fe93-31f0-4dd0-8a48-2717dd1ae114",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "5b7dc99e-70b6-446a-8c5e-92649fe5d569"
+        "OriginalLocation": null,
+        "ID": "7da7ab28-df52-4195-814d-ea066d8c808c",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "81c67e66-df92-4728-b41b-dc5d275f2622"
+        "OriginalLocation": null,
+        "ID": "d458b21f-0466-42ff-a1c6-4212cff2b0ee",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "2fbc5213-c524-49c0-a20b-4ee07d29f07e"
+        "OriginalLocation": null,
+        "ID": "8150c021-3c88-42a4-a6ef-870ed0abefd3",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "c65df61c-453c-4250-82f0-2255b444171c"
+        "OriginalLocation": null,
+        "ID": "78484636-62ce-4e24-b7a4-9222d1b18b4a",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -231,6 +379,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -238,8 +387,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "16ae28a6-4d1a-4592-9848-90484c2d7f61"
+        "OriginalLocation": null,
+        "ID": "f4f2f71c-67a2-4ee6-81ed-940a27fa462f",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -247,6 +399,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -254,8 +407,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "fd7cab2a-e961-4794-bc39-1f6cff510824"
+        "OriginalLocation": null,
+        "ID": "c623ebb5-9f52-42af-bdfa-5092b916d9ee",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -263,6 +419,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -270,8 +427,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "b6f7dc5f-8904-4dc2-ac00-c9f81ffcd576"
+        "OriginalLocation": null,
+        "ID": "3e62be12-11c5-472f-91e5-383f0c3aec25",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -279,6 +439,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -286,8 +447,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "47449dc7-1502-4974-a467-2d2758a9ba0b"
+        "OriginalLocation": null,
+        "ID": "55592dca-5db0-4ee4-8f7a-d09e0a55c14e",
+        "IsSelected": false
       },
       {
         "Heat": 1,
@@ -296,23 +460,33 @@
           "DB",
           "S"
         ],
+        "DamageCodesText": "DB, S",
         "MinimumRange": 4,
         "ShortRange": 8,
         "MediumRange": 16,
         "LongRange": 24,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 45,
+            "WeaponDamage": 2,
+            "AmmoExplosionDamage": 9,
             "Name": "Ammo (AC/2)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "CT",
-            "ID": "89618f05-ecbc-43ed-b70d-4248f5cae300"
+            "OriginalLocation": null,
+            "ID": "8909a110-25ed-4d0e-8821-013a2a201f66",
+            "IsSelected": false
           }
         ],
         "Name": "AC/2",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "b58ce6d0-6fa6-4809-aced-e84c20d4b4b4"
+        "OriginalLocation": null,
+        "ID": "53444a42-6894-4a07-9af9-64f205eae639",
+        "IsSelected": false
       },
       {
         "Heat": 1,
@@ -321,6 +495,7 @@
           "DB",
           "S"
         ],
+        "DamageCodesText": "DB, S",
         "MinimumRange": 4,
         "ShortRange": 8,
         "MediumRange": 16,
@@ -328,11 +503,13 @@
         "Ammo": [],
         "Name": "AC/2",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "b9bdd0b9-5a93-4e52-9e2b-9cb3384c19eb"
+        "OriginalLocation": null,
+        "ID": "5f97d766-26f9-4b2b-8fec-1c55f64c28cb",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 11,
     "Quirks": [
       {
@@ -341,7 +518,8 @@
     ],
     "UnitHeader": "Blackjack (BJ-1)",
     "UnitDetails": "45 tons - BV: 949",
-    "ID": "ba3e1ce2-c503-493f-845b-660bdc8e5b9d"
+    "ID": "ad14ff93-944d-4f95-8af3-d274b0d0cc17",
+    "IsSelected": false
   },
   {
     "Name": "Centurion",
@@ -356,198 +534,337 @@
       "Walking": 4,
       "Running": 6,
       "Jumping": 0,
-      "ID": "54be1ec8-7ceb-45af-a582-4e46d2b1f0d0"
+      "ID": "0e258862-1d41-4d6f-ba13-4c3d136b627e",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 9,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "8470fa75-d034-4a49-aed7-7ed4b272bc97"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "5e758d95-8a2b-4376-b0b0-ccdebde836f3",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 18,
         "RearArmor": 7,
         "Structure": 16,
-        "ID": "f8543d8d-987e-433f-9f3c-2848bae09d9a"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "cbc68735-dd77-4551-ab44-0a9418095341",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 13,
         "RearArmor": 6,
         "Structure": 12,
-        "ID": "e8534899-dd34-4747-98d1-369e746fe838"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "ae21f10a-7c72-4f3c-875c-4d6e8608cccb",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 13,
         "RearArmor": 6,
         "Structure": 12,
-        "ID": "7071d320-f1bd-4d37-93ff-1fe1573d17e3"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "fbe0be02-ee69-47d1-ab15-c3722d47f5b8",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 8,
-        "ID": "373d2d85-b899-4f49-9c3d-508e93a1153a"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f1857020-e5de-41fd-b03d-b5471d42ea64",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 8,
-        "ID": "f97bdd9c-2aac-417e-af20-573029918d83"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "38619d31-e141-4c22-82bf-21bc5cafe626",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 12,
-        "ID": "175d1615-14ce-4cc0-84de-239ef7f5a240"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "343dd420-a270-4b64-b05a-ff8bb318120b",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 12,
-        "ID": "999e4020-a32f-411e-9f6a-95c5d11589ae"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "df50c2ea-c0fa-4a82-b7c8-754f82318b95",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "72d5df08-50f9-4fef-a4aa-c54d9cc37e04"
+        "OriginalLocation": null,
+        "ID": "0e81f68b-43e5-43f8-84ce-2ef81e32f7cf",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "faa9ea3b-c43e-4238-8178-5cae9700845b"
+        "OriginalLocation": null,
+        "ID": "27c0c5fd-f6e1-4bf8-ac8d-8fe6209ca880",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "24c7d862-6f40-496b-9f84-7adf09e369c6"
+        "OriginalLocation": null,
+        "ID": "9e1fe5a0-208d-4c6b-a927-732ba3229d4c",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "b8ddaecd-70ed-47ee-9abf-80194ed9ae3b"
+        "OriginalLocation": null,
+        "ID": "0cc8cedf-ff35-46b6-b36d-9fd3978e0de0",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "9da56d11-6a67-4ddf-97d7-3af50b0d162e"
+        "OriginalLocation": null,
+        "ID": "f10298c0-1626-41f3-86da-7a777617b479",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "5bbb8b00-12a0-43f3-a95e-a48c41249f22"
+        "OriginalLocation": null,
+        "ID": "207ae782-02af-4c5d-96a5-3bf7d2cd95fa",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "3b76fbcd-5738-405d-9975-626332c167de"
+        "OriginalLocation": null,
+        "ID": "c66eecb6-80b2-4744-904e-1585e4b3a623",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "bc8d3eaa-02d4-4335-b1b1-74c105a6da85"
+        "OriginalLocation": null,
+        "ID": "773e7ca4-1654-4d34-9042-70b46c4a4243",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "2e73eb9f-a4d3-465e-b5bd-8956b605fa7d"
+        "OriginalLocation": null,
+        "ID": "b2b2dc88-0a01-4872-80c5-06b066128846",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "5856f7d3-8f48-4ce2-9843-4d472a02e928"
+        "OriginalLocation": null,
+        "ID": "bba66fb0-48ee-4834-bc07-ee68e5925265",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "0194fcd0-dc2d-4635-94c0-66a5dceeb3dd"
+        "OriginalLocation": null,
+        "ID": "41280dcc-8cfb-4bf6-adfd-ec5ce10b6351",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "f60eb2ba-9758-4b9e-bedf-0e9f701883df"
+        "OriginalLocation": null,
+        "ID": "b02b49d8-43c9-497f-86ee-dc063e379aad",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "ddf2bdb5-baa2-4c83-8ae4-9c9a1c72c555"
+        "OriginalLocation": null,
+        "ID": "3143902f-d76c-41cf-9aec-4aecdef3876e",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 5,
+        "OriginalHits": 5,
         "Location": "LT",
-        "ID": "c394777d-825f-4f6f-8d00-90e05dab83fa"
+        "OriginalLocation": null,
+        "ID": "afb78182-f650-4aa4-a7d4-54eac0d2fd82",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "bc0126a0-1745-4057-b28a-ca87a750df26"
+        "OriginalLocation": null,
+        "ID": "ac8ce231-8293-4895-be56-98e5e87f93f8",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "0ea7b65f-26ae-4525-bd71-3cccb19837e2"
+        "OriginalLocation": null,
+        "ID": "90e52aa8-bbc7-4285-980f-dc7abcbd37ce",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "49dc4002-4e77-4aee-b590-4b5ba623ef40"
+        "OriginalLocation": null,
+        "ID": "7db5ca48-0e31-49dc-81e0-df22588745fa",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "4da96a59-a8e1-4a61-a103-cd7e67329eae"
+        "OriginalLocation": null,
+        "ID": "e670ddf5-3e09-49b8-ac1d-63a896781e33",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "37eb842f-b272-4ffe-ac85-8349236092df"
+        "OriginalLocation": null,
+        "ID": "65626004-6f3e-4150-943c-e8fb39e90454",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "3c247e95-9409-4e3b-b3d4-abddd724fb95"
+        "OriginalLocation": null,
+        "ID": "e2bbcef6-83f3-4a66-b83d-b91bd21596f0",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "9cad9a17-045c-4f69-8a85-c3200ba7f3ea"
+        "OriginalLocation": null,
+        "ID": "6735a0a0-0c90-4da9-92a0-491991df6954",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 5,
+        "OriginalHits": 5,
         "Location": "RT",
-        "ID": "691704c2-8ddc-4ec1-878d-47ce0b929eef"
+        "OriginalLocation": null,
+        "ID": "5a3b0cbd-e471-4e87-9a8e-04816efa88c4",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -558,30 +875,46 @@
           "DB",
           "S"
         ],
+        "DamageCodesText": "DB, S",
         "MinimumRange": 0,
         "ShortRange": 5,
         "MediumRange": 10,
         "LongRange": 15,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 10,
+            "WeaponDamage": 10,
+            "AmmoExplosionDamage": 10,
             "Name": "Ammo (AC/10)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "9b39ebb3-3c15-45c1-ad98-973131f3fbc4"
+            "OriginalLocation": null,
+            "ID": "62886fbf-0a30-41ab-95d5-44e0cc6957a7",
+            "IsSelected": false
           },
           {
+            "HasCASE": false,
             "AmmoCount": 10,
+            "WeaponDamage": 10,
+            "AmmoExplosionDamage": 10,
             "Name": "Ammo (AC/10)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "28bac297-bbdd-43d6-962e-2a4b21f587e1"
+            "OriginalLocation": null,
+            "ID": "1a3efeb7-bdf8-4ed7-a196-5d60ac299165",
+            "IsSelected": false
           }
         ],
         "Name": "AC/10",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "cd732a76-7905-4984-8d9e-1502d89e61d5"
+        "OriginalLocation": null,
+        "ID": "e0786ae6-ad77-4dd0-82b9-cbf63909788b",
+        "IsSelected": false
       },
       {
         "Heat": 4,
@@ -591,30 +924,46 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 6,
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 12,
+            "WeaponDamage": 10,
+            "AmmoExplosionDamage": 12,
             "Name": "Ammo (LRM 10)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "LT",
-            "ID": "8c7c3717-3910-4092-889d-ae6456a3fea4"
+            "OriginalLocation": null,
+            "ID": "59cc558d-157d-44ba-b54b-7f1273afa91c",
+            "IsSelected": false
           },
           {
+            "HasCASE": false,
             "AmmoCount": 12,
+            "WeaponDamage": 10,
+            "AmmoExplosionDamage": 12,
             "Name": "Ammo (LRM 10)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "LT",
-            "ID": "74f94ca8-9937-4703-a474-74df830153f0"
+            "OriginalLocation": null,
+            "ID": "b741651f-7856-4fe9-ac20-0253d73be0f6",
+            "IsSelected": false
           }
         ],
         "Name": "LRM 10",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "3c55b366-e6c2-470e-a23d-55b32b7bb9a9"
+        "OriginalLocation": null,
+        "ID": "32c8d8c7-b502-4428-b798-d5277c0b3367",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -622,6 +971,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -629,8 +979,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "36e33303-6e05-4997-b4cd-0df9c9ac5fe0"
+        "OriginalLocation": null,
+        "ID": "eaf6113d-149f-4ca1-b2ac-49f16538886b",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -638,6 +991,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -645,11 +999,13 @@
         "Ammo": [],
         "Name": "Medium Laser (R)",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "00d623ab-a1b5-4818-b30e-965228dd0e18"
+        "OriginalLocation": null,
+        "ID": "420b6cbc-45e5-46fd-b359-46fbceb9ac81",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 10,
     "Quirks": [
       {
@@ -661,7 +1017,8 @@
     ],
     "UnitHeader": "Centurion (CN9-A)",
     "UnitDetails": "50 tons - BV: 945",
-    "ID": "df9aac7a-fd8e-45fb-874a-dc9ab861fd5a"
+    "ID": "94f3eaf8-32d0-4d9a-a07e-b267470ee86e",
+    "IsSelected": false
   },
   {
     "Name": "Commando",
@@ -676,216 +1033,364 @@
       "Walking": 6,
       "Running": 9,
       "Jumping": 0,
-      "ID": "5134c680-8c13-4ed4-a8ba-faa902f407ae"
+      "ID": "543ff3bd-0e32-44ff-9219-cdec814978d3",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "14e0a4a0-5f0a-45ce-9b35-0195f6bdb497"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "6407cba3-95ac-4d0e-8bfb-ee1ce443615e",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": 4,
         "Structure": 8,
-        "ID": "69cbe1d1-dc70-49dd-9da5-0424223b1088"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "3a688139-219d-4a04-8baf-f0e597f3c7cc",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": 3,
         "Structure": 6,
-        "ID": "67d9b1d8-e284-40ed-9ec5-f853daa1f336"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "1713fbe7-696f-4d2e-b9f1-c25ac941d0f1",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": 3,
         "Structure": 6,
-        "ID": "6f6da5fb-ce3d-45ff-a9d4-bc7ed5c13e0a"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "e67e7dd1-d757-4dbb-8afd-b606ca2b6b76",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 4,
-        "ID": "1435ff95-27a3-4cf6-a63b-334220505053"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "4f3b41da-2cff-41dc-966c-169f63025b74",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 4,
-        "ID": "b941fae8-e00b-4d1a-9453-733f48a44d85"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "3484e59e-bf81-4acd-a3af-d393c4374760",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": null,
         "Structure": 6,
-        "ID": "8641f435-a7b6-4f6f-af5a-66e0923a3373"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "adc3963d-ae8b-48d3-bf03-a2e8b8c98f39",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": null,
         "Structure": 6,
-        "ID": "c337515e-4fbd-453f-96a7-551c6d44eca5"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "772fb3c0-ed4c-4d45-8587-1d0b6dbf7c12",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "ed5b16d6-dcdb-4789-936d-baf3e7ec72af"
+        "OriginalLocation": null,
+        "ID": "4dc43d70-a0d2-4773-bb1c-d96262c29dbb",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "b9530a28-b50f-4db0-867b-37dedd0ed87b"
+        "OriginalLocation": null,
+        "ID": "61558d63-91c1-4caa-b9f9-c3bca6a84ec1",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "19daeae5-386d-4172-9d42-856899c1384b"
+        "OriginalLocation": null,
+        "ID": "1e100294-54f9-4be2-89a8-d717e0b9aca6",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "441345cf-313c-4509-8527-4119575cce6e"
+        "OriginalLocation": null,
+        "ID": "064be18f-5e4e-4438-a5f0-46afa9f825ad",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "69d84769-bed7-40d3-9d61-f2e6ca2cb814"
+        "OriginalLocation": null,
+        "ID": "90c5b442-2379-4c84-9711-7e5a3208c0d6",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "fd127b59-811a-4d2b-bb3a-3dc071fe149d"
+        "OriginalLocation": null,
+        "ID": "28dbf09d-e3c0-4427-872d-665046d581d2",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "83a76455-d4e8-440d-8e00-ce314adaef5a"
+        "OriginalLocation": null,
+        "ID": "f82623ab-e9c6-4a88-8a65-11e8e6e68d06",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "3fbdbfcd-7d88-4b06-aaec-5f3e2a7a7375"
+        "OriginalLocation": null,
+        "ID": "b5363d4f-c76a-4207-bd07-96e5e2ec34fe",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "56e31c93-c19d-4ee9-84d7-cf9b72357950"
+        "OriginalLocation": null,
+        "ID": "0a88e395-1a91-467c-aa24-6fc68ae3551f",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "73b34291-b708-416a-9cbd-37ef4c5efd6a"
+        "OriginalLocation": null,
+        "ID": "adcbec24-9ac8-4101-bc7f-2f3042e8d8f8",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "7b334090-a509-43bd-ac65-9edbd90e52e2"
+        "OriginalLocation": null,
+        "ID": "c01aa492-9a10-4cd3-8c4a-ede713490ac3",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "ebaf6643-a2c0-4a14-91a9-36a951abee19"
+        "OriginalLocation": null,
+        "ID": "18b141be-8380-4ecd-aaf0-164812001151",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "1d1b2439-2684-4b2b-aa15-974b7135e7d1"
+        "OriginalLocation": null,
+        "ID": "0311b708-073c-435f-86f3-fdc56ab91f2b",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 5,
+        "OriginalHits": 5,
         "Location": "LT",
-        "ID": "da5879f3-a39c-4b06-8fa0-f1d23ba1454f"
+        "OriginalLocation": null,
+        "ID": "f83f28db-25e5-4977-bfab-4d711ba7dfcf",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 5,
+        "OriginalHits": 5,
         "Location": "LT",
-        "ID": "4d5a8636-ed97-4d88-8cca-9391ecef06b5"
+        "OriginalLocation": null,
+        "ID": "0d599221-1b1c-4a47-a1ea-f2fa576399ad",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "6c1232ce-f8ea-44a4-91ba-1e0779f17fcc"
+        "OriginalLocation": null,
+        "ID": "be73b192-a215-4e04-a741-d2b1e326955c",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "b1d9c09e-510d-4a15-acd0-947bd1d3edc1"
+        "OriginalLocation": null,
+        "ID": "e3b552ab-b3e3-41f6-ae4c-e6b692a4153b",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "6e884ac8-3558-4ace-9352-ed5e1854286d"
+        "OriginalLocation": null,
+        "ID": "6afcd188-2af3-4ebf-8bb8-3644bb483523",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "929b2d31-7edb-433e-a41f-3fa66caeb291"
+        "OriginalLocation": null,
+        "ID": "353987ba-34ec-488d-b1f6-4c2d344b1749",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "53c13c8e-7ae6-4783-8c65-069fcff2820d"
+        "OriginalLocation": null,
+        "ID": "ec0e5832-448d-4eec-afb6-eaa1a2fdf52b",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "066fdebd-9744-4027-adba-3bae5f4bbdca"
+        "OriginalLocation": null,
+        "ID": "8aa2aa30-86ee-417b-9da8-1f3c27e8e2e8",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "c64bae33-ee6a-472b-b1ef-ce1b2d5d4132"
+        "OriginalLocation": null,
+        "ID": "1ea3699b-af21-4b27-8cd5-899341305d68",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "b7e0a0dc-2b8f-420d-a42d-d35c52f038ec"
+        "OriginalLocation": null,
+        "ID": "a39a0ceb-afb6-4a51-b79e-84bbcca362b3",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 5,
+        "OriginalHits": 5,
         "Location": "RT",
-        "ID": "482ffe4c-8ab5-4141-87e1-9976cadde06b"
+        "OriginalLocation": null,
+        "ID": "069fff3c-8fec-40a7-883a-04375ab50119",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 5,
+        "OriginalHits": 5,
         "Location": "RT",
-        "ID": "8d1253cd-1b7f-43bb-aea7-ef7d22d9a67b"
+        "OriginalLocation": null,
+        "ID": "f3e644fa-637c-45d1-bbcf-e06be6630785",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -895,6 +1400,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -902,8 +1408,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "6744fb6d-ac42-42b8-8d48-a3815369a247"
+        "OriginalLocation": null,
+        "ID": "d23a885f-a1f7-4399-92b5-4e9e1422139d",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -913,23 +1422,33 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 25,
+            "WeaponDamage": 8,
+            "AmmoExplosionDamage": 20,
             "Name": "Ammo (SRM 4)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "0609d98b-4213-400d-ad87-fdeb5c376586"
+            "OriginalLocation": null,
+            "ID": "25e4cacc-ccda-441d-baf8-20a71e85cc6d",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 4",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "18d2819b-533b-4214-971b-1f3f8e9ebd42"
+        "OriginalLocation": null,
+        "ID": "65c8d7bc-55d4-41ad-a53b-64945ccdb573",
+        "IsSelected": false
       },
       {
         "Heat": 4,
@@ -939,26 +1458,35 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 15,
+            "WeaponDamage": 12,
+            "AmmoExplosionDamage": 18,
             "Name": "Ammo (SRM 6)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "LT",
-            "ID": "a0f9acfd-266b-474b-a5f9-be2a07778f18"
+            "OriginalLocation": null,
+            "ID": "20f18a04-0489-4ab2-87d7-2777fce128dc",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 6",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "ade648c4-9f57-4edd-a995-6e9711703432"
+        "OriginalLocation": null,
+        "ID": "2dc24641-1e9a-4614-bf20-7c026a7e6374",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 10,
     "Quirks": [
       {
@@ -970,7 +1498,8 @@
     ],
     "UnitHeader": "Commando (COM-2D)",
     "UnitDetails": "25 tons - BV: 541",
-    "ID": "36d3a2f6-00e5-44a2-a309-65e6d7cdb47f"
+    "ID": "9695df01-8ed3-44a6-99e9-1a003fc8c9bc",
+    "IsSelected": false
   },
   {
     "Name": "Dervish",
@@ -985,222 +1514,373 @@
       "Walking": 5,
       "Running": 8,
       "Jumping": 5,
-      "ID": "905cafa5-a443-49ac-8671-5be4197d8b4b"
+      "ID": "58958dd5-f94a-4330-bf9b-5f4db5b6558c",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "5e63467d-a77e-4cb1-bf1f-8df353d1f8f4"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "39b8cb16-d4ec-44b3-b8e3-81f209eb116e",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 20,
         "RearArmor": 4,
         "Structure": 18,
-        "ID": "e4ac9459-d357-4d76-b659-1265a747a205"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "41038062-7907-4beb-97e3-1d03ce465434",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": 4,
         "Structure": 13,
-        "ID": "00c6bb8c-79e2-4db1-b785-0f168bed1e99"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "a99edb83-f2d3-45f0-9f66-05e38bfdc518",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": 4,
         "Structure": 13,
-        "ID": "c4f81455-ee76-42fd-ae48-d90a91a9d0da"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "41ff9ad1-075f-4675-8130-4bd8b1f446d3",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 10,
         "RearArmor": null,
         "Structure": 9,
-        "ID": "9e2b1a63-64c0-4309-84ec-94756faa00d0"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "ca4fd506-484a-498a-8f86-6fce58d3abe1",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 10,
         "RearArmor": null,
         "Structure": 9,
-        "ID": "daf40da7-8d61-4e60-a4d3-208e0fca4219"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "37e01fd5-7ce6-46d0-9da2-3ebfaf3e28d8",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": null,
         "Structure": 13,
-        "ID": "f9f1f3e7-e530-4dba-afa3-bce59312fb5c"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "67aeb1b3-094d-4037-b48b-f6a3d7194619",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": null,
         "Structure": 13,
-        "ID": "b3c08856-23f3-4821-9936-7ae67e329f79"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "bddb3743-5740-4907-8ee7-b11e3f606ea9",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "79a4d35e-831c-49b5-9c85-c4c37a352f1e"
+        "OriginalLocation": null,
+        "ID": "116652b3-967c-41c8-b9ba-95cb6eb2f35e",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "b279aa57-08f4-4986-ac31-f7fb4da3690a"
+        "OriginalLocation": null,
+        "ID": "30013f1e-1719-4624-aa3d-b2da5e8c2b3e",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "7a51dc6c-43e5-4ea0-85f0-378d48d8185a"
+        "OriginalLocation": null,
+        "ID": "54173945-530e-49a6-abbd-46a1143a3573",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "f37be28c-0f6e-4b00-84e2-0bcef5a0af9f"
+        "OriginalLocation": null,
+        "ID": "a0e13c38-c7a7-4f1d-9ff9-5dd9e43d8eef",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "63af5f17-e0ab-4cc8-b8ea-c7de2fa6a4e2"
+        "OriginalLocation": null,
+        "ID": "9e8bf8b6-4fe7-480f-af7b-e0164f41a9c1",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "3a03a903-48dd-44ae-9d89-357ff16a99ee"
+        "OriginalLocation": null,
+        "ID": "8caef95f-62dc-4b0f-a65e-710a5e1ab566",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "d4dc73e9-8752-4da0-9580-1c9a1e2d2183"
+        "OriginalLocation": null,
+        "ID": "74a54ffc-7b0c-412f-a3a8-8653e6e4bab2",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "0256282f-9749-4ff8-b4d8-8a80490128ff"
+        "OriginalLocation": null,
+        "ID": "6cd6530f-2311-48f4-911d-2c370c239013",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "a6983ab6-ad63-4396-950f-efae53f66fa2"
+        "OriginalLocation": null,
+        "ID": "6345a0fa-7e0e-474e-afdb-796216db5e5c",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "cead1071-0939-4501-829e-d88b021737f3"
+        "OriginalLocation": null,
+        "ID": "22aba045-4a57-41f8-9c26-2e6124d63272",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "e1ce132d-e61b-45fa-a2d0-49ea91012e3b"
+        "OriginalLocation": null,
+        "ID": "088381f9-2dea-44e0-ab1f-c7142ef8ed77",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "e17e0cf7-b786-4096-83c4-20ce7901caab"
+        "OriginalLocation": null,
+        "ID": "aefb5fda-f294-4ab2-bf2a-4f308e9e2444",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "39e32c6d-57df-4d13-acf3-fc31e83ab9b6"
+        "OriginalLocation": null,
+        "ID": "9d7c5d1c-c35f-4867-98cb-70ffc3bf88c3",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "dd481f9c-d5ec-4613-ba7a-0c95e7f298b5"
+        "OriginalLocation": null,
+        "ID": "c139b4e9-8538-4114-9ced-9b5fbeba709b",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "9f83935c-16a1-4aab-8648-c43432d31520"
+        "OriginalLocation": null,
+        "ID": "80bb2368-e06e-4f2d-acd7-d79fe5c04fbb",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "923e2fa7-f9e6-4645-912f-9bf96db11ecf"
+        "OriginalLocation": null,
+        "ID": "db09aaa1-2104-4cc7-8984-92aa55d5d9a6",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "8da3c40d-6d40-46cf-be12-d50d90b956c1"
+        "OriginalLocation": null,
+        "ID": "b568a09b-5393-4490-bd68-3ea741fa47a5",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "535cc6d9-94f7-4d36-8f73-4fd0df51385a"
+        "OriginalLocation": null,
+        "ID": "d6a3a759-0d77-4f0a-a76b-7c065f59d4eb",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "862ae8e0-6fc8-45c5-8276-71e734257e03"
+        "OriginalLocation": null,
+        "ID": "1d4836eb-aba2-4c3a-a387-ed55b78a4897",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "ff303acc-9dab-4c11-a3f5-2f3c1508b2d7"
+        "OriginalLocation": null,
+        "ID": "62cfd50c-4cfe-4b02-accd-c06d4bc614c9",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "f1c60ad1-0dfc-4d03-a7f2-e0b0249bb731"
+        "OriginalLocation": null,
+        "ID": "6f316f6b-9b5d-476f-b75c-ae4f6d3b611f",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "ad770158-63f0-4b84-8d81-bf4120ed6cc4"
+        "OriginalLocation": null,
+        "ID": "0d3cabff-8ba4-4a61-99a5-d44ee5bd9af3",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "2879ea4d-a9c9-4c5f-a996-915c5ccfc274"
+        "OriginalLocation": null,
+        "ID": "c3b69877-f246-401c-94c3-afcf2d1c4161",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "57ffaaf3-f52f-4d0d-b88d-86522bdc5b15"
+        "OriginalLocation": null,
+        "ID": "ac4df914-f39c-4d18-84f8-553af828e871",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "ebb0c818-f1d3-4e23-99ce-912fc35f9ca6"
+        "OriginalLocation": null,
+        "ID": "ada4f5d0-c4c6-42fb-b52f-7aa9a88cc014",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "d2a73db6-3169-40eb-89ff-131139d66685"
+        "OriginalLocation": null,
+        "ID": "131af24e-dbdf-4276-bafd-c35c31a26f96",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -1210,6 +1890,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -1217,8 +1898,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "758ba22e-107e-48b0-ac4a-8e10fcb685fa"
+        "OriginalLocation": null,
+        "ID": "4f2d4de4-7a7e-4bee-9212-124018192a98",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -1226,6 +1910,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -1233,8 +1918,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "1f7937a3-10b9-4bfd-8569-495fafe00c86"
+        "OriginalLocation": null,
+        "ID": "96ea6702-30ab-4fb7-b91e-4447964462c9",
+        "IsSelected": false
       },
       {
         "Heat": 2,
@@ -1244,23 +1932,33 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 50,
+            "WeaponDamage": 4,
+            "AmmoExplosionDamage": 20,
             "Name": "Ammo (SRM 2)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RA",
-            "ID": "0bfe22c2-8883-42d9-b2e5-ccfc7ebf862d"
+            "OriginalLocation": null,
+            "ID": "e2dca9ab-953c-45a7-88d1-a85715263042",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 2",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "a4556276-f7bc-46bb-84df-7c6ba6c06869"
+        "OriginalLocation": null,
+        "ID": "76c40431-a0ca-49c1-a230-9b1bd97de173",
+        "IsSelected": false
       },
       {
         "Heat": 2,
@@ -1270,23 +1968,33 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 50,
+            "WeaponDamage": 4,
+            "AmmoExplosionDamage": 20,
             "Name": "Ammo (SRM 2)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RA",
-            "ID": "89388eb4-5a36-4dd8-834c-5b461df3c46f"
+            "OriginalLocation": null,
+            "ID": "ee2c32cb-2500-4ddb-ad2f-f6460e7451bd",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 2",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "b8eeb7d6-f3f1-46ea-ac4b-507265726273"
+        "OriginalLocation": null,
+        "ID": "0000b367-b463-4b22-b24e-9ddfc7f303e7",
+        "IsSelected": false
       },
       {
         "Heat": 4,
@@ -1296,23 +2004,33 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 6,
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 12,
+            "WeaponDamage": 10,
+            "AmmoExplosionDamage": 12,
             "Name": "Ammo (LRM 10)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "2806e268-5c90-4ba6-b81d-e5ee9774e885"
+            "OriginalLocation": null,
+            "ID": "9fbedc5a-8a15-47a6-8f3f-83e28a57e015",
+            "IsSelected": false
           }
         ],
         "Name": "LRM 10",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "74fb6b0d-7046-48d0-af1e-9d281a50f789"
+        "OriginalLocation": null,
+        "ID": "9ed057b5-0fe8-40fc-b435-53870971ef86",
+        "IsSelected": false
       },
       {
         "Heat": 4,
@@ -1322,26 +2040,35 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 6,
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 12,
+            "WeaponDamage": 10,
+            "AmmoExplosionDamage": 12,
             "Name": "Ammo (LRM 10)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "fed2e3ed-28a4-48c5-94bb-8859611f9ade"
+            "OriginalLocation": null,
+            "ID": "103877b5-1756-42db-af6d-1620dcd586cd",
+            "IsSelected": false
           }
         ],
         "Name": "LRM 10",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "2698ec7e-a019-40ff-adc2-beb213cdf60f"
+        "OriginalLocation": null,
+        "ID": "977d69e7-337b-42c9-a986-bd646ca8e7ee",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 10,
     "Quirks": [
       {
@@ -1353,7 +2080,8 @@
     ],
     "UnitHeader": "Dervish (DV-6M)",
     "UnitDetails": "55 tons - BV: 1146",
-    "ID": "872e43fa-620a-4b0b-b85c-376ffe18b96d"
+    "ID": "661a8a58-f3e8-4520-a6ca-4f2734c0e342",
+    "IsSelected": false
   },
   {
     "Name": "Javelin",
@@ -1368,246 +2096,409 @@
       "Walking": 6,
       "Running": 9,
       "Jumping": 6,
-      "ID": "03493c41-d5ea-4dc2-b42e-7918ef178cd1"
+      "ID": "4462d0ea-7a24-4647-be1c-7dff68632e8f",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "1d94a75b-e947-4d2f-9837-98493324cc5b"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "1c664455-3ee9-4be8-8170-c95d8a20ef9e",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": 2,
         "Structure": 10,
-        "ID": "1bf34dc3-9b28-47dd-8418-c935f4a97702"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "c94fe837-d1d4-457b-be08-515c80421dc1",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": 2,
         "Structure": 7,
-        "ID": "34b3c116-1186-4bee-b431-cd9ef58ae1d1"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "d1a30645-15dd-45bb-9fcf-01778c1ee55c",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": 2,
         "Structure": 7,
-        "ID": "2b863106-c6ae-45e7-9a3b-4dc2559640ce"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "4523d2a7-808e-4f71-a7d7-47ad24e8b5b6",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 5,
-        "ID": "27686fa8-7558-4492-b34c-17f4568857e5"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "dcb64e30-18f2-4b05-9f8a-e00b50894d34",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 5,
-        "ID": "e57aad16-5c23-423e-9785-e65e3dc729c8"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "4a80a64b-66c4-4ba2-a71a-c4d7e508200b",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": null,
         "Structure": 7,
-        "ID": "1ea053e3-b7e9-4300-a66f-5702f8c0f8ba"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "64a02c9f-ee8a-47b1-8009-5dca43634954",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 8,
         "RearArmor": null,
         "Structure": 7,
-        "ID": "20146c4d-a544-4ed6-b0f4-7ae84f7fd14b"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "041127a2-0632-47ab-a612-eb4ca31b028d",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "90a0991e-ba25-4c9d-8eb5-011f20c37af7"
+        "OriginalLocation": null,
+        "ID": "49b3e67e-37a9-4df7-966c-33ffa45fadbe",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "a8964424-224f-464d-a9a5-62921d5968ab"
+        "OriginalLocation": null,
+        "ID": "34e5a6d1-684a-405c-99da-d4d25844ecc6",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "3a6df98d-959b-4e52-9a4e-68b797030d1c"
+        "OriginalLocation": null,
+        "ID": "df5bc407-ba29-49fa-85b6-d4e7093ace65",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "700d523c-080a-4e6c-827b-154ee12d7c68"
+        "OriginalLocation": null,
+        "ID": "ce3598b9-b0ae-4466-b19f-15f9f6b86232",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "ab16f7d9-040d-46b4-b1ee-17a8ef8a920e"
+        "OriginalLocation": null,
+        "ID": "d45f4e75-3c78-4379-ba6b-e661d7ef0965",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "631d63f7-1dde-420a-a328-d400eb2c8f0d"
+        "OriginalLocation": null,
+        "ID": "00347223-4dd3-44fb-ac4f-a9d85e7e3c63",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "eb948c20-946e-406e-9c88-33c87abb9518"
+        "OriginalLocation": null,
+        "ID": "a59124de-c1b4-43fa-a495-ec8baabcafd8",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "91a44e1e-4a65-4aec-98b8-27526b1f605b"
+        "OriginalLocation": null,
+        "ID": "bbb0fbaa-031a-419f-891b-744b3fd8df53",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "2d6b1d44-584d-475b-ba02-2ec806e7c14e"
+        "OriginalLocation": null,
+        "ID": "b0788cc7-7ab7-4e66-b5b8-87bc705f40d9",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "367200bf-3286-498a-aab5-5309fba6b5ce"
+        "OriginalLocation": null,
+        "ID": "da445ff1-eed7-4a97-ad4b-ab932128b56d",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "317b53b0-aa69-409c-9ca0-8d9397f3963d"
+        "OriginalLocation": null,
+        "ID": "be53fe3d-d9d2-4a2e-82e1-d20ca643d6d0",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "efbbd54d-381a-454c-80a2-7aa8763dc8f7"
+        "OriginalLocation": null,
+        "ID": "41375dea-fb79-4e05-b16a-d89405132a00",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "3c68c9ba-2ed5-493d-8602-1b6ff6936b0f"
+        "OriginalLocation": null,
+        "ID": "c89173d9-d4ab-4281-9710-e2c855e4ffa6",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "af1cb662-3a73-4b9b-93ba-3a42aa0af9e8"
+        "OriginalLocation": null,
+        "ID": "b3b4faf3-b44e-44df-9ee8-327ddf82dbe3",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "f45d2925-8704-4973-b831-d51647095f8a"
+        "OriginalLocation": null,
+        "ID": "904765a1-bc44-4a51-9a24-c7bd4a352e82",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "eba25156-621e-42b3-b279-e17688d11170"
+        "OriginalLocation": null,
+        "ID": "63a2317e-a725-45ad-9986-618447d8d852",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "3708aed4-80ec-4e8b-84c3-b4ab25efe602"
+        "OriginalLocation": null,
+        "ID": "55134840-b410-41bb-8861-64b63effe5d1",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "bde41337-7259-47f7-b6f8-d756e76aef5b"
+        "OriginalLocation": null,
+        "ID": "35e4a318-bb2d-4062-9d09-325398f25e71",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "ff4245b3-0e54-4d77-8982-5da89e54ea7c"
+        "OriginalLocation": null,
+        "ID": "b588bed6-1e58-4952-97c3-ac9faf6c7787",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "0f4685af-2735-436c-a283-86220662852b"
+        "OriginalLocation": null,
+        "ID": "91317029-f3a4-4cfd-b54b-246a2417cf2c",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "8d4cd89d-110b-4479-9916-fab88dfba89c"
+        "OriginalLocation": null,
+        "ID": "f502940e-4acb-45e8-ad17-ea5036b257b3",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "0b145324-be28-462c-8c1f-3e2129550217"
+        "OriginalLocation": null,
+        "ID": "82fa1e8f-00d4-4f04-87d3-b7c205cc5e0d",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "e10372df-0eb7-4776-a9ea-083f2e6cebba"
+        "OriginalLocation": null,
+        "ID": "1e923f05-89b1-48d7-8434-cbfdbb6e13b0",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "6d176563-051b-4318-8731-355a659a559f"
+        "OriginalLocation": null,
+        "ID": "af61a098-8e9c-4601-bd5a-c21b6a6d03ca",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "cc50f257-7a06-4314-98c1-16ac40863e6e"
+        "OriginalLocation": null,
+        "ID": "da9e6ba5-f7f2-4318-bad1-10872142bf0a",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "fdf7b9a0-7688-40d1-aa35-2bb159c7ac9f"
+        "OriginalLocation": null,
+        "ID": "fdffa1c4-769c-44f2-996a-1906dd293362",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "d2f7a83f-ef4b-4697-9e98-1af4b46528b6"
+        "OriginalLocation": null,
+        "ID": "8cc5cd4b-82ac-470c-a733-60e3ea1d17bf",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "6e3c9d07-e966-4e37-b153-b9348e8c436a"
+        "OriginalLocation": null,
+        "ID": "1f9c1e0d-cc44-4b50-9b47-ada41cabfe22",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "0809165c-a9e0-4fbc-a970-b9a7c30285e3"
+        "OriginalLocation": null,
+        "ID": "e4c9969c-9a88-4ac8-91a8-9c4bdb33eb57",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "51c1bf11-c2ca-4532-a67f-5c1cbd229a41"
+        "OriginalLocation": null,
+        "ID": "278fcaea-0aef-44fd-9c7d-7e57476e45c2",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -1619,23 +2510,33 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 15,
+            "WeaponDamage": 12,
+            "AmmoExplosionDamage": 18,
             "Name": "Ammo (SRM 6)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "7fdaca45-200f-4b94-9a2f-60db2cd0d209"
+            "OriginalLocation": null,
+            "ID": "c2575747-a4ce-4c54-9fff-f7a602cfbd7a",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 6",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "3a28897d-822c-4cc6-8d27-52889161602d"
+        "OriginalLocation": null,
+        "ID": "a2739286-0217-4bde-897c-37cd279c605c",
+        "IsSelected": false
       },
       {
         "Heat": 4,
@@ -1645,26 +2546,35 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 15,
+            "WeaponDamage": 12,
+            "AmmoExplosionDamage": 18,
             "Name": "Ammo (SRM 6)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "4910f2a4-d72c-4aa4-bdf2-07224bc410ea"
+            "OriginalLocation": null,
+            "ID": "095b6a9c-04cb-47e0-8bf7-a806704add7b",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 6",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "f3b0bd71-3b48-4264-928a-71266f27eb08"
+        "OriginalLocation": null,
+        "ID": "03ce1906-205f-4830-b21e-0c9ac433e048",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 10,
     "Quirks": [
       {
@@ -1673,7 +2583,8 @@
     ],
     "UnitHeader": "Javelin (JVN-10N)",
     "UnitDetails": "30 tons - BV: 594",
-    "ID": "1f6dc9f7-fba8-48a9-ba31-29ec59618776"
+    "ID": "af6bc2c9-2787-4aec-a230-ce958f1394c0",
+    "IsSelected": false
   },
   {
     "Name": "Phoenix Hawk",
@@ -1688,240 +2599,400 @@
       "Walking": 6,
       "Running": 9,
       "Jumping": 6,
-      "ID": "9be28f62-2d5a-4e2b-81a1-9905b6728244"
+      "ID": "b6b95584-d36c-412d-a3df-b84e6a6154b5",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 6,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "bb2f3c7b-30bb-462d-baaa-42ee1b125c33"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "ece2601a-97ed-4045-8118-b45ab2e1d91d",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 23,
         "RearArmor": 5,
         "Structure": 14,
-        "ID": "11f28a70-7762-42b2-8e0e-78fdaf91a1aa"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "754bb1cb-8833-4ec3-9439-5debe80e1c30",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 18,
         "RearArmor": 4,
         "Structure": 11,
-        "ID": "c75bdf9d-3585-450b-a859-321a03092bcf"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "07c8e242-4a6e-4013-93a7-e1367e29c527",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 18,
         "RearArmor": 4,
         "Structure": 11,
-        "ID": "232f5bfe-294c-4b63-9b68-d3eb71f39dbf"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "8dea08a3-124d-465d-a4a3-2fe8397832a4",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 10,
         "RearArmor": null,
         "Structure": 7,
-        "ID": "8f92b518-d6d0-4f1b-bf5a-c95d3ab79d82"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "0a1b2508-3b42-4872-aee4-eac601bc55ae",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 10,
         "RearArmor": null,
         "Structure": 7,
-        "ID": "6e957247-eec5-4dde-9ee9-3d247ae4f8c7"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "55b35c98-afb4-48a4-b290-54d7b72c25ed",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": null,
         "Structure": 11,
-        "ID": "14a48312-de2f-4514-a744-c2d3341741f9"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "5b09ff42-8448-4f16-9552-bfae6ca0428a",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 15,
         "RearArmor": null,
         "Structure": 11,
-        "ID": "071cc553-9868-4717-b481-8cac25c57416"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "8b2d05e4-3291-4682-9a55-ad43e8d3363c",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "3e35da2b-c2cf-40cc-99eb-bfc3564720b8"
+        "OriginalLocation": null,
+        "ID": "7a3895f0-b5e1-4d27-a14c-bbe3dd01f5d3",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "9229e0ee-7611-4739-b442-5e1f687323d0"
+        "OriginalLocation": null,
+        "ID": "08842c1f-b190-4632-b8b2-492e331c09f9",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "cd87df67-1954-4ddb-9134-b2ab3c395092"
+        "OriginalLocation": null,
+        "ID": "fe414516-8034-486c-834c-207dc9d0b9ab",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "ef91d018-0787-4036-8ed2-dca6b7e6118f"
+        "OriginalLocation": null,
+        "ID": "839c813b-3434-4a18-b59c-bb3f50302c2d",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "8c979dab-b3e3-4fa7-bfde-af65bb05b484"
+        "OriginalLocation": null,
+        "ID": "4c7b8af3-4403-479f-b8d9-6baeccc4d56a",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "afa40405-252a-43bb-b025-14937fbf7847"
+        "OriginalLocation": null,
+        "ID": "5941a7e9-a914-4dc3-893f-0660e7b74093",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "47e36c39-e280-4d4f-b041-aaee88088a70"
+        "OriginalLocation": null,
+        "ID": "7e2bd641-019d-413a-be5e-ee8136000ed9",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "0e22cf8e-fa9c-4131-a58a-3bc1a15bad72"
+        "OriginalLocation": null,
+        "ID": "0f9328e0-a50c-4f11-8b58-8adf08a6690b",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "c1f76cd5-7bef-44c0-b5de-30617c3abbc1"
+        "OriginalLocation": null,
+        "ID": "7329cdc4-11c9-46cd-b905-2331645cf94a",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "1540d5cb-1736-4a32-a28b-1ba64b901559"
+        "OriginalLocation": null,
+        "ID": "c7ee9232-e536-4cd1-9599-35d6cba0a08e",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "13eb0d08-efce-48ee-a89e-95b777aa2a98"
+        "OriginalLocation": null,
+        "ID": "0b090246-88a1-41cf-94d1-05213a24d52f",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "cb2e0040-d29e-406e-852f-18ff3f0a8370"
+        "OriginalLocation": null,
+        "ID": "e0a7e1c5-5af1-493d-815f-6a94369ddf3c",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "fa1b8211-0c73-4d03-9a74-c573e734541e"
+        "OriginalLocation": null,
+        "ID": "6a162223-1730-4161-aa28-8f46939649b0",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "b3722d74-7d50-49c3-9c7f-530e7a36be79"
+        "OriginalLocation": null,
+        "ID": "2b60f80b-2eb2-4e0a-aea3-707383ae066d",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "0b4219b5-cfad-4bfc-bcbb-a378320b0f59"
+        "OriginalLocation": null,
+        "ID": "8a6fc110-a7c8-4d1e-9634-69dd78da459b",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "efdd6e2f-8f94-4684-9171-bbadfbf79d77"
+        "OriginalLocation": null,
+        "ID": "78dd59fb-0bd0-4024-975a-e9471555d22b",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "4a6556e3-a5f4-45eb-a2ac-44a4f67963a1"
+        "OriginalLocation": null,
+        "ID": "5f6f3828-d2dd-44a6-9b29-955861f8af8d",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "f7730b61-06b7-4e26-b90a-649d279e2f35"
+        "OriginalLocation": null,
+        "ID": "32875fe7-a09e-4162-b695-24992afb92a7",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "64684f82-3722-44e2-9a6e-4b32663b0011"
+        "OriginalLocation": null,
+        "ID": "02e1b1e6-c520-483a-a046-25d046263f97",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "d92aae01-d694-459f-bf07-bec10628b49d"
+        "OriginalLocation": null,
+        "ID": "cababf27-e91b-4ff1-b3ae-928fbe83c392",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "bfb5ece4-3fe5-497a-9f04-63d1c4261871"
+        "OriginalLocation": null,
+        "ID": "e268d7cd-0c33-433c-8afc-10a712cdca95",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "384d0419-6d1f-427f-b522-ccf4c32497a8"
+        "OriginalLocation": null,
+        "ID": "281bdbc8-1bf1-4a9e-8e54-d7b56ed86a37",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "cd94f27f-3d6b-4d27-8af7-195758ae6b4d"
+        "OriginalLocation": null,
+        "ID": "dab25e86-e02c-442e-9653-de7d76ea497c",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "df304225-6dca-4d0d-91f2-3d424b52e3ae"
+        "OriginalLocation": null,
+        "ID": "7688309a-4b4e-4aa1-9f9b-3b040f6e1d92",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "988aa7cb-b6bc-4c8b-bfb4-104756c08cc9"
+        "OriginalLocation": null,
+        "ID": "5ccd1e1d-ab14-4ba9-9e7a-05d85ae184fa",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "f3253c76-88dc-4952-978c-27a1fad39a4a"
+        "OriginalLocation": null,
+        "ID": "09e61e7b-34bc-4b16-96a2-a58bf6ce3959",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "a9d5b1d2-c447-4730-a091-3b656d39411d"
+        "OriginalLocation": null,
+        "ID": "362ff081-fee5-4ec9-9480-5d387a4c5b46",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "0f62536b-c7b5-45ae-9494-8e9b50d329ea"
+        "OriginalLocation": null,
+        "ID": "0b64d71b-a8ca-4315-a266-ab52db3703eb",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "1e8733db-2e6f-459f-87d6-2f3669f21b8d"
+        "OriginalLocation": null,
+        "ID": "6b981908-9044-4aef-bec5-e40e2ad05a57",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -1931,6 +3002,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -1938,8 +3010,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "45a9c528-d538-4aaf-b358-6dd3814ecac0"
+        "OriginalLocation": null,
+        "ID": "8b6ff927-ec0c-4740-af37-a9c908ad1b63",
+        "IsSelected": false
       },
       {
         "Heat": 3,
@@ -1947,6 +3022,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -1954,8 +3030,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "c0db0836-b0c4-4c13-ba1d-128880aac50a"
+        "OriginalLocation": null,
+        "ID": "d7958a96-b69d-4108-9895-c2f814a5d82d",
+        "IsSelected": false
       },
       {
         "Heat": 8,
@@ -1963,6 +3042,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 5,
         "MediumRange": 10,
@@ -1970,8 +3050,11 @@
         "Ammo": [],
         "Name": "Large Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "fc876d37-0f7c-455f-8740-b27d18db82ee"
+        "OriginalLocation": null,
+        "ID": "38453edc-1256-4e61-abdf-d19d490a178d",
+        "IsSelected": false
       },
       {
         "Heat": 0,
@@ -1980,23 +3063,33 @@
           "DB",
           "AI"
         ],
+        "DamageCodesText": "DB, AI",
         "MinimumRange": 0,
         "ShortRange": 1,
         "MediumRange": 2,
         "LongRange": 3,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 200,
+            "WeaponDamage": 2,
+            "AmmoExplosionDamage": 40,
             "Name": "Ammo (Machine Gun)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "CT",
-            "ID": "3ca6bbdb-88fd-443a-bd47-4015bee7ae14"
+            "OriginalLocation": null,
+            "ID": "7df47c4c-0629-4bcd-9e31-6b9af7ee19c8",
+            "IsSelected": false
           }
         ],
         "Name": "Machine Gun",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "9ab7922c-150b-4a1e-8ab4-26815f3d6e45"
+        "OriginalLocation": null,
+        "ID": "2583c189-f9fa-41e9-80c1-57e399816a1a",
+        "IsSelected": false
       },
       {
         "Heat": 0,
@@ -2005,6 +3098,7 @@
           "DB",
           "AI"
         ],
+        "DamageCodesText": "DB, AI",
         "MinimumRange": 0,
         "ShortRange": 1,
         "MediumRange": 2,
@@ -2012,11 +3106,13 @@
         "Ammo": [],
         "Name": "Machine Gun",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "8db63a4a-87e6-4678-bffd-c07225547719"
+        "OriginalLocation": null,
+        "ID": "e16bdcb1-ed73-4aaf-8cca-0bdc75141b5a",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 10,
     "Quirks": [
       {
@@ -2034,313 +3130,8 @@
     ],
     "UnitHeader": "Phoenix Hawk (PXH-1)",
     "UnitDetails": "45 tons - BV: 1041",
-    "ID": "5c78491b-927d-4952-8b42-dc4a4687eeab"
-  },
-  {
-    "Name": "Spider",
-    "Model": "SDR-5V",
-    "Tonnage": 30,
-    "BattleValue": 622,
-    "TechBase": "Inner Sphere",
-    "RulesLevel": "Introductory",
-    "YearIntroduced": 2650,
-    "YearExtinct": null,
-    "UnitMovement": {
-      "Walking": 8,
-      "Running": 12,
-      "Jumping": 8,
-      "ID": "03c9703a-1633-4f21-bd1e-7d3c872e2314"
-    },
-    "Components": [
-      {
-        "Name": "Head",
-        "Armor": 6,
-        "RearArmor": null,
-        "Structure": 3,
-        "ID": "89bdb007-ae44-44f2-84e8-79b3411ccdf7"
-      },
-      {
-        "Name": "Center Torso",
-        "Armor": 8,
-        "RearArmor": 4,
-        "Structure": 10,
-        "ID": "1ad036be-77dd-4efc-ac5b-43ace7fd06ce"
-      },
-      {
-        "Name": "Left Torso",
-        "Armor": 6,
-        "RearArmor": 2,
-        "Structure": 7,
-        "ID": "f577a310-2f0a-4444-95f5-d53f9c067d78"
-      },
-      {
-        "Name": "Right Torso",
-        "Armor": 6,
-        "RearArmor": 2,
-        "Structure": 7,
-        "ID": "92ce8851-27e6-410a-82d1-cd7076d44c95"
-      },
-      {
-        "Name": "Right Arm",
-        "Armor": 5,
-        "RearArmor": null,
-        "Structure": 5,
-        "ID": "f5bbe98d-fdb2-4263-ba77-b1cbf66c8525"
-      },
-      {
-        "Name": "Left Arm",
-        "Armor": 5,
-        "RearArmor": null,
-        "Structure": 5,
-        "ID": "78311c42-7344-44f7-bf9b-3b610ce105ab"
-      },
-      {
-        "Name": "Right Leg",
-        "Armor": 6,
-        "RearArmor": null,
-        "Structure": 7,
-        "ID": "0f454947-522b-4d9f-92cf-679a16f5b504"
-      },
-      {
-        "Name": "Left Leg",
-        "Armor": 6,
-        "RearArmor": null,
-        "Structure": 7,
-        "ID": "08ec45e6-a93b-4844-8e59-3479592e2802"
-      }
-    ],
-    "Equipment": [
-      {
-        "Name": "Fusion Engine",
-        "Hits": 3,
-        "Location": "CT",
-        "ID": "054aa5a3-ce2d-4adf-805c-4c83cfe9268f"
-      },
-      {
-        "Name": "Gyro",
-        "Hits": 2,
-        "Location": "CT",
-        "ID": "b70cd294-fe39-44f4-8165-2df27320807a"
-      },
-      {
-        "Name": "Cockpit",
-        "Hits": 1,
-        "Location": "H",
-        "ID": "586ca67b-62da-4989-97d7-0d211d702653"
-      },
-      {
-        "Name": "Heat Sink",
-        "Hits": 1,
-        "Location": "H",
-        "ID": "b822a5a0-1df0-48ac-89b6-81589f0452a4"
-      },
-      {
-        "Name": "Life Support",
-        "Hits": 1,
-        "Location": "H",
-        "ID": "1003a3e5-5a22-4dec-9568-0795808a60ee"
-      },
-      {
-        "Name": "Sensors",
-        "Hits": 2,
-        "Location": "H",
-        "ID": "91d991ed-a880-4921-8173-8da89ccc9083"
-      },
-      {
-        "Name": "Hand Actuator",
-        "Hits": 1,
-        "Location": "LA",
-        "ID": "32946531-85ac-43eb-a33d-adc9a2e25114"
-      },
-      {
-        "Name": "Lower Arm Actuator",
-        "Hits": 1,
-        "Location": "LA",
-        "ID": "131e7b19-bdbe-4a61-bba4-d9b6cf708260"
-      },
-      {
-        "Name": "Shoulder",
-        "Hits": 1,
-        "Location": "LA",
-        "ID": "60967d19-f6f1-4d04-95fb-095a34738e39"
-      },
-      {
-        "Name": "Upper Arm Actuator",
-        "Hits": 1,
-        "Location": "LA",
-        "ID": "d7efc1db-e2e5-459e-929b-d05d71930417"
-      },
-      {
-        "Name": "Foot Actuator",
-        "Hits": 1,
-        "Location": "LL",
-        "ID": "d90fabcf-4a7c-4d89-bdb2-39a27960bf41"
-      },
-      {
-        "Name": "Hip",
-        "Hits": 1,
-        "Location": "LL",
-        "ID": "2efb061b-c49f-46eb-abfd-e4fdd310b71e"
-      },
-      {
-        "Name": "Lower Leg Actuator",
-        "Hits": 1,
-        "Location": "LL",
-        "ID": "4b0443b7-9d78-4044-920d-54e516e02466"
-      },
-      {
-        "Name": "Upper Leg Actuator",
-        "Hits": 1,
-        "Location": "LL",
-        "ID": "d5865f7b-1f4c-49e8-b035-2feb11ea8205"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "LT",
-        "ID": "ebd5bda9-3c04-418a-8a82-519b239b30ba"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "LT",
-        "ID": "7bbca487-14ac-405e-b7ed-33b0791a1f25"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "LT",
-        "ID": "42e80f7a-9875-436b-97dc-a10a6fd82191"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "LT",
-        "ID": "bbd01105-3883-45aa-a426-c4b7dfd8e279"
-      },
-      {
-        "Name": "Hand Actuator",
-        "Hits": 1,
-        "Location": "RA",
-        "ID": "1e8ab90e-ffe4-46aa-a178-343ba143bb1f"
-      },
-      {
-        "Name": "Lower Arm Actuator",
-        "Hits": 1,
-        "Location": "RA",
-        "ID": "8b1a8dd7-a8bb-496b-912f-80ee9e295c38"
-      },
-      {
-        "Name": "Shoulder",
-        "Hits": 1,
-        "Location": "RA",
-        "ID": "cfa80dee-a670-4681-ac96-2265021adf77"
-      },
-      {
-        "Name": "Upper Arm Actuator",
-        "Hits": 1,
-        "Location": "RA",
-        "ID": "e5935173-0757-46cd-81f3-6c91a5c07ec8"
-      },
-      {
-        "Name": "Foot Actuator",
-        "Hits": 1,
-        "Location": "RL",
-        "ID": "eb593638-3405-4b42-a6d0-31130a5eed02"
-      },
-      {
-        "Name": "Hip",
-        "Hits": 1,
-        "Location": "RL",
-        "ID": "2d5876b0-a248-444f-8f1c-e66c7d2cb97f"
-      },
-      {
-        "Name": "Lower Leg Actuator",
-        "Hits": 1,
-        "Location": "RL",
-        "ID": "81597083-e8d2-4f47-8ee2-94c286790fc3"
-      },
-      {
-        "Name": "Upper Leg Actuator",
-        "Hits": 1,
-        "Location": "RL",
-        "ID": "fc0fca26-0657-4aba-83a2-f7311fe2094a"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "RT",
-        "ID": "676dec13-eba8-44df-a2c5-bf385e94c9c7"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "RT",
-        "ID": "84c2a312-924d-4b41-8728-0d89f776b8a6"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "RT",
-        "ID": "25e74f0a-5506-4878-8a39-0a76f567f62f"
-      },
-      {
-        "Name": "Jump Jet",
-        "Hits": 1,
-        "Location": "RT",
-        "ID": "495987aa-42ee-47d2-a89c-4ebc8fe38824"
-      }
-    ],
-    "Weapons": [
-      {
-        "Heat": 3,
-        "Damage": 5,
-        "DamageCodes": [
-          "DE"
-        ],
-        "MinimumRange": 0,
-        "ShortRange": 3,
-        "MediumRange": 6,
-        "LongRange": 9,
-        "Ammo": [],
-        "Name": "Medium Laser",
-        "Hits": 1,
-        "Location": "CT",
-        "ID": "ad2f6256-7597-4b90-8f86-6c2c9986420c"
-      },
-      {
-        "Heat": 3,
-        "Damage": 5,
-        "DamageCodes": [
-          "DE"
-        ],
-        "MinimumRange": 0,
-        "ShortRange": 3,
-        "MediumRange": 6,
-        "LongRange": 9,
-        "Ammo": [],
-        "Name": "Medium Laser",
-        "Hits": 1,
-        "Location": "CT",
-        "ID": "6ec04d82-c370-485d-a2ad-55de049d3fa3"
-      }
-    ],
-    "CurrentHeatLevel": 0,
-    "HeatSinks": 10,
-    "Quirks": [
-      {
-        "Name": "Easy to Maintain"
-      },
-      {
-        "Name": "Nimble Jumper"
-      },
-      {
-        "Name": "No Ejection System"
-      }
-    ],
-    "UnitHeader": "Spider (SDR-5V)",
-    "UnitDetails": "30 tons - BV: 622",
-    "ID": "2bbb016e-3c34-4d98-8275-cc4f5bf7184b"
+    "ID": "13dffe6d-dafa-4a69-a039-ebf938fba9da",
+    "IsSelected": false
   },
   {
     "Name": "Shadow Hawk",
@@ -2355,216 +3146,364 @@
       "Walking": 5,
       "Running": 8,
       "Jumping": 3,
-      "ID": "8937f3ee-654b-46f9-b1a0-b20ca313f6d5"
+      "ID": "564c2ffa-a037-4365-a72d-7b476c4fc912",
+      "IsSelected": false
     },
     "Components": [
       {
         "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 9,
         "RearArmor": null,
         "Structure": 3,
-        "ID": "a979996b-6564-4529-8396-19627e8c2059"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "693d317c-887d-421b-bdba-0b6749180240",
+        "IsSelected": false
       },
       {
         "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 23,
         "RearArmor": 8,
         "Structure": 18,
-        "ID": "36ec422a-7e36-4499-8326-d04ed78a34b4"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "468d62b7-9439-4bfc-b833-10c3e6285b57",
+        "IsSelected": false
       },
       {
         "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 18,
         "RearArmor": 6,
         "Structure": 13,
-        "ID": "00d98724-1bed-4448-bdd7-dd13334ffceb"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "b9d4542a-6cea-4a48-935b-f80ad3bc5c82",
+        "IsSelected": false
       },
       {
         "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 18,
         "RearArmor": 6,
         "Structure": 13,
-        "ID": "b15a5e92-33c4-4ffb-962b-a2372bdd100c"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "d6c188f3-6f02-459d-b37e-68b960b4fc7d",
+        "IsSelected": false
       },
       {
         "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 9,
-        "ID": "e5e8e852-3b62-4e13-abe6-bc100a6d0962"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "694d2ad1-06db-41a0-a972-529412dbfa4d",
+        "IsSelected": false
       },
       {
         "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 9,
-        "ID": "ac381dc0-5715-41d6-bc16-e5daa04f78ac"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "4ffe0a97-9369-40a5-9312-6a36974f0ec7",
+        "IsSelected": false
       },
       {
         "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 13,
-        "ID": "ba81497c-b18a-435e-af47-b9bbb8a6953e"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "32a24d35-b1f6-4463-8f0a-91ca2deef6cc",
+        "IsSelected": false
       },
       {
         "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
         "Armor": 16,
         "RearArmor": null,
         "Structure": 13,
-        "ID": "f44b0272-ff5b-4679-86e3-ad52f7be9ee8"
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "1df96cee-368d-4908-9436-121abdf76527",
+        "IsSelected": false
       }
     ],
     "Equipment": [
       {
         "Name": "Fusion Engine",
         "Hits": 3,
+        "OriginalHits": 3,
         "Location": "CT",
-        "ID": "7b4aa076-f261-4a23-925c-c42dbf2381f7"
+        "OriginalLocation": null,
+        "ID": "cd81cecc-0501-476e-b601-49470f69d721",
+        "IsSelected": false
       },
       {
         "Name": "Gyro",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "CT",
-        "ID": "52fd9adf-4733-4a59-b64a-3b446271fb79"
+        "OriginalLocation": null,
+        "ID": "eac50354-addc-4ffc-b90b-fbc4d0317789",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "CT",
-        "ID": "0a5aadf3-4740-4247-bb87-742a39172f3f"
+        "OriginalLocation": null,
+        "ID": "69e93e91-111e-447f-8a8e-0d93da0cdfcf",
+        "IsSelected": false
       },
       {
         "Name": "Cockpit",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "654b1561-fbe7-4462-b808-7504a2488416"
+        "OriginalLocation": null,
+        "ID": "51ea5d5e-c209-43d3-b869-5dbb241aed8f",
+        "IsSelected": false
       },
       {
         "Name": "Life Support",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "dcfe0102-0558-4fa0-bee7-a206480ea9f7"
+        "OriginalLocation": null,
+        "ID": "6efc8743-c128-4e4c-b3b7-5120f670ca9b",
+        "IsSelected": false
       },
       {
         "Name": "Sensors",
         "Hits": 2,
+        "OriginalHits": 2,
         "Location": "H",
-        "ID": "c4bee744-7183-41a9-b2ed-c68253c64dcd"
+        "OriginalLocation": null,
+        "ID": "724200fd-3268-4b99-9d84-6c323fdedeec",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "cb1da24b-60f9-487b-83e6-de8b96161c80"
+        "OriginalLocation": null,
+        "ID": "d31ae35d-e6ab-4991-a44f-ce2c8a018be1",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "6e733d4c-c1e0-4783-8d71-c4a938f59f4c"
+        "OriginalLocation": null,
+        "ID": "2cf5156e-ba9a-4196-b572-45f6aa4e34d9",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "9ca8cbe4-328b-4843-8923-a8726629ed7f"
+        "OriginalLocation": null,
+        "ID": "8f02bb37-40dc-4687-afa5-d89ed56d64b0",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LA",
-        "ID": "6bc31014-939b-468e-9c43-d8096706d520"
+        "OriginalLocation": null,
+        "ID": "6eeb557c-a05f-445c-a202-cba6afbced26",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "0ed4d50f-9210-4e9a-8e55-ff858bccfa8d"
+        "OriginalLocation": null,
+        "ID": "58dce10d-5930-4080-a665-d3e41be29414",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "dfad679a-7191-4e59-b432-6dcb3b24baca"
+        "OriginalLocation": null,
+        "ID": "9ed3289c-5059-4549-948b-32299c9885c3",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "db2ea9de-01a1-4a0c-98df-07b995879eb1"
+        "OriginalLocation": null,
+        "ID": "e1e69b46-c82c-41ad-bc08-150fdc0a29a0",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LL",
-        "ID": "cf2c24dd-855d-47ef-b1f8-467214e9162a"
+        "OriginalLocation": null,
+        "ID": "63ae1be4-67df-4e9f-9c1f-85a4596bd489",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "95b56756-1e67-4753-96bf-894ba028d745"
+        "OriginalLocation": null,
+        "ID": "e1f7c2a4-3f7f-491f-951b-e842a9c17288",
+        "IsSelected": false
       },
       {
         "Name": "Hand Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "b72459b3-2287-49bd-96d4-29b207466507"
+        "OriginalLocation": null,
+        "ID": "75aa29ac-5471-4ac0-a42b-5b538e81b05a",
+        "IsSelected": false
       },
       {
         "Name": "Lower Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "c32b712a-a6f5-4e48-ad9b-dd7ca5cab4d9"
+        "OriginalLocation": null,
+        "ID": "d4449630-d881-4fb8-8b3c-a2dd59b94ba5",
+        "IsSelected": false
       },
       {
         "Name": "Shoulder",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "0e008377-dfa6-41ec-9c0f-6fde412a7530"
+        "OriginalLocation": null,
+        "ID": "75bedd16-ef77-479c-92af-e217a7ff9284",
+        "IsSelected": false
       },
       {
         "Name": "Upper Arm Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "6708ee49-4996-4d60-91f2-10a6736c4795"
+        "OriginalLocation": null,
+        "ID": "d0b5812e-f397-43ab-abc5-f1b1ca608ef7",
+        "IsSelected": false
       },
       {
         "Name": "Foot Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "1bec0897-0e50-49f7-94e5-1ac6c8c92b3f"
+        "OriginalLocation": null,
+        "ID": "552735ed-4e5f-437a-9128-e1ca3e37f5e7",
+        "IsSelected": false
       },
       {
         "Name": "Hip",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "f5e6007e-dace-41ac-b5d2-fe4309e0016c"
+        "OriginalLocation": null,
+        "ID": "e2203dad-f700-49bf-a3e1-f0654ca049b9",
+        "IsSelected": false
       },
       {
         "Name": "Lower Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "07388a1e-4c5d-4194-9306-bc6fcfa9fd9f"
+        "OriginalLocation": null,
+        "ID": "d966c28d-0f7e-4f9e-9f95-d46b70a12e83",
+        "IsSelected": false
       },
       {
         "Name": "Upper Leg Actuator",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RL",
-        "ID": "e2f1cf5c-d3af-4143-9c68-09c2cf4740fc"
+        "OriginalLocation": null,
+        "ID": "3849aa55-e039-4f3a-ac78-db7596f0eca9",
+        "IsSelected": false
       },
       {
         "Name": "Heat Sink",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "e89929c8-39ad-44c3-b1ae-f859cce2f93e"
+        "OriginalLocation": null,
+        "ID": "8c2af9d2-30b1-42e6-8750-84d8302195f2",
+        "IsSelected": false
       },
       {
         "Name": "Jump Jet",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "b737bb67-210c-4a12-91e1-c8a6c57b603d"
+        "OriginalLocation": null,
+        "ID": "ab21553b-3a8c-47bf-86d3-785aacb68536",
+        "IsSelected": false
       }
     ],
     "Weapons": [
@@ -2574,6 +3513,7 @@
         "DamageCodes": [
           "DE"
         ],
+        "DamageCodesText": "DE",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
@@ -2581,8 +3521,11 @@
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RA",
-        "ID": "dde506d3-2d51-4f17-b3d3-19eaddace758"
+        "OriginalLocation": null,
+        "ID": "0eff616d-38fb-4c2f-a5eb-d4d08b9a7581",
+        "IsSelected": false
       },
       {
         "Heat": 1,
@@ -2591,23 +3534,33 @@
           "DB",
           "S"
         ],
+        "DamageCodesText": "DB, S",
         "MinimumRange": 3,
         "ShortRange": 6,
         "MediumRange": 12,
         "LongRange": 18,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 20,
+            "WeaponDamage": 5,
+            "AmmoExplosionDamage": 10,
             "Name": "Ammo (AC/5)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "LT",
-            "ID": "4b9b66bf-caf9-48e0-a480-8387736c3f2b"
+            "OriginalLocation": null,
+            "ID": "0fb67404-e72f-471d-ac62-70e670c04500",
+            "IsSelected": false
           }
         ],
         "Name": "AC/5",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "LT",
-        "ID": "8a6c7ff1-1111-450f-93b4-49994568a3db"
+        "OriginalLocation": null,
+        "ID": "3af33e3c-6511-4c52-a34e-4a9b94a46f0a",
+        "IsSelected": false
       },
       {
         "Heat": 2,
@@ -2617,23 +3570,33 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 6,
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 24,
+            "WeaponDamage": 5,
+            "AmmoExplosionDamage": 12,
             "Name": "Ammo (LRM 5)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "RT",
-            "ID": "203fb1ae-6289-4fb4-b1e7-7c690d6f8565"
+            "OriginalLocation": null,
+            "ID": "552bf8e9-ee6c-4176-980e-393811e696f4",
+            "IsSelected": false
           }
         ],
         "Name": "LRM 5",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "RT",
-        "ID": "e6d7ef8e-58d1-4201-909a-15300b65cab0"
+        "OriginalLocation": null,
+        "ID": "94eacc87-5805-4ff1-acf9-91de9a9e7c22",
+        "IsSelected": false
       },
       {
         "Heat": 2,
@@ -2643,26 +3606,35 @@
           "C",
           "S"
         ],
+        "DamageCodesText": "M, C, S",
         "MinimumRange": 0,
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
         "Ammo": [
           {
+            "HasCASE": false,
             "AmmoCount": 50,
+            "WeaponDamage": 4,
+            "AmmoExplosionDamage": 20,
             "Name": "Ammo (SRM 2)",
             "Hits": 1,
+            "OriginalHits": 1,
             "Location": "CT",
-            "ID": "584ea9f7-a247-4d4c-bf3b-5c777d89cd97"
+            "OriginalLocation": null,
+            "ID": "bc116c40-0c5a-47d8-a04b-01cefb6bd504",
+            "IsSelected": false
           }
         ],
         "Name": "SRM 2",
         "Hits": 1,
+        "OriginalHits": 1,
         "Location": "H",
-        "ID": "d22e026d-d8a8-4e3b-a4af-1b92af27138b"
+        "OriginalLocation": null,
+        "ID": "16630e41-78ed-48cc-9cc8-93771ff0bdd1",
+        "IsSelected": false
       }
     ],
-    "CurrentHeatLevel": 0,
     "HeatSinks": 12,
     "Quirks": [
       {
@@ -2686,6 +3658,978 @@
     ],
     "UnitHeader": "Shadow Hawk (SHD-2H)",
     "UnitDetails": "55 tons - BV: 1064",
-    "ID": "f1e4646e-11cb-4a7c-9969-b313988a3bb9"
+    "ID": "2fbc57ea-e31a-44bb-81b7-8e40c3ebd745",
+    "IsSelected": false
+  },
+  {
+    "Name": "Spider",
+    "Model": "SDR-5V",
+    "Tonnage": 30,
+    "BattleValue": 622,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2650,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 8,
+      "Running": 12,
+      "Jumping": 8,
+      "ID": "7d8dbd18-faef-4413-90f9-e0089a74a675",
+      "IsSelected": false
+    },
+    "Components": [
+      {
+        "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 6,
+        "RearArmor": null,
+        "Structure": 3,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "941c72a8-539b-4e69-a19f-93b4bee3419b",
+        "IsSelected": false
+      },
+      {
+        "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 8,
+        "RearArmor": 4,
+        "Structure": 10,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "c1f2de0e-f59b-4d56-a3a3-62af20ca20c6",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 6,
+        "RearArmor": 2,
+        "Structure": 7,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "3218efd2-9101-40c7-9610-bb22d184b77c",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 6,
+        "RearArmor": 2,
+        "Structure": 7,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "b4a97ea6-0593-4f1e-ad2f-2d6f3b13ae2f",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 5,
+        "RearArmor": null,
+        "Structure": 5,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "9a4bdf47-40fb-41c9-9ecb-34cc01484511",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 5,
+        "RearArmor": null,
+        "Structure": 5,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "a69636cd-941e-4fe9-b0a6-f640f0a72bd3",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 6,
+        "RearArmor": null,
+        "Structure": 7,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "c08f82c8-7cea-469a-a328-a51d42f54c81",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 6,
+        "RearArmor": null,
+        "Structure": 7,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "7fe98414-5575-439e-b95e-421e06f169c8",
+        "IsSelected": false
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Fusion Engine",
+        "Hits": 3,
+        "OriginalHits": 3,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "22339d7b-dee2-4264-b41e-33251028ccb0",
+        "IsSelected": false
+      },
+      {
+        "Name": "Gyro",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "39d2ff27-0294-4c4b-9944-ce90a4c819f0",
+        "IsSelected": false
+      },
+      {
+        "Name": "Cockpit",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "b4328a28-aff6-433a-967b-278117aabd82",
+        "IsSelected": false
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "f4efca27-b4f6-4503-9adb-6d4cee8ed11a",
+        "IsSelected": false
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "feb4365e-3640-4829-a007-e4eb3e834617",
+        "IsSelected": false
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "1563fb6b-c049-4c59-8455-c525045f22df",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "42117de6-64e5-4432-a920-7643578b9430",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "83f6fc1a-a59a-4ed9-af05-3929e15ece58",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "adbf11bc-0033-4cc5-8450-402f16fb2050",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "50f762cf-a239-4ee3-a96e-6f5f49c4ef1b",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "727f1186-42dd-4614-86ee-d4ce2e3092ac",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "7fb93a73-ddb4-4d00-a56a-7ea5ee6d121d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "d5dc5684-f89f-49b2-b0d5-69304f772583",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "b1727258-1006-40b1-b77a-cdb6fbd99f2e",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LT",
+        "OriginalLocation": null,
+        "ID": "33612637-ed7f-4853-b199-531e0b495235",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LT",
+        "OriginalLocation": null,
+        "ID": "265a71c0-3b77-43a9-8158-10f8e92b3fa7",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LT",
+        "OriginalLocation": null,
+        "ID": "e6591785-c857-44c1-9482-e8fa6c0fdc9a",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LT",
+        "OriginalLocation": null,
+        "ID": "b3169a1d-1f34-41a0-a1a6-8e48a1df8de9",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "974a3787-bd7b-4d09-937f-7b53674e7f5e",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "4e7693de-b5c9-4a44-bb24-43fc550b0f1d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "f3137383-a645-48f0-a6f3-b9d5185312ed",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "39557a3d-6125-40d3-9130-82f4e8344a06",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "8398c7ca-01d2-4317-a020-ee6f7f95b1c0",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "4f7d2a15-3f3a-473c-bf64-7afb30b2890c",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "a6849f5e-1295-4613-bc87-e84abc894193",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "bd98ab08-715d-4fc1-90f8-a6136428dc30",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RT",
+        "OriginalLocation": null,
+        "ID": "eb9281da-7537-4aac-abc9-06c3b911cfa1",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RT",
+        "OriginalLocation": null,
+        "ID": "429e1e42-c424-4639-a2fd-1a83e839dc60",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RT",
+        "OriginalLocation": null,
+        "ID": "aca8c0c9-c794-4bcb-ae94-9b3fe7a7bf8d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RT",
+        "OriginalLocation": null,
+        "ID": "7478af5f-de9f-498e-b90f-4cb5f1875686",
+        "IsSelected": false
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "DamageCodesText": "DE",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "2a8f0573-e3c3-4a45-9a31-8f32929269ab",
+        "IsSelected": false
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "DE"
+        ],
+        "DamageCodesText": "DE",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "b829e3c0-a70f-4cd3-a449-d65cd9a6b403",
+        "IsSelected": false
+      }
+    ],
+    "HeatSinks": 10,
+    "Quirks": [
+      {
+        "Name": "Easy to Maintain"
+      },
+      {
+        "Name": "Nimble Jumper"
+      },
+      {
+        "Name": "No Ejection System"
+      }
+    ],
+    "UnitHeader": "Spider (SDR-5V)",
+    "UnitDetails": "30 tons - BV: 622",
+    "ID": "c3d5ed7b-8cd3-4886-809e-9d03993bc947",
+    "IsSelected": false
+  },
+  {
+    "Name": "Trebuchet",
+    "Model": "TBT-5J",
+    "Tonnage": 50,
+    "BattleValue": 1191,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2850,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 5,
+      "Running": 8,
+      "Jumping": 5,
+      "ID": "c058a113-1c97-4fbc-b7da-b080b2c3030c",
+      "IsSelected": false
+    },
+    "Components": [
+      {
+        "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 9,
+        "RearArmor": null,
+        "Structure": 3,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "b82aa0f8-c76a-4c6e-8994-4b459257c8a6",
+        "IsSelected": false
+      },
+      {
+        "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 22,
+        "RearArmor": 7,
+        "Structure": 16,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f96ec6c0-6a83-40e4-b3f2-834a9069addf",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 15,
+        "RearArmor": 5,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "254c1a98-f72d-49e8-afc8-d5d21780b6bb",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 15,
+        "RearArmor": 5,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f5a338dd-4168-4126-bb32-4aa00a960fbe",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 8,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "155333c5-6c66-4097-b743-526cd415a392",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 8,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f9a37e4b-31bb-4bc5-a90f-999b8c87839b",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 15,
+        "RearArmor": null,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "6b2b6aa7-8057-4fad-b713-9926185e6c31",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 15,
+        "RearArmor": null,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "2fbb5459-5eec-4603-aa31-2f98f5bd3c5b",
+        "IsSelected": false
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Fusion Engine",
+        "Hits": 3,
+        "OriginalHits": 3,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "59145f90-295f-41a3-b98c-364c5bda65c2",
+        "IsSelected": false
+      },
+      {
+        "Name": "Gyro",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "906d50ac-d5c2-4a85-ad0d-3de986031e4d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Cockpit",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "6f4b35b4-9fb0-4fa5-b03d-b323831ec724",
+        "IsSelected": false
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "9b55d9af-f82b-4019-b17e-92313dc2c397",
+        "IsSelected": false
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "a41bc3d1-4728-44b9-8e85-c41682d8a70d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "aca2f38d-22e2-4038-90ca-137b6c984aa7",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "e1029ec8-e70b-4817-b69d-c4119989cdb3",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "d3363aa7-5336-4d3d-aa98-98d0583d9f04",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "388c7c60-af56-4dbb-afb3-871cfda264ec",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "9f67e7e5-471c-426b-9e11-e78998646277",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "e9fa342c-d9a2-4a0e-938c-b319a194b31e",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "beac470f-d250-4e9e-9768-d1a2464a7a1b",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "5dc88501-01ad-4f08-9f34-99ab69db3d5a",
+        "IsSelected": false
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 5,
+        "OriginalHits": 1,
+        "Location": "LT",
+        "OriginalLocation": null,
+        "ID": "9123a85b-640a-465f-9a09-409ee77fe508",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "3dc015dc-d966-4491-a199-f03946d1965b",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "7e623634-f92a-4753-bcb3-e463896ce29a",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "d8ef2e04-a610-4d88-9d34-b1c565870a3e",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "12f46201-1a5d-4363-91f6-96bcfe5ef6df",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "99cdc01d-71b9-4b56-a42c-3ef1f5ff9ae7",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "5dd127d9-c09b-4f85-90e4-cbf1f81b0b20",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "3210d8d1-171f-40df-b418-59f38c4c7a94",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "d32205b2-e28f-4f5d-a1cb-1eaa44742454",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "b7580412-6640-44e9-9f1a-092aa187e29e",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "71c693a7-68f6-4f56-b237-e05d55d90e35",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "01fecc54-8b41-4a4c-9fcd-a594a664169d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Jump Jet",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "20ca0914-e58a-40a8-a602-c5f6bce7ef34",
+        "IsSelected": false
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "D",
+          "E"
+        ],
+        "DamageCodesText": "D, E",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "0d9b5cc8-bfc2-46bc-a313-871aaa6cc801",
+        "IsSelected": false
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "D",
+          "E"
+        ],
+        "DamageCodesText": "D, E",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": "LA",
+        "ID": "af6e337e-0b20-4b10-9c56-4725fc180b90",
+        "IsSelected": false
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "D",
+          "E"
+        ],
+        "DamageCodesText": "D, E",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": "LA",
+        "ID": "7613a3c6-18b5-4bff-b3c5-94e1f2146c36",
+        "IsSelected": false
+      },
+      {
+        "Heat": 5,
+        "Damage": 1,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "DamageCodesText": "M, C, S",
+        "MinimumRange": 6,
+        "ShortRange": 7,
+        "MediumRange": 14,
+        "LongRange": 21,
+        "Ammo": [
+          {
+            "HasCASE": false,
+            "AmmoCount": 8,
+            "WeaponDamage": 15,
+            "AmmoExplosionDamage": 12,
+            "Name": "Ammo (LRM 15)",
+            "Hits": 1,
+            "OriginalHits": 1,
+            "Location": "CT",
+            "OriginalLocation": null,
+            "ID": "44e549ee-b834-4ddd-acf4-cda6369b6e29",
+            "IsSelected": false
+          }
+        ],
+        "Name": "LRM 15",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RT",
+        "OriginalLocation": null,
+        "ID": "2874a314-86c5-4cc2-9603-b767bfc58355",
+        "IsSelected": false
+      }
+    ],
+    "HeatSinks": 15,
+    "Quirks": [
+      {
+        "Name": "Easy to Maintain"
+      }
+    ],
+    "UnitHeader": "Trebuchet (TBT-5J)",
+    "UnitDetails": "50 tons - BV: 1191",
+    "ID": "fc3b4479-b982-450f-bbd1-c878fd6c860d",
+    "IsSelected": false
   }
 ]
