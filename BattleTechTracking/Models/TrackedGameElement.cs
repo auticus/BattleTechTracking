@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using BattleTechTracking.Converters;
 using BattleTechTracking.Factories;
+using BattleTechTracking.Reports;
 
 namespace BattleTechTracking.Models
 {
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayMatchedListView
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;

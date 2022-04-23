@@ -7,6 +7,7 @@ namespace BattleTechTracking.Models
         private int _hits;
         private string _location;
         private string _originalLocation;
+        private int _originalHits;
 
         public string Name { get; set; }
 
@@ -18,6 +19,7 @@ namespace BattleTechTracking.Models
                 if (_hits == 0 && value > 0 && string.IsNullOrEmpty(_originalLocation))
                 {
                     Location = _originalLocation; //model starts at 0 and gets a value populated for it - so cache that
+                    OriginalHits = value;
                 }
 
                 _hits = value;
@@ -25,6 +27,17 @@ namespace BattleTechTracking.Models
                 OnPropertyChanged(nameof(Hits));
 
                 if (_hits == 0) DestroyItem();
+            }
+        }
+
+
+        public int OriginalHits
+        {
+            get => _originalHits;
+            set
+            {
+                _originalHits = value;
+                OnPropertyChanged(nameof(OriginalHits));
             }
         }
 

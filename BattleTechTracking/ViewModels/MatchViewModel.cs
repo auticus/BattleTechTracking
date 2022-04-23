@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Models;
+using BattleTechTracking.Reports;
 using Xamarin.Forms;
 
 namespace BattleTechTracking.ViewModels
@@ -27,11 +29,13 @@ namespace BattleTechTracking.ViewModels
         private bool _activeUnitEquipmentVisible;
         private bool _activeUnitWeaponsVisible;
         private bool _activeUnitAmmoVisible;
+        private bool _dataReportsVisible;
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
+        private IDisplayListView _selectorViewSelectedUnit;
 
-        private List<IDisplayMatchedListView>[] _factionUnits =
+        private IList<IDisplayMatchedListView>[] _factionUnits =
             { new List<IDisplayMatchedListView>(), new List<IDisplayMatchedListView>() };
 
         private ObservableCollection<GroupedGameElement> _activeFactionUnits;
@@ -39,6 +43,7 @@ namespace BattleTechTracking.ViewModels
         private ObservableCollection<Equipment> _activeUnitEquipment;
         private ObservableCollection<Weapon> _activeUnitWeapons;
         private ObservableCollection<Ammunition> _activeUnitAmmunition;
+        private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
         private TrackedGameElement _selectedActiveUnit;
 
         /// <summary>
@@ -252,6 +257,16 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        public bool DataReportsVisible
+        {
+            get =>  _dataReportsVisible;
+            set
+            {
+                _dataReportsVisible = value;
+                OnPropertyChanged(nameof(DataReportsVisible));
+            }
+        }
+
         /// <summary>
         /// Gets the unit filters from the unit selector.
         /// </summary>
@@ -259,8 +274,6 @@ namespace BattleTechTracking.ViewModels
 
         public List<string> UnitActions { get; }
         public List<string> UnitStatuses { get; }
-
-        private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
 
         public ObservableCollection<IDisplayListView> SelectorViewVisibleUnits
         {
@@ -272,8 +285,6 @@ namespace BattleTechTracking.ViewModels
                 SelectorViewSelectedUnit = null;
             }
         }
-
-        private IDisplayListView _selectorViewSelectedUnit;
 
         /// <summary>
         /// Gets or sets the Selected Unit from the Unit Selector
@@ -348,12 +359,18 @@ namespace BattleTechTracking.ViewModels
         /// </summary>
         public ICommand BeginNewRound { get; }
 
+        /// <summary>
+        /// Gets the command to display the reports screen.
+        /// </summary>
+        public ICommand ReportsCommand { get; }
+
         public ICommand ViewTrackGameElementDetails { get; }
         public ICommand ViewActiveUnitComponents { get; }
         public ICommand ViewActiveUnitEquipment { get; }
         public ICommand ViewActiveUnitWeapons { get; }
         public ICommand ViewActiveUnitAmmo { get; }
-        public ICommand DeleteComponent { get; }
+
+        public DataReportViewModel DataReportVM { get; } = new DataReportViewModel();
 
         public MatchViewModel()
         {
@@ -471,6 +488,20 @@ namespace BattleTechTracking.ViewModels
                 SetAllPanelsInvisible();
                 ActiveUnitAmmoVisible = true;
             });
+
+            ReportsCommand = new Command(() =>
+            {
+                //refresh the faction data with what is in the observable
+                _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
+
+                DataReportVM.RefreshReportData(new TextReportInput(TextReportInput.ConvertFactionDataToReportableFormat(_factionUnits),
+                                                            new string[]{Faction1Name, Faction2Name}));
+                DataReportVM.TextReportContents = string.Empty;
+                DataReportVM.SelectedReport = string.Empty;
+
+                SetAllPanelsInvisible();
+                DataReportsVisible = true;
+            });
         }
 
         public void LoadMatchState(MatchState state)
@@ -493,6 +524,7 @@ namespace BattleTechTracking.ViewModels
             ActiveUnitEquipmentVisible = false;
             ActiveUnitWeaponsVisible = false;
             ActiveUnitAmmoVisible = false;
+            DataReportsVisible = false;
         }
 
         private void LoadVisibleUnits()

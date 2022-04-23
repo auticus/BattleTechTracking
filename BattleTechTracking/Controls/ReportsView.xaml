@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BattleTechTracking.Controls.ReportsView"
+             x:Name="thisView">
+  <ContentView.Content>
+      <!-- dropdown with reports and charts followed by content view
+      Some content will just display data and be an editor they can copy out of
+      Chart views will have input fields and an output field and the ability to random gen-->
+    <StackLayout>
+        <!--HEADER-->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <BoxView 
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="MidnightBlue" 
+                HorizontalOptions="FillAndExpand"/>
+            <Label Text="Data Reports" 
+                Grid.Column="0" 
+                TextColor="Gold"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center" 
+                VerticalTextAlignment="Center"
+                FontAttributes="Bold"
+                FontSize="Medium"/>
+        </Grid>
+        <StackLayout Orientation="Horizontal">
+            <Label TextColor="Gold" 
+                Margin="10,10,0,0" 
+                VerticalTextAlignment="Center"
+                Text="Report"/>
+            <Picker Margin="10,10,0,0"
+                WidthRequest="400"
+                ItemsSource="{Binding Reports, Source={x:Reference thisView}}"
+                SelectedItem="{Binding SelectedReport, Source={x:Reference thisView}, Mode=TwoWay}"/>
+        </StackLayout>
+
+        <!-- CONTENTS -->
+        <StackLayout Margin="10,10,10,50"
+            IsVisible="{Binding TextReportVisible, Source={x:Reference thisView}}">
+            <Editor HeightRequest="500"
+                    Text="{Binding TextReportContents, Source={x:Reference thisView}, Mode=TwoWay}"/>
+            <Button Margin="10,10,0,0"
+                    Text="Generate Report"
+                    TextColor="Gold"
+                    Command="{Binding GenerateReport, Source={x:Reference thisView}}" />
+        </StackLayout>
+    </StackLayout>    
+  </ContentView.Content>
+</ContentView>

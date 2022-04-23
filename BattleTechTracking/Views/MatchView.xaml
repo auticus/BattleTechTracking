@@ -197,6 +197,18 @@
                                          AmmunitionList="{Binding ActiveUnitAmmunition}"
                                          IsDataEditMode="False"/>
 
+                <controls:ReportsView Grid.Row="0"
+                                      Grid.RowSpan="2"
+                                      Grid.Column="1"
+                                      Margin="10,48,0,0"
+                                      IsVisible="{Binding DataReportsVisible}"
+                                      Reports="{Binding DataReportVM.DataReports}"
+                                      SelectedReport="{Binding DataReportVM.SelectedReport, Mode=TwoWay}"
+                                      GenerateReport="{Binding DataReportVM.GenerateReportCommand}"
+                                      TextReportVisible="{Binding DataReportVM.TextReportVisible}"
+                                      TextReportContents="{Binding DataReportVM.TextReportContents, Mode=TwoWay}"
+                                      />
+
                 <StackLayout Grid.Row="2"
                              Grid.Column="1"
                              Orientation="Horizontal">
