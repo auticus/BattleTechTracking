@@ -186,6 +186,7 @@
                                       Margin="10,45,0,0"
                                       IsVisible="{Binding ActiveUnitWeaponsVisible}"
                                       ItemSource="{Binding ActiveUnitWeapons}"
+                                      FireWeaponCommand="{Binding FireWeaponCommand}"
                                       IsDataEditMode="False"/>
 
                 <controls:AmmunitionView Grid.Row="0"

@@ -75,10 +75,11 @@ namespace BattleTechTracking.Models
             Location = EquipmentStatus.DESTROYED;
         }
 
-        public virtual void TryRestoreItem()
+        public virtual bool TryRestoreItem()
         {
-            if (Hits == 0) return;
+            if (Hits == 0) return false;
             Location = _originalLocation;
+            return true;
         }
     }
 }

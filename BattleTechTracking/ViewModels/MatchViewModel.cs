@@ -364,6 +364,11 @@ namespace BattleTechTracking.ViewModels
         /// </summary>
         public ICommand ReportsCommand { get; }
 
+        /// <summary>
+        /// Gets the command to fire a given weapon.
+        /// </summary>
+        public ICommand FireWeaponCommand { get; }
+
         public ICommand ViewTrackGameElementDetails { get; }
         public ICommand ViewActiveUnitComponents { get; }
         public ICommand ViewActiveUnitEquipment { get; }
@@ -501,6 +506,34 @@ namespace BattleTechTracking.ViewModels
 
                 SetAllPanelsInvisible();
                 DataReportsVisible = true;
+            });
+
+            FireWeaponCommand = new Command<Guid>((id) =>
+            {
+                var wpn = ActiveUnitWeapons.FirstOrDefault(weapon => weapon.ID == id);
+                if (wpn == null) return;
+                if (wpn.WeaponFiringStatus != WeaponFiringStatus.NotFired) return; //if the status is set, cannot fire again
+                if (wpn.WeaponFiringStatus == WeaponFiringStatus.WeaponDestroyed) return;
+
+                if (!wpn.UsesAmmunition)
+                {
+                    wpn.WeaponFiringStatus = WeaponFiringStatus.WeaponFired;
+                    SelectedActiveUnit.CurrentHeatLevel += wpn.Heat;
+                    return;
+                }
+
+                //find the ammo and if so, remove one otherwise return no ammo
+                var allAmmo = ActiveUnitAmmunition.Where(x => x.Name.Contains(wpn.Name));
+                foreach (var ammo in allAmmo)
+                {
+                    if (ammo.AmmoCount == 0 || ammo.Location == EquipmentStatus.DESTROYED) continue;
+                    ammo.AmmoCount--;
+                    SelectedActiveUnit.CurrentHeatLevel += wpn.Heat;
+                    wpn.WeaponFiringStatus = WeaponFiringStatus.WeaponFired;
+                    return;
+                }
+
+                wpn.WeaponFiringStatus = WeaponFiringStatus.OutOfAmmo;
             });
         }
 

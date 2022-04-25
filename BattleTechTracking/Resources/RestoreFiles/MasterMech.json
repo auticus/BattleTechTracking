@@ -12,7 +12,7 @@
       "Walking": 4,
       "Running": 6,
       "Jumping": 4,
-      "ID": "bba29568-dd30-4084-a651-c09f16c1b7ca",
+      "ID": "096305f8-f971-4b20-8813-59bdbea67584",
       "IsSelected": false
     },
     "Components": [
@@ -29,7 +29,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "b8f6e700-5651-4ee4-9f08-dba126a570fc",
+        "ID": "80d08254-ded3-4af2-be7e-6fa8138599a1",
         "IsSelected": false
       },
       {
@@ -45,7 +45,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "9241c053-cca9-4231-80ad-e0d668a28627",
+        "ID": "ab551931-ed5e-4806-899f-e93e9b668339",
         "IsSelected": false
       },
       {
@@ -61,7 +61,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "f4bf2b14-dbd2-4e93-884a-d2abf9303f6c",
+        "ID": "3cf81251-1654-4a33-a31e-bb7813b9acc5",
         "IsSelected": false
       },
       {
@@ -77,7 +77,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "f12692f0-d1dd-4c45-b445-271891ee176b",
+        "ID": "59c5ec8f-48f2-46fb-8f5b-f761a83c1c96",
         "IsSelected": false
       },
       {
@@ -93,7 +93,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "9a505087-27b0-4366-81c7-07185ae27eb4",
+        "ID": "8c29b7aa-9a37-45de-b239-69f7445fcd73",
         "IsSelected": false
       },
       {
@@ -109,7 +109,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "82fe8042-be9f-4a54-b657-110154e10ca6",
+        "ID": "db428192-3735-4065-acee-949300c3e26d",
         "IsSelected": false
       },
       {
@@ -125,7 +125,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "47ada527-fc07-4a07-aa83-8aa693129d94",
+        "ID": "e93116cf-63a7-4692-9ab0-e424af00fb20",
         "IsSelected": false
       },
       {
@@ -141,7 +141,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "63eacba0-774d-4c53-891f-8af27ff9b5c9",
+        "ID": "962dc410-d0d2-43d0-9afc-82fb01a098e3",
         "IsSelected": false
       }
     ],
@@ -152,7 +152,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "b39db25e-f0a4-4c43-b5d3-00db096e5fac",
+        "ID": "e1db47e3-94b2-47a3-a0d7-60019182fca8",
         "IsSelected": false
       },
       {
@@ -161,7 +161,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "73aa3d25-b5c7-408e-b637-b5fc77899759",
+        "ID": "408d751d-bbd8-446d-b899-b6b9b15d3139",
         "IsSelected": false
       },
       {
@@ -170,7 +170,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "23f1db53-99e9-483b-bb46-af8a1c8fa725",
+        "ID": "03808b5f-d217-457c-83d2-e9fa4f7fec2f",
         "IsSelected": false
       },
       {
@@ -179,7 +179,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "4d95105e-ec49-47b7-8b9f-3787ca1e0a83",
+        "ID": "e6d5a3c1-8243-487e-ba00-0d7fd435b7ed",
         "IsSelected": false
       },
       {
@@ -188,7 +188,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "25478d4c-0be7-4aa4-a00f-9072378d54b8",
+        "ID": "87a6de13-e896-47f1-89a7-de5d96291b31",
         "IsSelected": false
       },
       {
@@ -197,7 +197,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "bed1fd20-1a37-4ce3-9362-2a235694c9cc",
+        "ID": "dcdde805-e58b-41b5-b100-42cde36d6773",
         "IsSelected": false
       },
       {
@@ -206,7 +206,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "c3fe3ee1-9334-45dd-8b0b-6da92c274e1f",
+        "ID": "71dcbef1-089b-4d9f-9ba0-6f223c597bb1",
         "IsSelected": false
       },
       {
@@ -215,7 +215,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "2ea1530f-b62e-4d65-8380-e33d3aeed25c",
+        "ID": "12c5c0ef-af00-4a92-bf06-ec8b4cead10a",
         "IsSelected": false
       },
       {
@@ -224,7 +224,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "cb15aa43-78bb-458c-bf65-dfb300421d84",
+        "ID": "3eb6103c-8bc4-4f1f-a1e5-a6bc3678894e",
         "IsSelected": false
       },
       {
@@ -233,7 +233,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "67974719-a603-4c27-933d-72a86d423ded",
+        "ID": "f5511cef-4850-48ee-a1b6-cdb87e86de58",
         "IsSelected": false
       },
       {
@@ -242,7 +242,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "3d1bd12d-aa69-489a-bb36-1b768009123b",
+        "ID": "f2601c9b-ca03-43fb-8da4-9d033813ff3c",
         "IsSelected": false
       },
       {
@@ -251,7 +251,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "b8255ffd-99f1-4c25-a796-351445110e0b",
+        "ID": "2697a9cb-49b0-486a-975e-85dba34399e0",
         "IsSelected": false
       },
       {
@@ -260,7 +260,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "b7640aad-50a0-4d19-86f0-ba5cab952b16",
+        "ID": "d7f5005f-ea63-4b59-984b-72173aafd14a",
         "IsSelected": false
       },
       {
@@ -269,7 +269,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "5bcd0b26-dd6e-46c8-a91a-c2423b188bb9",
+        "ID": "549d6ecf-0656-418a-b5f1-562e9347148d",
         "IsSelected": false
       },
       {
@@ -278,7 +278,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "e3e2b365-5226-4d37-8b93-22458135647b",
+        "ID": "2286a83f-5b79-4010-b732-33ba5189e57c",
         "IsSelected": false
       },
       {
@@ -287,7 +287,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "9dda59fd-53c0-4574-b1ff-692bd2498c8d",
+        "ID": "888282ee-19cf-4846-b5b0-ab3e07c33938",
         "IsSelected": false
       },
       {
@@ -296,7 +296,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "1570ebf0-0cd3-461c-93ef-4f91ea53853f",
+        "ID": "c2aa89cd-f141-4f9d-97a0-b976ef05b3a8",
         "IsSelected": false
       },
       {
@@ -305,7 +305,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "4c566224-9404-4c24-ae73-3fa33e5febcf",
+        "ID": "61af33bd-4597-422f-a77d-629861494df9",
         "IsSelected": false
       },
       {
@@ -314,7 +314,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "cd08d03e-25d2-4ac8-b3b3-b8640e5e955e",
+        "ID": "098096e0-9841-4689-8f1e-e967546fb001",
         "IsSelected": false
       },
       {
@@ -323,7 +323,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "c62e8fee-d73f-4ab5-b13b-727c8fb04eac",
+        "ID": "d9f52c09-7ab1-442d-a686-348b06587850",
         "IsSelected": false
       },
       {
@@ -332,7 +332,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "7164fe93-31f0-4dd0-8a48-2717dd1ae114",
+        "ID": "47b2f78a-4721-4e08-9b24-de2f4eb55156",
         "IsSelected": false
       },
       {
@@ -341,7 +341,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "7da7ab28-df52-4195-814d-ea066d8c808c",
+        "ID": "fcf698dd-4fe2-417a-8228-e90f56ad08d4",
         "IsSelected": false
       },
       {
@@ -350,7 +350,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "d458b21f-0466-42ff-a1c6-4212cff2b0ee",
+        "ID": "bd729ebc-b960-49b8-9640-62180a493e77",
         "IsSelected": false
       },
       {
@@ -359,7 +359,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "8150c021-3c88-42a4-a6ef-870ed0abefd3",
+        "ID": "0797cc67-fe84-433c-b93e-445cd17d3697",
         "IsSelected": false
       },
       {
@@ -368,7 +368,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "78484636-62ce-4e24-b7a4-9222d1b18b4a",
+        "ID": "9dcef331-4bcd-4056-8244-e25f5339e1a0",
         "IsSelected": false
       }
     ],
@@ -384,13 +384,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "f4f2f71c-67a2-4ee6-81ed-940a27fa462f",
+        "ID": "66c0ac1e-bf76-43e6-9f8c-6a5f7a569f5d",
         "IsSelected": false
       },
       {
@@ -404,13 +405,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "c623ebb5-9f52-42af-bdfa-5092b916d9ee",
+        "ID": "8437c936-df72-45b7-a5ff-cba74aec9efa",
         "IsSelected": false
       },
       {
@@ -424,13 +426,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "3e62be12-11c5-472f-91e5-383f0c3aec25",
+        "ID": "60744b9c-1c6b-4866-9904-5e29f34ea24b",
         "IsSelected": false
       },
       {
@@ -444,13 +447,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "55592dca-5db0-4ee4-8f7a-d09e0a55c14e",
+        "ID": "858315ce-0649-4552-b2c5-4c2df874043d",
         "IsSelected": false
       },
       {
@@ -465,6 +469,7 @@
         "ShortRange": 8,
         "MediumRange": 16,
         "LongRange": 24,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -476,7 +481,7 @@
             "OriginalHits": 1,
             "Location": "CT",
             "OriginalLocation": null,
-            "ID": "8909a110-25ed-4d0e-8821-013a2a201f66",
+            "ID": "8225dfa2-dc6a-48c9-bdc9-6384e9d4e369",
             "IsSelected": false
           }
         ],
@@ -485,7 +490,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "53444a42-6894-4a07-9af9-64f205eae639",
+        "ID": "85bb6ccb-44da-4029-aae4-46f875c05f24",
         "IsSelected": false
       },
       {
@@ -500,13 +505,14 @@
         "ShortRange": 8,
         "MediumRange": 16,
         "LongRange": 24,
+        "UsesAmmunition": true,
         "Ammo": [],
         "Name": "AC/2",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "5f97d766-26f9-4b2b-8fec-1c55f64c28cb",
+        "ID": "069b78ba-53f9-4ed4-8090-14cdd76499ba",
         "IsSelected": false
       }
     ],
@@ -518,7 +524,7 @@
     ],
     "UnitHeader": "Blackjack (BJ-1)",
     "UnitDetails": "45 tons - BV: 949",
-    "ID": "ad14ff93-944d-4f95-8af3-d274b0d0cc17",
+    "ID": "7abf6609-2b7e-4bd5-b5ec-feb2615be378",
     "IsSelected": false
   },
   {
@@ -534,7 +540,7 @@
       "Walking": 4,
       "Running": 6,
       "Jumping": 0,
-      "ID": "0e258862-1d41-4d6f-ba13-4c3d136b627e",
+      "ID": "5fa2f242-97ac-4932-aba1-25cecc82609a",
       "IsSelected": false
     },
     "Components": [
@@ -551,7 +557,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "5e758d95-8a2b-4376-b0b0-ccdebde836f3",
+        "ID": "9f0d0fdf-3211-4eec-9935-298d19a306b6",
         "IsSelected": false
       },
       {
@@ -567,7 +573,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "cbc68735-dd77-4551-ab44-0a9418095341",
+        "ID": "bc8f99d8-7848-4a0a-91e9-0d7666f7dced",
         "IsSelected": false
       },
       {
@@ -583,7 +589,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "ae21f10a-7c72-4f3c-875c-4d6e8608cccb",
+        "ID": "aae118cf-7c7f-4dfe-a6de-dd457bd52078",
         "IsSelected": false
       },
       {
@@ -599,7 +605,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "fbe0be02-ee69-47d1-ab15-c3722d47f5b8",
+        "ID": "3f16d2af-df02-4606-8fc9-61ebbe19a53a",
         "IsSelected": false
       },
       {
@@ -615,7 +621,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "f1857020-e5de-41fd-b03d-b5471d42ea64",
+        "ID": "bf975c43-65a3-482d-8a09-f7c43ea04762",
         "IsSelected": false
       },
       {
@@ -631,7 +637,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "38619d31-e141-4c22-82bf-21bc5cafe626",
+        "ID": "7292119c-84de-4578-a424-5005c7e2bb22",
         "IsSelected": false
       },
       {
@@ -647,7 +653,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "343dd420-a270-4b64-b05a-ff8bb318120b",
+        "ID": "a34b8726-d1b6-4cc3-8973-40b18f3bfd1a",
         "IsSelected": false
       },
       {
@@ -663,7 +669,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "df50c2ea-c0fa-4a82-b7c8-754f82318b95",
+        "ID": "cab7be52-4c63-4441-b3b7-b63100aa0aa7",
         "IsSelected": false
       }
     ],
@@ -674,7 +680,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "0e81f68b-43e5-43f8-84ce-2ef81e32f7cf",
+        "ID": "235c1d98-3cab-4297-9a2c-8dfcbad5e485",
         "IsSelected": false
       },
       {
@@ -683,7 +689,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "27c0c5fd-f6e1-4bf8-ac8d-8fe6209ca880",
+        "ID": "cc79de9e-dd44-4635-849d-51bb15d8341f",
         "IsSelected": false
       },
       {
@@ -692,7 +698,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "9e1fe5a0-208d-4c6b-a927-732ba3229d4c",
+        "ID": "f3977b81-e65e-4d70-bc4f-73d2709a9337",
         "IsSelected": false
       },
       {
@@ -701,7 +707,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "0cc8cedf-ff35-46b6-b36d-9fd3978e0de0",
+        "ID": "84c075c4-5fff-473c-975b-1ee7674ded23",
         "IsSelected": false
       },
       {
@@ -710,7 +716,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "f10298c0-1626-41f3-86da-7a777617b479",
+        "ID": "80a2824b-3415-490c-903e-68f6c70c274f",
         "IsSelected": false
       },
       {
@@ -719,7 +725,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "207ae782-02af-4c5d-96a5-3bf7d2cd95fa",
+        "ID": "05684e6e-73ce-4171-ac8d-e94aba2d314e",
         "IsSelected": false
       },
       {
@@ -728,7 +734,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "c66eecb6-80b2-4744-904e-1585e4b3a623",
+        "ID": "90a35b1f-2038-466d-af5d-c25160acc58b",
         "IsSelected": false
       },
       {
@@ -737,7 +743,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "773e7ca4-1654-4d34-9042-70b46c4a4243",
+        "ID": "9757e4fb-3e81-4324-beb2-744811beeaf8",
         "IsSelected": false
       },
       {
@@ -746,7 +752,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "b2b2dc88-0a01-4872-80c5-06b066128846",
+        "ID": "a7556bb4-a728-4329-9d23-1e7101a5a517",
         "IsSelected": false
       },
       {
@@ -755,7 +761,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "bba66fb0-48ee-4834-bc07-ee68e5925265",
+        "ID": "2759cca7-30d7-49c1-bdae-1e241de452e1",
         "IsSelected": false
       },
       {
@@ -764,7 +770,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "41280dcc-8cfb-4bf6-adfd-ec5ce10b6351",
+        "ID": "d04f2cb8-fccc-4097-a06a-03c3a76209f8",
         "IsSelected": false
       },
       {
@@ -773,7 +779,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "b02b49d8-43c9-497f-86ee-dc063e379aad",
+        "ID": "a1604089-0df1-4197-b99c-1e8b8561a050",
         "IsSelected": false
       },
       {
@@ -782,7 +788,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "3143902f-d76c-41cf-9aec-4aecdef3876e",
+        "ID": "006a9408-6c11-4865-bc0b-2428615c005d",
         "IsSelected": false
       },
       {
@@ -791,7 +797,7 @@
         "OriginalHits": 5,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "afb78182-f650-4aa4-a7d4-54eac0d2fd82",
+        "ID": "96282b25-764a-4c85-b56c-99f1610232cb",
         "IsSelected": false
       },
       {
@@ -800,7 +806,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "ac8ce231-8293-4895-be56-98e5e87f93f8",
+        "ID": "a59942eb-d662-4385-b2a0-41976ce84b89",
         "IsSelected": false
       },
       {
@@ -809,7 +815,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "90e52aa8-bbc7-4285-980f-dc7abcbd37ce",
+        "ID": "967876e4-ee76-4c1e-822f-09b31380ed6e",
         "IsSelected": false
       },
       {
@@ -818,7 +824,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "7db5ca48-0e31-49dc-81e0-df22588745fa",
+        "ID": "cf82bbcb-081b-4e88-bf82-63c55079f962",
         "IsSelected": false
       },
       {
@@ -827,7 +833,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "e670ddf5-3e09-49b8-ac1d-63a896781e33",
+        "ID": "ffc6f8a5-ede5-40a8-b124-a2c947c58198",
         "IsSelected": false
       },
       {
@@ -836,7 +842,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "65626004-6f3e-4150-943c-e8fb39e90454",
+        "ID": "7c96f815-ea86-4cb5-acbb-749033363533",
         "IsSelected": false
       },
       {
@@ -845,7 +851,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "e2bbcef6-83f3-4a66-b83d-b91bd21596f0",
+        "ID": "7d8f24d4-ac9b-4e1f-8a4e-df463d35d262",
         "IsSelected": false
       },
       {
@@ -854,7 +860,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "6735a0a0-0c90-4da9-92a0-491991df6954",
+        "ID": "26cfe0e4-0e56-47da-af93-f766b4916808",
         "IsSelected": false
       },
       {
@@ -863,7 +869,7 @@
         "OriginalHits": 5,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "5a3b0cbd-e471-4e87-9a8e-04816efa88c4",
+        "ID": "357fc065-f856-423b-9070-c296a3d5ef64",
         "IsSelected": false
       }
     ],
@@ -880,6 +886,7 @@
         "ShortRange": 5,
         "MediumRange": 10,
         "LongRange": 15,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -891,7 +898,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "62886fbf-0a30-41ab-95d5-44e0cc6957a7",
+            "ID": "8259649f-0b30-4035-8c96-76164b41ce0d",
             "IsSelected": false
           },
           {
@@ -904,7 +911,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "1a3efeb7-bdf8-4ed7-a196-5d60ac299165",
+            "ID": "0699c56a-a6b9-4b16-8248-5a08d60f144d",
             "IsSelected": false
           }
         ],
@@ -913,7 +920,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "e0786ae6-ad77-4dd0-82b9-cbf63909788b",
+        "ID": "e60c34b6-589d-4e12-8c19-26cda460445d",
         "IsSelected": false
       },
       {
@@ -929,6 +936,7 @@
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -940,7 +948,7 @@
             "OriginalHits": 1,
             "Location": "LT",
             "OriginalLocation": null,
-            "ID": "59cc558d-157d-44ba-b54b-7f1273afa91c",
+            "ID": "ed8254db-93bf-45d6-9716-a6092507754b",
             "IsSelected": false
           },
           {
@@ -953,7 +961,7 @@
             "OriginalHits": 1,
             "Location": "LT",
             "OriginalLocation": null,
-            "ID": "b741651f-7856-4fe9-ac20-0253d73be0f6",
+            "ID": "a06580fe-b215-41e9-9b26-d54e250cd6a3",
             "IsSelected": false
           }
         ],
@@ -962,7 +970,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "32c8d8c7-b502-4428-b798-d5277c0b3367",
+        "ID": "17f39fbf-ef16-4d99-8592-ccaf1711f3bf",
         "IsSelected": false
       },
       {
@@ -976,13 +984,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "eaf6113d-149f-4ca1-b2ac-49f16538886b",
+        "ID": "fa784ffc-3970-4c24-84d8-ffc8dc9b4899",
         "IsSelected": false
       },
       {
@@ -996,13 +1005,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser (R)",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "420b6cbc-45e5-46fd-b359-46fbceb9ac81",
+        "ID": "c7bb2ffe-4705-4126-a9fd-115e74e70895",
         "IsSelected": false
       }
     ],
@@ -1017,7 +1027,7 @@
     ],
     "UnitHeader": "Centurion (CN9-A)",
     "UnitDetails": "50 tons - BV: 945",
-    "ID": "94f3eaf8-32d0-4d9a-a07e-b267470ee86e",
+    "ID": "421f20d5-572b-43fd-ae23-6d2ee518165f",
     "IsSelected": false
   },
   {
@@ -1033,7 +1043,7 @@
       "Walking": 6,
       "Running": 9,
       "Jumping": 0,
-      "ID": "543ff3bd-0e32-44ff-9219-cdec814978d3",
+      "ID": "2d8d2a88-88c3-496c-952b-61b023d7635a",
       "IsSelected": false
     },
     "Components": [
@@ -1050,7 +1060,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "6407cba3-95ac-4d0e-8bfb-ee1ce443615e",
+        "ID": "c937c59c-39ab-468a-9bfd-a24116e1f3c8",
         "IsSelected": false
       },
       {
@@ -1066,7 +1076,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "3a688139-219d-4a04-8baf-f0e597f3c7cc",
+        "ID": "a589ea8b-9bd0-48cf-8123-31f0e5375532",
         "IsSelected": false
       },
       {
@@ -1082,7 +1092,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "1713fbe7-696f-4d2e-b9f1-c25ac941d0f1",
+        "ID": "be786131-9255-4c17-8c3c-45aff262e5c5",
         "IsSelected": false
       },
       {
@@ -1098,7 +1108,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "e67e7dd1-d757-4dbb-8afd-b606ca2b6b76",
+        "ID": "7bf46cae-07a1-4387-b5f0-972ae56ddd44",
         "IsSelected": false
       },
       {
@@ -1114,7 +1124,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "4f3b41da-2cff-41dc-966c-169f63025b74",
+        "ID": "0a8c7023-d85e-424a-8969-5d64bd463487",
         "IsSelected": false
       },
       {
@@ -1130,7 +1140,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "3484e59e-bf81-4acd-a3af-d393c4374760",
+        "ID": "1e721188-40ce-4734-a674-00aeb003a082",
         "IsSelected": false
       },
       {
@@ -1146,7 +1156,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "adc3963d-ae8b-48d3-bf03-a2e8b8c98f39",
+        "ID": "0e548027-c388-494c-92bb-25e279c6fadb",
         "IsSelected": false
       },
       {
@@ -1162,7 +1172,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "772fb3c0-ed4c-4d45-8587-1d0b6dbf7c12",
+        "ID": "7a98c38d-9b70-4b48-a6b9-7ca100c183ab",
         "IsSelected": false
       }
     ],
@@ -1173,7 +1183,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "4dc43d70-a0d2-4773-bb1c-d96262c29dbb",
+        "ID": "f17b1f9a-37c0-4f8f-984d-72d6e523e08d",
         "IsSelected": false
       },
       {
@@ -1182,7 +1192,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "61558d63-91c1-4caa-b9f9-c3bca6a84ec1",
+        "ID": "8ac749c6-4af6-4637-ba6c-e652be487b85",
         "IsSelected": false
       },
       {
@@ -1191,7 +1201,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "1e100294-54f9-4be2-89a8-d717e0b9aca6",
+        "ID": "d43bf65d-e958-4e76-8fb5-b501092c3fd8",
         "IsSelected": false
       },
       {
@@ -1200,7 +1210,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "064be18f-5e4e-4438-a5f0-46afa9f825ad",
+        "ID": "1053fd7a-6242-46b8-bdd2-cc98dc5d52d1",
         "IsSelected": false
       },
       {
@@ -1209,7 +1219,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "90c5b442-2379-4c84-9711-7e5a3208c0d6",
+        "ID": "7ed3ebc1-2d34-4f80-9201-d02b20c48e11",
         "IsSelected": false
       },
       {
@@ -1218,7 +1228,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "28dbf09d-e3c0-4427-872d-665046d581d2",
+        "ID": "db08b806-c318-4e6b-8378-b9006a60b7cd",
         "IsSelected": false
       },
       {
@@ -1227,7 +1237,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "f82623ab-e9c6-4a88-8a65-11e8e6e68d06",
+        "ID": "528a95b1-e205-47fc-a795-fb9d1da3cb80",
         "IsSelected": false
       },
       {
@@ -1236,7 +1246,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "b5363d4f-c76a-4207-bd07-96e5e2ec34fe",
+        "ID": "fcfaa991-537b-4968-ad19-624337fbf17d",
         "IsSelected": false
       },
       {
@@ -1245,7 +1255,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "0a88e395-1a91-467c-aa24-6fc68ae3551f",
+        "ID": "897829db-da23-4029-babb-83178a29a6e7",
         "IsSelected": false
       },
       {
@@ -1254,7 +1264,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "adcbec24-9ac8-4101-bc7f-2f3042e8d8f8",
+        "ID": "1f069470-883e-4bd2-86a0-7f6700dcf81b",
         "IsSelected": false
       },
       {
@@ -1263,7 +1273,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "c01aa492-9a10-4cd3-8c4a-ede713490ac3",
+        "ID": "a9961357-3094-46e5-bb76-cf0f4f43318f",
         "IsSelected": false
       },
       {
@@ -1272,7 +1282,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "18b141be-8380-4ecd-aaf0-164812001151",
+        "ID": "25b2e84f-4842-43fa-bb74-d6ce21967ee1",
         "IsSelected": false
       },
       {
@@ -1281,7 +1291,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "0311b708-073c-435f-86f3-fdc56ab91f2b",
+        "ID": "202898c6-7a53-479c-8620-93a2a60b2425",
         "IsSelected": false
       },
       {
@@ -1290,7 +1300,7 @@
         "OriginalHits": 5,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "f83f28db-25e5-4977-bfab-4d711ba7dfcf",
+        "ID": "e493c7c4-ef91-46c5-8958-18f63cea0036",
         "IsSelected": false
       },
       {
@@ -1299,7 +1309,7 @@
         "OriginalHits": 5,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "0d599221-1b1c-4a47-a1ea-f2fa576399ad",
+        "ID": "bc5d883d-a171-4183-8477-bad132af7aa7",
         "IsSelected": false
       },
       {
@@ -1308,7 +1318,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "be73b192-a215-4e04-a741-d2b1e326955c",
+        "ID": "1faffa0b-23f8-4ee7-9802-3b71e0e5de06",
         "IsSelected": false
       },
       {
@@ -1317,7 +1327,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "e3b552ab-b3e3-41f6-ae4c-e6b692a4153b",
+        "ID": "5da957f6-d85e-452b-8b8c-c40c18adf092",
         "IsSelected": false
       },
       {
@@ -1326,7 +1336,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "6afcd188-2af3-4ebf-8bb8-3644bb483523",
+        "ID": "3d0754b4-72ec-446f-974b-993b601e10ad",
         "IsSelected": false
       },
       {
@@ -1335,7 +1345,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "353987ba-34ec-488d-b1f6-4c2d344b1749",
+        "ID": "99ce9549-31ac-416e-a35b-18eec3d06764",
         "IsSelected": false
       },
       {
@@ -1344,7 +1354,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "ec0e5832-448d-4eec-afb6-eaa1a2fdf52b",
+        "ID": "fa08ca7e-405d-4873-ac12-de25a173792b",
         "IsSelected": false
       },
       {
@@ -1353,7 +1363,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "8aa2aa30-86ee-417b-9da8-1f3c27e8e2e8",
+        "ID": "9821d09c-3a93-471b-a694-0a42ac236299",
         "IsSelected": false
       },
       {
@@ -1362,7 +1372,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "1ea3699b-af21-4b27-8cd5-899341305d68",
+        "ID": "ef6a4810-3c56-4a2e-be17-99c99e8b5f28",
         "IsSelected": false
       },
       {
@@ -1371,7 +1381,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "a39a0ceb-afb6-4a51-b79e-84bbcca362b3",
+        "ID": "1002dc57-39e0-4156-a5c8-daacffe37f9f",
         "IsSelected": false
       },
       {
@@ -1380,7 +1390,7 @@
         "OriginalHits": 5,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "069fff3c-8fec-40a7-883a-04375ab50119",
+        "ID": "d55146d6-e3cb-4517-8c82-aafdb833ac94",
         "IsSelected": false
       },
       {
@@ -1389,7 +1399,7 @@
         "OriginalHits": 5,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "f3e644fa-637c-45d1-bbcf-e06be6630785",
+        "ID": "a81a97b9-db0a-496b-80c0-0cb12c16031a",
         "IsSelected": false
       }
     ],
@@ -1405,13 +1415,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "d23a885f-a1f7-4399-92b5-4e9e1422139d",
+        "ID": "e083d1c8-dd7c-4048-acdc-98561e791f8a",
         "IsSelected": false
       },
       {
@@ -1427,6 +1438,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -1438,7 +1450,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "25e4cacc-ccda-441d-baf8-20a71e85cc6d",
+            "ID": "4095c9db-64ca-4eb9-879b-5809767403bf",
             "IsSelected": false
           }
         ],
@@ -1447,7 +1459,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "65c8d7bc-55d4-41ad-a53b-64945ccdb573",
+        "ID": "75812c67-6e63-45c1-8dc2-14654395c676",
         "IsSelected": false
       },
       {
@@ -1463,6 +1475,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -1474,7 +1487,7 @@
             "OriginalHits": 1,
             "Location": "LT",
             "OriginalLocation": null,
-            "ID": "20f18a04-0489-4ab2-87d7-2777fce128dc",
+            "ID": "c35c6b92-d75b-4560-9b8a-10d2a22be8db",
             "IsSelected": false
           }
         ],
@@ -1483,7 +1496,7 @@
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "2dc24641-1e9a-4614-bf20-7c026a7e6374",
+        "ID": "7c6f7b9e-c0d4-4a44-8682-9a87926e5517",
         "IsSelected": false
       }
     ],
@@ -1498,7 +1511,7 @@
     ],
     "UnitHeader": "Commando (COM-2D)",
     "UnitDetails": "25 tons - BV: 541",
-    "ID": "9695df01-8ed3-44a6-99e9-1a003fc8c9bc",
+    "ID": "cda4d59a-e05c-4739-b9ef-1c83df3ced02",
     "IsSelected": false
   },
   {
@@ -1514,7 +1527,7 @@
       "Walking": 5,
       "Running": 8,
       "Jumping": 5,
-      "ID": "58958dd5-f94a-4330-bf9b-5f4db5b6558c",
+      "ID": "40de2545-be37-46e6-9a26-a8a09b8feb90",
       "IsSelected": false
     },
     "Components": [
@@ -1531,7 +1544,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "39b8cb16-d4ec-44b3-b8e3-81f209eb116e",
+        "ID": "45a61fe8-894f-42e2-8dd8-40ea1bcea108",
         "IsSelected": false
       },
       {
@@ -1547,7 +1560,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "41038062-7907-4beb-97e3-1d03ce465434",
+        "ID": "6a82fc78-0028-42f9-8a2b-447e8e19ba20",
         "IsSelected": false
       },
       {
@@ -1563,7 +1576,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "a99edb83-f2d3-45f0-9f66-05e38bfdc518",
+        "ID": "a342bb71-da16-407d-b3eb-4ac45ee207db",
         "IsSelected": false
       },
       {
@@ -1579,7 +1592,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "41ff9ad1-075f-4675-8130-4bd8b1f446d3",
+        "ID": "44099c56-e5d3-4ca8-97c9-eb04060f7ea1",
         "IsSelected": false
       },
       {
@@ -1595,7 +1608,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "ca4fd506-484a-498a-8f86-6fce58d3abe1",
+        "ID": "37b3ad29-7957-483f-a492-0d95516cb2cf",
         "IsSelected": false
       },
       {
@@ -1611,7 +1624,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "37e01fd5-7ce6-46d0-9da2-3ebfaf3e28d8",
+        "ID": "42e1e56a-d5c4-4c75-bdbe-c47acf77c6fa",
         "IsSelected": false
       },
       {
@@ -1627,7 +1640,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "67aeb1b3-094d-4037-b48b-f6a3d7194619",
+        "ID": "0e254cab-1805-48b9-9c84-8c22a05161e7",
         "IsSelected": false
       },
       {
@@ -1643,7 +1656,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "bddb3743-5740-4907-8ee7-b11e3f606ea9",
+        "ID": "bb33a6a3-23e2-432a-8304-21437ccd70c3",
         "IsSelected": false
       }
     ],
@@ -1654,7 +1667,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "116652b3-967c-41c8-b9ba-95cb6eb2f35e",
+        "ID": "020b8d8e-c807-432e-99ad-af8fbb84d370",
         "IsSelected": false
       },
       {
@@ -1663,7 +1676,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "30013f1e-1719-4624-aa3d-b2da5e8c2b3e",
+        "ID": "b357e7c3-ffca-4264-9c36-5d6e1e51ee8a",
         "IsSelected": false
       },
       {
@@ -1672,7 +1685,7 @@
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "54173945-530e-49a6-abbd-46a1143a3573",
+        "ID": "c32a47c9-0bae-46f3-8d30-949767c7bd25",
         "IsSelected": false
       },
       {
@@ -1681,7 +1694,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "a0e13c38-c7a7-4f1d-9ff9-5dd9e43d8eef",
+        "ID": "8bc713ed-6b32-426d-836f-7460ced0b6b1",
         "IsSelected": false
       },
       {
@@ -1690,7 +1703,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "9e8bf8b6-4fe7-480f-af7b-e0164f41a9c1",
+        "ID": "a3fb9fb2-7814-4cf4-8b94-ceb3e769a82c",
         "IsSelected": false
       },
       {
@@ -1699,7 +1712,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "8caef95f-62dc-4b0f-a65e-710a5e1ab566",
+        "ID": "6644da38-7a2b-48c4-83f8-df4c9e8187ab",
         "IsSelected": false
       },
       {
@@ -1708,7 +1721,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "74a54ffc-7b0c-412f-a3a8-8653e6e4bab2",
+        "ID": "c4653f00-a316-4ee2-8bec-86473fe621d9",
         "IsSelected": false
       },
       {
@@ -1717,7 +1730,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "6cd6530f-2311-48f4-911d-2c370c239013",
+        "ID": "b18c13a5-4630-4b32-b583-131f4308b88f",
         "IsSelected": false
       },
       {
@@ -1726,7 +1739,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "6345a0fa-7e0e-474e-afdb-796216db5e5c",
+        "ID": "3cbbef06-8f16-402e-ac30-da6fc7286a1b",
         "IsSelected": false
       },
       {
@@ -1735,7 +1748,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "22aba045-4a57-41f8-9c26-2e6124d63272",
+        "ID": "b927be22-7ddb-4c38-97c5-1a04663f2559",
         "IsSelected": false
       },
       {
@@ -1744,7 +1757,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "088381f9-2dea-44e0-ab1f-c7142ef8ed77",
+        "ID": "58c490a9-1f76-4c6d-a54d-33c0b2609a7f",
         "IsSelected": false
       },
       {
@@ -1753,7 +1766,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "aefb5fda-f294-4ab2-bf2a-4f308e9e2444",
+        "ID": "1e8788ef-8ec9-4518-9bfe-755a317101cf",
         "IsSelected": false
       },
       {
@@ -1762,7 +1775,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "9d7c5d1c-c35f-4867-98cb-70ffc3bf88c3",
+        "ID": "5e7b6c18-a2bb-447c-8021-b704446707ed",
         "IsSelected": false
       },
       {
@@ -1771,7 +1784,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "c139b4e9-8538-4114-9ced-9b5fbeba709b",
+        "ID": "41f6558c-24ee-4f69-a9d7-ba0d51cc48e1",
         "IsSelected": false
       },
       {
@@ -1780,7 +1793,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "80bb2368-e06e-4f2d-acd7-d79fe5c04fbb",
+        "ID": "08d63c67-969f-41af-bdde-4d3e35349130",
         "IsSelected": false
       },
       {
@@ -1789,7 +1802,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "db09aaa1-2104-4cc7-8984-92aa55d5d9a6",
+        "ID": "c1d6e7ba-8a6a-4f04-b203-0deceaed1386",
         "IsSelected": false
       },
       {
@@ -1798,7 +1811,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "b568a09b-5393-4490-bd68-3ea741fa47a5",
+        "ID": "5e5dbd85-d972-4319-98e6-74f77040cc99",
         "IsSelected": false
       },
       {
@@ -1807,7 +1820,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "d6a3a759-0d77-4f0a-a76b-7c065f59d4eb",
+        "ID": "6e66149d-723f-4051-a1cf-78c4405d10ce",
         "IsSelected": false
       },
       {
@@ -1816,7 +1829,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "1d4836eb-aba2-4c3a-a387-ed55b78a4897",
+        "ID": "77aaab54-7b2c-4e9e-a346-d0629632b5f8",
         "IsSelected": false
       },
       {
@@ -1825,7 +1838,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "62cfd50c-4cfe-4b02-accd-c06d4bc614c9",
+        "ID": "401d0927-c0c6-41ad-8ee7-3e8224203fb4",
         "IsSelected": false
       },
       {
@@ -1834,7 +1847,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "6f316f6b-9b5d-476f-b75c-ae4f6d3b611f",
+        "ID": "e6f15f15-3599-47cf-ad4d-90b8a7488103",
         "IsSelected": false
       },
       {
@@ -1843,7 +1856,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "0d3cabff-8ba4-4a61-99a5-d44ee5bd9af3",
+        "ID": "dac465c1-55dd-47e2-8a18-5c221a4fed27",
         "IsSelected": false
       },
       {
@@ -1852,7 +1865,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "c3b69877-f246-401c-94c3-afcf2d1c4161",
+        "ID": "6f45790c-7bf7-4eb0-b4cb-c799f7a20456",
         "IsSelected": false
       },
       {
@@ -1861,7 +1874,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "ac4df914-f39c-4d18-84f8-553af828e871",
+        "ID": "604e73d5-8fd1-44fa-a69c-a51a7cec6a5d",
         "IsSelected": false
       },
       {
@@ -1870,7 +1883,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "ada4f5d0-c4c6-42fb-b52f-7aa9a88cc014",
+        "ID": "c257225f-dd23-4be8-aa6c-0dcb020d628a",
         "IsSelected": false
       },
       {
@@ -1879,7 +1892,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "131af24e-dbdf-4276-bafd-c35c31a26f96",
+        "ID": "41189765-7a44-4d31-919f-c48a3d31c354",
         "IsSelected": false
       }
     ],
@@ -1895,13 +1908,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "4f2d4de4-7a7e-4bee-9212-124018192a98",
+        "ID": "d9b35961-9835-4753-b1e9-7b4b0ede4967",
         "IsSelected": false
       },
       {
@@ -1915,13 +1929,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "96ea6702-30ab-4fb7-b91e-4447964462c9",
+        "ID": "992a67f6-ec69-4efc-8568-2689c7bbc176",
         "IsSelected": false
       },
       {
@@ -1937,6 +1952,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -1948,7 +1964,7 @@
             "OriginalHits": 1,
             "Location": "RA",
             "OriginalLocation": null,
-            "ID": "e2dca9ab-953c-45a7-88d1-a85715263042",
+            "ID": "27609365-b4e0-4749-93d9-fbf280894747",
             "IsSelected": false
           }
         ],
@@ -1957,7 +1973,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "76c40431-a0ca-49c1-a230-9b1bd97de173",
+        "ID": "30bf57c9-cd00-4021-bb62-304080009612",
         "IsSelected": false
       },
       {
@@ -1973,6 +1989,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -1984,7 +2001,7 @@
             "OriginalHits": 1,
             "Location": "RA",
             "OriginalLocation": null,
-            "ID": "ee2c32cb-2500-4ddb-ad2f-f6460e7451bd",
+            "ID": "ecd64edc-cf41-45a1-a96b-1ff019daeee3",
             "IsSelected": false
           }
         ],
@@ -1993,7 +2010,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "0000b367-b463-4b22-b24e-9ddfc7f303e7",
+        "ID": "4983d3cb-72c1-495b-9ae0-3f009771ffef",
         "IsSelected": false
       },
       {
@@ -2009,6 +2026,7 @@
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -2020,7 +2038,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "9fbedc5a-8a15-47a6-8f3f-83e28a57e015",
+            "ID": "3ba00402-3909-417b-974f-31e5f5b3bc13",
             "IsSelected": false
           }
         ],
@@ -2029,7 +2047,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "9ed057b5-0fe8-40fc-b435-53870971ef86",
+        "ID": "32cbf8ef-ac9c-4847-8450-e15fa5fbd18c",
         "IsSelected": false
       },
       {
@@ -2045,6 +2063,7 @@
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -2056,7 +2075,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "103877b5-1756-42db-af6d-1620dcd586cd",
+            "ID": "89db1895-a936-404b-a125-268536d51f25",
             "IsSelected": false
           }
         ],
@@ -2065,7 +2084,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "977d69e7-337b-42c9-a986-bd646ca8e7ee",
+        "ID": "2e80c6bb-0861-43f4-8f23-77806579ea8e",
         "IsSelected": false
       }
     ],
@@ -2080,7 +2099,7 @@
     ],
     "UnitHeader": "Dervish (DV-6M)",
     "UnitDetails": "55 tons - BV: 1146",
-    "ID": "661a8a58-f3e8-4520-a6ca-4f2734c0e342",
+    "ID": "c9fa18cc-b730-4c04-a6fe-ae5171e85187",
     "IsSelected": false
   },
   {
@@ -2096,7 +2115,7 @@
       "Walking": 6,
       "Running": 9,
       "Jumping": 6,
-      "ID": "4462d0ea-7a24-4647-be1c-7dff68632e8f",
+      "ID": "b9e1de7e-d78c-40fb-93a4-86db7ef92261",
       "IsSelected": false
     },
     "Components": [
@@ -2113,7 +2132,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "1c664455-3ee9-4be8-8170-c95d8a20ef9e",
+        "ID": "37877c24-7079-4fe2-8d71-7698021048f9",
         "IsSelected": false
       },
       {
@@ -2129,7 +2148,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "c94fe837-d1d4-457b-be08-515c80421dc1",
+        "ID": "1115b04c-665d-464a-b39a-fd831f722890",
         "IsSelected": false
       },
       {
@@ -2145,7 +2164,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "d1a30645-15dd-45bb-9fcf-01778c1ee55c",
+        "ID": "48472982-a715-49f9-a0cf-8c93597aa10a",
         "IsSelected": false
       },
       {
@@ -2161,7 +2180,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "4523d2a7-808e-4f71-a7d7-47ad24e8b5b6",
+        "ID": "32ed3b2a-20af-475b-a009-14e6783b9a2d",
         "IsSelected": false
       },
       {
@@ -2177,7 +2196,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "dcb64e30-18f2-4b05-9f8a-e00b50894d34",
+        "ID": "6810f25c-b29d-4f1e-aa69-18a2d77502e1",
         "IsSelected": false
       },
       {
@@ -2193,7 +2212,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "4a80a64b-66c4-4ba2-a71a-c4d7e508200b",
+        "ID": "d41271d6-2820-4abb-8539-a13d02bb78df",
         "IsSelected": false
       },
       {
@@ -2209,7 +2228,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "64a02c9f-ee8a-47b1-8009-5dca43634954",
+        "ID": "e52d37f2-6976-4fe4-b934-22b4f8cc0b82",
         "IsSelected": false
       },
       {
@@ -2225,7 +2244,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "041127a2-0632-47ab-a612-eb4ca31b028d",
+        "ID": "c786e7ae-a13e-456b-9133-1b9d186c3891",
         "IsSelected": false
       }
     ],
@@ -2236,7 +2255,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "49b3e67e-37a9-4df7-966c-33ffa45fadbe",
+        "ID": "231f617a-3243-46a0-888a-4f266a5a7549",
         "IsSelected": false
       },
       {
@@ -2245,7 +2264,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "34e5a6d1-684a-405c-99da-d4d25844ecc6",
+        "ID": "59d2fd44-97af-4e61-b255-3cca07a3abb9",
         "IsSelected": false
       },
       {
@@ -2254,7 +2273,7 @@
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "df5bc407-ba29-49fa-85b6-d4e7093ace65",
+        "ID": "b91fb85b-0a38-4b20-b723-47863afda52c",
         "IsSelected": false
       },
       {
@@ -2263,7 +2282,7 @@
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "ce3598b9-b0ae-4466-b19f-15f9f6b86232",
+        "ID": "1f9078f3-e435-44f3-a211-f6ca2f0bf852",
         "IsSelected": false
       },
       {
@@ -2272,7 +2291,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "d45f4e75-3c78-4379-ba6b-e661d7ef0965",
+        "ID": "1ce731ed-a91d-42b5-93d6-0a66817e1438",
         "IsSelected": false
       },
       {
@@ -2281,7 +2300,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "00347223-4dd3-44fb-ac4f-a9d85e7e3c63",
+        "ID": "598f39c8-bc12-43e4-b33c-461ee58ae17f",
         "IsSelected": false
       },
       {
@@ -2290,7 +2309,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "a59124de-c1b4-43fa-a495-ec8baabcafd8",
+        "ID": "b1205182-1737-4acd-b691-f19da84898c0",
         "IsSelected": false
       },
       {
@@ -2299,7 +2318,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "bbb0fbaa-031a-419f-891b-744b3fd8df53",
+        "ID": "dc4cf317-fe76-4840-aae4-f3057a401011",
         "IsSelected": false
       },
       {
@@ -2308,7 +2327,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "b0788cc7-7ab7-4e66-b5b8-87bc705f40d9",
+        "ID": "8ce5e176-3c6e-4626-8a04-539bab455a53",
         "IsSelected": false
       },
       {
@@ -2317,7 +2336,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "da445ff1-eed7-4a97-ad4b-ab932128b56d",
+        "ID": "b82fe16c-d3d2-4164-b68a-d41deab0ab02",
         "IsSelected": false
       },
       {
@@ -2326,7 +2345,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "be53fe3d-d9d2-4a2e-82e1-d20ca643d6d0",
+        "ID": "5e3c41c6-b92a-42d8-ac81-612a7e819290",
         "IsSelected": false
       },
       {
@@ -2335,7 +2354,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "41375dea-fb79-4e05-b16a-d89405132a00",
+        "ID": "6fb9ce97-76b0-416e-8efc-70e24323e46d",
         "IsSelected": false
       },
       {
@@ -2344,7 +2363,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "c89173d9-d4ab-4281-9710-e2c855e4ffa6",
+        "ID": "c63b81dd-42d6-47e9-a286-0d154fc9f24c",
         "IsSelected": false
       },
       {
@@ -2353,7 +2372,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "b3b4faf3-b44e-44df-9ee8-327ddf82dbe3",
+        "ID": "75c71711-5aab-40c3-8dc5-23c06bfd11f7",
         "IsSelected": false
       },
       {
@@ -2362,7 +2381,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "904765a1-bc44-4a51-9a24-c7bd4a352e82",
+        "ID": "1e52bb1a-2d41-418f-827d-03d7e4f98ae9",
         "IsSelected": false
       },
       {
@@ -2371,7 +2390,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "63a2317e-a725-45ad-9986-618447d8d852",
+        "ID": "cfa4c08d-c4fd-49e8-b728-543a03759557",
         "IsSelected": false
       },
       {
@@ -2380,7 +2399,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "55134840-b410-41bb-8861-64b63effe5d1",
+        "ID": "e028d962-ff35-4f2e-96b7-100138f286a2",
         "IsSelected": false
       },
       {
@@ -2389,7 +2408,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "35e4a318-bb2d-4062-9d09-325398f25e71",
+        "ID": "6124abc9-3c2b-4e06-a28b-9f5777511fdc",
         "IsSelected": false
       },
       {
@@ -2398,7 +2417,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "b588bed6-1e58-4952-97c3-ac9faf6c7787",
+        "ID": "1186cb34-ef6f-4204-a132-d1547731ff9e",
         "IsSelected": false
       },
       {
@@ -2407,7 +2426,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "91317029-f3a4-4cfd-b54b-246a2417cf2c",
+        "ID": "52c208f5-e535-4530-86e5-d6463ee66cfc",
         "IsSelected": false
       },
       {
@@ -2416,7 +2435,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "f502940e-4acb-45e8-ad17-ea5036b257b3",
+        "ID": "e79db779-faab-41b7-83f4-496971d87f0e",
         "IsSelected": false
       },
       {
@@ -2425,7 +2444,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "82fa1e8f-00d4-4f04-87d3-b7c205cc5e0d",
+        "ID": "f760cb75-0df1-4ac2-9eaa-5bf58f01ecfa",
         "IsSelected": false
       },
       {
@@ -2434,7 +2453,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "1e923f05-89b1-48d7-8434-cbfdbb6e13b0",
+        "ID": "54b6b52f-41f8-4ee5-baec-cde578397112",
         "IsSelected": false
       },
       {
@@ -2443,7 +2462,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "af61a098-8e9c-4601-bd5a-c21b6a6d03ca",
+        "ID": "4b9ea815-748e-4399-82a8-38ccee148525",
         "IsSelected": false
       },
       {
@@ -2452,7 +2471,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "da9e6ba5-f7f2-4318-bad1-10872142bf0a",
+        "ID": "fdcfc159-9526-4d36-8405-037344af6648",
         "IsSelected": false
       },
       {
@@ -2461,7 +2480,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "fdffa1c4-769c-44f2-996a-1906dd293362",
+        "ID": "c0108500-a824-4eff-9b5c-ca9df14d6db6",
         "IsSelected": false
       },
       {
@@ -2470,7 +2489,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "8cc5cd4b-82ac-470c-a733-60e3ea1d17bf",
+        "ID": "b0f9ad40-164b-42d9-a00a-012559ad2e2b",
         "IsSelected": false
       },
       {
@@ -2479,7 +2498,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "1f9c1e0d-cc44-4b50-9b47-ada41cabfe22",
+        "ID": "61eda234-0edb-4a8b-8c76-f96122c47d27",
         "IsSelected": false
       },
       {
@@ -2488,7 +2507,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "e4c9969c-9a88-4ac8-91a8-9c4bdb33eb57",
+        "ID": "f3277a8d-8878-4a1f-8ac2-c112ca1d8efd",
         "IsSelected": false
       },
       {
@@ -2497,7 +2516,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "278fcaea-0aef-44fd-9c7d-7e57476e45c2",
+        "ID": "cbf9f579-41fe-4bba-97ab-0b0032a25e37",
         "IsSelected": false
       }
     ],
@@ -2515,6 +2534,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -2526,7 +2546,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "c2575747-a4ce-4c54-9fff-f7a602cfbd7a",
+            "ID": "83460d1f-efe8-4967-a850-5c6ac516e294",
             "IsSelected": false
           }
         ],
@@ -2535,7 +2555,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "a2739286-0217-4bde-897c-37cd279c605c",
+        "ID": "4e2147fa-695a-4a54-9fbc-151cce98848d",
         "IsSelected": false
       },
       {
@@ -2551,6 +2571,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -2562,7 +2583,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "095b6a9c-04cb-47e0-8bf7-a806704add7b",
+            "ID": "70bf3785-9bd4-4275-83db-7f5298e4f9ab",
             "IsSelected": false
           }
         ],
@@ -2571,7 +2592,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "03ce1906-205f-4830-b21e-0c9ac433e048",
+        "ID": "7693ccdc-57a3-45b5-82de-4d18f37cbbe2",
         "IsSelected": false
       }
     ],
@@ -2583,7 +2604,7 @@
     ],
     "UnitHeader": "Javelin (JVN-10N)",
     "UnitDetails": "30 tons - BV: 594",
-    "ID": "af6bc2c9-2787-4aec-a230-ce958f1394c0",
+    "ID": "49752bdf-4ce8-423c-bbf6-4a53bd4b5c9f",
     "IsSelected": false
   },
   {
@@ -2599,7 +2620,7 @@
       "Walking": 6,
       "Running": 9,
       "Jumping": 6,
-      "ID": "b6b95584-d36c-412d-a3df-b84e6a6154b5",
+      "ID": "04a30ead-2a45-46b6-a340-4b477d10d0d0",
       "IsSelected": false
     },
     "Components": [
@@ -2616,7 +2637,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "ece2601a-97ed-4045-8118-b45ab2e1d91d",
+        "ID": "89e6062d-bda7-4921-9576-b1d14c02eb62",
         "IsSelected": false
       },
       {
@@ -2632,7 +2653,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "754bb1cb-8833-4ec3-9439-5debe80e1c30",
+        "ID": "ddb6ec36-42ad-4935-8b25-a9f7d2c2e651",
         "IsSelected": false
       },
       {
@@ -2648,7 +2669,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "07c8e242-4a6e-4013-93a7-e1367e29c527",
+        "ID": "664a507a-5e53-4c21-acf6-51c31a526bb8",
         "IsSelected": false
       },
       {
@@ -2664,7 +2685,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "8dea08a3-124d-465d-a4a3-2fe8397832a4",
+        "ID": "b338edcd-ce75-46b5-a3ba-13bde29c4385",
         "IsSelected": false
       },
       {
@@ -2680,7 +2701,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "0a1b2508-3b42-4872-aee4-eac601bc55ae",
+        "ID": "be8b09c6-7e25-4712-8e27-8d75b5e2a0c7",
         "IsSelected": false
       },
       {
@@ -2696,7 +2717,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "55b35c98-afb4-48a4-b290-54d7b72c25ed",
+        "ID": "cde9e6cb-c551-448a-b9c7-5854c1ffc622",
         "IsSelected": false
       },
       {
@@ -2712,7 +2733,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "5b09ff42-8448-4f16-9552-bfae6ca0428a",
+        "ID": "ae7f290b-b4ff-4265-93a3-19672aaf6607",
         "IsSelected": false
       },
       {
@@ -2728,7 +2749,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "8b2d05e4-3291-4682-9a55-ad43e8d3363c",
+        "ID": "81f888c5-64ca-4231-b7af-2f6d3842c1c8",
         "IsSelected": false
       }
     ],
@@ -2739,7 +2760,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "7a3895f0-b5e1-4d27-a14c-bbe3dd01f5d3",
+        "ID": "de310fcf-dd4c-4733-a2ae-dd6cd1d772a3",
         "IsSelected": false
       },
       {
@@ -2748,7 +2769,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "08842c1f-b190-4632-b8b2-492e331c09f9",
+        "ID": "9cdc40ed-31ac-4c4f-8ba5-75f9689df384",
         "IsSelected": false
       },
       {
@@ -2757,7 +2778,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "fe414516-8034-486c-834c-207dc9d0b9ab",
+        "ID": "d47af872-fcc5-4c96-bf38-61845130da62",
         "IsSelected": false
       },
       {
@@ -2766,7 +2787,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "839c813b-3434-4a18-b59c-bb3f50302c2d",
+        "ID": "8d529a3d-78a7-4066-8b0b-d29943f806b5",
         "IsSelected": false
       },
       {
@@ -2775,7 +2796,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "4c7b8af3-4403-479f-b8d9-6baeccc4d56a",
+        "ID": "4d02ddc5-f222-427b-a409-f7915863dc2b",
         "IsSelected": false
       },
       {
@@ -2784,7 +2805,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "5941a7e9-a914-4dc3-893f-0660e7b74093",
+        "ID": "e1f5eb55-4e03-43ce-921f-1ebc16b0441d",
         "IsSelected": false
       },
       {
@@ -2793,7 +2814,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "7e2bd641-019d-413a-be5e-ee8136000ed9",
+        "ID": "61d84487-61c1-4faa-badb-3d8e12490c71",
         "IsSelected": false
       },
       {
@@ -2802,7 +2823,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "0f9328e0-a50c-4f11-8b58-8adf08a6690b",
+        "ID": "077c3aed-04ab-4380-a7dc-65f8fbf2e321",
         "IsSelected": false
       },
       {
@@ -2811,7 +2832,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "7329cdc4-11c9-46cd-b905-2331645cf94a",
+        "ID": "ee86924a-4138-427d-a68b-b9de694daf3c",
         "IsSelected": false
       },
       {
@@ -2820,7 +2841,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "c7ee9232-e536-4cd1-9599-35d6cba0a08e",
+        "ID": "8ff1202c-92f2-4a47-b76a-67be2c2a3e6d",
         "IsSelected": false
       },
       {
@@ -2829,7 +2850,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "0b090246-88a1-41cf-94d1-05213a24d52f",
+        "ID": "d9f53a72-88b0-4c88-9c24-152790016a66",
         "IsSelected": false
       },
       {
@@ -2838,7 +2859,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "e0a7e1c5-5af1-493d-815f-6a94369ddf3c",
+        "ID": "8cb533d1-934b-49de-91b9-81ff0e849566",
         "IsSelected": false
       },
       {
@@ -2847,7 +2868,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "6a162223-1730-4161-aa28-8f46939649b0",
+        "ID": "8c36586a-abd7-47f0-8c61-29505f03aca7",
         "IsSelected": false
       },
       {
@@ -2856,7 +2877,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "2b60f80b-2eb2-4e0a-aea3-707383ae066d",
+        "ID": "a34da386-6736-40df-9d44-4d641ddf578d",
         "IsSelected": false
       },
       {
@@ -2865,7 +2886,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "8a6fc110-a7c8-4d1e-9634-69dd78da459b",
+        "ID": "d41395f8-7a76-4b29-a91e-df03fab6a8a0",
         "IsSelected": false
       },
       {
@@ -2874,7 +2895,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "78dd59fb-0bd0-4024-975a-e9471555d22b",
+        "ID": "467ca12f-cd83-40ec-8c63-9a27314cfa2c",
         "IsSelected": false
       },
       {
@@ -2883,7 +2904,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "5f6f3828-d2dd-44a6-9b29-955861f8af8d",
+        "ID": "86aa6fbb-ad24-4fae-84a3-163054ff3f47",
         "IsSelected": false
       },
       {
@@ -2892,7 +2913,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "32875fe7-a09e-4162-b695-24992afb92a7",
+        "ID": "a807b185-8fb1-408f-bd57-fcc3bb261d8d",
         "IsSelected": false
       },
       {
@@ -2901,7 +2922,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "02e1b1e6-c520-483a-a046-25d046263f97",
+        "ID": "c5dc7e9a-9bbe-47ad-8752-1e7131d677d6",
         "IsSelected": false
       },
       {
@@ -2910,7 +2931,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "cababf27-e91b-4ff1-b3ae-928fbe83c392",
+        "ID": "2f6d675a-c6c2-4871-91cb-d45047e26174",
         "IsSelected": false
       },
       {
@@ -2919,7 +2940,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "e268d7cd-0c33-433c-8afc-10a712cdca95",
+        "ID": "70b2314d-e6f5-4dff-8e2e-1c4e94e0a070",
         "IsSelected": false
       },
       {
@@ -2928,7 +2949,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "281bdbc8-1bf1-4a9e-8e54-d7b56ed86a37",
+        "ID": "da21f0f6-8ad2-4187-893c-76ab0e6b87c7",
         "IsSelected": false
       },
       {
@@ -2937,7 +2958,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "dab25e86-e02c-442e-9653-de7d76ea497c",
+        "ID": "f9096a1f-d79c-4e5f-bdb8-a5bd5a0582c8",
         "IsSelected": false
       },
       {
@@ -2946,7 +2967,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "7688309a-4b4e-4aa1-9f9b-3b040f6e1d92",
+        "ID": "fd18529b-22a0-4ac9-869f-38f8088917c1",
         "IsSelected": false
       },
       {
@@ -2955,7 +2976,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "5ccd1e1d-ab14-4ba9-9e7a-05d85ae184fa",
+        "ID": "f975c240-33cc-4a90-8d4d-7e39a055a238",
         "IsSelected": false
       },
       {
@@ -2964,7 +2985,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "09e61e7b-34bc-4b16-96a2-a58bf6ce3959",
+        "ID": "f45354c4-df07-4f05-8448-51de27259f78",
         "IsSelected": false
       },
       {
@@ -2973,7 +2994,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "362ff081-fee5-4ec9-9480-5d387a4c5b46",
+        "ID": "224a6ed8-0249-4cec-9306-f26359e7f301",
         "IsSelected": false
       },
       {
@@ -2982,7 +3003,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "0b64d71b-a8ca-4315-a266-ab52db3703eb",
+        "ID": "5387f4ad-ebe6-4184-b80d-926286b16330",
         "IsSelected": false
       },
       {
@@ -2991,7 +3012,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "6b981908-9044-4aef-bec5-e40e2ad05a57",
+        "ID": "28bd78a6-9f09-4ddb-885c-dad6821c0a65",
         "IsSelected": false
       }
     ],
@@ -3007,13 +3028,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "8b6ff927-ec0c-4740-af37-a9c908ad1b63",
+        "ID": "eeda26bb-4013-403e-8afe-17fcdb5cab33",
         "IsSelected": false
       },
       {
@@ -3027,13 +3049,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "d7958a96-b69d-4108-9895-c2f814a5d82d",
+        "ID": "2e5023d7-e65b-46d9-bc56-361e5f05bb71",
         "IsSelected": false
       },
       {
@@ -3047,13 +3070,14 @@
         "ShortRange": 5,
         "MediumRange": 10,
         "LongRange": 15,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Large Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "38453edc-1256-4e61-abdf-d19d490a178d",
+        "ID": "9a11a97b-d2f1-4fae-a69d-78f247c20d68",
         "IsSelected": false
       },
       {
@@ -3068,6 +3092,7 @@
         "ShortRange": 1,
         "MediumRange": 2,
         "LongRange": 3,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -3079,7 +3104,7 @@
             "OriginalHits": 1,
             "Location": "CT",
             "OriginalLocation": null,
-            "ID": "7df47c4c-0629-4bcd-9e31-6b9af7ee19c8",
+            "ID": "9c3de729-400f-403c-9307-2a9deba6ccbf",
             "IsSelected": false
           }
         ],
@@ -3088,7 +3113,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "2583c189-f9fa-41e9-80c1-57e399816a1a",
+        "ID": "0713e73c-3a6a-44e3-92ff-3436f8f6823f",
         "IsSelected": false
       },
       {
@@ -3103,13 +3128,14 @@
         "ShortRange": 1,
         "MediumRange": 2,
         "LongRange": 3,
+        "UsesAmmunition": true,
         "Ammo": [],
         "Name": "Machine Gun",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "e16bdcb1-ed73-4aaf-8cca-0bdc75141b5a",
+        "ID": "dfda1a18-d03f-408a-9fc9-6251eb2970f6",
         "IsSelected": false
       }
     ],
@@ -3130,7 +3156,7 @@
     ],
     "UnitHeader": "Phoenix Hawk (PXH-1)",
     "UnitDetails": "45 tons - BV: 1041",
-    "ID": "13dffe6d-dafa-4a69-a039-ebf938fba9da",
+    "ID": "409ff29e-4002-44c9-88a6-77ddd3167d31",
     "IsSelected": false
   },
   {
@@ -3146,7 +3172,7 @@
       "Walking": 5,
       "Running": 8,
       "Jumping": 3,
-      "ID": "564c2ffa-a037-4365-a72d-7b476c4fc912",
+      "ID": "660983e3-0078-4a08-9f19-4082a1553346",
       "IsSelected": false
     },
     "Components": [
@@ -3163,7 +3189,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "693d317c-887d-421b-bdba-0b6749180240",
+        "ID": "61787edf-4c21-40f3-a82f-ebf192f9a382",
         "IsSelected": false
       },
       {
@@ -3179,7 +3205,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "468d62b7-9439-4bfc-b833-10c3e6285b57",
+        "ID": "38f3472a-02ea-4660-8c82-c09f2cfaabd1",
         "IsSelected": false
       },
       {
@@ -3195,7 +3221,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "b9d4542a-6cea-4a48-935b-f80ad3bc5c82",
+        "ID": "43644a3a-7d4d-48a6-8511-c1b6f3c2ff01",
         "IsSelected": false
       },
       {
@@ -3211,7 +3237,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "d6c188f3-6f02-459d-b37e-68b960b4fc7d",
+        "ID": "82e06eb2-4006-4a21-a2c1-e4d207e86f00",
         "IsSelected": false
       },
       {
@@ -3227,7 +3253,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "694d2ad1-06db-41a0-a972-529412dbfa4d",
+        "ID": "cf0d3bed-a0e1-4678-b76c-35edbf8fa34e",
         "IsSelected": false
       },
       {
@@ -3243,7 +3269,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "4ffe0a97-9369-40a5-9312-6a36974f0ec7",
+        "ID": "a9d08f47-8a7f-458c-892c-8c227065bd26",
         "IsSelected": false
       },
       {
@@ -3259,7 +3285,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "32a24d35-b1f6-4463-8f0a-91ca2deef6cc",
+        "ID": "6564f272-690f-4f79-aa0d-c5314e58e335",
         "IsSelected": false
       },
       {
@@ -3275,7 +3301,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "1df96cee-368d-4908-9436-121abdf76527",
+        "ID": "2aca4126-ac04-4464-885d-f2ab6840f51c",
         "IsSelected": false
       }
     ],
@@ -3286,7 +3312,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "cd81cecc-0501-476e-b601-49470f69d721",
+        "ID": "45af31b9-731d-41a0-aa1c-c479cd2e5762",
         "IsSelected": false
       },
       {
@@ -3295,7 +3321,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "eac50354-addc-4ffc-b90b-fbc4d0317789",
+        "ID": "6e14937a-1acc-48f3-a6e7-a76f7d7a6647",
         "IsSelected": false
       },
       {
@@ -3304,7 +3330,7 @@
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "69e93e91-111e-447f-8a8e-0d93da0cdfcf",
+        "ID": "5b0f7503-ab92-48e6-92a1-0d2aeb792e58",
         "IsSelected": false
       },
       {
@@ -3313,7 +3339,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "51ea5d5e-c209-43d3-b869-5dbb241aed8f",
+        "ID": "dc7d12da-b642-4d77-893e-8334df2ee904",
         "IsSelected": false
       },
       {
@@ -3322,7 +3348,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "6efc8743-c128-4e4c-b3b7-5120f670ca9b",
+        "ID": "a0246829-efbb-4baa-9279-b7844da8e784",
         "IsSelected": false
       },
       {
@@ -3331,7 +3357,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "724200fd-3268-4b99-9d84-6c323fdedeec",
+        "ID": "5fc1904f-1f54-4fa2-a5f8-363d314511ba",
         "IsSelected": false
       },
       {
@@ -3340,7 +3366,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "d31ae35d-e6ab-4991-a44f-ce2c8a018be1",
+        "ID": "b2b3dfc6-1d8b-4ffe-9e89-b21e916fa6b7",
         "IsSelected": false
       },
       {
@@ -3349,7 +3375,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "2cf5156e-ba9a-4196-b572-45f6aa4e34d9",
+        "ID": "3df191bc-8243-4aa5-8b32-475d73ab7247",
         "IsSelected": false
       },
       {
@@ -3358,7 +3384,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "8f02bb37-40dc-4687-afa5-d89ed56d64b0",
+        "ID": "eebd9bf0-c5a7-4ceb-aa99-6477fa922314",
         "IsSelected": false
       },
       {
@@ -3367,7 +3393,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "6eeb557c-a05f-445c-a202-cba6afbced26",
+        "ID": "e90e3e24-4d0d-4821-b9f7-d9ef7923a874",
         "IsSelected": false
       },
       {
@@ -3376,7 +3402,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "58dce10d-5930-4080-a665-d3e41be29414",
+        "ID": "decd204f-29f5-4211-a055-a0fc81751b1e",
         "IsSelected": false
       },
       {
@@ -3385,7 +3411,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "9ed3289c-5059-4549-948b-32299c9885c3",
+        "ID": "281b2909-64cb-470b-9b47-db810b7ba1b6",
         "IsSelected": false
       },
       {
@@ -3394,7 +3420,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "e1e69b46-c82c-41ad-bc08-150fdc0a29a0",
+        "ID": "64b9fcdc-6417-4a47-a99c-6ab412eab940",
         "IsSelected": false
       },
       {
@@ -3403,7 +3429,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "63ae1be4-67df-4e9f-9c1f-85a4596bd489",
+        "ID": "b4c1cd92-2d9f-4609-9683-12d45834b15b",
         "IsSelected": false
       },
       {
@@ -3412,7 +3438,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "e1f7c2a4-3f7f-491f-951b-e842a9c17288",
+        "ID": "a5834a66-c1bd-4aa4-a86d-dd66681cbcee",
         "IsSelected": false
       },
       {
@@ -3421,7 +3447,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "75aa29ac-5471-4ac0-a42b-5b538e81b05a",
+        "ID": "8c97c506-a539-408e-8484-929c72e21358",
         "IsSelected": false
       },
       {
@@ -3430,7 +3456,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "d4449630-d881-4fb8-8b3c-a2dd59b94ba5",
+        "ID": "b5942257-e757-483f-a558-acc801377c4e",
         "IsSelected": false
       },
       {
@@ -3439,7 +3465,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "75bedd16-ef77-479c-92af-e217a7ff9284",
+        "ID": "ce265e4b-9424-409d-bee8-86c0c1719f9e",
         "IsSelected": false
       },
       {
@@ -3448,7 +3474,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "d0b5812e-f397-43ab-abc5-f1b1ca608ef7",
+        "ID": "57c38b8f-95d3-4c6e-b03d-f526246195a0",
         "IsSelected": false
       },
       {
@@ -3457,7 +3483,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "552735ed-4e5f-437a-9128-e1ca3e37f5e7",
+        "ID": "d0c2ef35-06a2-462a-a1eb-a321d9411152",
         "IsSelected": false
       },
       {
@@ -3466,7 +3492,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "e2203dad-f700-49bf-a3e1-f0654ca049b9",
+        "ID": "3e1b6933-4712-4881-882b-ac086a4221ca",
         "IsSelected": false
       },
       {
@@ -3475,7 +3501,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "d966c28d-0f7e-4f9e-9f95-d46b70a12e83",
+        "ID": "5b2341ce-68e4-4040-8232-acd6125090d3",
         "IsSelected": false
       },
       {
@@ -3484,7 +3510,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "3849aa55-e039-4f3a-ac78-db7596f0eca9",
+        "ID": "99f98f5f-a4ae-41e7-bc79-9cb0bb3ce329",
         "IsSelected": false
       },
       {
@@ -3493,7 +3519,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "8c2af9d2-30b1-42e6-8750-84d8302195f2",
+        "ID": "a3c08c39-3a46-45a9-9404-98b46e2a0495",
         "IsSelected": false
       },
       {
@@ -3502,7 +3528,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "ab21553b-3a8c-47bf-86d3-785aacb68536",
+        "ID": "9777cbbe-8082-485a-a33c-8baac99625b9",
         "IsSelected": false
       }
     ],
@@ -3518,13 +3544,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "0eff616d-38fb-4c2f-a5eb-d4d08b9a7581",
+        "ID": "62d4fab1-368c-4d76-b6cb-30f275dbb987",
         "IsSelected": false
       },
       {
@@ -3539,6 +3566,7 @@
         "ShortRange": 6,
         "MediumRange": 12,
         "LongRange": 18,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -3550,7 +3578,7 @@
             "OriginalHits": 1,
             "Location": "LT",
             "OriginalLocation": null,
-            "ID": "0fb67404-e72f-471d-ac62-70e670c04500",
+            "ID": "10a0f618-d756-4f5c-9584-26d7a7469915",
             "IsSelected": false
           }
         ],
@@ -3559,7 +3587,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "3af33e3c-6511-4c52-a34e-4a9b94a46f0a",
+        "ID": "c3720bbe-3b71-4e15-b527-f8202a116587",
         "IsSelected": false
       },
       {
@@ -3575,6 +3603,7 @@
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -3586,7 +3615,7 @@
             "OriginalHits": 1,
             "Location": "RT",
             "OriginalLocation": null,
-            "ID": "552bf8e9-ee6c-4176-980e-393811e696f4",
+            "ID": "75b82f53-a652-45f3-8228-31e9ccdc7f12",
             "IsSelected": false
           }
         ],
@@ -3595,7 +3624,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "94eacc87-5805-4ff1-acf9-91de9a9e7c22",
+        "ID": "a3844355-aae6-4de4-b4e6-0e413556e7be",
         "IsSelected": false
       },
       {
@@ -3611,6 +3640,7 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -3622,7 +3652,7 @@
             "OriginalHits": 1,
             "Location": "CT",
             "OriginalLocation": null,
-            "ID": "bc116c40-0c5a-47d8-a04b-01cefb6bd504",
+            "ID": "aa826136-91b3-4d9c-ae1d-ef8dd569b5c1",
             "IsSelected": false
           }
         ],
@@ -3631,7 +3661,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "16630e41-78ed-48cc-9cc8-93771ff0bdd1",
+        "ID": "119a6ada-fa67-44a9-82a4-a7da89067872",
         "IsSelected": false
       }
     ],
@@ -3658,7 +3688,7 @@
     ],
     "UnitHeader": "Shadow Hawk (SHD-2H)",
     "UnitDetails": "55 tons - BV: 1064",
-    "ID": "2fbc57ea-e31a-44bb-81b7-8e40c3ebd745",
+    "ID": "a86476e1-20cc-4560-b178-b13b124e5ba2",
     "IsSelected": false
   },
   {
@@ -3674,7 +3704,7 @@
       "Walking": 8,
       "Running": 12,
       "Jumping": 8,
-      "ID": "7d8dbd18-faef-4413-90f9-e0089a74a675",
+      "ID": "423b454e-fb0e-47eb-9c94-11a0e549d0ff",
       "IsSelected": false
     },
     "Components": [
@@ -3691,7 +3721,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "941c72a8-539b-4e69-a19f-93b4bee3419b",
+        "ID": "48ee2295-be21-4b67-8f46-33f303a04eb0",
         "IsSelected": false
       },
       {
@@ -3707,7 +3737,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "c1f2de0e-f59b-4d56-a3a3-62af20ca20c6",
+        "ID": "d7f44f31-d5f1-4361-8121-2f279d93cf01",
         "IsSelected": false
       },
       {
@@ -3723,7 +3753,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "3218efd2-9101-40c7-9610-bb22d184b77c",
+        "ID": "4f0dd9c8-3eb8-4e19-9df4-b8e4f63c53d2",
         "IsSelected": false
       },
       {
@@ -3739,7 +3769,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "b4a97ea6-0593-4f1e-ad2f-2d6f3b13ae2f",
+        "ID": "82c95482-22b2-4352-bdf9-9bed27946267",
         "IsSelected": false
       },
       {
@@ -3755,7 +3785,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "9a4bdf47-40fb-41c9-9ecb-34cc01484511",
+        "ID": "06458090-ce30-41e5-94ac-43d1916ea6d6",
         "IsSelected": false
       },
       {
@@ -3771,7 +3801,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "a69636cd-941e-4fe9-b0a6-f640f0a72bd3",
+        "ID": "3423fdfd-f604-459d-a40b-0083af6203c7",
         "IsSelected": false
       },
       {
@@ -3787,7 +3817,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "c08f82c8-7cea-469a-a328-a51d42f54c81",
+        "ID": "48b4c36c-3a94-469d-bda0-53ed130658d3",
         "IsSelected": false
       },
       {
@@ -3803,7 +3833,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "7fe98414-5575-439e-b95e-421e06f169c8",
+        "ID": "25183c4a-88ce-4fb6-95fa-a5049d2102be",
         "IsSelected": false
       }
     ],
@@ -3814,7 +3844,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "22339d7b-dee2-4264-b41e-33251028ccb0",
+        "ID": "ff0f993f-10db-42ae-9f83-edb90015837a",
         "IsSelected": false
       },
       {
@@ -3823,7 +3853,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "39d2ff27-0294-4c4b-9944-ce90a4c819f0",
+        "ID": "d702c1a0-4cb8-4b7b-86e6-9326d9c2fdc2",
         "IsSelected": false
       },
       {
@@ -3832,7 +3862,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "b4328a28-aff6-433a-967b-278117aabd82",
+        "ID": "96f0d682-03b1-4dc7-b1c4-f187e79e7f6f",
         "IsSelected": false
       },
       {
@@ -3841,7 +3871,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "f4efca27-b4f6-4503-9adb-6d4cee8ed11a",
+        "ID": "1b342c07-de93-4996-b969-36bf25e627b4",
         "IsSelected": false
       },
       {
@@ -3850,7 +3880,7 @@
         "OriginalHits": 1,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "feb4365e-3640-4829-a007-e4eb3e834617",
+        "ID": "bbb29de9-6648-422c-8b09-5240c8c6d388",
         "IsSelected": false
       },
       {
@@ -3859,7 +3889,7 @@
         "OriginalHits": 2,
         "Location": "H",
         "OriginalLocation": null,
-        "ID": "1563fb6b-c049-4c59-8455-c525045f22df",
+        "ID": "acddfc38-e516-45b6-b542-57f8af44af1d",
         "IsSelected": false
       },
       {
@@ -3868,7 +3898,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "42117de6-64e5-4432-a920-7643578b9430",
+        "ID": "6a0527d6-4ff2-4fb5-a6ed-155bbe4bbffe",
         "IsSelected": false
       },
       {
@@ -3877,7 +3907,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "83f6fc1a-a59a-4ed9-af05-3929e15ece58",
+        "ID": "972f1d71-734c-46d9-97a6-f99dba503ed6",
         "IsSelected": false
       },
       {
@@ -3886,7 +3916,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "adbf11bc-0033-4cc5-8450-402f16fb2050",
+        "ID": "c079ff9b-325c-4f3b-bd4e-e86ab5305eec",
         "IsSelected": false
       },
       {
@@ -3895,7 +3925,7 @@
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "50f762cf-a239-4ee3-a96e-6f5f49c4ef1b",
+        "ID": "5f6148ca-eaf7-4fd0-9618-0f4f1b5efc30",
         "IsSelected": false
       },
       {
@@ -3904,7 +3934,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "727f1186-42dd-4614-86ee-d4ce2e3092ac",
+        "ID": "eaac8d53-60b9-4840-803b-f9f44a6a6c17",
         "IsSelected": false
       },
       {
@@ -3913,7 +3943,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "7fb93a73-ddb4-4d00-a56a-7ea5ee6d121d",
+        "ID": "7a8f7558-1c61-4afa-8621-a751b5d50598",
         "IsSelected": false
       },
       {
@@ -3922,7 +3952,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "d5dc5684-f89f-49b2-b0d5-69304f772583",
+        "ID": "f4616be2-9f26-4c58-afcd-66afcc92af92",
         "IsSelected": false
       },
       {
@@ -3931,7 +3961,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "b1727258-1006-40b1-b77a-cdb6fbd99f2e",
+        "ID": "4f34eaf4-b58c-4e8e-a87e-44058506d823",
         "IsSelected": false
       },
       {
@@ -3940,7 +3970,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "33612637-ed7f-4853-b199-531e0b495235",
+        "ID": "dfa81cc0-b85e-48cd-9087-8d7bfe8e4a98",
         "IsSelected": false
       },
       {
@@ -3949,7 +3979,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "265a71c0-3b77-43a9-8158-10f8e92b3fa7",
+        "ID": "4e9b41ea-76c3-4aa2-b6e5-de793a172f66",
         "IsSelected": false
       },
       {
@@ -3958,7 +3988,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "e6591785-c857-44c1-9482-e8fa6c0fdc9a",
+        "ID": "866b17ce-9f16-43d7-a7d8-414f5b7a1433",
         "IsSelected": false
       },
       {
@@ -3967,7 +3997,7 @@
         "OriginalHits": 1,
         "Location": "LT",
         "OriginalLocation": null,
-        "ID": "b3169a1d-1f34-41a0-a1a6-8e48a1df8de9",
+        "ID": "6a656847-654d-49ba-a8bd-8e19477c26dc",
         "IsSelected": false
       },
       {
@@ -3976,7 +4006,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "974a3787-bd7b-4d09-937f-7b53674e7f5e",
+        "ID": "9eb3b2f9-aa84-4b56-8f56-ef92d67f3acd",
         "IsSelected": false
       },
       {
@@ -3985,7 +4015,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "4e7693de-b5c9-4a44-bb24-43fc550b0f1d",
+        "ID": "78a00c06-8879-4a02-8de3-25c350581900",
         "IsSelected": false
       },
       {
@@ -3994,7 +4024,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "f3137383-a645-48f0-a6f3-b9d5185312ed",
+        "ID": "b23addcb-4f8c-4197-9328-c648aa911c31",
         "IsSelected": false
       },
       {
@@ -4003,7 +4033,7 @@
         "OriginalHits": 1,
         "Location": "RA",
         "OriginalLocation": null,
-        "ID": "39557a3d-6125-40d3-9130-82f4e8344a06",
+        "ID": "06ba7846-99dd-492e-9503-503dcb8b2b7c",
         "IsSelected": false
       },
       {
@@ -4012,7 +4042,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "8398c7ca-01d2-4317-a020-ee6f7f95b1c0",
+        "ID": "39395963-1401-49e3-8235-73ddee13735f",
         "IsSelected": false
       },
       {
@@ -4021,7 +4051,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "4f7d2a15-3f3a-473c-bf64-7afb30b2890c",
+        "ID": "81615e1a-362a-44b0-a890-3d20621b4fb9",
         "IsSelected": false
       },
       {
@@ -4030,7 +4060,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "a6849f5e-1295-4613-bc87-e84abc894193",
+        "ID": "ca01110d-582e-44af-a8a2-6fdc26e98ae1",
         "IsSelected": false
       },
       {
@@ -4039,7 +4069,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "bd98ab08-715d-4fc1-90f8-a6136428dc30",
+        "ID": "eab1ed7b-1ad0-4434-887e-1507f2faf366",
         "IsSelected": false
       },
       {
@@ -4048,7 +4078,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "eb9281da-7537-4aac-abc9-06c3b911cfa1",
+        "ID": "8217d2b2-8f05-4c82-9f21-dbd5b31d6270",
         "IsSelected": false
       },
       {
@@ -4057,7 +4087,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "429e1e42-c424-4639-a2fd-1a83e839dc60",
+        "ID": "a927b217-23d7-4959-8ba5-72bab222eed9",
         "IsSelected": false
       },
       {
@@ -4066,7 +4096,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "aca8c0c9-c794-4bcb-ae94-9b3fe7a7bf8d",
+        "ID": "4a06e0e5-12a6-4531-886b-390666e9724b",
         "IsSelected": false
       },
       {
@@ -4075,7 +4105,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "7478af5f-de9f-498e-b90f-4cb5f1875686",
+        "ID": "be0e4304-6902-4d52-965a-ae0b9dffe840",
         "IsSelected": false
       }
     ],
@@ -4091,13 +4121,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "2a8f0573-e3c3-4a45-9a31-8f32929269ab",
+        "ID": "f50ab90d-9699-4bab-8d05-b3c4aeb85a44",
         "IsSelected": false
       },
       {
@@ -4111,13 +4142,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "b829e3c0-a70f-4cd3-a449-d65cd9a6b403",
+        "ID": "d519e6a2-912f-403c-a032-3b7126cdf149",
         "IsSelected": false
       }
     ],
@@ -4135,7 +4167,7 @@
     ],
     "UnitHeader": "Spider (SDR-5V)",
     "UnitDetails": "30 tons - BV: 622",
-    "ID": "c3d5ed7b-8cd3-4886-809e-9d03993bc947",
+    "ID": "a9850048-ad9a-43fe-81be-982f722c70ab",
     "IsSelected": false
   },
   {
@@ -4151,7 +4183,7 @@
       "Walking": 5,
       "Running": 8,
       "Jumping": 5,
-      "ID": "c058a113-1c97-4fbc-b7da-b080b2c3030c",
+      "ID": "a5dbbb90-ac72-47aa-a270-f3533fc6df01",
       "IsSelected": false
     },
     "Components": [
@@ -4168,7 +4200,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "b82aa0f8-c76a-4c6e-8994-4b459257c8a6",
+        "ID": "fad9f8cc-7169-47ea-866c-247e96f93778",
         "IsSelected": false
       },
       {
@@ -4184,7 +4216,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "f96ec6c0-6a83-40e4-b3f2-834a9069addf",
+        "ID": "c99c19d1-d2ef-44a0-a1d8-62772111e0ac",
         "IsSelected": false
       },
       {
@@ -4200,7 +4232,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "254c1a98-f72d-49e8-afc8-d5d21780b6bb",
+        "ID": "fba76382-abfd-4bad-b43e-1ee956f2bbcd",
         "IsSelected": false
       },
       {
@@ -4216,7 +4248,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "f5a338dd-4168-4126-bb32-4aa00a960fbe",
+        "ID": "e0755bbc-3837-4e24-b9ae-8b4d0ce8bb2e",
         "IsSelected": false
       },
       {
@@ -4232,7 +4264,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "155333c5-6c66-4097-b743-526cd415a392",
+        "ID": "6333c26b-1155-414e-afcd-709756f4ffaf",
         "IsSelected": false
       },
       {
@@ -4248,7 +4280,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "f9a37e4b-31bb-4bc5-a90f-999b8c87839b",
+        "ID": "fd7cf30c-03ea-45a5-8043-6291c1698b63",
         "IsSelected": false
       },
       {
@@ -4264,7 +4296,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "6b2b6aa7-8057-4fad-b713-9926185e6c31",
+        "ID": "04fc8071-24cb-4e23-9472-e79f0efe74b3",
         "IsSelected": false
       },
       {
@@ -4280,7 +4312,7 @@
         "OriginalStructure": 0,
         "Removed": false,
         "ComponentStatus": 0,
-        "ID": "2fbb5459-5eec-4603-aa31-2f98f5bd3c5b",
+        "ID": "4b826c7e-c8b9-4448-a06b-d2fb40be050e",
         "IsSelected": false
       }
     ],
@@ -4291,7 +4323,7 @@
         "OriginalHits": 3,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "59145f90-295f-41a3-b98c-364c5bda65c2",
+        "ID": "eff7fa2d-d059-4d87-8367-a08a13bf126f",
         "IsSelected": false
       },
       {
@@ -4300,178 +4332,7 @@
         "OriginalHits": 2,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "906d50ac-d5c2-4a85-ad0d-3de986031e4d",
-        "IsSelected": false
-      },
-      {
-        "Name": "Cockpit",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "H",
-        "OriginalLocation": null,
-        "ID": "6f4b35b4-9fb0-4fa5-b03d-b323831ec724",
-        "IsSelected": false
-      },
-      {
-        "Name": "Life Support",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "H",
-        "OriginalLocation": null,
-        "ID": "9b55d9af-f82b-4019-b17e-92313dc2c397",
-        "IsSelected": false
-      },
-      {
-        "Name": "Sensors",
-        "Hits": 2,
-        "OriginalHits": 2,
-        "Location": "H",
-        "OriginalLocation": null,
-        "ID": "a41bc3d1-4728-44b9-8e85-c41682d8a70d",
-        "IsSelected": false
-      },
-      {
-        "Name": "Hand Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LA",
-        "OriginalLocation": null,
-        "ID": "aca2f38d-22e2-4038-90ca-137b6c984aa7",
-        "IsSelected": false
-      },
-      {
-        "Name": "Lower Arm Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LA",
-        "OriginalLocation": null,
-        "ID": "e1029ec8-e70b-4817-b69d-c4119989cdb3",
-        "IsSelected": false
-      },
-      {
-        "Name": "Shoulder",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LA",
-        "OriginalLocation": null,
-        "ID": "d3363aa7-5336-4d3d-aa98-98d0583d9f04",
-        "IsSelected": false
-      },
-      {
-        "Name": "Upper Arm Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LA",
-        "OriginalLocation": null,
-        "ID": "388c7c60-af56-4dbb-afb3-871cfda264ec",
-        "IsSelected": false
-      },
-      {
-        "Name": "Foot Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LL",
-        "OriginalLocation": null,
-        "ID": "9f67e7e5-471c-426b-9e11-e78998646277",
-        "IsSelected": false
-      },
-      {
-        "Name": "Hip",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LL",
-        "OriginalLocation": null,
-        "ID": "e9fa342c-d9a2-4a0e-938c-b319a194b31e",
-        "IsSelected": false
-      },
-      {
-        "Name": "Lower Leg Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LL",
-        "OriginalLocation": null,
-        "ID": "beac470f-d250-4e9e-9768-d1a2464a7a1b",
-        "IsSelected": false
-      },
-      {
-        "Name": "Upper Leg Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "LL",
-        "OriginalLocation": null,
-        "ID": "5dc88501-01ad-4f08-9f34-99ab69db3d5a",
-        "IsSelected": false
-      },
-      {
-        "Name": "Heat Sink",
-        "Hits": 5,
-        "OriginalHits": 1,
-        "Location": "LT",
-        "OriginalLocation": null,
-        "ID": "9123a85b-640a-465f-9a09-409ee77fe508",
-        "IsSelected": false
-      },
-      {
-        "Name": "Lower Arm Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RA",
-        "OriginalLocation": null,
-        "ID": "3dc015dc-d966-4491-a199-f03946d1965b",
-        "IsSelected": false
-      },
-      {
-        "Name": "Shoulder",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RA",
-        "OriginalLocation": null,
-        "ID": "7e623634-f92a-4753-bcb3-e463896ce29a",
-        "IsSelected": false
-      },
-      {
-        "Name": "Upper Arm Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RA",
-        "OriginalLocation": null,
-        "ID": "d8ef2e04-a610-4d88-9d34-b1c565870a3e",
-        "IsSelected": false
-      },
-      {
-        "Name": "Foot Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RL",
-        "OriginalLocation": null,
-        "ID": "12f46201-1a5d-4363-91f6-96bcfe5ef6df",
-        "IsSelected": false
-      },
-      {
-        "Name": "Hip",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RL",
-        "OriginalLocation": null,
-        "ID": "99cdc01d-71b9-4b56-a42c-3ef1f5ff9ae7",
-        "IsSelected": false
-      },
-      {
-        "Name": "Lower Leg Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RL",
-        "OriginalLocation": null,
-        "ID": "5dd127d9-c09b-4f85-90e4-cbf1f81b0b20",
-        "IsSelected": false
-      },
-      {
-        "Name": "Upper Leg Actuator",
-        "Hits": 1,
-        "OriginalHits": 1,
-        "Location": "RL",
-        "OriginalLocation": null,
-        "ID": "3210d8d1-171f-40df-b418-59f38c4c7a94",
+        "ID": "2f6c55e6-e3b3-4fb0-bc55-34472c5baccb",
         "IsSelected": false
       },
       {
@@ -4480,7 +4341,88 @@
         "OriginalHits": 1,
         "Location": "CT",
         "OriginalLocation": null,
-        "ID": "d32205b2-e28f-4f5d-a1cb-1eaa44742454",
+        "ID": "74cdba2d-2c8f-4ecc-9b34-9a5b2769dc3a",
+        "IsSelected": false
+      },
+      {
+        "Name": "Cockpit",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "6944743e-cdb5-4306-9d61-5489746c6441",
+        "IsSelected": false
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "9b5fac7b-046a-4f13-8b94-83d2013ef4b5",
+        "IsSelected": false
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "6ec02f6b-8509-42cb-8b44-f6f11c679c88",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "72994fb3-c5ae-4e2d-97df-76b2c9530fd8",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "6eb84938-d6f4-487a-b191-e1edc3c90d91",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "976301c9-6a75-41e8-8b6c-ede17766b12e",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "da2b145e-bdeb-4d71-a01d-de531019cbc6",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "acafc52a-0149-4de1-8b59-be4659524a21",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "bf49fd7f-9020-44c1-b57b-c1dc7253d1e2",
         "IsSelected": false
       },
       {
@@ -4489,7 +4431,7 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "b7580412-6640-44e9-9f1a-092aa187e29e",
+        "ID": "8df6a15f-9c92-482b-975c-ef1eb3d9a387",
         "IsSelected": false
       },
       {
@@ -4498,7 +4440,79 @@
         "OriginalHits": 1,
         "Location": "LL",
         "OriginalLocation": null,
-        "ID": "71c693a7-68f6-4f56-b237-e05d55d90e35",
+        "ID": "2b83e8df-848f-43fe-b451-56dbc4f9b833",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "f65fbf30-bad4-4225-983a-6978f36fc62f",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "c9db8646-0022-4119-bdc1-eebffce1b4e7",
+        "IsSelected": false
+      },
+      {
+        "Name": "Heat Sink",
+        "Hits": 5,
+        "OriginalHits": 1,
+        "Location": "LT",
+        "OriginalLocation": null,
+        "ID": "d964c909-43c6-468c-b554-513259d48282",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "0fe36880-d791-45e3-9626-e41f7a813a57",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "4403238a-6aa1-4221-bb4a-5385e2c52a30",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "a48f0c30-f958-4403-b16b-ae8e4dd5ee56",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "28af416b-a119-49e1-844b-ff8057f3edb1",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "5ed67e28-e2ae-442b-aa0d-f99576bb4eb8",
         "IsSelected": false
       },
       {
@@ -4507,7 +4521,7 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "01fecc54-8b41-4a4c-9fcd-a594a664169d",
+        "ID": "9da9fad4-22d6-4aa8-be5d-a330635fb208",
         "IsSelected": false
       },
       {
@@ -4516,7 +4530,25 @@
         "OriginalHits": 1,
         "Location": "RL",
         "OriginalLocation": null,
-        "ID": "20ca0914-e58a-40a8-a602-c5f6bce7ef34",
+        "ID": "4e15117f-abe7-420d-bee2-ced12521d42f",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "5431aaca-f10d-46b6-9eed-20f0f9cf1765",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "4a41f2a7-d2b1-442e-820b-b24fe33865a6",
         "IsSelected": false
       }
     ],
@@ -4533,13 +4565,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "LA",
         "OriginalLocation": null,
-        "ID": "0d9b5cc8-bfc2-46bc-a313-871aaa6cc801",
+        "ID": "6f0d10bb-8bda-4b40-9a3d-e30885356574",
         "IsSelected": false
       },
       {
@@ -4554,13 +4587,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
-        "OriginalLocation": "LA",
-        "ID": "af6e337e-0b20-4b10-9c56-4725fc180b90",
+        "OriginalLocation": null,
+        "ID": "fd4e5f83-8f76-4d34-b48b-6c377faf58e1",
         "IsSelected": false
       },
       {
@@ -4575,13 +4609,14 @@
         "ShortRange": 3,
         "MediumRange": 6,
         "LongRange": 9,
+        "UsesAmmunition": false,
         "Ammo": [],
         "Name": "Medium Laser",
         "Hits": 1,
         "OriginalHits": 1,
         "Location": "RA",
-        "OriginalLocation": "LA",
-        "ID": "7613a3c6-18b5-4bff-b3c5-94e1f2146c36",
+        "OriginalLocation": null,
+        "ID": "87f33a8f-3fad-4e32-bf15-05b313070af8",
         "IsSelected": false
       },
       {
@@ -4597,6 +4632,7 @@
         "ShortRange": 7,
         "MediumRange": 14,
         "LongRange": 21,
+        "UsesAmmunition": true,
         "Ammo": [
           {
             "HasCASE": false,
@@ -4608,7 +4644,7 @@
             "OriginalHits": 1,
             "Location": "CT",
             "OriginalLocation": null,
-            "ID": "44e549ee-b834-4ddd-acf4-cda6369b6e29",
+            "ID": "8c316dd3-e683-4974-b952-99054fd02261",
             "IsSelected": false
           }
         ],
@@ -4617,7 +4653,7 @@
         "OriginalHits": 1,
         "Location": "RT",
         "OriginalLocation": null,
-        "ID": "2874a314-86c5-4cc2-9603-b767bfc58355",
+        "ID": "73c3fce3-f326-47ae-9143-70d052ad9691",
         "IsSelected": false
       }
     ],
@@ -4629,7 +4665,474 @@
     ],
     "UnitHeader": "Trebuchet (TBT-5J)",
     "UnitDetails": "50 tons - BV: 1191",
-    "ID": "fc3b4479-b982-450f-bbd1-c878fd6c860d",
+    "ID": "4f2c0811-de5c-4b16-8c8a-06060760c045",
+    "IsSelected": false
+  },
+  {
+    "Name": "Trebuchet",
+    "Model": "TBT-5N",
+    "Tonnage": 50,
+    "BattleValue": 1191,
+    "TechBase": "Inner Sphere",
+    "RulesLevel": "Introductory",
+    "YearIntroduced": 2799,
+    "YearExtinct": null,
+    "UnitMovement": {
+      "Walking": 5,
+      "Running": 8,
+      "Jumping": 0,
+      "ID": "32bee7d0-d319-46e7-8b52-fe5009dd57ae",
+      "IsSelected": false
+    },
+    "Components": [
+      {
+        "Name": "Head",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 9,
+        "RearArmor": null,
+        "Structure": 3,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "fc39f534-5212-4eca-94f2-02af04ee3ded",
+        "IsSelected": false
+      },
+      {
+        "Name": "Center Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 22,
+        "RearArmor": 7,
+        "Structure": 16,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "0067c5e4-eff1-45f5-870e-9109ff809dc6",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 11,
+        "RearArmor": 5,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "246bb1f7-c8dc-421f-ae8a-ad25d622b8e3",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Torso",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 11,
+        "RearArmor": 5,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "2017b586-bfd2-437b-8025-05da42a6806f",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 8,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "b00e7b6c-e006-4b62-9039-6d82cbe63632",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Arm",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 10,
+        "RearArmor": null,
+        "Structure": 8,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "77ba56c5-8533-4243-968a-11df23622ca7",
+        "IsSelected": false
+      },
+      {
+        "Name": "Right Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 15,
+        "RearArmor": null,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "1f6848b1-a9a0-4303-b7c5-91a2b52279c8",
+        "IsSelected": false
+      },
+      {
+        "Name": "Left Leg",
+        "OnComponentDestroyed": null,
+        "OnComponentRestored": null,
+        "OnComponentArmorRemoved": null,
+        "Armor": 15,
+        "RearArmor": null,
+        "Structure": 12,
+        "OriginalArmor": 0,
+        "OriginalRearArmor": null,
+        "OriginalStructure": 0,
+        "Removed": false,
+        "ComponentStatus": 0,
+        "ID": "f1cbe06f-968b-4410-8a79-1e3d428607b6",
+        "IsSelected": false
+      }
+    ],
+    "Equipment": [
+      {
+        "Name": "Fusion Engine",
+        "Hits": 3,
+        "OriginalHits": 3,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "4ae78b3b-46ad-4941-be85-28412957b8ad",
+        "IsSelected": false
+      },
+      {
+        "Name": "Gyro",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "CT",
+        "OriginalLocation": null,
+        "ID": "9cba3944-90b1-415e-badc-b3de7a27af44",
+        "IsSelected": false
+      },
+      {
+        "Name": "Cockpit",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "6dd4c319-8843-43bc-8d10-a62f6ce69d60",
+        "IsSelected": false
+      },
+      {
+        "Name": "Life Support",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "4ca835a6-199b-40d1-8939-ecf4e732dada",
+        "IsSelected": false
+      },
+      {
+        "Name": "Sensors",
+        "Hits": 2,
+        "OriginalHits": 2,
+        "Location": "H",
+        "OriginalLocation": null,
+        "ID": "96d8e5a7-265e-48b1-b859-231fe191b243",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hand Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "ccfdec5c-f27e-43a8-a785-fa02e0df6072",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "b00ec1d7-401c-480a-8119-9c6d1f6ffc13",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "3d3df5e2-c25d-415d-a146-71d45792ea03",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "947047bc-c91f-457f-a14c-5173f382984d",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "6b6150f4-fe49-4b50-a825-01a171db9b59",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "117e2cf0-4b24-4791-af71-ff55076d0362",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "04c7750d-f206-446a-92b4-187335b0adca",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LL",
+        "OriginalLocation": null,
+        "ID": "31501c04-9676-44f2-b45e-589547aa971b",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "431c078d-2dd0-42a8-b511-f1442d3e28e5",
+        "IsSelected": false
+      },
+      {
+        "Name": "Shoulder",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "ea96417b-ace2-4f0a-9f3c-fa6fe34c36bf",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Arm Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "d06c2bbe-7c2d-43cd-9372-dfa183fc5d46",
+        "IsSelected": false
+      },
+      {
+        "Name": "Foot Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "d6721692-edcb-4aad-b8cf-a1eca630b6c0",
+        "IsSelected": false
+      },
+      {
+        "Name": "Hip",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "ad155267-8a67-45ae-81be-15ae5b5221ae",
+        "IsSelected": false
+      },
+      {
+        "Name": "Lower Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "34d77b8e-f0b7-4e97-9e00-f055e3c9ce95",
+        "IsSelected": false
+      },
+      {
+        "Name": "Upper Leg Actuator",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RL",
+        "OriginalLocation": null,
+        "ID": "d319dac7-f35e-4143-8438-9beb8e3f245e",
+        "IsSelected": false
+      }
+    ],
+    "Weapons": [
+      {
+        "Heat": 5,
+        "Damage": 1,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "DamageCodesText": "M, C, S",
+        "MinimumRange": 6,
+        "ShortRange": 7,
+        "MediumRange": 14,
+        "LongRange": 21,
+        "UsesAmmunition": true,
+        "Ammo": [
+          {
+            "HasCASE": false,
+            "AmmoCount": 16,
+            "WeaponDamage": 15,
+            "AmmoExplosionDamage": 24,
+            "Name": "Ammo (LRM 15)",
+            "Hits": 1,
+            "OriginalHits": 1,
+            "Location": "LT",
+            "OriginalLocation": null,
+            "ID": "d4a64444-0385-4ae2-8cb4-cd473b2047b1",
+            "IsSelected": false
+          }
+        ],
+        "Name": "LRM 15",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "308fdf10-7d6b-4057-8aac-f2760e420f55",
+        "IsSelected": false
+      },
+      {
+        "Heat": 5,
+        "Damage": 1,
+        "DamageCodes": [
+          "M",
+          "C",
+          "S"
+        ],
+        "DamageCodesText": "M, C, S",
+        "MinimumRange": 6,
+        "ShortRange": 7,
+        "MediumRange": 14,
+        "LongRange": 21,
+        "UsesAmmunition": true,
+        "Ammo": [],
+        "Name": "LRM 15",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RT",
+        "OriginalLocation": null,
+        "ID": "3ada5cfe-1c7e-4a8e-b99c-8a6567e9dcb1",
+        "IsSelected": false
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "D",
+          "E"
+        ],
+        "DamageCodesText": "D, E",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "UsesAmmunition": false,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "LA",
+        "OriginalLocation": null,
+        "ID": "b107ad7a-ffbe-4003-afbd-62426c56291b",
+        "IsSelected": false
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "D",
+          "E"
+        ],
+        "DamageCodesText": "D, E",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "UsesAmmunition": false,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "e348910e-e329-45ee-9291-a2e862561555",
+        "IsSelected": false
+      },
+      {
+        "Heat": 3,
+        "Damage": 5,
+        "DamageCodes": [
+          "D",
+          "E"
+        ],
+        "DamageCodesText": "D, E",
+        "MinimumRange": 0,
+        "ShortRange": 3,
+        "MediumRange": 6,
+        "LongRange": 9,
+        "UsesAmmunition": false,
+        "Ammo": [],
+        "Name": "Medium Laser",
+        "Hits": 1,
+        "OriginalHits": 1,
+        "Location": "RA",
+        "OriginalLocation": null,
+        "ID": "d6119430-0cb2-427c-9438-4d961bc415c7",
+        "IsSelected": false
+      }
+    ],
+    "HeatSinks": 10,
+    "Quirks": [
+      {
+        "Name": "Easy to Maintain"
+      }
+    ],
+    "UnitHeader": "Trebuchet (TBT-5N)",
+    "UnitDetails": "50 tons - BV: 1191",
+    "ID": "a0f584e2-42d1-4381-af6b-9f8ea2224ee1",
     "IsSelected": false
   }
 ]

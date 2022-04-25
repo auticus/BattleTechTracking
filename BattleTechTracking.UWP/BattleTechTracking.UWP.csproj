@@ -142,6 +142,7 @@
     <Content Include="MainScreenCircleButton.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="reports.png" />
+    <Content Include="reticle.png" />
     <Content Include="settings.png" />
     <Content Include="trash.jpg" />
   </ItemGroup>

@@ -46,7 +46,8 @@ namespace BattleTechTracking.Factories
                 MediumRange = template.MediumRange,
                 MinimumRange = template.MinimumRange,
                 Name = template.Name,
-                ShortRange = template.ShortRange
+                ShortRange = template.ShortRange,
+                UsesAmmunition = template.UsesAmmunition
             };
             wpn.CacheLocation();
             return wpn;

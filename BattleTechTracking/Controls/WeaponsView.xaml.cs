@@ -56,6 +56,12 @@ namespace BattleTechTracking.Controls
             typeof(int),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty FireWeaponCommandProperty = BindableProperty.Create(
+            nameof(FireWeaponCommand),
+            typeof(ICommand),
+            typeof(WeaponsView)
+        );
+
         public ObservableCollection<Weapon> ItemSource
         {
             get => (ObservableCollection<Weapon>)GetValue(WeaponsView.ItemSourceProperty);
@@ -95,6 +101,12 @@ namespace BattleTechTracking.Controls
         {
             get => (Command)GetValue(WeaponsView.OpenAmmoProperty);
             set => SetValue(WeaponsView.OpenAmmoProperty, value);
+        }
+
+        public Command FireWeaponCommand
+        {
+            get => (Command)GetValue(WeaponsView.FireWeaponCommandProperty);
+            set => SetValue(WeaponsView.FireWeaponCommandProperty, value);
         }
 
         public bool IsDataEditMode

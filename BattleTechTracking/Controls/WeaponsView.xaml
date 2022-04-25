@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
              xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
+             xmlns:effects="clr-namespace:BattleTechTracking.Effects;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.WeaponsView"
              x:Name="thisView">
     <ContentView.Resources>
@@ -11,6 +12,8 @@
         <converters:EquipmentLocationToColorStatusConverter x:Key="LocToColorConverter"/>
         <converters:EquipmentLocationToFontStyleConverter x:Key="LocToFontStyleConverter"/>
         <converters:EquipmentLocationToTextDecoratorConverter x:Key="LocToTextDecoratorConverter"/>
+        <converters:WeaponFiringStatusToStringConverter x:Key="WeaponFiringStatusToStringConverter"/>
+        <converters:WeaponFiringStatusToColorConverter x:Key="WeaponFiringStatusToColorConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <ListView VerticalOptions="FillAndExpand"
@@ -167,7 +170,38 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <!-- Copy Button Column 8-->
+                                <!-- Tracking Mode Fire Weapon Button -->
+                                <ImageButton Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="8"
+                                        Grid.ColumnSpan="2"
+                                        Margin="0,10,0,0"
+                                        BorderColor="DarkRed" BorderWidth="1"
+                                        WidthRequest="70"
+                                        HeightRequest="70"
+                                        CornerRadius="90" 
+                                        HorizontalOptions="Center"
+                                        Source="reticle.png"
+                                        IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"
+                                        Command="{Binding FireWeaponCommand, Source={x:Reference thisView}}"
+                                        CommandParameter="{Binding ID}"
+                                        effects:TooltipEffect.Position="Bottom"
+                                        effects:TooltipEffect.Text="Fire Weapon"/>
+                                
+                                <Label Text="{Binding WeaponFiringStatus, Converter={StaticResource WeaponFiringStatusToStringConverter}}" 
+                                       Grid.Row="2"
+                                       Grid.Column="8"
+                                       Grid.ColumnSpan="2"
+                                       HorizontalOptions="Center"
+                                       FontAttributes="Bold"
+                                       TextColor="{Binding WeaponFiringStatus, Converter={StaticResource WeaponFiringStatusToColorConverter}}"
+                                       IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"/>
+
+                                <!-- Edit Mode Copy Button Column 8-->
                                 <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="copy.png" HorizontalOptions="End"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="8"
@@ -175,7 +209,7 @@
                                              Command="{Binding CopyWeapon, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
 
-                                <!--Delete Button Column 9-->
+                                <!--Edit Mode Delete Button Column 9-->
                                 <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="Center"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="9"
@@ -288,6 +322,19 @@
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                         Command="{Binding OpenAmmo, Source={x:Reference thisView}}"
                                         CommandParameter="{Binding ID}"/>
+
+                                <!--Edit Mode Uses Ammo switch Columns 8-->
+                                <Switch Grid.Row="1" 
+                                        Grid.Column="8"
+                                        Margin="5,0,0,0"
+                                        BackgroundColor="DimGray"
+                                        OnColor="Gold"
+                                        ThumbColor="White"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Start"
+                                        WidthRequest="45"
+                                        IsToggled="{Binding UsesAmmunition}"
+                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
 
                                 <!-- Tracking mode location -->
                                 <Label Text="Location"

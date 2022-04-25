@@ -300,6 +300,10 @@ namespace BattleTechTracking.Models
 
             HandleHeat();
             UnitAction = ActionsFactory.NO_ACTION;
+            foreach (var wpn in UnitWeapons.Where(p => p.WeaponFiringStatus != WeaponFiringStatus.WeaponDestroyed))
+            {
+                wpn.WeaponFiringStatus = WeaponFiringStatus.NotFired;
+            }
         }
 
         private void HandleHeat()
