@@ -14,8 +14,18 @@ namespace BattleTechTracking.Controls
             typeof(ObservableCollection<Weapon>),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty TemplatedWeaponsProperty = BindableProperty.Create(
+            nameof(TemplatedWeapons),
+            typeof(ObservableCollection<Weapon>),
+            typeof(WeaponsView));
+
         public static readonly BindableProperty SelectedWeaponProperty = BindableProperty.Create(
             nameof(SelectedWeapon),
+            typeof(Weapon),
+            typeof(WeaponsView));
+
+        public static readonly BindableProperty SelectedTemplatedWeaponProperty = BindableProperty.Create(
+            nameof(SelectedTemplatedWeapon),
             typeof(Weapon),
             typeof(WeaponsView));
 
@@ -34,6 +44,11 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty OpenWeaponTemplateProperty = BindableProperty.Create(
+            nameof(OpenWeaponTemplate),
+            typeof(ICommand),
+            typeof(WeaponsView));
+
         public static readonly BindableProperty OpenDamageCodesProperty = BindableProperty.Create(
             nameof(OpenDamageCodes),
             typeof(ICommand),
@@ -43,8 +58,7 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty OpenAmmoProperty = BindableProperty.Create(
             nameof(OpenAmmo),
             typeof(ICommand),
-            typeof(WeaponsView)
-        );
+            typeof(WeaponsView));
 
         public static readonly BindableProperty IsDataEditModeProperty = BindableProperty.Create(
             nameof(IsDataEditMode),
@@ -59,8 +73,7 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty FireWeaponCommandProperty = BindableProperty.Create(
             nameof(FireWeaponCommand),
             typeof(ICommand),
-            typeof(WeaponsView)
-        );
+            typeof(WeaponsView));
 
         public ObservableCollection<Weapon> ItemSource
         {
@@ -68,10 +81,22 @@ namespace BattleTechTracking.Controls
             set => SetValue(WeaponsView.ItemSourceProperty, value);
         }
 
+        public ObservableCollection<Weapon> TemplatedWeapons
+        {
+            get => (ObservableCollection<Weapon>)GetValue(WeaponsView.TemplatedWeaponsProperty);
+            set => SetValue(WeaponsView.TemplatedWeaponsProperty, value);
+        }
+    
         public Weapon SelectedWeapon
         {
             get => (Weapon)GetValue(WeaponsView.SelectedWeaponProperty);
             set => SetValue(WeaponsView.SelectedWeaponProperty, value);
+        }
+
+        public Weapon SelectedTemplatedWeapon
+        {
+            get => (Weapon)GetValue(WeaponsView.SelectedTemplatedWeaponProperty);
+            set => SetValue(WeaponsView.SelectedTemplatedWeaponProperty, value);
         }
 
         public Command NewWeapon
@@ -90,6 +115,12 @@ namespace BattleTechTracking.Controls
         {
             get => (Command)GetValue(WeaponsView.CopyWeaponProperty);
             set => SetValue(WeaponsView.CopyWeaponProperty, value);
+        }
+
+        public Command OpenWeaponTemplate
+        {
+            get => (Command)GetValue(WeaponsView.OpenWeaponTemplateProperty);
+            set => SetValue(WeaponsView.OpenWeaponTemplateProperty, value);
         }
 
         public Command OpenDamageCodes

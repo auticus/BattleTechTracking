@@ -29,12 +29,14 @@ namespace BattleTechTracking.ViewModels
         private ObservableCollection<UnitComponent> _selectedUnitComponents;
         private ObservableCollection<Equipment> _selectedUnitEquipment;
         private ObservableCollection<Weapon> _selectedUnitWeapons;
+        private ObservableCollection<Weapon> _templatedWeapons;
         private ObservableCollection<Ammunition> _selectedWeaponAmmunition;
         private ObservableCollection<Quirk> _selectedUnitQuirks;
 
         private UnitComponent _selectedComponent;
         private Equipment _selectedEquipment;
         private Weapon _selectedWeapon;
+        private Weapon _selectedTemplatedWeapon;
         private Ammunition _selectedAmmo;
         private List<BattleMech> _mechList;
         private List<IndustrialMech> _industrialMechList;
@@ -65,7 +67,8 @@ namespace BattleTechTracking.ViewModels
             set
             {
                 PersistSelectedUnitToModels();
-
+                UpdateTemplatedWeaponsCacheWithAnyNewWeapons(_selectedUnit.Weapons);
+                
                 _selectedUnit = value;
                 OnPropertyChanged(nameof(SelectedUnit));
 
@@ -110,6 +113,19 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedUnitWeapons = value;
                 OnPropertyChanged(nameof(SelectedUnitWeapons));
+            }
+        }
+
+        /// <summary>
+        /// Gets the collection of weapons that are stored in the weapons template for creating new templates.
+        /// </summary>
+        public ObservableCollection<Weapon> TemplatedWeapons
+        {
+            get => _templatedWeapons;
+            private set
+            {
+                _templatedWeapons = value;
+                OnPropertyChanged(nameof(TemplatedWeapons));
             }
         }
 
@@ -174,6 +190,19 @@ namespace BattleTechTracking.ViewModels
                 OnPropertyChanged(nameof(SelectedWeapon));
                 AmmunitionViewHeader = $"{_selectedWeapon.Name ?? string.Empty} Ammunition";
                 SelectedWeaponAmmunition = new ObservableCollection<Ammunition>(SelectedWeapon.Ammo);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the selected Templated Weapon
+        /// </summary>
+        public Weapon SelectedTemplatedWeapon
+        {
+            get => _selectedTemplatedWeapon;
+            set
+            {
+                _selectedTemplatedWeapon = value;
+                OnPropertyChanged(nameof(SelectedTemplatedWeapon));
             }
         }
 
@@ -441,6 +470,16 @@ namespace BattleTechTracking.ViewModels
             _infantryList = DataPump.GetPersistedDataForType<Infantry>().ToList();
             _combatVehicleList = DataPump.GetPersistedDataForType<CombatVehicle>().ToList();
 
+            TemplatedWeapons = new ObservableCollection<Weapon>(
+                ComponentFactory.GetDistinctWeapons(new[]
+                { 
+                    _mechList.ConvertAll(x=>(BaseUnit)x), 
+                    _industrialMechList.ConvertAll(x=>(BaseUnit)x), 
+                    _combatVehicleList.ConvertAll(x=>(BaseUnit)x)
+                }, UnitComponent.CENTER_TORSO_CODE));
+
+            SelectedTemplatedWeapon = TemplatedWeapons[0];
+
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
             VehicleComponentsVisible = true;
 
@@ -480,7 +519,14 @@ namespace BattleTechTracking.ViewModels
             NewWeapon = new Command(() =>
             {
                 if (SelectedUnit == null) return;
-                SelectedUnitWeapons.Add(new Weapon(){Name = "Unnamed", Hits=1, Location="CT"});
+
+                //intentionally do not carry ammunition locations over
+                var newWpn = ComponentFactory.BuildWeaponFromTemplate(
+                    SelectedTemplatedWeapon, 
+                    overrideLocation: UnitComponent.DefaultLocation((BaseUnit)SelectedUnit), 
+                    keepTemplatedAmmo: false);
+
+                SelectedUnitWeapons.Add(newWpn);
             });
 
             DeleteWeapon = new Command<Guid>((id) =>
@@ -727,6 +773,16 @@ namespace BattleTechTracking.ViewModels
             WalkingLabel = "Cruising";
             RunningLabel = "Flanking";
             JumpingLabel = "Flying";
+        }
+
+        private void UpdateTemplatedWeaponsCacheWithAnyNewWeapons(IEnumerable<Weapon> weapons)
+        {
+            // examine the weapons collection passed in and add any items that need to be added that do not yet exist
+            foreach (var wpn in weapons)
+            {
+                if (TemplatedWeapons.Any(p => p.Name.Trim() == wpn.Name.Trim())) continue;
+                TemplatedWeapons.Add(wpn);
+            }
         }
     }
 }

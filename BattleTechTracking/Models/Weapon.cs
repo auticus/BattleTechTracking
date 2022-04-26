@@ -36,7 +36,6 @@ namespace BattleTechTracking.Models
                 OnPropertyChanged(nameof(WeaponFiringStatus));
             }
         }
-
         public IEnumerable<Ammunition> Ammo { get; set; } = new List<Ammunition>();
 
         public override void DestroyItem()
@@ -51,5 +50,7 @@ namespace BattleTechTracking.Models
             WeaponFiringStatus = WeaponFiringStatus.NotFired;
             return true;
         }
+
+        public override string ToString() => Name;
     }
 }

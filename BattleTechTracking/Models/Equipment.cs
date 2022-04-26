@@ -8,8 +8,18 @@ namespace BattleTechTracking.Models
         private string _location;
         private string _originalLocation;
         private int _originalHits;
+        private string _name;
 
-        public string Name { get; set; }
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name == value) return;
+                _name = value.Trim();
+                OnPropertyChanged(nameof(Name));
+            }
+        }
 
         public int Hits
         {

@@ -160,6 +160,16 @@ namespace BattleTechTracking.Models
             OriginalStructure = Structure;
         }
 
+        public static string DefaultLocation(BaseUnit unit)
+        {
+            if (unit.GetType() == typeof(BattleMech) || unit.GetType() == typeof(IndustrialMech))
+                return CENTER_TORSO_CODE;
+            if (unit.GetType() == typeof(CombatVehicle))
+                return FRONT_CODE;
+
+            return CENTER_TORSO_CODE;
+        }
+
         private bool IsUndamaged()
             => Structure == OriginalStructure && Armor == OriginalArmor && (OriginalRearArmor == null || RearArmor == OriginalRearArmor);
 

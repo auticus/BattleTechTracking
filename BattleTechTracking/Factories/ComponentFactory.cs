@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Factories
 {
     public static class ComponentFactory
     {
+        public const string UNNAMED_WEAPON = "<Unnamed>";
         private const int SRM_DAMAGE_PER = 2;
         private const int LRM_DAMAGE_PER = 1;
 
@@ -33,6 +35,9 @@ namespace BattleTechTracking.Factories
         }
 
         public static Weapon BuildWeaponFromTemplate(Weapon template)
+            => BuildWeaponFromTemplate(template, overrideLocation: template.Location, keepTemplatedAmmo: true);
+
+        public static Weapon BuildWeaponFromTemplate(Weapon template, string overrideLocation, bool keepTemplatedAmmo)
         {
             var wpn = new Weapon()
             {
@@ -41,7 +46,7 @@ namespace BattleTechTracking.Factories
                 DamageCodes = new List<string>(template.DamageCodes),
                 Heat = template.Heat,
                 Hits = template.Hits,
-                Location = template.Location,
+                Location = overrideLocation,
                 LongRange = template.LongRange,
                 MediumRange = template.MediumRange,
                 MinimumRange = template.MinimumRange,
@@ -50,6 +55,8 @@ namespace BattleTechTracking.Factories
                 UsesAmmunition = template.UsesAmmunition
             };
             wpn.CacheLocation();
+
+            if (!keepTemplatedAmmo) wpn.Ammo = new List<Ammunition>();
             return wpn;
         }
 
@@ -80,6 +87,37 @@ namespace BattleTechTracking.Factories
             if (wpn.Name.Contains("LRM 20")) return 20;
 
             return wpn.Damage;
+        }
+
+        /// <summary>
+        /// Takes an array of a list of units and goes through all of them to pull distinct weaponry (without ammunition).
+        /// </summary>
+        /// <param name="units"></param>
+        /// <returns></returns>
+        public static IEnumerable<Weapon> GetDistinctWeapons(List<BaseUnit>[] units, string defaultLocation)
+        {
+            var distinctWeapons = new List<Weapon>();
+            
+            foreach (var unit in units)
+            {
+                PopulateDistinctWeaponsListWithMissingWeaponsFromUnits(distinctWeapons, unit);
+            }
+
+            distinctWeapons = distinctWeapons.OrderBy(p => p.Name).ToList();
+            distinctWeapons.Insert(0, new Weapon() { Name = UNNAMED_WEAPON, Hits = 1, Location = defaultLocation });
+            return distinctWeapons;
+        }
+
+        private static void PopulateDistinctWeaponsListWithMissingWeaponsFromUnits(IList<Weapon> distinctWeapons, IEnumerable<BaseUnit> units)
+        {
+            foreach (var unit in units)
+            {
+                foreach (var wpn in unit.Weapons)
+                {
+                    if (distinctWeapons.Any(p => p.Name == wpn.Name)) continue;
+                    distinctWeapons.Add(wpn);
+                }
+            }
         }
     }
 }

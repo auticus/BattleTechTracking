@@ -138,6 +138,7 @@
         "Name": "SRM 2",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "bd0078c7-5e64-4efa-ac7e-554cf0c3e42e"
       }
     ],
@@ -280,6 +281,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "RS",
+        "UsesAmmunition": true,
         "ID": "92a693ec-8d91-421b-a62c-d3f607a99657"
       },
       {
@@ -297,6 +299,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "LS",
+        "UsesAmmunition": true,
         "ID": "934e7f7f-580b-4467-8c46-a75ea6dc9494"
       },
       {
@@ -313,6 +316,7 @@
         "Name": "Medium Laser",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": false,
         "ID": "899f4fb1-bbec-48f8-8903-b60f421d244f"
       }
     ],
@@ -414,7 +418,7 @@
     ],
     "Weapons": [
       {
-        "Heat": 0,
+        "Heat": 7,
         "Damage": 20,
         "DamageCodes": [
           "DB",
@@ -436,6 +440,7 @@
         "Name": "AC/20",
         "Hits": 1,
         "Location": "F",
+        "UsesAmmunition": true, 
         "ID": "8f63a0c3-1a18-4917-8541-e24e2bc0c1b8"
       }
     ],
@@ -579,6 +584,7 @@
         "Name": "LRM 10",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "2852d3d3-1816-474d-9633-db287ccfbe08"
       },
       {
@@ -605,6 +611,7 @@
         "Name": "SRM 2",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "79981676-79ca-471c-b2a9-a12dd1a25b6f"
       },
       {
@@ -623,6 +630,7 @@
         "Name": "SRM 2",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "c6d15291-1845-4aa9-bffe-ac19d004da4f"
       },
       {
@@ -641,6 +649,7 @@
         "Name": "SRM 2",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "bc2ee95b-ed9d-4bb4-8482-df78186dee57"
       }
     ],
@@ -770,6 +779,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "F",
+        "UsesAmmunition": true,
         "ID": "09c1df59-263e-4fc1-bd48-5942d958391f"
       },
       {
@@ -787,6 +797,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "F",
+        "UsesAmmunition": true,
         "ID": "18441f81-bdca-4f99-abea-c152136a8c74"
       }
     ],
@@ -929,6 +940,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "9ad64b6b-117b-45e3-ba34-f4c4d7dab4c7"
       },
       {
@@ -955,6 +967,7 @@
         "Name": "SRM 6",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "624624a9-651a-41d8-9546-23b65a132177"
       },
       {
@@ -973,6 +986,7 @@
         "Name": "SRM 6",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "b7db39eb-f690-4c27-a5a4-e0b7b65d4798"
       }
     ],
@@ -1115,6 +1129,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "F",
+        "UsesAmmunition": true,
         "ID": "f2ff2840-d152-4643-ab16-1f1df92fbef1"
       },
       {
@@ -1141,6 +1156,7 @@
         "Name": "SRM 2",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "b88a9e1b-5f92-4a76-b449-9f53128731d7"
       },
       {
@@ -1166,6 +1182,7 @@
         "Name": "AC/2",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "36d16a19-b96d-4991-89b6-17cd14797c89"
       }
     ],
@@ -1308,6 +1325,7 @@
         "Name": "Machine Gun",
         "Hits": 1,
         "Location": "F",
+        "UsesAmmunition": true,
         "ID": "1cff8833-1f23-4f15-ba7e-fde5bd15130c"
       },
       {
@@ -1333,6 +1351,7 @@
         "Name": "AC/5",
         "Hits": 1,
         "Location": "TU",
+        "UsesAmmunition": true,
         "ID": "df950df9-82cc-45b3-9340-ee2e39c9ac79"
       }
     ],

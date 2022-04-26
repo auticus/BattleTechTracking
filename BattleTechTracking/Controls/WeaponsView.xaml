@@ -24,18 +24,33 @@
                 <ContentView BackgroundColor="MidnightBlue">
                     <Grid HorizontalOptions="FillAndExpand">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.95*"/>
-                            <ColumnDefinition />
+                            <ColumnDefinition Width="0.90*"/>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="40"/>
                         </Grid.ColumnDefinitions>
-                        <Label Text="Weapons" HorizontalTextAlignment="Center" Margin="75,0,0,0"
-                               HorizontalOptions="Center" FontSize="Medium" TextColor="Gold"
-                               Grid.Column="0"/>
-                        <ImageButton WidthRequest="32" HeightRequest="32" 
-                                   CornerRadius="120" HorizontalOptions="End" 
-                                   BackgroundColor="Black" Source="plusIcon.jpg"
-                                   Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" Grid.Column="1"
-                                   IsVisible="{Binding IsDataEditMode}"
-                                   Command="{Binding NewWeapon, Source={x:Reference thisView}}"/>
+                        <Label Grid.Column="0"
+                               Text="Weapons" 
+                               HorizontalTextAlignment="Center" 
+                               Margin="75,0,0,0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="Medium" 
+                               TextColor="Gold"/>
+                        <Picker Grid.Column="1"
+                                Margin="0,0,10,0"
+                                WidthRequest="200"
+                                VerticalOptions="Center"
+                                ItemsSource="{Binding TemplatedWeapons, Source={x:Reference thisView}}"
+                                SelectedItem="{Binding SelectedTemplatedWeapon, Source={x:Reference thisView}, Mode=TwoWay}"/>
+                        <ImageButton Grid.Column="2"
+                                     WidthRequest="32" HeightRequest="32" 
+                                     CornerRadius="120" HorizontalOptions="End" 
+                                     BackgroundColor="Black" Source="plusIcon.jpg"
+                                     Margin="0,5,10,5" BorderColor="Gold" BorderWidth="1" 
+                                     effects:TooltipEffect.Position="Bottom"
+                                     effects:TooltipEffect.Text="Adds a weapon"
+                                     IsVisible="{Binding IsDataEditMode}"
+                                     Command="{Binding NewWeapon, Source={x:Reference thisView}}"/>
                     </Grid>
                 </ContentView>
             </ListView.Header>
@@ -205,14 +220,18 @@
                                 <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="copy.png" HorizontalOptions="End"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="8"
+                                             effects:TooltipEffect.Position="Bottom"
+                                             effects:TooltipEffect.Text="Copies this weapon and creates a new instance of it"
                                              IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                              Command="{Binding CopyWeapon, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
-
+                                
                                 <!--Edit Mode Delete Button Column 9-->
                                 <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="Center"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="9"
+                                             effects:TooltipEffect.Position="Bottom"
+                                             effects:TooltipEffect.Text="Deletes this weapon from the element"
                                              IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                              Command="{Binding DeleteWeapon, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
@@ -321,6 +340,8 @@
                                 <Button Text="+" TextColor="Gold" Grid.Row="1" Grid.Column="7" BackgroundColor="Black"
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                         Command="{Binding OpenAmmo, Source={x:Reference thisView}}"
+                                        effects:TooltipEffect.Position="Bottom"
+                                        effects:TooltipEffect.Text="Creates ammo location for this weapon"
                                         CommandParameter="{Binding ID}"/>
 
                                 <!--Edit Mode Uses Ammo switch Columns 8-->
@@ -333,6 +354,8 @@
                                         VerticalOptions="Center"
                                         HorizontalOptions="Start"
                                         WidthRequest="45"
+                                        effects:TooltipEffect.Position="Bottom"
+                                        effects:TooltipEffect.Text="Toggles if the weapon uses ammunition"
                                         IsToggled="{Binding UsesAmmunition}"
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
 

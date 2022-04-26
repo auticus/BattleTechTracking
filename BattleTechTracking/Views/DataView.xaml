@@ -335,7 +335,7 @@
                         </Entry>
                     </Grid>
                     
-                    <StackLayout Grid.Row="6" Grid.ColumnSpan="6">
+                    <StackLayout Grid.Column ="0" Grid.Row="6" Grid.ColumnSpan="6">
                         <controls:VehicleComponentView Margin="10,30,15,10"
                                                        IsVisible="{Binding VehicleComponentsVisible}"
                                                        ItemSource="{Binding SelectedUnitComponents}"
@@ -361,6 +361,8 @@
                                               CopyWeapon ="{Binding CopyWeapon}"
                                               OpenDamageCodes ="{Binding OpenDamageCodes}"
                                               OpenAmmo="{Binding OpenAmmo}"
+                                              TemplatedWeapons="{Binding TemplatedWeapons}"
+                                              SelectedTemplatedWeapon="{Binding SelectedTemplatedWeapon, Mode=TwoWay}"
                                               IsDataEditMode="True"/>
 
                         <controls:DamageCodesView Margin="10,30,15,10"
