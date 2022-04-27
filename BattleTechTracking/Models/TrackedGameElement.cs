@@ -31,7 +31,7 @@ namespace BattleTechTracking.Models
         private string _unitAction;
         private string _unitStatus;
 
-        private LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
+        private readonly LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
 
         public EventHandler Invalidated { get; set; }
 
@@ -116,8 +116,22 @@ namespace BattleTechTracking.Models
             get => _currentHeatLevel;
             set
             {
+                if (!ThisCanTrackHeat) value = 0;
+                
                 _currentHeatLevel = value;
                 OnPropertyChanged(nameof(CurrentHeatLevel));
+            }
+        }
+
+        public bool ThisCanTrackHeat
+        {
+            get
+            {
+                var isBattleMech = GameElement is BattleMech;
+                if (isBattleMech) return true;
+
+                isBattleMech = GameElement is IndustrialMech;
+                return isBattleMech;
             }
         }
 

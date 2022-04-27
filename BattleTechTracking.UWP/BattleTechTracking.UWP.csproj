@@ -110,6 +110,9 @@
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="copy.png" />
     <Content Include="goBack.png" />
+    <Content Include="heat1.png" />
+    <Content Include="heat2.png" />
+    <Content Include="heat5.png" />
     <Content Include="Next.ico" />
     <Content Include="okIcon.png" />
     <Content Include="plusIcon.jpg" />

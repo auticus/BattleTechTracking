@@ -162,7 +162,11 @@
                                                  PilotSkill="{Binding SelectedActiveUnit.PilotPilotingSkill, Mode=TwoWay}"
                                                  PilotGunnerySkill="{Binding SelectedActiveUnit.PilotGunnerySkill, Mode=TwoWay}"
                                                  PilotHits ="{Binding SelectedActiveUnit.PilotHits, Mode=TwoWay}"
-                                                 Notes ="{Binding SelectedActiveUnit.Notes, Mode=TwoWay}"/>
+                                                 Notes ="{Binding SelectedActiveUnit.Notes, Mode=TwoWay}"
+                                                 TrackHeat="{Binding SelectedActiveUnit.ThisCanTrackHeat, Mode=TwoWay}"
+                                                 Heat1Command="{Binding GenerateHeat1}"
+                                                 Heat2Command="{Binding GenerateHeat2}"
+                                                 Heat5Command="{Binding GenerateHeat5}"/>
 
                 <controls:VehicleComponentView Margin="10,45,0,0"
                                                Grid.Row="0"

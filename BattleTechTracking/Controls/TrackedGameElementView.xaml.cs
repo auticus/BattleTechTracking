@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,102 +11,122 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty TrackedElementHeaderProperty = BindableProperty.Create(
             nameof(TrackedElementHeader),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty UnitActionsProperty = BindableProperty.Create(
             nameof(UnitActions),
             typeof(List<string>),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty UnitStatusesProperty = BindableProperty.Create(
             nameof(UnitStatuses),
             typeof(List<string>),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty SelectedUnitActionProperty = BindableProperty.Create(
             nameof(SelectedUnitAction),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty SelectedUnitStatusProperty = BindableProperty.Create(
             nameof(SelectedUnitStatus),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty QuirksProperty = BindableProperty.Create(
             nameof(Quirks),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty DidWalkProperty = BindableProperty.Create(
             nameof(DidWalk),
             typeof(bool),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty DidRunProperty = BindableProperty.Create(
             nameof(DidRun),
             typeof(bool),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty DidJumpProperty = BindableProperty.Create(
             nameof(DidJump),
             typeof(bool),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty IsProneProperty = BindableProperty.Create(
             nameof(IsProne),
             typeof(bool),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty CurrentHeatLevelProperty = BindableProperty.Create(
             nameof(CurrentHeatLevel),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty CurrentHeatSinksProperty = BindableProperty.Create(
             nameof(CurrentHeatSinks),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty HexesMovedProperty = BindableProperty.Create(
             nameof(HexesMoved),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty NumberOfElementsProperty = BindableProperty.Create(
             nameof(NumberOfElements),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty PilotNameProperty = BindableProperty.Create(
             nameof(PilotName),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty PilotSkillProperty = BindableProperty.Create(
             nameof(PilotSkill),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty PilotGunnerySkillProperty = BindableProperty.Create(
             nameof(PilotGunnerySkill),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty PilotHitsProperty = BindableProperty.Create(
             nameof(PilotHits),
             typeof(int),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty NotesProperty = BindableProperty.Create(
             nameof(Notes),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
 
         public static readonly BindableProperty MovementProperty = BindableProperty.Create(
             nameof(Movement),
             typeof(string),
-            typeof(MatchSettingsView));
+            typeof(TrackedGameElementView));
+
+        public static readonly BindableProperty Heat1CommandProperty = BindableProperty.Create(
+            nameof(Heat1Command),
+            typeof(ICommand),
+            typeof(TrackedGameElementView));
+
+        public static readonly BindableProperty Heat2CommandProperty = BindableProperty.Create(
+            nameof(Heat2Command),
+            typeof(ICommand),
+            typeof(TrackedGameElementView));
+
+        public static readonly BindableProperty Heat5CommandProperty = BindableProperty.Create(
+            nameof(Heat5Command),
+            typeof(ICommand),
+            typeof(TrackedGameElementView));
+
+        public static readonly BindableProperty TrackHeatProperty = BindableProperty.Create(
+            nameof(TrackHeat),
+            typeof(bool),
+            typeof(TrackedGameElementView));
 
         public string TrackedElementHeader
         {
@@ -141,6 +162,12 @@ namespace BattleTechTracking.Controls
         {
             get => (bool)GetValue(TrackedGameElementView.IsProneProperty);
             set => SetValue(TrackedGameElementView.IsProneProperty, value);
+        }
+
+        public bool TrackHeat
+        {
+            get => (bool)GetValue(TrackedGameElementView.TrackHeatProperty);
+            set => SetValue(TrackedGameElementView.TrackHeatProperty, value);
         }
 
         public int CurrentHeatLevel
@@ -225,6 +252,24 @@ namespace BattleTechTracking.Controls
         {
             get => (string)GetValue(TrackedGameElementView.SelectedUnitStatusProperty);
             set => SetValue(TrackedGameElementView.SelectedUnitStatusProperty, value);
+        }
+
+        public Command Heat1Command
+        {
+            get => (Command)GetValue(TrackedGameElementView.Heat1CommandProperty);
+            set => SetValue(TrackedGameElementView.Heat1CommandProperty, value);
+        }
+
+        public Command Heat2Command
+        {
+            get => (Command)GetValue(TrackedGameElementView.Heat2CommandProperty);
+            set => SetValue(TrackedGameElementView.Heat2CommandProperty, value);
+        }
+
+        public Command Heat5Command
+        {
+            get => (Command)GetValue(TrackedGameElementView.Heat5CommandProperty);
+            set => SetValue(TrackedGameElementView.Heat5CommandProperty, value);
         }
 
         public TrackedGameElementView()

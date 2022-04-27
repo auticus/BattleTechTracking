@@ -2,9 +2,10 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:behaviors="clr-namespace:BattleTechTracking.Behaviors;assembly=BattleTechTracking"
+             xmlns:effects="clr-namespace:BattleTechTracking.Effects;assembly=BattleTechTracking"
+             xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.TrackedGameElementView"
              x:Name="thisView">
-            
     <ContentView.Content>
         <Grid VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
@@ -32,7 +33,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="75"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
@@ -46,7 +47,11 @@
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 
                 <!-- Unit Action Drop Down -->
@@ -64,7 +69,7 @@
                         ItemsSource="{Binding UnitActions, Source={x:Reference thisView}}" 
                         SelectedItem="{Binding SelectedUnitAction, Source={x:Reference thisView}}"/>
 
-                <StackLayout Grid.Row="0" Grid.Column="3" Orientation="Horizontal">
+                <StackLayout Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" Orientation="Horizontal">
                     <Label TextColor="Gold" 
                            Margin="10,0,0,0" 
                            VerticalTextAlignment="Center"
@@ -85,7 +90,7 @@
 
                 <Label Grid.Row="1"
                        Grid.Column="1"
-                       Grid.ColumnSpan="3"
+                       Grid.ColumnSpan="6"
                        TextColor="White" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
@@ -106,6 +111,45 @@
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="{Binding Movement, Source={x:Reference thisView}}"/>
+
+                <ImageButton  Grid.Row="2" 
+                              Grid.Column="4"
+                              WidthRequest="80" HeightRequest="80" 
+                              CornerRadius="180" HorizontalOptions="End" 
+                              Source="heat1.png"
+                              BorderColor="Red"
+                              BorderWidth="1"
+                              effects:TooltipEffect.Position="Bottom"
+                              effects:TooltipEffect.Text="Generate 1 Heat"
+                              Margin="0,0,0,0"
+                              IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"
+                              Command="{Binding Heat1Command, Source={x:Reference thisView}}"/>
+
+                <ImageButton  Grid.Row="2" 
+                              Grid.Column="5"
+                              WidthRequest="80" HeightRequest="80" 
+                              CornerRadius="180" HorizontalOptions="End" 
+                              Source="heat2.png"
+                              BorderColor="Red"
+                              effects:TooltipEffect.Position="Bottom"
+                              effects:TooltipEffect.Text="Generate 2 Heat"
+                              BorderWidth="1"
+                              Margin="0,0,0,0"
+                              IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"
+                              Command="{Binding Heat2Command, Source={x:Reference thisView}}"/>
+
+                <ImageButton  Grid.Row="2" 
+                              Grid.Column="6"
+                              WidthRequest="80" HeightRequest="80" 
+                              CornerRadius="180" HorizontalOptions="End" 
+                              Source="heat5.png"
+                              BorderColor="Red"
+                              BorderWidth="1"
+                              effects:TooltipEffect.Position="Bottom"
+                              effects:TooltipEffect.Text="Generate 5 Heat"
+                              Margin="0,0,0,0"
+                              IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"
+                              Command="{Binding Heat5Command, Source={x:Reference thisView}}"/>
 
                 <!-- Hexes Moved Row 3 -->
                 <Label Grid.Row="3"
@@ -287,6 +331,7 @@
                 <Editor Grid.Row="7"
                        Grid.RowSpan="3"
                        Grid.Column="3"
+                       Grid.ColumnSpan="4"
                        WidthRequest="200"
                        VerticalOptions="FillAndExpand"
                        HorizontalOptions="Start"

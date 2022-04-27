@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -374,6 +373,9 @@ namespace BattleTechTracking.ViewModels
         public ICommand ViewActiveUnitEquipment { get; }
         public ICommand ViewActiveUnitWeapons { get; }
         public ICommand ViewActiveUnitAmmo { get; }
+        public ICommand GenerateHeat1 { get; }
+        public ICommand GenerateHeat2 { get; }
+        public ICommand GenerateHeat5 { get; }
 
         public DataReportViewModel DataReportVM { get; } = new DataReportViewModel();
 
@@ -534,6 +536,19 @@ namespace BattleTechTracking.ViewModels
                 }
 
                 wpn.WeaponFiringStatus = WeaponFiringStatus.OutOfAmmo;
+            });
+
+            GenerateHeat1 = new Command(() =>
+            {
+                SelectedActiveUnit.CurrentHeatLevel++;
+            });
+            GenerateHeat2 = new Command(() =>
+            {
+                SelectedActiveUnit.CurrentHeatLevel += 2;
+            });
+            GenerateHeat5 = new Command(() =>
+            {
+                SelectedActiveUnit.CurrentHeatLevel += 5;
             });
         }
 
