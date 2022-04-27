@@ -112,6 +112,17 @@
                        VerticalTextAlignment="Center"
                        Text="{Binding Movement, Source={x:Reference thisView}}"/>
 
+                <Image        Grid.Row="2" 
+                              Grid.Column="3"
+                              WidthRequest="32" HeightRequest="32" 
+                              HorizontalOptions="End"
+                              VerticalOptions="Center"
+                              Source="helpIcon.png"
+                              effects:TooltipEffect.Position="Bottom"
+                              effects:TooltipEffect.Text="+1 Walking, +2 Running, +3 to Hexes Moved Jumping"
+                              Margin="0,0,20,0"
+                              IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"/>
+
                 <ImageButton  Grid.Row="2" 
                               Grid.Column="4"
                               WidthRequest="80" HeightRequest="80" 

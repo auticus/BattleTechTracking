@@ -113,6 +113,7 @@
     <Content Include="heat1.png" />
     <Content Include="heat2.png" />
     <Content Include="heat5.png" />
+    <Content Include="helpIcon.png" />
     <Content Include="Next.ico" />
     <Content Include="okIcon.png" />
     <Content Include="plusIcon.jpg" />

@@ -4,13 +4,14 @@ using System.Linq;
 using BattleTechTracking.Converters;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Reports;
+using BattleTechTracking.Utilities;
 
 namespace BattleTechTracking.Models
 {
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;
@@ -123,18 +124,8 @@ namespace BattleTechTracking.Models
             }
         }
 
-        public bool ThisCanTrackHeat
-        {
-            get
-            {
-                var isBattleMech = GameElement is BattleMech;
-                if (isBattleMech) return true;
-
-                isBattleMech = GameElement is IndustrialMech;
-                return isBattleMech;
-            }
-        }
-
+        public bool ThisCanTrackHeat => Heat.ElementTracksHeat(this);
+       
         public int CurrentHeatSinks
         {
             get => _currentHeatSinks;
@@ -312,28 +303,12 @@ namespace BattleTechTracking.Models
             DidJump = false;
             //prone intentionally not reset
 
-            HandleHeat();
+            Heat.DoEndOfRoundHeatCalculation(this);
             UnitAction = ActionsFactory.NO_ACTION;
             foreach (var wpn in UnitWeapons.Where(p => p.WeaponFiringStatus != WeaponFiringStatus.WeaponDestroyed))
             {
                 wpn.WeaponFiringStatus = WeaponFiringStatus.NotFired;
             }
-        }
-
-        private void HandleHeat()
-        {
-            if (!(GameElement is BattleMech element))
-            {
-                element = GameElement as IndustrialMech;
-            }
-
-            if (element == null) return;
-
-            //current heat level = 8
-            //current heat sinks = 5
-            var newHeat = CurrentHeatLevel - CurrentHeatSinks;
-            CurrentHeatLevel = CurrentHeatLevel - CurrentHeatSinks;
-            if (CurrentHeatLevel < 0) CurrentHeatLevel = 0;
         }
 
         private IEnumerable<Quirk> GetQuirksFromElement()
