@@ -166,7 +166,9 @@
                                                  TrackHeat="{Binding SelectedActiveUnit.ThisCanTrackHeat, Mode=TwoWay}"
                                                  Heat1Command="{Binding GenerateHeat1}"
                                                  Heat2Command="{Binding GenerateHeat2}"
-                                                 Heat5Command="{Binding GenerateHeat5}"/>
+                                                 Heat5Command="{Binding GenerateHeat5}"
+                                                 HeatColorLevel="{Binding SelectedActiveUnit.CurrentHeatColor, Mode=TwoWay}"
+                                                 HeatToolTip="{Binding SelectedActiveUnit.CurrentHeatTooltip, Mode=TwoWay}"/>
 
                 <controls:VehicleComponentView Margin="10,45,0,0"
                                                Grid.Row="0"

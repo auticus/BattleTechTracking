@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Input;
+using BattleTechTracking.Utilities;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -126,6 +127,16 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty TrackHeatProperty = BindableProperty.Create(
             nameof(TrackHeat),
             typeof(bool),
+            typeof(TrackedGameElementView));
+
+        public static readonly BindableProperty HeatColorLevelProperty = BindableProperty.Create(
+            nameof(HeatColorLevel),
+            typeof(HeatLevels),
+            typeof(TrackedGameElementView));
+
+        public static readonly BindableProperty HeatToolTipProperty = BindableProperty.Create(
+            nameof(HeatToolTip),
+            typeof(string),
             typeof(TrackedGameElementView));
 
         public string TrackedElementHeader
@@ -270,6 +281,18 @@ namespace BattleTechTracking.Controls
         {
             get => (Command)GetValue(TrackedGameElementView.Heat5CommandProperty);
             set => SetValue(TrackedGameElementView.Heat5CommandProperty, value);
+        }
+
+        public HeatLevels HeatColorLevel
+        {
+            get => (HeatLevels)GetValue(TrackedGameElementView.HeatColorLevelProperty);
+            set => SetValue(TrackedGameElementView.HeatColorLevelProperty, value);
+        }
+
+        public string HeatToolTip
+        {
+            get => (string)GetValue(TrackedGameElementView.HeatToolTipProperty);
+            set => SetValue(TrackedGameElementView.HeatToolTipProperty, value);
         }
 
         public TrackedGameElementView()

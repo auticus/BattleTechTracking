@@ -6,6 +6,9 @@
              xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.TrackedGameElementView"
              x:Name="thisView">
+    <ContentView.Resources>
+        <converters:HeatColorToImagePathConverter x:Key="HeatToImageConverter"/>
+    </ContentView.Resources>
     <ContentView.Content>
         <Grid VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
@@ -36,7 +39,7 @@
                     <RowDefinition Height="75"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
@@ -112,16 +115,16 @@
                        VerticalTextAlignment="Center"
                        Text="{Binding Movement, Source={x:Reference thisView}}"/>
 
-                <Image        Grid.Row="2" 
-                              Grid.Column="3"
-                              WidthRequest="32" HeightRequest="32" 
-                              HorizontalOptions="End"
-                              VerticalOptions="Center"
-                              Source="helpIcon.png"
-                              effects:TooltipEffect.Position="Bottom"
-                              effects:TooltipEffect.Text="+1 Walking, +2 Running, +3 to Hexes Moved Jumping"
-                              Margin="0,0,20,0"
-                              IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"/>
+                <Image Grid.Row="2" 
+                      Grid.Column="3"
+                      WidthRequest="32" HeightRequest="32" 
+                      HorizontalOptions="End"
+                      VerticalOptions="Center"
+                      Source="helpIcon.png"
+                      effects:TooltipEffect.Position="Bottom"
+                      effects:TooltipEffect.Text="+1 Walking, +2 Running, +3 to Hexes Moved Jumping"
+                      Margin="0,0,20,0"
+                      IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"/>
 
                 <ImageButton  Grid.Row="2" 
                               Grid.Column="4"
@@ -259,6 +262,19 @@
                         <behaviors:NumericValidationBehavior/>
                     </Entry.Behaviors>
                 </Entry>
+
+                <Image Grid.Row="5"
+                       Grid.Column="1"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       HorizontalOptions="End"
+                       VerticalOptions="Center"
+                       Margin="5,0,0,0"
+                       effects:TooltipEffect.Position="Bottom"
+                       effects:TooltipEffect.Text="{Binding HeatToolTip, Source={x:Reference thisView}}"
+                       Source="{Binding HeatColorLevel,                                    
+                                    Source={x:Reference thisView},
+                                    Converter={StaticResource HeatToImageConverter}}"/>
                 
                 <!-- Pilot Gunnery -->
                 <Label Grid.Row="5"

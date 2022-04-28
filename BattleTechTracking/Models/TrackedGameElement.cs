@@ -118,12 +118,29 @@ namespace BattleTechTracking.Models
             set
             {
                 if (!ThisCanTrackHeat) value = 0;
-                
+
+                if (value > Heat.MAX_HEAT) value = Heat.MAX_HEAT;
                 _currentHeatLevel = value;
                 OnPropertyChanged(nameof(CurrentHeatLevel));
+                OnPropertyChanged(nameof(CurrentHeatColor));
+                OnPropertyChanged(nameof(CurrentHeatTooltip));
             }
         }
 
+        /// <summary>
+        /// Gets the value showing the current heat color.
+        /// </summary>
+        public HeatLevels CurrentHeatColor => ThisCanTrackHeat ? Heat.GetHeatMapColorForLevel(CurrentHeatLevel) : HeatLevels.None;
+
+        /// <summary>
+        /// Gets the value showing the current heat's tooltip.
+        /// </summary>
+        public string CurrentHeatTooltip =>
+            ThisCanTrackHeat ? Heat.GetHeatImpactTooltip(this) : string.Empty;
+
+        /// <summary>
+        /// Gets a value indicating that this game element tracks heat.
+        /// </summary>
         public bool ThisCanTrackHeat => Heat.ElementTracksHeat(this);
        
         public int CurrentHeatSinks
