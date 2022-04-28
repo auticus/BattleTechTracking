@@ -257,6 +257,7 @@
                        MaxLength="2"
                        VerticalOptions="Center"
                        HorizontalOptions="Start"
+                       IsEnabled="{Binding TrackHeat, Source={x:Reference thisView}}"
                        Text="{Binding CurrentHeatLevel, Source={x:Reference thisView}}">
                     <Entry.Behaviors>
                         <behaviors:NumericValidationBehavior/>
