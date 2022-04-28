@@ -18,9 +18,9 @@ namespace BattleTechTracking.Utilities
 
         public static int GetHeatSinksFromElement(ITrackable gameElement)
         {
-            if (!(gameElement is BattleMech element))
+            if (!(gameElement.GameElement is BattleMech element))
             {
-                element = gameElement as IndustrialMech;
+                element = gameElement.GameElement as IndustrialMech;
             }
 
             return element?.HeatSinks ?? NONE;
@@ -28,7 +28,7 @@ namespace BattleTechTracking.Utilities
 
         public static int GetNumberOfElementsFromGameElement(ITrackable gameElement)
         {
-            if (!(gameElement is Infantry element))
+            if (!(gameElement.GameElement is Infantry element))
             {
                 return NON_INFANTRY_DEFAULT_NUMBER_OF_ELEMENTS;
             }
