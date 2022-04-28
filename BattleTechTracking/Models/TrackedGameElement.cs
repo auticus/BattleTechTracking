@@ -155,11 +155,17 @@ namespace BattleTechTracking.Models
 
         public string Quirks
         {
-            get => _quirks;
-            set
+            get
             {
-                _quirks = value;
-                OnPropertyChanged(nameof(Quirks));
+                if (!(GameElement is BattleMech element))
+                {
+                    element = GameElement as IndustrialMech;
+                }
+
+                var quirkList = element == null ? new List<Quirk>() : element.Quirks;
+                if (!quirkList.Any()) return "None";
+                var quirks = quirkList.Select(x => x.Name).ToList();
+                return string.Join(", ", quirks);
             }
         }
 
@@ -287,58 +293,18 @@ namespace BattleTechTracking.Models
         public TrackedGameElement(IDisplayListView gameElement)
         {
             GameElement = gameElement;
-            Quirks = GetQuirks();
-            CurrentHeatSinks = GetHeatSinksFromElement();
-            NumberOfElements = GetNumberOfElementsFromGameElement();
-            PilotName = "Unknown";
+            CurrentHeatSinks = GameStateTracker.GetHeatSinksFromElement(this);
+            NumberOfElements = GameStateTracker.GetNumberOfElementsFromGameElement(this);
+            PilotName = GameStateTracker.DEFAULT_PILOT_NAME;
             UnitAction = ActionsFactory.NO_ACTION;
+            PilotHits = GameStateTracker.GetStartingHitsForPilot(this);
             
-            switch (gameElement)
-            {
-                case BattleMech _:
-                    PilotHits = 6;
-                    break;
-                case CombatVehicle _:
-                    PilotHits = 1;
-                    break;
-            }
-
             PopulateComponents();
             PopulateEquipment();
             PopulateWeapons();
             PopulateAmmunition();
         }
-
-        private IEnumerable<Quirk> GetQuirksFromElement()
-        {
-            if (!(GameElement is BattleMech element))
-            {
-                element = GameElement as IndustrialMech;
-            }
-
-            return element == null ? new List<Quirk>() : new List<Quirk>(element.Quirks);
-        }
-
-        private int GetHeatSinksFromElement()
-        {
-            if (!(GameElement is BattleMech element))
-            {
-                element = GameElement as IndustrialMech;
-            }
-
-            return element == null ? 0 : element.HeatSinks;
-        }
-
-        private int GetNumberOfElementsFromGameElement()
-        {
-            if (!(GameElement is Infantry element))
-            {
-                return 1;
-            }
-
-            return element.Number;
-        }
-
+        
         private void PopulateComponents()
         {
             var element = GameElement as BaseUnit;
@@ -464,14 +430,6 @@ namespace BattleTechTracking.Models
 
         private string GetInfantryMovementDetails(Infantry element)
             => $"Movement MP: {element.Movement}";
-
-        private string GetQuirks()
-        {
-            var quirks = GetQuirksFromElement().Select(x => x.Name).ToList();
-            if (!quirks.Any()) return "None";
-
-            return string.Join(", ", quirks);
-        }
 
         private void AdjustUnitStatusForDestroyed(string locCode)
         {

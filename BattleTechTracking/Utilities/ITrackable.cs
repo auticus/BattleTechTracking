@@ -8,6 +8,7 @@ namespace BattleTechTracking.Utilities
     /// </summary>
     public interface ITrackable
     {
+        IDisplayListView GameElement { get; }
         int HexesMoved { get; set; }
         bool DidWalk { get; set; }
         bool DidRun { get; set; }
