@@ -41,7 +41,8 @@
                                 WidthRequest="200"
                                 VerticalOptions="Center"
                                 ItemsSource="{Binding TemplatedWeapons, Source={x:Reference thisView}}"
-                                SelectedItem="{Binding SelectedTemplatedWeapon, Source={x:Reference thisView}, Mode=TwoWay}"/>
+                                SelectedItem="{Binding SelectedTemplatedWeapon, Source={x:Reference thisView}, Mode=TwoWay}"
+                                IsVisible="{Binding IsDataEditMode}"/>
                         <ImageButton Grid.Column="2"
                                      WidthRequest="32" HeightRequest="32" 
                                      CornerRadius="120" HorizontalOptions="End" 
