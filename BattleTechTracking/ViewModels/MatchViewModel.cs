@@ -6,6 +6,7 @@ using System.Windows.Input;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Models;
 using BattleTechTracking.Reports;
+using BattleTechTracking.Utilities;
 using Xamarin.Forms;
 
 namespace BattleTechTracking.ViewModels
@@ -452,18 +453,11 @@ namespace BattleTechTracking.ViewModels
             BeginNewRound = new Command(() =>
             {
                 var nonActiveFaction = ActiveFaction == 1 ? 0 : 1;
-                foreach (var element in _factionUnits[nonActiveFaction])
-                {
-                    ((TrackedGameElement)element).NextRound();
-                }
+                //refresh the active faction in cache with whats in the observable
+                _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
 
-                foreach (var group in ActiveFactionUnits)
-                {
-                    foreach (var element in group.GameElements)
-                    {
-                        ((TrackedGameElement)element).NextRound();
-                    }
-                }
+                GameStateTracker.NextRound(_factionUnits[nonActiveFaction].Cast<ITrackable>());
+                GameStateTracker.NextRound(_factionUnits[ActiveFaction].Cast<ITrackable>());
             });
 
             ViewTrackGameElementDetails = new Command(() =>
@@ -678,6 +672,10 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
+        /// <summary>
+        /// Takes the <see cref="ActiveFactionUnits"/> collection and turns it into a single List of <see cref="IDisplayMatchedListView"/> elements.
+        /// </summary>
+        /// <returns></returns>
         private List<IDisplayMatchedListView> FlattenActiveFactionUnitsToOneList()
         {
             if (ActiveFactionUnits == null) return null;

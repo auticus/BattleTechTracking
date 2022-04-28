@@ -11,7 +11,7 @@ namespace BattleTechTracking.Models
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable, ITrackable
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;
@@ -307,25 +307,6 @@ namespace BattleTechTracking.Models
             PopulateEquipment();
             PopulateWeapons();
             PopulateAmmunition();
-        }
-
-        /// <summary>
-        /// Resets an element for the beginning of a new turn.
-        /// </summary>
-        public void NextRound()
-        {
-            HexesMoved = 0;
-            DidWalk = false;
-            DidRun = false;
-            DidJump = false;
-            //prone intentionally not reset
-
-            Heat.DoEndOfRoundHeatCalculation(this);
-            UnitAction = ActionsFactory.NO_ACTION;
-            foreach (var wpn in UnitWeapons.Where(p => p.WeaponFiringStatus != WeaponFiringStatus.WeaponDestroyed))
-            {
-                wpn.WeaponFiringStatus = WeaponFiringStatus.NotFired;
-            }
         }
 
         private IEnumerable<Quirk> GetQuirksFromElement()
