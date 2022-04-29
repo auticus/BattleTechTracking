@@ -50,7 +50,7 @@
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="80"/>
@@ -118,50 +118,48 @@
                 <Image Grid.Row="2" 
                       Grid.Column="3"
                       WidthRequest="32" HeightRequest="32" 
-                      HorizontalOptions="End"
+                      HorizontalOptions="Start"
                       VerticalOptions="Center"
                       Source="helpIcon.png"
                       effects:TooltipEffect.Position="Bottom"
-                      effects:TooltipEffect.Text="+1 Walking, +2 Running, +3 to Hexes Moved Jumping"
-                      Margin="0,0,20,0"
+                      effects:TooltipEffect.Text="+1 Walking, +2 Running, +3 to Hexes Moved Jumping, +1 Standing Up"
+                      Margin="50,0,20,0"
                       IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"/>
 
                 <ImageButton  Grid.Row="2" 
                               Grid.Column="4"
                               WidthRequest="80" HeightRequest="80" 
-                              CornerRadius="180" HorizontalOptions="End" 
+                              CornerRadius="180" 
+                              HorizontalOptions="Start" 
                               Source="heat1.png"
                               BorderColor="Red"
                               BorderWidth="1"
                               effects:TooltipEffect.Position="Bottom"
                               effects:TooltipEffect.Text="Generate 1 Heat"
-                              Margin="0,0,0,0"
                               IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"
                               Command="{Binding Heat1Command, Source={x:Reference thisView}}"/>
 
                 <ImageButton  Grid.Row="2" 
                               Grid.Column="5"
                               WidthRequest="80" HeightRequest="80" 
-                              CornerRadius="180" HorizontalOptions="End" 
+                              CornerRadius="180" HorizontalOptions="Start" 
                               Source="heat2.png"
                               BorderColor="Red"
                               effects:TooltipEffect.Position="Bottom"
                               effects:TooltipEffect.Text="Generate 2 Heat"
                               BorderWidth="1"
-                              Margin="0,0,0,0"
                               IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"
                               Command="{Binding Heat2Command, Source={x:Reference thisView}}"/>
 
                 <ImageButton  Grid.Row="2" 
                               Grid.Column="6"
                               WidthRequest="80" HeightRequest="80" 
-                              CornerRadius="180" HorizontalOptions="End" 
+                              CornerRadius="180" HorizontalOptions="Start" 
                               Source="heat5.png"
                               BorderColor="Red"
                               BorderWidth="1"
                               effects:TooltipEffect.Position="Bottom"
                               effects:TooltipEffect.Text="Generate 5 Heat"
-                              Margin="0,0,0,0"
                               IsVisible="{Binding TrackHeat, Source={x:Reference thisView}}"
                               Command="{Binding Heat5Command, Source={x:Reference thisView}}"/>
 

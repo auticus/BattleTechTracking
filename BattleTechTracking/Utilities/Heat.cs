@@ -131,7 +131,7 @@ namespace BattleTechTracking.Utilities
         private static string GetFireModDescription(int level)
         {
             if (level == 0) return string.Empty;
-            return $"+{level} Modifier to Fire";
+            return $"+{level} GunneryScore to Fire";
         }
 
         private static string GetShutDownDescription(int? level)

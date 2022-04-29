@@ -13,7 +13,7 @@ namespace BattleTechTracking.Models
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable, ITrackable
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable, ITrackable, ITargetable, IGunnery
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;
@@ -36,6 +36,7 @@ namespace BattleTechTracking.Models
         private readonly LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
 
         public EventHandler Invalidated { get; set; }
+        public EventHandler OnGunneryChanged { get; set; }
 
         /// <summary>
         /// Gets or sets the Game Element represented.
@@ -70,6 +71,7 @@ namespace BattleTechTracking.Models
             {
                 _didWalk = value;
                 OnPropertyChanged(nameof(DidWalk));
+                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -80,6 +82,7 @@ namespace BattleTechTracking.Models
             {
                 _didRun = value;
                 OnPropertyChanged(nameof(DidRun));
+                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -90,6 +93,7 @@ namespace BattleTechTracking.Models
             {
                 _didJump = value;
                 OnPropertyChanged(nameof(DidJump));
+                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -125,6 +129,7 @@ namespace BattleTechTracking.Models
                 OnPropertyChanged(nameof(CurrentHeatLevel));
                 OnPropertyChanged(nameof(CurrentHeatColor));
                 OnPropertyChanged(nameof(CurrentHeatTooltip));
+                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -283,10 +288,10 @@ namespace BattleTechTracking.Models
         }
 
         /// <summary>
-        /// Gets the <see cref="TargetingSystem"/> for this <see cref="TrackedGameElement"/>
+        /// Gets the <see cref="Targeting"/> for this <see cref="TrackedGameElement"/>
         /// </summary>
         [JsonIgnore]
-        public TargetingSystem ValidTargets { get; } = new TargetingSystem();
+        public Targeting ValidTargets { get; } = new Targeting();
 
         public ObservableCollection<UnitComponent> UnitComponents { get; } = new ObservableCollection<UnitComponent>();
         public ObservableCollection<Equipment> UnitEquipment { get; } = new ObservableCollection<Equipment>();

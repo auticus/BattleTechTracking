@@ -116,6 +116,7 @@ namespace BattleTechTracking.ViewModels
                 foreach (var element in _activeFactionUnits)
                 {
                     element.Invalidated += OnGroupedElement_Invalidated;
+                    element.OnGunneryChanged += OnGunneryChanged;
                 }
                 OnPropertyChanged(nameof(ActiveFactionUnits));
             }
@@ -133,6 +134,7 @@ namespace BattleTechTracking.ViewModels
                 OnPropertyChanged(nameof(SelectedActiveUnit));
                 SetActiveFlagOnSelectedElement();
                 SetDefaultPanelVisible();
+                GetUpdatedTargetModifiers();
             }
         }
 
@@ -719,12 +721,29 @@ namespace BattleTechTracking.ViewModels
             //have not figured that out yet as to why it calls itself over and over
         }
 
+        private void OnGunneryChanged(object sender, EventArgs e)
+        {
+            GetUpdatedTargetModifiers();
+        }
+
         private void UnsubAllGroupInvalidationEvents()
         {
             foreach (var element in ActiveFactionUnits)
             {
                 element.Invalidated -= OnGroupedElement_Invalidated;
+                element.OnGunneryChanged -= OnGunneryChanged;
             }
+        }
+
+        /// <summary>
+        /// Goes through the non active faction elements and re-figures its target modifiers
+        /// </summary>
+        private void GetUpdatedTargetModifiers()
+        {
+            if (SelectedActiveUnit == null) return;
+            var nonActiveFaction = ActiveFaction == 1 ? 0 : 1;
+            SelectedActiveUnit.ValidTargets.Targets = new ObservableCollection<TargetedEntity>(
+                TargetingSystem.GetAllTargetedElementsModifiers(_factionUnits[nonActiveFaction].Cast<ITargetable>(), SelectedActiveUnit));
         }
     }
 }

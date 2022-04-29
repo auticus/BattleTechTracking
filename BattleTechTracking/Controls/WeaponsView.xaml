@@ -14,6 +14,7 @@
         <converters:EquipmentLocationToTextDecoratorConverter x:Key="LocToTextDecoratorConverter"/>
         <converters:WeaponFiringStatusToStringConverter x:Key="WeaponFiringStatusToStringConverter"/>
         <converters:WeaponFiringStatusToColorConverter x:Key="WeaponFiringStatusToColorConverter"/>
+        <converters:TargetModToDescriptionConverter x:Key="TargetModToDescriptionConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <Grid>
@@ -544,6 +545,19 @@
                             Converter={StaticResource InvertedBoolConvert}}"
                         ItemsSource="{Binding TargetedElements, Source={x:Reference thisView}}"
                         SelectedItem="{Binding SelectedTargetedElement, Source={x:Reference thisView}, Mode=TwoWay}"/>
+
+                <Label Text="{Binding SelectedTargetedElement.GunneryScore,
+                            Converter={StaticResource TargetModToDescriptionConverter},
+                            Source={x:Reference thisView}, Mode=TwoWay}"
+                       Grid.Column="1"
+                       TextColor="WhiteSmoke"
+                       FontAttributes="Italic"
+                       VerticalTextAlignment="End"
+                       VerticalOptions="End"
+                       Margin="5,0,0,5"
+                       IsVisible="{Binding IsDataEditMode, 
+                            Source={x:Reference thisView}, 
+                            Converter={StaticResource InvertedBoolConvert}}"/>
             </Grid>
         </Grid>
     </ContentView.Content>

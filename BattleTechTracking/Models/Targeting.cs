@@ -2,7 +2,7 @@
 
 namespace BattleTechTracking.Models
 {
-    public class TargetingSystem : BaseModel
+    public class Targeting : BaseModel
     {
         private ObservableCollection<TargetedEntity> _targets;
 
