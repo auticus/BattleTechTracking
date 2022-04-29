@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Utilities
@@ -14,6 +14,6 @@ namespace BattleTechTracking.Utilities
         bool DidRun { get; set; }
         bool DidJump { get; set; }
         string UnitAction { get; set; }
-        IEnumerable<Weapon> UnitWeapons { get; }
+        ObservableCollection<Weapon> UnitWeapons { get; }
     }
 }

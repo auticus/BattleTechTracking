@@ -39,10 +39,6 @@ namespace BattleTechTracking.ViewModels
             { new List<IDisplayMatchedListView>(), new List<IDisplayMatchedListView>() };
 
         private ObservableCollection<GroupedGameElement> _activeFactionUnits;
-        private ObservableCollection<UnitComponent> _activeUnitComponents;
-        private ObservableCollection<Equipment> _activeUnitEquipment;
-        private ObservableCollection<Weapon> _activeUnitWeapons;
-        private ObservableCollection<Ammunition> _activeUnitAmmunition;
         private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
         private TrackedGameElement _selectedActiveUnit;
 
@@ -125,46 +121,6 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
-        public ObservableCollection<UnitComponent> ActiveUnitComponents
-        {
-            get => _activeUnitComponents;
-            set
-            {
-                _activeUnitComponents = value;
-                OnPropertyChanged(nameof(ActiveUnitComponents));
-            }
-        }
-
-        public ObservableCollection<Equipment> ActiveUnitEquipment
-        {
-            get => _activeUnitEquipment;
-            set
-            {
-                _activeUnitEquipment = value;
-                OnPropertyChanged(nameof(ActiveUnitEquipment));
-            }
-        }
-
-        public ObservableCollection<Weapon> ActiveUnitWeapons
-        {
-            get => _activeUnitWeapons;
-            set
-            {
-                _activeUnitWeapons = value;
-                OnPropertyChanged(nameof(ActiveUnitWeapons));
-            }
-        }
-
-        public ObservableCollection<Ammunition> ActiveUnitAmmunition
-        {
-            get => _activeUnitAmmunition;
-            set
-            {
-                _activeUnitAmmunition = value;
-                OnPropertyChanged(nameof(ActiveUnitAmmunition));
-            }
-        }
-
         /// <summary>
         /// Gets or sets the selected faction unit.
         /// </summary>
@@ -177,7 +133,6 @@ namespace BattleTechTracking.ViewModels
                 OnPropertyChanged(nameof(SelectedActiveUnit));
                 SetActiveFlagOnSelectedElement();
                 SetDefaultPanelVisible();
-                PopulateDataStructuresWithActiveUnit();
             }
         }
 
@@ -506,7 +461,7 @@ namespace BattleTechTracking.ViewModels
 
             FireWeaponCommand = new Command<Guid>((id) =>
             {
-                var wpn = ActiveUnitWeapons.FirstOrDefault(weapon => weapon.ID == id);
+                var wpn = SelectedActiveUnit.UnitWeapons.FirstOrDefault(weapon => weapon.ID == id);
                 if (wpn == null) return;
                 if (wpn.WeaponFiringStatus != WeaponFiringStatus.NotFired) return; //if the status is set, cannot fire again
                 if (wpn.WeaponFiringStatus == WeaponFiringStatus.WeaponDestroyed) return;
@@ -519,7 +474,7 @@ namespace BattleTechTracking.ViewModels
                 }
 
                 //find the ammo and if so, remove one otherwise return no ammo
-                var allAmmo = ActiveUnitAmmunition.Where(x => x.Name.Contains(wpn.Name));
+                var allAmmo = SelectedActiveUnit.UnitAmmunition.Where(x => x.Name.Contains(wpn.Name));
                 foreach (var ammo in allAmmo)
                 {
                     if (ammo.AmmoCount == 0 || ammo.Location == EquipmentStatus.DESTROYED) continue;
@@ -650,25 +605,6 @@ namespace BattleTechTracking.ViewModels
             {
                 SetAllPanelsInvisible();
                 MatchTrackingViewVisible = true;
-            }
-        }
-
-        private void PopulateDataStructuresWithActiveUnit()
-        {
-            if (SelectedActiveUnit == null)
-            {
-                ActiveUnitComponents = null;
-                ActiveUnitEquipment = null;
-                ActiveUnitWeapons = null;
-                ActiveUnitAmmunition = null;
-            }
-            else
-            {
-                ActiveUnitComponents =
-                    new ObservableCollection<UnitComponent>(SelectedActiveUnit.UnitComponents.ToList());
-                ActiveUnitEquipment = new ObservableCollection<Equipment>(SelectedActiveUnit.UnitEquipment.ToList());
-                ActiveUnitWeapons = new ObservableCollection<Weapon>(SelectedActiveUnit.UnitWeapons.ToList());
-                ActiveUnitAmmunition = new ObservableCollection<Ammunition>(SelectedActiveUnit.UnitAmmunition.ToList());
             }
         }
 

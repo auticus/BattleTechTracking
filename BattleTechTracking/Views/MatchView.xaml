@@ -175,7 +175,7 @@
                                                Grid.RowSpan="2"
                                                Grid.Column="1"
                                                IsVisible="{Binding ActiveComponentsVisible}"
-                                               ItemSource ="{Binding ActiveUnitComponents, Mode=TwoWay}"
+                                               ItemSource ="{Binding SelectedActiveUnit.UnitComponents, Mode=TwoWay}"
                                                IsDataEditMode="False"/>
 
                 <controls:EquipmentView Grid.Row="0"
@@ -183,7 +183,7 @@
                                         Grid.Column="1"
                                         Margin="10,45,0,0"
                                         IsVisible="{Binding ActiveUnitEquipmentVisible}"
-                                        ItemSource="{Binding ActiveUnitEquipment}"
+                                        ItemSource="{Binding SelectedActiveUnit.UnitEquipment}"
                                         IsDataEditMode="False"/>
 
                 <controls:WeaponsView Grid.Row="0"
@@ -191,8 +191,10 @@
                                       Grid.Column="1" 
                                       Margin="10,45,0,0"
                                       IsVisible="{Binding ActiveUnitWeaponsVisible}"
-                                      ItemSource="{Binding ActiveUnitWeapons}"
+                                      ItemSource="{Binding SelectedActiveUnit.UnitWeapons}"
                                       FireWeaponCommand="{Binding FireWeaponCommand}"
+                                      TargetedElements="{Binding SelectedActiveUnit.ValidTargets.Targets}"
+                                      SelectedTargetedElement="{Binding SelectedActiveUnit.ValidTargets.SelectedTarget}"
                                       IsDataEditMode="False"/>
 
                 <controls:AmmunitionView Grid.Row="0"
@@ -201,7 +203,7 @@
                                          Margin="10,45,0,0"
                                          IsVisible="{Binding ActiveUnitAmmoVisible}"
                                          AmmunitionViewHeader="Ammunition"
-                                         AmmunitionList="{Binding ActiveUnitAmmunition}"
+                                         AmmunitionList="{Binding SelectedActiveUnit.UnitAmmunition}"
                                          IsDataEditMode="False"/>
 
                 <controls:ReportsView Grid.Row="0"

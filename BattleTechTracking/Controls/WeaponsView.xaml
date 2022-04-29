@@ -16,19 +16,25 @@
         <converters:WeaponFiringStatusToColorConverter x:Key="WeaponFiringStatusToColorConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
-        <ListView VerticalOptions="FillAndExpand"
-                BindingContext="{x:Reference thisView}"
-                ItemsSource="{Binding ItemSource, Source={x:Reference thisView}}"
-                SelectedItem="{Binding SelectedWeapon, Source={x:Reference thisView}}">
-            <ListView.Header>
-                <ContentView BackgroundColor="MidnightBlue">
-                    <Grid HorizontalOptions="FillAndExpand">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.90*"/>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="40"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Grid.Column="0"
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <ListView Grid.Row="0"
+                    VerticalOptions="FillAndExpand"
+                      BindingContext="{x:Reference thisView}"
+                      ItemsSource="{Binding ItemSource, Source={x:Reference thisView}}"
+                      SelectedItem="{Binding SelectedWeapon, Source={x:Reference thisView}}">
+                <ListView.Header>
+                    <ContentView BackgroundColor="MidnightBlue">
+                        <Grid HorizontalOptions="FillAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.90*"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="40"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
                                Text="Weapons" 
                                HorizontalTextAlignment="Center" 
                                Margin="75,0,0,0"
@@ -36,14 +42,14 @@
                                VerticalOptions="Center"
                                FontSize="Medium" 
                                TextColor="Gold"/>
-                        <Picker Grid.Column="1"
+                            <Picker Grid.Column="1"
                                 Margin="0,0,10,0"
                                 WidthRequest="200"
                                 VerticalOptions="Center"
                                 ItemsSource="{Binding TemplatedWeapons, Source={x:Reference thisView}}"
                                 SelectedItem="{Binding SelectedTemplatedWeapon, Source={x:Reference thisView}, Mode=TwoWay}"
                                 IsVisible="{Binding IsDataEditMode}"/>
-                        <ImageButton Grid.Column="2"
+                            <ImageButton Grid.Column="2"
                                      WidthRequest="32" HeightRequest="32" 
                                      CornerRadius="120" HorizontalOptions="End" 
                                      BackgroundColor="Black" Source="plusIcon.jpg"
@@ -52,35 +58,35 @@
                                      effects:TooltipEffect.Text="Adds a weapon"
                                      IsVisible="{Binding IsDataEditMode}"
                                      Command="{Binding NewWeapon, Source={x:Reference thisView}}"/>
-                    </Grid>
-                </ContentView>
-            </ListView.Header>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Grid Margin="5, 5, 0, 0"
+                        </Grid>
+                    </ContentView>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid Margin="5, 5, 0, 0"
                                   BackgroundColor="{Binding Location, Converter={StaticResource LocToColorConverter}}">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="35"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="35"/>
-                                    <ColumnDefinition Width="50"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="32"/>
-                                    <RowDefinition Height="32"/>
-                                    <RowDefinition Height="32"/>
-                                </Grid.RowDefinitions>
-                                
-                                <!-- Name of Weapon -->
-                                <Entry Text="{Binding Name}"
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="35"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="35"/>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="32"/>
+                                        <RowDefinition Height="32"/>
+                                        <RowDefinition Height="32"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Name of Weapon -->
+                                    <Entry Text="{Binding Name}"
                                        Grid.Row="0"
                                        WidthRequest="200"
                                        Grid.Column="0"
@@ -91,7 +97,7 @@
                                        VerticalTextAlignment="Center"
                                        Focused="VisualElement_OnFocused"
                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
-                                <Label Text="{Binding Name}"
+                                    <Label Text="{Binding Name}"
                                        Grid.Row="0"
                                        Grid.Column="0"
                                        Grid.ColumnSpan="4"
@@ -105,9 +111,9 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                                
-                                <!-- Edit mode Location Columns 4 & 5-->
-                                <Label Text="Location"
+
+                                    <!-- Edit mode Location Columns 4 & 5-->
+                                    <Label Text="Location"
                                        Grid.Row="0"
                                         Grid.Column="4"
                                         TextColor="WhiteSmoke"
@@ -115,7 +121,7 @@
                                         FontSize="Caption"
                                         VerticalTextAlignment="Center"
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
-                                <Entry Text="{Binding Location}"
+                                    <Entry Text="{Binding Location}"
                                        Grid.Row="0"
                                        Grid.Column="5"
                                        VerticalOptions="Center"
@@ -123,10 +129,10 @@
                                        MaxLength="2"
                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                        Focused="VisualElement_OnFocused">
-                                </Entry>
+                                    </Entry>
 
-                                <!-- Tracking mode Heat Columns 4 & 5-->
-                                <Label Text="Heat"
+                                    <!-- Tracking mode Heat Columns 4 & 5-->
+                                    <Label Text="Heat"
                                        Grid.Row="0"
                                        Grid.Column="4"
                                        TextColor="WhiteSmoke"
@@ -135,7 +141,7 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                                <Label Text="{Binding Heat}"
+                                    <Label Text="{Binding Heat}"
                                        Grid.Row="0"
                                        Grid.Column="5"
                                        TextColor="Gold"
@@ -144,8 +150,8 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <!--Edit Mode Heat Columns 6 & 7-->
-                                <Label Text="Heat"
+                                    <!--Edit Mode Heat Columns 6 & 7-->
+                                    <Label Text="Heat"
                                        Grid.Row="0"
                                      Margin="5,0,0,0"
                                      Grid.Column="6"
@@ -154,7 +160,7 @@
                                      FontSize="Caption"
                                      VerticalTextAlignment="Center"
                                      IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
-                                <Entry Text="{Binding Heat}"
+                                    <Entry Text="{Binding Heat}"
                                        Grid.Row="0"
                                      Grid.Column="7"
                                      VerticalOptions="Center"
@@ -162,13 +168,13 @@
                                      MaxLength="2"
                                     Focused="VisualElement_OnFocused"
                                     IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}">
-                                    <Entry.Behaviors>
-                                        <behaviors:NumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
+                                        <Entry.Behaviors>
+                                            <behaviors:NumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
 
-                                <!--Tracking Mode Damage Columns 6 & 7 -->
-                                <Label Text="Dmg"
+                                    <!--Tracking Mode Damage Columns 6 & 7 -->
+                                    <Label Text="Dmg"
                                        Grid.Row="0"
                                        Grid.Column="6"
                                        TextColor="WhiteSmoke"
@@ -177,7 +183,7 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                                <Label Text="{Binding Damage}"
+                                    <Label Text="{Binding Damage}"
                                        Grid.Row="0"
                                        Grid.Column="7"
                                        TextColor="Gold"
@@ -186,8 +192,8 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <!-- Tracking Mode Fire Weapon Button -->
-                                <ImageButton Grid.Row="0"
+                                    <!-- Tracking Mode Fire Weapon Button -->
+                                    <ImageButton Grid.Row="0"
                                         Grid.RowSpan="2"
                                         Grid.Column="8"
                                         Grid.ColumnSpan="2"
@@ -205,8 +211,8 @@
                                         CommandParameter="{Binding ID}"
                                         effects:TooltipEffect.Position="Bottom"
                                         effects:TooltipEffect.Text="Fire Weapon"/>
-                                
-                                <Label Text="{Binding WeaponFiringStatus, Converter={StaticResource WeaponFiringStatusToStringConverter}}" 
+
+                                    <Label Text="{Binding WeaponFiringStatus, Converter={StaticResource WeaponFiringStatusToStringConverter}}" 
                                        Grid.Row="2"
                                        Grid.Column="8"
                                        Grid.ColumnSpan="2"
@@ -217,8 +223,8 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <!-- Edit Mode Copy Button Column 8-->
-                                <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
+                                    <!-- Edit Mode Copy Button Column 8-->
+                                    <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="copy.png" HorizontalOptions="End"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="8"
                                              effects:TooltipEffect.Position="Bottom"
@@ -226,9 +232,9 @@
                                              IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                              Command="{Binding CopyWeapon, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
-                                
-                                <!--Edit Mode Delete Button Column 9-->
-                                <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
+
+                                    <!--Edit Mode Delete Button Column 9-->
+                                    <ImageButton Grid.Row="0" WidthRequest="32" HeightRequest="32" 
                                              BackgroundColor="Black" Source="trash.jpg" HorizontalOptions="Center"
                                              BorderColor="Gold" BorderWidth="1" Grid.Column="9"
                                              effects:TooltipEffect.Position="Bottom"
@@ -237,10 +243,10 @@
                                              Command="{Binding DeleteWeapon, Source={x:Reference thisView}}"
                                              CommandParameter="{Binding ID}"/>
 
-                                <!--_________________________________________Row 2_________________________________________-->
-                                
-                                <!--Edit Mode Damage Entry Columns 0 & 1 -->
-                                <Label Text="Dmg"
+                                    <!--_________________________________________Row 2_________________________________________-->
+
+                                    <!--Edit Mode Damage Entry Columns 0 & 1 -->
+                                    <Label Text="Dmg"
                                        Grid.Row="1"
                                        Grid.Column="0"
                                        TextColor="WhiteSmoke"
@@ -249,7 +255,7 @@
                                        VerticalTextAlignment="Center"
                                        Margin="5,0,5,0"
                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
-                                <Entry Text="{Binding Damage}"
+                                    <Entry Text="{Binding Damage}"
                                        Grid.Row="1"
                                        Grid.Column="1"
                                        VerticalOptions="Center"
@@ -257,13 +263,13 @@
                                        MaxLength="2"
                                        Focused="VisualElement_OnFocused"
                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}">
-                                    <Entry.Behaviors>
-                                        <behaviors:NumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
+                                        <Entry.Behaviors>
+                                            <behaviors:NumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
 
-                                <!--Tracking Mode Damage Codes Columns 0 & 1-->
-                                <Label Text="Dmg Codes"
+                                    <!--Tracking Mode Damage Codes Columns 0 & 1-->
+                                    <Label Text="Dmg Codes"
                                        Grid.Row="1"
                                        Grid.Column="0"
                                        TextColor="WhiteSmoke"
@@ -274,7 +280,7 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                                <Label Text="{Binding DamageCodesText}"
+                                    <Label Text="{Binding DamageCodesText}"
                                        Grid.Row="1"
                                        Grid.Column="1"
                                        TextColor="Gold"
@@ -283,8 +289,8 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <!--Edit Mode Damage Code Setter Columns 4 & 5-->
-                                <Label Text="Dmg Codes"
+                                    <!--Edit Mode Damage Code Setter Columns 4 & 5-->
+                                    <Label Text="Dmg Codes"
                                        Grid.Row="1"
                                        Grid.Column="4"
                                        TextColor="WhiteSmoke"
@@ -295,13 +301,13 @@
                                        Margin="5,0,3,0"
                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
 
-                                <Button Text="+" TextColor="Gold" Grid.Row="1" Grid.Column="5" BackgroundColor="Black"
+                                    <Button Text="+" TextColor="Gold" Grid.Row="1" Grid.Column="5" BackgroundColor="Black"
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                         Command="{Binding OpenDamageCodes, Source={x:Reference thisView}}"
                                         CommandParameter="{Binding ID}"/>
 
-                                <!--Tracking Mode Hits Column 4 & 5 -->
-                                <Label Text="Hits"
+                                    <!--Tracking Mode Hits Column 4 & 5 -->
+                                    <Label Text="Hits"
                                        Grid.Row="1"
                                        Grid.Column="4"
                                        TextColor="WhiteSmoke"
@@ -312,7 +318,7 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                                <Entry Text="{Binding Hits}"
+                                    <Entry Text="{Binding Hits}"
                                        Grid.Row="1"
                                        Grid.Column="5"
                                        VerticalOptions="Center"
@@ -322,13 +328,13 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}">
-                                    <Entry.Behaviors>
-                                        <behaviors:NumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
-                                
-                                <!--Edit Mode Ammo Setter Columns 6 & 7 -->
-                                <Label Text="Ammo"
+                                        <Entry.Behaviors>
+                                            <behaviors:NumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+
+                                    <!--Edit Mode Ammo Setter Columns 6 & 7 -->
+                                    <Label Text="Ammo"
                                        Grid.Row="1"
                                        Grid.Column="6"
                                        TextColor="WhiteSmoke"
@@ -337,16 +343,16 @@
                                        VerticalTextAlignment="Center"
                                        Margin="5,0,0,0"
                                        IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
-                                
-                                <Button Text="+" TextColor="Gold" Grid.Row="1" Grid.Column="7" BackgroundColor="Black"
+
+                                    <Button Text="+" TextColor="Gold" Grid.Row="1" Grid.Column="7" BackgroundColor="Black"
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                         Command="{Binding OpenAmmo, Source={x:Reference thisView}}"
                                         effects:TooltipEffect.Position="Bottom"
                                         effects:TooltipEffect.Text="Creates ammo location for this weapon"
                                         CommandParameter="{Binding ID}"/>
 
-                                <!--Edit Mode Uses Ammo switch Columns 8-->
-                                <Switch Grid.Row="1" 
+                                    <!--Edit Mode Uses Ammo switch Columns 8-->
+                                    <Switch Grid.Row="1" 
                                         Grid.Column="8"
                                         Margin="5,0,0,0"
                                         BackgroundColor="DimGray"
@@ -360,8 +366,8 @@
                                         IsToggled="{Binding UsesAmmunition}"
                                         IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"/>
 
-                                <!-- Tracking mode location -->
-                                <Label Text="Location"
+                                    <!-- Tracking mode location -->
+                                    <Label Text="Location"
                                        Grid.Row="1"
                                        Grid.Column="6"
                                        TextColor="WhiteSmoke"
@@ -372,7 +378,7 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                                <Label Text="{Binding Location, Converter={StaticResource KeycodeConverter}}"
+                                    <Label Text="{Binding Location, Converter={StaticResource KeycodeConverter}}"
                                        Grid.Row="1"
                                        Grid.Column="7"
                                        Grid.ColumnSpan="3"
@@ -382,10 +388,10 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <!--_________________________________________Row 3_________________________________________-->
-                                
-                                <!-- Row 3 (Ranges) -->
-                                <Label Text="Min"
+                                    <!--_________________________________________Row 3_________________________________________-->
+
+                                    <!-- Row 3 (Ranges) -->
+                                    <Label Text="Min"
                                     Grid.Row="2"
                                     Grid.Column="0"
                                    TextColor="WhiteSmoke"
@@ -393,7 +399,7 @@
                                    FontSize="Caption"
                                    VerticalTextAlignment="Center"
                                    Margin="5,0,5,0"/>
-                                <Entry Text="{Binding MinimumRange}"
+                                    <Entry Text="{Binding MinimumRange}"
                                    Grid.Row="2"
                                    Grid.Column="1"
                                    VerticalOptions="Center"
@@ -401,11 +407,11 @@
                                    MaxLength="2"
                                    IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}"
                                    Focused="VisualElement_OnFocused">
-                                    <Entry.Behaviors>
-                                        <behaviors:NullableNumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
-                                <Label Text="{Binding MinimumRange}"
+                                        <Entry.Behaviors>
+                                            <behaviors:NullableNumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                    <Label Text="{Binding MinimumRange}"
                                        Grid.Row="2"
                                        Grid.Column="1"
                                        TextColor="Gold"
@@ -417,7 +423,7 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <Label Text="Short"
+                                    <Label Text="Short"
                                    Grid.Row="2"
                                    Grid.Column="2"
                                    TextColor="WhiteSmoke"
@@ -425,7 +431,7 @@
                                    FontSize="Caption"
                                    VerticalTextAlignment="Center"
                                    Margin="5,0,0,0"/>
-                                <Entry Text="{Binding ShortRange}"
+                                    <Entry Text="{Binding ShortRange}"
                                    Grid.Row="2"
                                    Grid.Column="3"
                                    VerticalOptions="Center"
@@ -433,11 +439,11 @@
                                    MaxLength="2"
                                    Focused="VisualElement_OnFocused"
                                    IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}">
-                                    <Entry.Behaviors>
-                                        <behaviors:NumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
-                                <Label Text="{Binding ShortRange}"
+                                        <Entry.Behaviors>
+                                            <behaviors:NumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                    <Label Text="{Binding ShortRange}"
                                        Grid.Row="2"
                                        Grid.Column="3"
                                        TextColor="Gold"
@@ -449,7 +455,7 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <Label Text="Medium"
+                                    <Label Text="Medium"
                                    Grid.Row="2"
                                    Grid.Column="4"
                                    TextColor="WhiteSmoke"
@@ -457,7 +463,7 @@
                                    FontSize="Caption"
                                    VerticalTextAlignment="Center"
                                    Margin="5,0,0,0"/>
-                                <Entry Text="{Binding MediumRange}"
+                                    <Entry Text="{Binding MediumRange}"
                                    Grid.Row="2"
                                    Grid.Column="5"
                                    VerticalOptions="Center"
@@ -465,11 +471,11 @@
                                    MaxLength="2"
                                    Focused="VisualElement_OnFocused"
                                    IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}">
-                                    <Entry.Behaviors>
-                                        <behaviors:NumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
-                                <Label Text="{Binding MediumRange}"
+                                        <Entry.Behaviors>
+                                            <behaviors:NumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                    <Label Text="{Binding MediumRange}"
                                        Grid.Row="2"
                                        Grid.Column="5"
                                        TextColor="Gold"
@@ -481,7 +487,7 @@
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
-                                <Label Text="Long"
+                                    <Label Text="Long"
                                    Grid.Row="2"
                                    Grid.Column="6"
                                    TextColor="WhiteSmoke"
@@ -489,7 +495,7 @@
                                    FontSize="Caption"
                                    VerticalTextAlignment="Center"
                                    Margin="5,0,5,0"/>
-                                <Entry Text="{Binding LongRange}"
+                                    <Entry Text="{Binding LongRange}"
                                    Grid.Row="2"
                                    Grid.Column="7"
                                    VerticalOptions="Center"
@@ -497,11 +503,11 @@
                                    MaxLength="2"
                                    Focused="VisualElement_OnFocused"
                                    IsVisible="{Binding IsDataEditMode, Source={x:Reference thisView}}">
-                                    <Entry.Behaviors>
-                                        <behaviors:NumericValidationBehavior/>
-                                    </Entry.Behaviors>
-                                </Entry>
-                                <Label Text="{Binding LongRange}"
+                                        <Entry.Behaviors>
+                                            <behaviors:NumericValidationBehavior/>
+                                        </Entry.Behaviors>
+                                    </Entry>
+                                    <Label Text="{Binding LongRange}"
                                        Grid.Row="2"
                                        Grid.Column="7"
                                        TextColor="Gold"
@@ -512,13 +518,33 @@
                                        IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
-                            </Grid>
-                            <!-- underline of the item -->
-                            <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                                </Grid>
+                                <!-- underline of the item -->
+                                <BoxView HeightRequest="1" BackgroundColor="DarkGray" Margin="5,0,0,0"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Row Index 1 - Targeting helper -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Picker Grid.Column="0"
+                        Margin="5,0,0,0"
+                        WidthRequest="280"
+                        VerticalOptions="Center"
+                        Title="Select a Target"
+                        TitleColor="DarkRed"
+                        IsVisible="{Binding IsDataEditMode, 
+                            Source={x:Reference thisView}, 
+                            Converter={StaticResource InvertedBoolConvert}}"
+                        ItemsSource="{Binding TargetedElements, Source={x:Reference thisView}}"
+                        SelectedItem="{Binding SelectedTargetedElement, Source={x:Reference thisView}, Mode=TwoWay}"/>
+            </Grid>
+        </Grid>
     </ContentView.Content>
 </ContentView>

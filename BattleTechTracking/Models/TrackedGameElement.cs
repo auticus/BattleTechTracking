@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using BattleTechTracking.Converters;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Reports;
 using BattleTechTracking.Utilities;
+using Newtonsoft.Json;
 
 namespace BattleTechTracking.Models
 {
@@ -22,7 +24,6 @@ namespace BattleTechTracking.Models
         private bool _isCrippled;
         private int _currentHeatLevel;
         private int _currentHeatSinks;
-        private string _quirks;
         private int _numberOfElements;
         private string _pilotName;
         private int _pilotPilotingSkill;
@@ -169,6 +170,9 @@ namespace BattleTechTracking.Models
             }
         }
 
+        /// <summary>
+        /// Gets or sets the number of models or elements within the unit.  Mainly used for Infantry regiments.
+        /// </summary>
         public int NumberOfElements
         {
             get => _numberOfElements;
@@ -229,6 +233,7 @@ namespace BattleTechTracking.Models
             }
         }
 
+        [JsonIgnore]
         public string MovementDetails
         {
             get
@@ -277,10 +282,16 @@ namespace BattleTechTracking.Models
             }
         }
 
-        public IEnumerable<UnitComponent> UnitComponents { get; } = new List<UnitComponent>();
-        public IEnumerable<Equipment> UnitEquipment { get; } = new List<Equipment>();
-        public IEnumerable<Weapon> UnitWeapons { get; } = new List<Weapon>();
-        public IEnumerable<Ammunition> UnitAmmunition { get; } = new List<Ammunition>();
+        /// <summary>
+        /// Gets the <see cref="TargetingSystem"/> for this <see cref="TrackedGameElement"/>
+        /// </summary>
+        [JsonIgnore]
+        public TargetingSystem ValidTargets { get; } = new TargetingSystem();
+
+        public ObservableCollection<UnitComponent> UnitComponents { get; } = new ObservableCollection<UnitComponent>();
+        public ObservableCollection<Equipment> UnitEquipment { get; } = new ObservableCollection<Equipment>();
+        public ObservableCollection<Weapon> UnitWeapons { get; } = new ObservableCollection<Weapon>();
+        public ObservableCollection<Ammunition> UnitAmmunition { get; } = new ObservableCollection<Ammunition>();
 
         /// <summary>
         /// Default constructor for serialization.
@@ -305,6 +316,9 @@ namespace BattleTechTracking.Models
             PopulateAmmunition();
         }
         
+        /// <summary>
+        /// Populates the component collection and wires up each component to event handlers that handle the component's state.
+        /// </summary>
         private void PopulateComponents()
         {
             var element = GameElement as BaseUnit;
@@ -317,7 +331,7 @@ namespace BattleTechTracking.Models
                 trackedComponent.OnComponentDestroyed += OnComponentDestroyed;
                 trackedComponent.OnComponentRestored += OnComponentRestored;
                 trackedComponent.OnComponentArmorRemoved += OnComponentArmorRemoved;
-                ((List<UnitComponent>)UnitComponents).Add(trackedComponent);
+                ((ObservableCollection<UnitComponent>)UnitComponents).Add(trackedComponent);
             }
         }
 
@@ -391,7 +405,7 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var equipment in element.Equipment)
             {
-                ((List<Equipment>)UnitEquipment).Add(ComponentFactory.BuildEquipmentFromTemplate(equipment));
+                ((ObservableCollection<Equipment>)UnitEquipment).Add(ComponentFactory.BuildEquipmentFromTemplate(equipment));
             }
         }
 
@@ -403,7 +417,7 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var weapon in element.Weapons)
             {
-                ((List<Weapon>)UnitWeapons).Add(ComponentFactory.BuildWeaponFromTemplate(weapon));
+                ((ObservableCollection<Weapon>)UnitWeapons).Add(ComponentFactory.BuildWeaponFromTemplate(weapon));
             }
         }
 
@@ -416,7 +430,7 @@ namespace BattleTechTracking.Models
             {
                 foreach (var ammo in weapon.Ammo)
                 {
-                    ((List<Ammunition>)UnitAmmunition).Add(ComponentFactory.BuildAmmoFromTemplate(ammo));
+                    ((ObservableCollection<Ammunition>)UnitAmmunition).Add(ComponentFactory.BuildAmmoFromTemplate(ammo));
                 }
             }
         }

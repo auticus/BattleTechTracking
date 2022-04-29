@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections.ObjectModel;
 using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Utilities
@@ -11,6 +11,6 @@ namespace BattleTechTracking.Utilities
         IDisplayListView GameElement { get; }
         int CurrentHeatLevel { get; set; }
         int CurrentHeatSinks { get; set; }
-        IEnumerable<Equipment> UnitEquipment { get; }
+        ObservableCollection<Equipment> UnitEquipment { get; }
     }
 }

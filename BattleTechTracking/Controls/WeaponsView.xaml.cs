@@ -75,6 +75,16 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty TargetedElementsProperty = BindableProperty.Create(
+            nameof(TargetedElements),
+            typeof(ObservableCollection<TargetedEntity>),
+            typeof(WeaponsView));
+
+        public static readonly BindableProperty SelectedTargetedElementProperty = BindableProperty.Create(
+            nameof(SelectedTargetedElement),
+            typeof(TargetedEntity),
+            typeof(WeaponsView));
+
         public ObservableCollection<Weapon> ItemSource
         {
             get => (ObservableCollection<Weapon>)GetValue(WeaponsView.ItemSourceProperty);
@@ -150,6 +160,18 @@ namespace BattleTechTracking.Controls
         {
             get => (int)GetValue(WeaponsView.HitsProperty);
             set => SetValue(WeaponsView.HitsProperty, value);
+        }
+
+        public ObservableCollection<TargetedEntity> TargetedElements
+        {
+            get => (ObservableCollection<TargetedEntity>)GetValue(WeaponsView.TargetedElementsProperty);
+            set => SetValue(WeaponsView.TargetedElementsProperty, value);
+        }
+
+        public TargetedEntity SelectedTargetedElement
+        {
+            get => (TargetedEntity)GetValue(WeaponsView.SelectedTargetedElementProperty);
+            set => SetValue(WeaponsView.SelectedTargetedElementProperty, value);
         }
 
         public WeaponsView()

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Reports
@@ -9,9 +10,9 @@ namespace BattleTechTracking.Reports
     public interface IReportable
     {
         string UnitHeader { get; }
-        IEnumerable<UnitComponent> UnitComponents { get; }
-        IEnumerable<Equipment> UnitEquipment { get; }
-        IEnumerable<Weapon> UnitWeapons { get; }
-        IEnumerable<Ammunition> UnitAmmunition { get; }
+        ObservableCollection<UnitComponent> UnitComponents { get; }
+        ObservableCollection<Equipment> UnitEquipment { get; }
+        ObservableCollection<Weapon> UnitWeapons { get; }
+        ObservableCollection<Ammunition> UnitAmmunition { get; }
     }
 }
