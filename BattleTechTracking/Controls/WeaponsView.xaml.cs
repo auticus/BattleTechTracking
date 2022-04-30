@@ -85,6 +85,16 @@ namespace BattleTechTracking.Controls
             typeof(TargetedEntity),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty SensorsDamagedProperty = BindableProperty.Create(
+            nameof(SensorsDamaged),
+            typeof(bool),
+            typeof(WeaponsView));
+
+        public static readonly BindableProperty ArmShoulderDamagedProperty = BindableProperty.Create(
+            nameof(ArmShoulderDamaged),
+            typeof(bool),
+            typeof(WeaponsView));
+
         public ObservableCollection<Weapon> ItemSource
         {
             get => (ObservableCollection<Weapon>)GetValue(WeaponsView.ItemSourceProperty);
@@ -172,6 +182,18 @@ namespace BattleTechTracking.Controls
         {
             get => (TargetedEntity)GetValue(WeaponsView.SelectedTargetedElementProperty);
             set => SetValue(WeaponsView.SelectedTargetedElementProperty, value);
+        }
+
+        public bool SensorsDamaged
+        {
+            get => (bool)GetValue(WeaponsView.SensorsDamagedProperty);
+            set => SetValue(WeaponsView.SensorsDamagedProperty, value);
+        }
+
+        public bool ArmShoulderDamaged
+        {
+            get => (bool)GetValue(WeaponsView.ArmShoulderDamagedProperty);
+            set => SetValue(WeaponsView.ArmShoulderDamagedProperty, value);
         }
 
         public WeaponsView()

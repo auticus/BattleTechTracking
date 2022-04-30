@@ -110,12 +110,14 @@
     <Content Include="Assets\LargeTile.scale-400.png" />
     <Content Include="blackLight.png" />
     <Content Include="copy.png" />
+    <Content Include="damageIcon.png" />
     <Content Include="goBack.png" />
     <Content Include="greenLight.png" />
     <Content Include="heat1.png" />
     <Content Include="heat2.png" />
     <Content Include="heat5.png" />
     <Content Include="helpIcon.png" />
+    <Content Include="miscIcon.png" />
     <Content Include="Next.ico" />
     <Content Include="okIcon.png" />
     <Content Include="orangeLight.png" />
@@ -151,7 +153,9 @@
     <Content Include="redLight.png" />
     <Content Include="reports.png" />
     <Content Include="reticle.png" />
+    <Content Include="sensors.png" />
     <Content Include="settings.png" />
+    <Content Include="terrainHex.png" />
     <Content Include="trash.jpg" />
     <Content Include="yellowLight.png" />
   </ItemGroup>

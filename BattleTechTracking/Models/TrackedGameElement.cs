@@ -13,7 +13,7 @@ namespace BattleTechTracking.Models
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable, ITrackable, ITargetable, IGunnery
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable, ITrackable, ITargetable, IGunnery, IComponentTrackable
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;
@@ -32,11 +32,12 @@ namespace BattleTechTracking.Models
         private string _notes;
         private string _unitAction;
         private string _unitStatus;
+        private bool _sensorsDamaged;
+        private bool _armOrShoulderDamaged;
 
         private readonly LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
 
         public EventHandler Invalidated { get; set; }
-        public EventHandler OnGunneryChanged { get; set; }
 
         /// <summary>
         /// Gets or sets the Game Element represented.
@@ -71,7 +72,6 @@ namespace BattleTechTracking.Models
             {
                 _didWalk = value;
                 OnPropertyChanged(nameof(DidWalk));
-                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -82,7 +82,6 @@ namespace BattleTechTracking.Models
             {
                 _didRun = value;
                 OnPropertyChanged(nameof(DidRun));
-                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -93,7 +92,6 @@ namespace BattleTechTracking.Models
             {
                 _didJump = value;
                 OnPropertyChanged(nameof(DidJump));
-                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -129,7 +127,26 @@ namespace BattleTechTracking.Models
                 OnPropertyChanged(nameof(CurrentHeatLevel));
                 OnPropertyChanged(nameof(CurrentHeatColor));
                 OnPropertyChanged(nameof(CurrentHeatTooltip));
-                OnGunneryChanged?.Invoke(this, EventArgs.Empty);
+            }
+        }
+
+        public bool SensorsDamaged
+        {
+            get => _sensorsDamaged;
+            private set
+            {
+                _sensorsDamaged = value;
+                OnPropertyChanged(nameof(SensorsDamaged));
+            }
+        }
+
+        public bool ArmOrShoulderDamaged
+        {
+            get => _armOrShoulderDamaged;
+            private set
+            {
+                _armOrShoulderDamaged = value;
+                OnPropertyChanged(nameof(ArmOrShoulderDamaged));
             }
         }
 
@@ -319,6 +336,14 @@ namespace BattleTechTracking.Models
             PopulateEquipment();
             PopulateWeapons();
             PopulateAmmunition();
+        }
+
+        public void RefreshComponentStatus()
+        {
+            // the alternative to this would be creating an elaborate event system to fire off when components are damaged
+            // this was the shorter more direct way.
+            SensorsDamaged = ComponentTracker.AreSensorsDamaged(this);
+            ArmOrShoulderDamaged = ComponentTracker.AreArmsOrShouldersDamaged(this);
         }
         
         /// <summary>

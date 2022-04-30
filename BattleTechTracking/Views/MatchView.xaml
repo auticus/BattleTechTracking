@@ -189,12 +189,14 @@
                 <controls:WeaponsView Grid.Row="0"
                                       Grid.RowSpan="2"
                                       Grid.Column="1" 
-                                      Margin="10,45,0,0"
+                                      Margin="10,45,0,10"
                                       IsVisible="{Binding ActiveUnitWeaponsVisible}"
                                       ItemSource="{Binding SelectedActiveUnit.UnitWeapons}"
                                       FireWeaponCommand="{Binding FireWeaponCommand}"
                                       TargetedElements="{Binding SelectedActiveUnit.ValidTargets.Targets}"
                                       SelectedTargetedElement="{Binding SelectedActiveUnit.ValidTargets.SelectedTarget}"
+                                      SensorsDamaged="{Binding SelectedActiveUnit.SensorsDamaged}"
+                                      ArmShoulderDamaged="{Binding SelectedActiveUnit.ArmOrShoulderDamaged}"
                                       IsDataEditMode="False"/>
 
                 <controls:AmmunitionView Grid.Row="0"
@@ -215,21 +217,20 @@
                                       SelectedReport="{Binding DataReportVM.SelectedReport, Mode=TwoWay}"
                                       GenerateReport="{Binding DataReportVM.GenerateReportCommand}"
                                       TextReportVisible="{Binding DataReportVM.TextReportVisible}"
-                                      TextReportContents="{Binding DataReportVM.TextReportContents, Mode=TwoWay}"
-                                      />
+                                      TextReportContents="{Binding DataReportVM.TextReportContents, Mode=TwoWay}"/>
 
                 <StackLayout Grid.Row="2"
                              Grid.Column="1"
                              Orientation="Horizontal">
-                    <Button Text="Element Details" TextColor="White"
+                    <Button Text="Element Details" TextColor="White" BackgroundColor="MidnightBlue"
                             Margin="20,0,0,10" Command="{Binding ViewTrackGameElementDetails }"/>
-                    <Button Text="Unit Components" TextColor="White" 
+                    <Button Text="Unit Components" TextColor="White" BackgroundColor="MidnightBlue"
                             Margin="20,0,0,10" Command="{Binding ViewActiveUnitComponents }"/>
-                    <Button Text="Equipment" TextColor="White" 
+                    <Button Text="Equipment" TextColor="White" BackgroundColor="MidnightBlue"
                             Margin="20,0,0,10" Command="{Binding ViewActiveUnitEquipment}"/>
-                    <Button Text="Weapons" TextColor="White"
+                    <Button Text="Weapons" TextColor="White" BackgroundColor="MidnightBlue"
                             Margin="20,0,0,10" Command="{Binding ViewActiveUnitWeapons }"/>
-                    <Button Text="Ammo" TextColor="White"
+                    <Button Text="Ammo" TextColor="White" BackgroundColor="MidnightBlue"
                             Margin="20,0,0,10" Command="{Binding ViewActiveUnitAmmo }"/>
                 </StackLayout>
             </Grid>

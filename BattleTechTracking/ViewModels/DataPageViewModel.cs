@@ -67,7 +67,7 @@ namespace BattleTechTracking.ViewModels
             set
             {
                 PersistSelectedUnitToModels();
-                UpdateTemplatedWeaponsCacheWithAnyNewWeapons(_selectedUnit.Weapons);
+                if (_selectedUnit != null) UpdateTemplatedWeaponsCacheWithAnyNewWeapons(_selectedUnit.Weapons);
                 
                 _selectedUnit = value;
                 OnPropertyChanged(nameof(SelectedUnit));

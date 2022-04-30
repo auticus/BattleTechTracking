@@ -8,8 +8,6 @@ namespace BattleTechTracking.Models
     {
         public string Key { get; private set; }
         public EventHandler Invalidated { get; set; }
-        public EventHandler OnGunneryChanged { get; set; }
-
         public IList<IDisplayMatchedListView> GameElements
         {
             get => this.Items;
@@ -29,7 +27,6 @@ namespace BattleTechTracking.Models
             foreach (var item in source)
             {
                 item.Invalidated += (sender, args) => Invalidated?.Invoke(this, args);
-                item.OnGunneryChanged += (sender, args) => OnGunneryChanged?.Invoke(this, args);
                 this.Items.Add(item);
             }
         }

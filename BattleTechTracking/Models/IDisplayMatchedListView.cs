@@ -7,6 +7,5 @@ namespace BattleTechTracking.Models
         string UnitAction { get; set; }
         string UnitStatus { get; set; }
         EventHandler Invalidated { get; set; }
-        EventHandler OnGunneryChanged { get; set; }
     }
 }

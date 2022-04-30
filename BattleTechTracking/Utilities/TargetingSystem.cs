@@ -26,6 +26,11 @@ namespace BattleTechTracking.Utilities
             else if (pilot.DidRun) baseScore += 2;
             else if (pilot.DidWalk) baseScore += 1;
 
+            if (pilot is IComponentTrackable pilotMachine)
+            {
+                if (ComponentTracker.AreSensorsDamaged(pilotMachine)) baseScore += 2;
+            }
+            
             return baseScore;
         }
 

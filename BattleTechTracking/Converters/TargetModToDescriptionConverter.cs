@@ -10,7 +10,7 @@ namespace BattleTechTracking.Converters
         {
             var score = (int)value;
             if (score > 12) return "Impossible";
-            return $"{score}+ Base GunneryScore";
+            return $"{score}+ Base";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
