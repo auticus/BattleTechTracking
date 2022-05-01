@@ -95,6 +95,16 @@ namespace BattleTechTracking.Controls
             typeof(bool),
             typeof(WeaponsView));
 
+        public static readonly BindableProperty PunchingTooltipProperty = BindableProperty.Create(
+            nameof(PunchingTooltip),
+            typeof(string),
+            typeof(WeaponsView));
+
+        public static readonly BindableProperty KickingTooltipProperty = BindableProperty.Create(
+            nameof(KickingTooltip),
+            typeof(string),
+            typeof(WeaponsView));
+
         public ObservableCollection<Weapon> ItemSource
         {
             get => (ObservableCollection<Weapon>)GetValue(WeaponsView.ItemSourceProperty);
@@ -194,6 +204,18 @@ namespace BattleTechTracking.Controls
         {
             get => (bool)GetValue(WeaponsView.ArmShoulderDamagedProperty);
             set => SetValue(WeaponsView.ArmShoulderDamagedProperty, value);
+        }
+
+        public string PunchingTooltip
+        {
+            get => (string)GetValue(WeaponsView.PunchingTooltipProperty);
+            set => SetValue(WeaponsView.PunchingTooltipProperty, value);
+        }
+
+        public string KickingTooltip
+        {
+            get => (string)GetValue(WeaponsView.KickingTooltipProperty);
+            set => SetValue(WeaponsView.KickingTooltipProperty, value);
         }
 
         public WeaponsView()

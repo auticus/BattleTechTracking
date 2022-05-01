@@ -8,9 +8,6 @@ namespace BattleTechTracking.Utilities
     /// </summary>
     public static class ComponentTracker
     {
-        private const string SHOULDER = "shoulder";
-        private const string LOWER_ARM_ACTUATOR = "lower arm actuator";
-        private const string UPPER_ARM_ACTUATOR = "upper arm actuator";
         /// <summary>
         /// Determines if the Sensors equipment slot is listed as damaged.
         /// </summary>
@@ -36,9 +33,9 @@ namespace BattleTechTracking.Utilities
 
         private static bool DoesElementContainArmData(Equipment equipment)
         {
-            return equipment.Name.ToLower().Contains(SHOULDER) ||
-                   equipment.Name.ToLower().Contains(LOWER_ARM_ACTUATOR) ||
-                   equipment.Name.ToLower().Contains(UPPER_ARM_ACTUATOR);
+            return equipment.Name.ToLower().Contains(UnitComponent.SHOULDER) ||
+                   equipment.Name.ToLower().Contains(UnitComponent.LOWER_ARM_ACTUATOR) ||
+                   equipment.Name.ToLower().Contains(UnitComponent.UPPER_ARM_ACTUATOR);
         }
     }
 }

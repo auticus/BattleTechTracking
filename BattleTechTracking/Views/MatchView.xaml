@@ -197,6 +197,8 @@
                                       SelectedTargetedElement="{Binding SelectedActiveUnit.ValidTargets.SelectedTarget}"
                                       SensorsDamaged="{Binding SelectedActiveUnit.SensorsDamaged}"
                                       ArmShoulderDamaged="{Binding SelectedActiveUnit.ArmOrShoulderDamaged}"
+                                      PunchingTooltip="{Binding SelectedActiveUnit.PunchingModifier}"
+                                      KickingTooltip="{Binding SelectedActiveUnit.KickingModifier}"
                                       IsDataEditMode="False"/>
 
                 <controls:AmmunitionView Grid.Row="0"

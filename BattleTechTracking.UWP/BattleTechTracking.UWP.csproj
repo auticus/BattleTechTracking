@@ -111,6 +111,8 @@
     <Content Include="blackLight.png" />
     <Content Include="copy.png" />
     <Content Include="damageIcon.png" />
+    <Content Include="fistIcon.png" />
+    <Content Include="footIcon.png" />
     <Content Include="goBack.png" />
     <Content Include="greenLight.png" />
     <Content Include="heat1.png" />

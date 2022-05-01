@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 using BattleTechTracking.Converters;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Reports;
@@ -13,7 +14,14 @@ namespace BattleTechTracking.Models
     /// <summary>
     /// Represents a game element that can be tracked on the game tracker and stored in a list view.
     /// </summary>
-    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, IReportable, IHeatable, ITrackable, ITargetable, IGunnery, IComponentTrackable
+    public class TrackedGameElement : BaseModel, IDisplayMatchedListView, 
+            IReportable, 
+            IHeatable, 
+            ITrackable, 
+            ITargetable, 
+            IGunnery, 
+            IComponentTrackable,
+            IPhysicalCombatant
     {
         private IDisplayListView _gameElement;
         private int _hexesMoved;
@@ -34,6 +42,8 @@ namespace BattleTechTracking.Models
         private string _unitStatus;
         private bool _sensorsDamaged;
         private bool _armOrShoulderDamaged;
+        private string _punchingMod;
+        private string _kickingMod;
 
         private readonly LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
 
@@ -147,6 +157,26 @@ namespace BattleTechTracking.Models
             {
                 _armOrShoulderDamaged = value;
                 OnPropertyChanged(nameof(ArmOrShoulderDamaged));
+            }
+        }
+
+        public string PunchingModifier
+        {
+            get => _punchingMod;
+            private set
+            {
+                _punchingMod = value;
+                OnPropertyChanged(nameof(PunchingModifier));
+            }
+        }
+
+        public string KickingModifier
+        {
+            get => _kickingMod;
+            private set
+            {
+                _kickingMod = value;
+                OnPropertyChanged(nameof(KickingModifier));
             }
         }
 
@@ -344,8 +374,25 @@ namespace BattleTechTracking.Models
             // this was the shorter more direct way.
             SensorsDamaged = ComponentTracker.AreSensorsDamaged(this);
             ArmOrShoulderDamaged = ComponentTracker.AreArmsOrShouldersDamaged(this);
+            PunchingModifier = PopulatePhysicalAttackProperties(PhysicalCombatSystem.GetPunchingModifiersForCombatant);
+            KickingModifier = PopulatePhysicalAttackProperties(PhysicalCombatSystem.GetKickingModifiersForCombatant);
         }
-        
+
+        private string PopulatePhysicalAttackProperties(Func<IPhysicalCombatant, IEnumerable<ComponentCombatModifier>> modifierFunction)
+        {
+            var mods = modifierFunction.Invoke(this);
+            var sb = new StringBuilder();
+
+            foreach (var mod in mods)
+            {
+                sb.AppendLine($"Loc: {mod.Component}");
+                if (!string.IsNullOrEmpty(mod.Description)) sb.AppendLine(mod.Description);
+                sb.AppendLine($"Pilot Roll: {mod.CombatRoll}+\r\n");
+            }
+
+            return sb.ToString();
+        }
+
         /// <summary>
         /// Populates the component collection and wires up each component to event handlers that handle the component's state.
         /// </summary>

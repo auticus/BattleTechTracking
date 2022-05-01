@@ -37,6 +37,15 @@ namespace BattleTechTracking.Models
         public const string REAR_SIDE_CODE = "R+S";
         public const string ALL_VEHICLE = "XX";
 
+        public const string SHOULDER = "shoulder";
+        public const string LOWER_ARM_ACTUATOR = "lower arm actuator";
+        public const string UPPER_ARM_ACTUATOR = "upper arm actuator";
+        public const string HAND_ACTUATOR = "hand actuator";
+        public const string HIP = "hip";
+        public const string UPPER_LEG_ACTUATOR = "upper leg actuator";
+        public const string LOWER_LEG_ACTUATOR = "lower leg actuator";
+        public const string FOOT_ACTUATOR = "foot actuator";
+
         public string Name { get; set; }
 
         /// <summary>
