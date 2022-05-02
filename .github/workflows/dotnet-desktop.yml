@@ -80,7 +80,7 @@ jobs:
 
     # Execute all unit tests in the solution
     #Disabling currently as there are no unit tests to run
-    - #name: Execute unit tests
+      #name: Execute unit tests
       #run: dotnet test
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
