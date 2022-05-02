@@ -8,6 +8,7 @@
         int HexesMoved { get; }
         bool DidJump { get; }
         bool IsProne { get; }
+        bool IsImmobile { get; }
         string UnitHeader { get; }
         string PilotName { get; }
     }

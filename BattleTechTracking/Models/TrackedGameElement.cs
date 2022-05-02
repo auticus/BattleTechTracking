@@ -31,6 +31,7 @@ namespace BattleTechTracking.Models
         private bool _didJump;
         private bool _isProne;
         private bool _isCrippled;
+        private bool _isImmobile;
         private int _currentHeatLevel;
         private int _currentHeatSinks;
         private int _numberOfElements;
@@ -123,6 +124,16 @@ namespace BattleTechTracking.Models
             {
                 _isCrippled = value;
                 OnPropertyChanged(nameof(IsCrippled));
+            }
+        }
+
+        public bool IsImmobile
+        {
+            get => _isImmobile;
+            set
+            {
+                _isImmobile = value;
+                OnPropertyChanged(nameof(IsImmobile));
             }
         }
 

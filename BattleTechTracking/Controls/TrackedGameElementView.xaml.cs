@@ -59,6 +59,11 @@ namespace BattleTechTracking.Controls
             typeof(bool),
             typeof(TrackedGameElementView));
 
+        public static readonly BindableProperty IsImmobileProperty = BindableProperty.Create(
+            nameof(IsImmobile),
+            typeof(bool),
+            typeof(TrackedGameElementView));
+
         public static readonly BindableProperty CurrentHeatLevelProperty = BindableProperty.Create(
             nameof(CurrentHeatLevel),
             typeof(int),
@@ -173,6 +178,12 @@ namespace BattleTechTracking.Controls
         {
             get => (bool)GetValue(TrackedGameElementView.IsProneProperty);
             set => SetValue(TrackedGameElementView.IsProneProperty, value);
+        }
+
+        public bool IsImmobile
+        {
+            get => (bool)GetValue(TrackedGameElementView.IsImmobileProperty);
+            set => SetValue(TrackedGameElementView.IsImmobileProperty, value);
         }
 
         public bool TrackHeat

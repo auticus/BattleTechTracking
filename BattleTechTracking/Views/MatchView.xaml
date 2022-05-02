@@ -158,6 +158,7 @@
                                                  DidRun="{Binding SelectedActiveUnit.DidRun, Mode=TwoWay}"
                                                  DidJump="{Binding SelectedActiveUnit.DidJump, Mode=TwoWay}"
                                                  IsProne="{Binding SelectedActiveUnit.IsProne, Mode=TwoWay}"
+                                                 IsImmobile ="{Binding SelectedActiveUnit.IsImmobile, Mode=TwoWay}"
                                                  PilotName="{Binding SelectedActiveUnit.PilotName, Mode=TwoWay}"
                                                  PilotSkill="{Binding SelectedActiveUnit.PilotPilotingSkill, Mode=TwoWay}"
                                                  PilotGunnerySkill="{Binding SelectedActiveUnit.PilotGunnerySkill, Mode=TwoWay}"

@@ -45,6 +45,7 @@
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
                     <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/> 
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
@@ -393,16 +394,31 @@
                         ThumbColor="White"
                         VerticalOptions="Center"
                         IsToggled="{Binding IsProne, Source={x:Reference thisView}}"/>
+
+                <!--Immobile?-->
+                <Label Grid.Row="10"
+                       Grid.Column="0"
+                       TextColor="Gold" 
+                       Margin="10,0,0,0" 
+                       VerticalTextAlignment="Center"
+                       Text="Is Immobile"/>
+                <Switch Grid.Row="10"
+                        Grid.Column="1"
+                        BackgroundColor="LightSlateGray"
+                        OnColor="Gold"
+                        ThumbColor="White"
+                        VerticalOptions="Center"
+                        IsToggled="{Binding IsImmobile, Source={x:Reference thisView}}"/>
                 
                 <!--Number Elements-->
-                <Label Grid.Row="10"
+                <Label Grid.Row="11"
                        Grid.Column="0"
                        TextColor="Gold" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="Number Elements"/>
 
-                <Entry Grid.Row="10"
+                <Entry Grid.Row="11"
                        Grid.Column="1"
                        Grid.ColumnSpan="2"
                        WidthRequest="35"

@@ -21,6 +21,7 @@ namespace BattleTechTracking.Utilities
                             GetProneModifier(target.IsProne) + 
                             GetHeatModifier(pilot.CurrentHeatLevel);
 
+            if (target.IsImmobile) baseScore -= 4;
             if (pilot.IsProne) baseScore += 2;
             if (pilot.DidJump) baseScore += 3;
             else if (pilot.DidRun) baseScore += 2;
