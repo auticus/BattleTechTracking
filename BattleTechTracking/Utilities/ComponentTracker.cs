@@ -25,10 +25,16 @@ namespace BattleTechTracking.Utilities
         /// </summary>
         /// <param name="element"></param>
         /// <returns></returns>
-        public static bool AreArmsOrShouldersDamaged(IComponentTrackable element)
+        public static bool AreAnyArmsOrShouldersDamaged(IComponentTrackable element)
         {
-            return element.UnitEquipment.Where(DoesElementContainArmData)
-                .Any(equipment => equipment.Hits < equipment.OriginalHits);
+            var armData = element.UnitEquipment.Where(DoesElementContainArmData);
+            foreach (var arm in armData)
+            {
+                if (arm.Hits < arm.OriginalHits) return true;
+                if (arm.Location == EquipmentStatus.DESTROYED) return true;
+            }
+
+            return false;
         }
 
         private static bool DoesElementContainArmData(Equipment equipment)

@@ -4,9 +4,9 @@
     {
         public string Component { get; }
         public string Description { get; }
-        public int CombatRoll { get; }
+        public int? CombatRoll { get; }
 
-        public ComponentCombatModifier(string component, string description, int combatRoll)
+        public ComponentCombatModifier(string component, string description, int? combatRoll)
         {
             this.Component = component;
             this.Description = description;

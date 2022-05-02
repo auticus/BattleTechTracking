@@ -76,6 +76,7 @@ namespace BattleTechTracking.Models
             set
             {
                 _rearArmor = value;
+                if (_rearArmor < 0) _rearArmor = 0;
                 OnPropertyChanged(nameof(RearArmor));
                 OnPropertyChanged(nameof(ComponentStatus));
             }
@@ -86,7 +87,9 @@ namespace BattleTechTracking.Models
             get => _structure;
             set
             {
+                if (_structure == 0 && value > 0) OnComponentRestored?.Invoke(this, EventArgs.Empty);
                 _structure = value;
+                if (_structure < 0) _structure = 0;
                 OnPropertyChanged(nameof(Structure));
                 OnPropertyChanged(nameof(ComponentStatus));
             }

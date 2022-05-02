@@ -1,4 +1,5 @@
-﻿using BattleTechTracking.Factories;
+﻿using System;
+using BattleTechTracking.Factories;
 
 namespace BattleTechTracking.Models
 {
@@ -9,6 +10,11 @@ namespace BattleTechTracking.Models
         private string _originalLocation;
         private int _originalHits;
         private string _name;
+
+        /// <summary>
+        /// Fires whenever a piece of equipment has 0 hits and the hits are made positive again.
+        /// </summary>
+        public EventHandler OnEquipmentAttemptedToBeRestored { get; set; }
 
         public string Name
         {
@@ -26,10 +32,15 @@ namespace BattleTechTracking.Models
             get => _hits;
             set
             {
+                //model starts at 0 and gets a value populated for it - so cache that
                 if (_hits == 0 && value > 0 && string.IsNullOrEmpty(_originalLocation))
                 {
-                    Location = _originalLocation; //model starts at 0 and gets a value populated for it - so cache that
+                    Location = _originalLocation;
                     OriginalHits = value;
+                }
+                else if (_hits == 0 && value > 0)
+                {
+                    OnEquipmentAttemptedToBeRestored?.Invoke(this, EventArgs.Empty);
                 }
 
                 _hits = value;
@@ -90,6 +101,11 @@ namespace BattleTechTracking.Models
             if (Hits == 0) return false;
             Location = _originalLocation;
             return true;
+        }
+
+        public virtual void ForceRestoreItem()
+        {
+            Location = _originalLocation;
         }
     }
 }

@@ -95,18 +95,26 @@ namespace BattleTechTracking.Utilities
         /// <returns></returns>
         private static ComponentCombatModifier GetPhysicalCombatStatsForArm(IPhysicalCombatant pilot, IEnumerable<Equipment> armComponents)
         {
-            //null values indicate the component is not there
-            var handMod = GetHandModifier(armComponents);  
-            var lowerMod = GetLowerArmModifier(armComponents);
-            var upperMod = GetUpperArmModifier(armComponents);
-            var shoulderMod = IsShoulderDamaged(armComponents);
-            var issues = new List<string>();
             var converter = new LocationCodeToStringConverter();
 
+            //null values indicate the component is not there
+            if (armComponents.First().Location == EquipmentStatus.DESTROYED)
+            {
+                return new ComponentCombatModifier(converter.Convert(armComponents.First().OriginalLocation, typeof(string), null, CultureInfo.CurrentCulture).ToString(),
+                    "ARM DESTROYED",
+                    null);
+            }
+
+            var shoulderMod = IsShoulderDamaged(armComponents);
             if (shoulderMod)
                 return new ComponentCombatModifier(converter.Convert(armComponents.First().OriginalLocation, typeof(string), null, CultureInfo.CurrentCulture).ToString(),
                     "SHOULDER DAMAGED - no punching or weapon attacks with this arm",
                     0);
+
+            var handMod = GetHandModifier(armComponents);  
+            var lowerMod = GetLowerArmModifier(armComponents);
+            var upperMod = GetUpperArmModifier(armComponents);
+            var issues = new List<string>();
 
             var damageExponent = 0;
             
@@ -161,20 +169,26 @@ namespace BattleTechTracking.Utilities
 
         private static ComponentCombatModifier GetPhysicalCombatStatsForLeg(IPhysicalCombatant pilot, IEnumerable<Equipment> legComponents)
         {
-            //null values indicate the component is not there
-            var footMod = GetFootModifier(legComponents);
-            var lowerMod = GetLowerLegModifier(legComponents);
-            var upperMod = GetUpperLegModifier(legComponents);
-            var hipMod = IsHipDamaged(legComponents);
-            var issues = new List<string>();
-            var damageExponent = 0;
-
             var converter = new LocationCodeToStringConverter();
+            if (legComponents.First().Location == EquipmentStatus.DESTROYED)
+            {
+                return new ComponentCombatModifier(converter.Convert(legComponents.First().OriginalLocation, typeof(string), null, CultureInfo.CurrentCulture).ToString(),
+                    "LEG DESTROYED",
+                    null);
+            }
 
+            var hipMod = IsHipDamaged(legComponents);
             if (hipMod)
                 return new ComponentCombatModifier(converter.Convert(legComponents.First().OriginalLocation, typeof(string), null, CultureInfo.CurrentCulture).ToString(),
                     "HIP DAMAGED - no kicking attacks with this leg",
                     0);
+
+            //null values indicate the component is not there
+            var footMod = GetFootModifier(legComponents);
+            var lowerMod = GetLowerLegModifier(legComponents);
+            var upperMod = GetUpperLegModifier(legComponents);
+            var issues = new List<string>();
+            var damageExponent = 0;
 
             if (footMod == null)
             {

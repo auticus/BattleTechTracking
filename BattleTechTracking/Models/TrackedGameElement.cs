@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using BattleTechTracking.Converters;
@@ -373,7 +374,7 @@ namespace BattleTechTracking.Models
             // the alternative to this would be creating an elaborate event system to fire off when components are damaged
             // this was the shorter more direct way.
             SensorsDamaged = ComponentTracker.AreSensorsDamaged(this);
-            ArmOrShoulderDamaged = ComponentTracker.AreArmsOrShouldersDamaged(this);
+            ArmOrShoulderDamaged = ComponentTracker.AreAnyArmsOrShouldersDamaged(this);
             PunchingModifier = PopulatePhysicalAttackProperties(PhysicalCombatSystem.GetPunchingModifiersForCombatant);
             KickingModifier = PopulatePhysicalAttackProperties(PhysicalCombatSystem.GetKickingModifiersForCombatant);
         }
@@ -387,7 +388,7 @@ namespace BattleTechTracking.Models
             {
                 sb.AppendLine($"Loc: {mod.Component}");
                 if (!string.IsNullOrEmpty(mod.Description)) sb.AppendLine(mod.Description);
-                sb.AppendLine($"Pilot Roll: {mod.CombatRoll}+\r\n");
+                if (mod.CombatRoll != null) sb.AppendLine($"Pilot Roll: {mod.CombatRoll}+\r\n");
             }
 
             return sb.ToString();
@@ -482,7 +483,9 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var equipment in element.Equipment)
             {
-                ((ObservableCollection<Equipment>)UnitEquipment).Add(ComponentFactory.BuildEquipmentFromTemplate(equipment));
+                var equip = ComponentFactory.BuildEquipmentFromTemplate(equipment);
+                equip.OnEquipmentAttemptedToBeRestored += OnEquipmentAttemptedToBeRestored;
+                ((ObservableCollection<Equipment>)UnitEquipment).Add(equip);
             }
         }
 
@@ -494,7 +497,9 @@ namespace BattleTechTracking.Models
             //infantry will not be a base unit
             foreach (var weapon in element.Weapons)
             {
-                ((ObservableCollection<Weapon>)UnitWeapons).Add(ComponentFactory.BuildWeaponFromTemplate(weapon));
+                var wpn = ComponentFactory.BuildWeaponFromTemplate(weapon);
+                wpn.OnEquipmentAttemptedToBeRestored += OnEquipmentAttemptedToBeRestored;
+                ((ObservableCollection<Weapon>)UnitWeapons).Add(wpn);
             }
         }
 
@@ -507,8 +512,34 @@ namespace BattleTechTracking.Models
             {
                 foreach (var ammo in weapon.Ammo)
                 {
-                    ((ObservableCollection<Ammunition>)UnitAmmunition).Add(ComponentFactory.BuildAmmoFromTemplate(ammo));
+                    var templatedAmmo = ComponentFactory.BuildAmmoFromTemplate(ammo);
+                    templatedAmmo.OnEquipmentAttemptedToBeRestored += OnEquipmentAttemptedToBeRestored;
+                    ((ObservableCollection<Ammunition>)UnitAmmunition).Add(ammo);
                 }
+            }
+        }
+
+        private void OnEquipmentAttemptedToBeRestored(object sender, EventArgs e)
+        {
+            // user has 0 hits on an item and has put positive value back on it.  
+            // if the location that they are trying to restore is not destroyed, allow this
+            var converter = new LocationCodeToStringConverter();
+
+            if (!(sender is Equipment equipment)) throw new ArgumentException("Restored Equipment is not a type that is understood");
+
+            var loc = converter.Convert(equipment.OriginalLocation, typeof(string), null, CultureInfo.CurrentCulture).ToString();
+
+            var component = UnitComponents.FirstOrDefault(c => c.Name == loc);
+            if (component == null) return; //this shouldn't happen but if the converter is given a value not in its dictionary that will cause a component to not be found
+
+            if (component.ComponentStatus != UnitComponentStatus.Destroyed)
+            {
+                //we are not using TryRestoreItem here because the hit on the stack will still say 0 when the event bubbles up and the try will fail
+                equipment.ForceRestoreItem();
+            }
+            else
+            {
+                equipment.Hits = 0;
             }
         }
 
