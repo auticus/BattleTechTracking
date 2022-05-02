@@ -399,6 +399,7 @@ namespace BattleTechTracking.ViewModels
         public ICommand OpenAmmo { get; }
         public ICommand NewAmmo { get; }
         public ICommand DeleteAmmo { get; }
+        public ICommand FilterUnits { get; }
         
         /// <summary>
         /// Gets the command responsible for showing the Unit Components panel.
@@ -657,12 +658,24 @@ namespace BattleTechTracking.ViewModels
             {
                 SelectedUnitQuirks.Remove(quirk);
             });
+
+            FilterUnits = new Command(FilterVisibleUnitsBySearchCondition);
         }
 
         private void LoadVisibleUnits()
         {
             VisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
             SetAssociatedViewLabelsByFilterType();
+        }
+
+        private void FilterVisibleUnitsBySearchCondition()
+        {
+            //fires off whenever the user clicks the magnifying glass icon to filter down whatever is currently loaded
+            LoadVisibleUnits();
+            if (string.IsNullOrEmpty(UnitNameFilter)) return;
+            
+            var filteredList = VisibleUnits.Where(unit => unit.UnitHeader.Contains(UnitNameFilter)).ToList();
+            VisibleUnits = new ObservableCollection<IDisplayListView>(filteredList);
         }
 
         private IEnumerable<IDisplayListView> GetAssociatedUnitsByFilterType()

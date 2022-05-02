@@ -155,6 +155,7 @@
     <Content Include="redLight.png" />
     <Content Include="reports.png" />
     <Content Include="reticle.png" />
+    <Content Include="searchIcon.png" />
     <Content Include="sensors.png" />
     <Content Include="settings.png" />
     <Content Include="terrainHex.png" />
