@@ -127,7 +127,7 @@
                                             Faction1Name="{Binding Faction1Name, Mode=TwoWay}"
                                             Faction2Name="{Binding Faction2Name, Mode=TwoWay}"/>
 
-                <controls:UnitSelectorView Margin="10,5,0,0"
+                <controls:UnitSelectorView Margin="10,0,0,0"
                                            Grid.Row="0"
                                            Grid.RowSpan="2"
                                            Grid.Column="1"
@@ -136,7 +136,9 @@
                                            VisibleUnits="{Binding SelectorViewVisibleUnits}"
                                            UnitFilters ="{Binding UnitFilters}"
                                            SelectedUnitFilter ="{Binding SelectedUnitFilter, Mode=TwoWay}"
-                                           SelectedUnit ="{Binding SelectorViewSelectedUnit, Mode=TwoWay}"/>
+                                           SelectedUnit ="{Binding SelectorViewSelectedUnit, Mode=TwoWay}"
+                                           UnitNameFilter="{Binding UnitNameFilter, Mode=TwoWay}"
+                                           FilterUnits="{Binding FilterUnits}"/>
 
                 <controls:TrackedGameElementView Margin="10,45,0,0"
                                                  Grid.Row="0"

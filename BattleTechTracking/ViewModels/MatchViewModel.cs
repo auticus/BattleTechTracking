@@ -33,6 +33,8 @@ namespace BattleTechTracking.ViewModels
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
+        private string _unitNameFilter;
+        private string _selectedUnitFilter;
         private IDisplayListView _selectorViewSelectedUnit;
 
         private IList<IDisplayMatchedListView>[] _factionUnits =
@@ -254,8 +256,6 @@ namespace BattleTechTracking.ViewModels
             }
         }
 
-        private string _selectedUnitFilter;
-
         /// <summary>
         /// Gets or sets the value that will filter the List View by what type of item to look at.
         /// </summary>
@@ -268,6 +268,16 @@ namespace BattleTechTracking.ViewModels
                 _selectedUnitFilter = value;
                 OnPropertyChanged(nameof(SelectedUnitFilter));
                 LoadVisibleUnits();
+            }
+        }
+
+        public string UnitNameFilter
+        {
+            get => _unitNameFilter;
+            set
+            {
+                _unitNameFilter = value;
+                OnPropertyChanged(nameof(UnitNameFilter));
             }
         }
 
@@ -332,6 +342,8 @@ namespace BattleTechTracking.ViewModels
         public ICommand GenerateHeat1 { get; }
         public ICommand GenerateHeat2 { get; }
         public ICommand GenerateHeat5 { get; }
+
+        public ICommand FilterUnits { get; }
 
         public DataReportViewModel DataReportVM { get; } = new DataReportViewModel();
 
@@ -500,6 +512,8 @@ namespace BattleTechTracking.ViewModels
             {
                 SelectedActiveUnit.CurrentHeatLevel += 5;
             });
+
+            FilterUnits = new Command(FilterVisibleUnitsBySearchCondition);
         }
 
         public void LoadMatchState(MatchState state)
@@ -528,6 +542,16 @@ namespace BattleTechTracking.ViewModels
         private void LoadVisibleUnits()
         {
             SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
+        }
+
+        private void FilterVisibleUnitsBySearchCondition()
+        {
+            //fires off whenever the user clicks the magnifying glass icon to filter down whatever is currently loaded
+            LoadVisibleUnits();
+            if (string.IsNullOrEmpty(UnitNameFilter)) return;
+
+            var filteredList = SelectorViewVisibleUnits.Where(unit => unit.UnitHeader.Contains(UnitNameFilter)).ToList();
+            SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>(filteredList);
         }
 
         private IEnumerable<IDisplayListView> GetAssociatedUnitsByFilterType()

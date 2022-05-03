@@ -23,6 +23,11 @@ namespace BattleTechTracking.Controls
             typeof(string),
             typeof(UnitSelectorView));
 
+        public static readonly BindableProperty UnitNameFilterProperty = BindableProperty.Create(
+            nameof(UnitNameFilter),
+            typeof(string),
+            typeof(UnitSelectorView));
+
         public static readonly BindableProperty SelectedUnitProperty = BindableProperty.Create(
             nameof(SelectedUnit),
             typeof(IDisplayListView),
@@ -36,6 +41,11 @@ namespace BattleTechTracking.Controls
         public static readonly BindableProperty VisibleUnitsProperty = BindableProperty.Create(
             nameof(VisibleUnits),
             typeof(ObservableCollection<IDisplayListView>),
+            typeof(UnitSelectorView));
+
+        public static readonly BindableProperty FilterUnitsProperty = BindableProperty.Create(
+            nameof(FilterUnits),
+            typeof(ICommand),
             typeof(UnitSelectorView));
 
         public ObservableCollection<IDisplayListView> VisibleUnits
@@ -62,12 +72,23 @@ namespace BattleTechTracking.Controls
             set => SetValue(UnitSelectorView.SelectedUnitFilterProperty, value);
         }
 
+        public string UnitNameFilter
+        {
+            get => (string)GetValue(UnitSelectorView.UnitNameFilterProperty);
+            set => SetValue(UnitSelectorView.UnitNameFilterProperty, value);
+        }
+
         public Command SelectorOk
         {
             get => (Command)GetValue(UnitSelectorView.SelectorOkProperty);
             set => SetValue(UnitSelectorView.SelectorOkProperty, value);
         }
 
+        public Command FilterUnits
+        {
+            get => (Command)GetValue(UnitSelectorView.FilterUnitsProperty);
+            set => SetValue(UnitSelectorView.FilterUnitsProperty, value);
+        }
         public UnitSelectorView()
         {
             InitializeComponent();

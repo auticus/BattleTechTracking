@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:BattleTechTracking.Effects;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.UnitSelectorView"
              x:Name="thisView">
   <ContentView.Content>
@@ -10,27 +11,53 @@
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="32"/>
+                <RowDefinition Height="64"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="32"/>
             </Grid.RowDefinitions>
 
             <!--Filters-->
-            <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="0">
+            <Grid Grid.Row="0" 
+                  Grid.RowSpan="2"
+                  Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32"/>
+                    <RowDefinition Height="32"/>
                 </Grid.RowDefinitions>
-                <Label Text="Type Filter" TextColor="Gold" VerticalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-                <Picker TitleColor="Gold" WidthRequest="300" Grid.Row="0" Grid.Column="1"
-                            ItemsSource="{Binding UnitFilters, Source={x:Reference thisView}}" 
-                            SelectedItem="{Binding SelectedUnitFilter, Source={x:Reference thisView}}"/>
+                <Label Text="Type Filter" TextColor="Gold" VerticalOptions="Center" 
+                       Grid.Row="0" 
+                       Grid.Column="0"/>
+                <Picker TitleColor="Gold" WidthRequest="300" 
+                        Grid.Row="0" 
+                        Grid.Column="1"
+                        ItemsSource="{Binding UnitFilters, Source={x:Reference thisView}}" 
+                        SelectedItem="{Binding SelectedUnitFilter, Source={x:Reference thisView}}"/>
+
+                <Label Text="Name or Model" TextColor="Gold" VerticalOptions="Center" 
+                       Grid.Row="1" 
+                       Grid.Column="0"/>
+                <Editor Text="{Binding UnitNameFilter, Source={x:Reference thisView}}"  
+                        Grid.Row="1" 
+                        Grid.Column="1"
+                        HorizontalOptions="FillAndExpand"
+                        AutoSize="Disabled"/>
+                <ImageButton  Grid.Row="1"
+                              Grid.Column="2"
+                              WidthRequest="32" 
+                              HeightRequest="32" 
+                              Source="searchIcon.png"
+                              effects:TooltipEffect.Position="Bottom"
+                              effects:TooltipEffect.Text="Filter List By Entry"
+                              Command="{Binding FilterUnits, Source={x:Reference thisView}}"/>
             </Grid>
+
             <!--Detail list of visible units -->
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" Margin="0,10,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="500"/>
