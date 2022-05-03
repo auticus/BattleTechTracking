@@ -15,6 +15,7 @@
         <converters:WeaponFiringStatusToStringConverter x:Key="WeaponFiringStatusToStringConverter"/>
         <converters:WeaponFiringStatusToColorConverter x:Key="WeaponFiringStatusToColorConverter"/>
         <converters:TargetModToDescriptionConverter x:Key="TargetModToDescriptionConverter"/>
+        <converters:DamageCodesToDescriptionConverter x:Key="dmgCodesToDescription"/>
     </ContentView.Resources>
     <ContentView.Content>
         <Grid>
@@ -284,9 +285,23 @@
                                     <Label Text="{Binding DamageCodesText}"
                                        Grid.Row="1"
                                        Grid.Column="1"
+                                       Grid.ColumnSpan="2"
                                        TextColor="Gold"
                                        VerticalTextAlignment="Center"
                                        IsVisible="{Binding IsDataEditMode, 
+                                            Converter={StaticResource InvertedBoolConvert},
+                                            Source={x:Reference thisView}}"/>
+
+                                    <Image Grid.Row="1" 
+                                           Grid.Column="3"
+                                           WidthRequest="28" HeightRequest="28" 
+                                           HorizontalOptions="Start"
+                                           VerticalOptions="Center"
+                                           Source="helpIcon.png"
+                                           effects:TooltipEffect.Position="Bottom"
+                                           effects:TooltipEffect.Text="{Binding DamageCodesText, Converter={StaticResource dmgCodesToDescription}}"
+                                           Margin="0,0,0,0"
+                                           IsVisible="{Binding IsDataEditMode, 
                                             Converter={StaticResource InvertedBoolConvert},
                                             Source={x:Reference thisView}}"/>
 
