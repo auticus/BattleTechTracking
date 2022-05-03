@@ -8,6 +8,7 @@
              x:Name="thisView">
     <ContentView.Resources>
         <converters:HeatColorToImagePathConverter x:Key="HeatToImageConverter"/>
+        <converters:QuirksToDescriptionsConverter x:Key="QuirksToDescriptionConverter"/>
     </ContentView.Resources>
     <ContentView.Content>
         <Grid VerticalOptions="FillAndExpand">
@@ -94,13 +95,24 @@
 
                 <Label Grid.Row="1"
                        Grid.Column="1"
-                       Grid.ColumnSpan="6"
+                       Grid.ColumnSpan="4"
                        TextColor="White" 
                        Margin="10,0,0,0" 
                        VerticalTextAlignment="Center"
                        Text="{Binding Quirks, Source={x:Reference thisView}}"/>
-                
-                <!-- Movement Scores Row 2 -->
+
+                <Image Grid.Row="1" 
+                       Grid.Column="5"
+                       WidthRequest="28" HeightRequest="28" 
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center"
+                       Source="helpIcon.png"
+                       effects:TooltipEffect.Position="Bottom"
+                       effects:TooltipEffect.Text="{Binding Quirks,
+                            Source={x:Reference thisView},
+                            Converter={StaticResource QuirksToDescriptionConverter}}"/>
+
+                       <!-- Movement Scores Row 2 -->
                 <Label Grid.Row="2"
                        Grid.Column="0"
                        TextColor="Gold" 
