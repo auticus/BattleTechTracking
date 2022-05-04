@@ -97,30 +97,18 @@ namespace BattleTechTracking.Utilities
             {"Weak Undercarriage", "When landing if the pilot skill failure margin is 3 or more the landing gear(s) collapse and unit takes 50 points of damage to the nose"},
         };
 
-        private static readonly List<string> KeysWithVariousPatterns = new List<string>()
-        {
-            "Bad Reputation",
-            "Battlefists",
-            "Good Reputation",
-            "Improved Targeting",
-            "Rugged",
-            "Ubiquitous"
-        };
-
         public static string GetQuirkDescription(string quirk)
         {
-            //Searchlight may be funky and need searched out as well since the chart says Searchlight #
-            //Variable Range Targeting
+            // a lot of quirks have extra parameters or data, so we have to do pattern matching
+
             if (quirk.ToUpper() == "NONE") return "No Quirks";
 
-            foreach (var key in KeysWithVariousPatterns.Where(key => DoesThisExistInAnyForm(quirk, key)))
+            foreach (var kvp in quirks.Where(kvp => DoesThisExistInAnyForm(quirk, kvp.Key)))
             {
-                return $"{quirk} :: {quirks[key]}";
+                return $"{quirk} :: {quirks[kvp.Key]}";
             }
 
-            return quirks.TryGetValue(quirk, out var description) 
-                ? $"{quirk} :: {description}" 
-                : $"{quirk} - not found in system";
+            return $"{quirk} - not found in system";
         }
 
         private static bool DoesThisExistInAnyForm(string quirk, string contains) => quirk.ToUpper().Contains(contains.ToUpper());
