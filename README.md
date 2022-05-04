@@ -5,7 +5,9 @@ Currently only worked with the UWP portion.  This code was thrown together rapid
 
 Planned Releases:
 0.1 - initial release with no server connectivity - can track a game
+
 0.2 - server components added to sync up a game and allow a game to be tracked across multiple instances of the app
+
 0.3 - quality of life and code cleanup / refactor
 
 1.0 - final release
