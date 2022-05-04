@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <Copyright>Auticus Studios</Copyright>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,6 +17,7 @@
     <None Remove="Resources\Fonts\Hvymtl1.ttf" />
     <None Remove="Resources\RestoreFiles\CombatVehicles.json" />
     <None Remove="Resources\RestoreFiles\IndustrialMech.json" />
+    <None Remove="Resources\RestoreFiles\Infantry.json" />
     <None Remove="Resources\RestoreFiles\MasterMech.json" />
   </ItemGroup>
 
@@ -21,6 +25,7 @@
     <EmbeddedResource Include="Resources\Fonts\Hvymtl1.ttf" />
     <EmbeddedResource Include="Resources\RestoreFiles\CombatVehicles.json" />
     <EmbeddedResource Include="Resources\RestoreFiles\IndustrialMech.json" />
+    <EmbeddedResource Include="Resources\RestoreFiles\Infantry.json" />
     <EmbeddedResource Include="Resources\RestoreFiles\MasterMech.json" />
   </ItemGroup>
 
