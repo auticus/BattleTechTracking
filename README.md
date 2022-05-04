@@ -11,4 +11,4 @@ Planned Releases:
 
 0.3 - quality of life and code cleanup / refactor
 
-1.0 - final release
+1.0 - final release - desktop app
