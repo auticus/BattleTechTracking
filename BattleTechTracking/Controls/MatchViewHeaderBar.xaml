@@ -51,13 +51,13 @@
                              effects:TooltipEffect.Position="Bottom"
                              effects:TooltipEffect.Text="Open Match Settings"/>
             <ImageButton Grid.Column="4"
-                             Command="{Binding OkCommand, Source={x:Reference thisView}}"
+                             Command="{Binding SaveCommand, Source={x:Reference thisView}}"
                              BackgroundColor="Black"
                              HeightRequest="40"
                              WidthRequest="40"
                              VerticalOptions="Start"
                              HorizontalOptions="Start"
-                             Source="okIcon.png"
+                             Source="saveIcon.ico"
                              effects:TooltipEffect.Position="Bottom"
                              effects:TooltipEffect.Text="Save Match and Close"/>
             <ImageButton Grid.Column="5"

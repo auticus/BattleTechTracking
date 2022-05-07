@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using BattleTechTracking.Models;
 using Newtonsoft.Json;
 
-namespace BattleTechTracking.Factories
+namespace BattleTechTracking.Utilities
 {
     /// <summary>
     /// The <see cref="DataPump"/> is responsible for pulling data from app data and passing it back to the application
     /// </summary>
     public static class DataPump
     {
+        private const string MATCH_STATE_FILE_EXTENSION = ".btt";
+
         /// <summary>
         /// Returns an IEnumerable of the type given in the persisted saved JSON files of the application.
         /// </summary>
@@ -35,7 +38,6 @@ namespace BattleTechTracking.Factories
 
         public static void SavePersistedDataForType<T>(IEnumerable<T> data)
         {
-            //System.Environment.ApplicationData
             var fileName = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{GetFileNameForType<T>()}";
             
             using (var file = File.CreateText(fileName))
@@ -47,7 +49,7 @@ namespace BattleTechTracking.Factories
 
         public static void SaveMatchState(MatchState factions, string fileName)
         {
-            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}";
+            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}{MATCH_STATE_FILE_EXTENSION}";
 
             try
             {
@@ -101,6 +103,18 @@ namespace BattleTechTracking.Factories
         {
             var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(GetManifestResourceForType<T>());
             return HydrateListFromJsonStream<T>(stream);
+        }
+
+        /// <summary>
+        /// Returns a list of all of the saved file names
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<string> GetAllSavedGameFileNames()
+        {
+            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}";
+            var di = new DirectoryInfo(filePath);
+            var files = di.GetFiles($"*{MATCH_STATE_FILE_EXTENSION}");
+            return files.Select(file => Path.GetFileNameWithoutExtension(file.Name));
         }
 
         private static IEnumerable<T> HydrateListFromJsonStream<T>(Stream jsonStream)

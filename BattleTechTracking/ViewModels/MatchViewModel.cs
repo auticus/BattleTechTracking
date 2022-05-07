@@ -292,9 +292,9 @@ namespace BattleTechTracking.ViewModels
         public ICommand SettingsOkCommand { get; }
 
         /// <summary>
-        /// Gets the Ok Command for the Match View screen which should save and close to main screen.
+        /// Gets the Save Command for the Match View screen which should open the save view to select a file name.
         /// </summary>
-        public ICommand OkCommand { get; }
+        public ICommand SaveCommand { get; }
 
         /// <summary>
         /// Gets the Close command for the Match View screen which should simply close to the main screen.
@@ -346,6 +346,7 @@ namespace BattleTechTracking.ViewModels
         public ICommand FilterUnits { get; }
 
         public DataReportViewModel DataReportVM { get; } = new DataReportViewModel();
+        public SaveFileViewModel SaveFileVM { get; } = new SaveFileViewModel();
 
         public MatchViewModel()
         {
@@ -365,19 +366,27 @@ namespace BattleTechTracking.ViewModels
 
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
 
-            OkCommand = new Command(() =>
+            SaveFileVM.OnFileViewModelFinished += (sender, args) =>
+            {
+                SetAllPanelsInvisible();
+                MatchTrackingViewVisible = true;
+            };
+
+            SaveCommand = new Command(() =>
             {
                 //make sure our active faction is saved out to the cache
                 _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
-
+                
                 var matchState = new MatchState()
                 {
                     Faction1Name = this.Faction1Name,
                     Faction2Name = this.Faction2Name,
                     Factions = _factionUnits
                 };
-                DataPump.SaveMatchState(matchState, "SavedMatchState.json");
-                PageNavigation.PopAsync();
+
+                SaveFileVM.SavedMatchState = matchState;
+                SetAllPanelsInvisible();
+                SaveFileVM.SaveFileIsVisible = true;
             });
 
             CloseCommand = new Command(() => { PageNavigation.PopAsync(); });
@@ -537,6 +546,7 @@ namespace BattleTechTracking.ViewModels
             ActiveUnitWeaponsVisible = false;
             ActiveUnitAmmoVisible = false;
             DataReportsVisible = false;
+            SaveFileVM.SaveFileIsVisible = false;
         }
 
         private void LoadVisibleUnits()

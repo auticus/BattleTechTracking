@@ -12,8 +12,8 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(MatchViewHeaderBar));
 
-        public static readonly BindableProperty OkCommandProperty = BindableProperty.Create(
-            nameof(OkCommand),
+        public static readonly BindableProperty SaveCommandProperty = BindableProperty.Create(
+            nameof(SaveCommand),
             typeof(ICommand),
             typeof(MatchViewHeaderBar));
 
@@ -38,10 +38,10 @@ namespace BattleTechTracking.Controls
             set => SetValue(MatchViewHeaderBar.CloseCommandProperty, value);
         }
 
-        public Command OkCommand
+        public Command SaveCommand
         {
-            get => (Command)GetValue(MatchViewHeaderBar.OkCommandProperty);
-            set => SetValue(MatchViewHeaderBar.OkCommandProperty, value);
+            get => (Command)GetValue(MatchViewHeaderBar.SaveCommandProperty);
+            set => SetValue(MatchViewHeaderBar.SaveCommandProperty, value);
         }
 
         public Command NewRoundCommand

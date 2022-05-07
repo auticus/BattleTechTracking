@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace BattleTechTracking.Models
 {
@@ -51,8 +52,13 @@ namespace BattleTechTracking.Models
         /// <summary>
         /// Gets and sets the event that will fire when a component is set to destroyed.
         /// </summary>
+        [JsonIgnore]
         public EventHandler OnComponentDestroyed { get; set; }
+
+        [JsonIgnore]
         public EventHandler OnComponentRestored { get; set; }
+
+        [JsonIgnore]
         public EventHandler OnComponentArmorRemoved { get; set; }
 
         public int Armor

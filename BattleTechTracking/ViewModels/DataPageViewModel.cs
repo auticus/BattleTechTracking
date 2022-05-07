@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Input;
 using BattleTechTracking.Factories;
 using BattleTechTracking.Models;
+using BattleTechTracking.Utilities;
 using Xamarin.Forms;
 
 namespace BattleTechTracking.ViewModels

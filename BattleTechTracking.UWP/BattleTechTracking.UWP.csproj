@@ -162,6 +162,7 @@
     <Content Include="redLight.png" />
     <Content Include="reports.png" />
     <Content Include="reticle.png" />
+    <Content Include="saveIcon.ico" />
     <Content Include="searchIcon.png" />
     <Content Include="sensors.png" />
     <Content Include="settings.png" />
@@ -200,7 +201,7 @@
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>AuticusStudios.pfx</AssemblyOriginatorKeyFile>

@@ -1,5 +1,5 @@
 ﻿using System;
-using BattleTechTracking.Factories;
+using Newtonsoft.Json;
 
 namespace BattleTechTracking.Models
 {
@@ -14,6 +14,7 @@ namespace BattleTechTracking.Models
         /// <summary>
         /// Fires whenever a piece of equipment has 0 hits and the hits are made positive again.
         /// </summary>
+        [JsonIgnore]
         public EventHandler OnEquipmentAttemptedToBeRestored { get; set; }
 
         public string Name

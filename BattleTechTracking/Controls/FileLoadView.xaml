@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BattleTechTracking.Controls.FileLoadView"
+             x:Name="thisView">
+    <ContentView.Content>
+      <Grid>
+          <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="32"/>
+              <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+          <ListView Grid.Row="0" VerticalOptions="FillAndExpand"
+                    BindingContext="{x:Reference thisView}"
+                    ItemsSource="{Binding FileNames, Source={x:Reference thisView}}"
+                    SelectedItem="{Binding SelectedFileName, Source={x:Reference thisView}}"
+          >
+              <ListView.Header>
+                  <ContentView BackgroundColor="MidnightBlue">
+                      <Grid HorizontalOptions="FillAndExpand">
+                          <Label Grid.Column="0"
+                                 Text="Saved Games" 
+                                 HorizontalTextAlignment="Center" 
+                                 Margin="75,0,0,0"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="Center"
+                                 FontSize="Medium" 
+                                 TextColor="Gold"/>
+                      </Grid>
+                  </ContentView>
+              </ListView.Header>
+              <ListView.ItemTemplate>
+                  <DataTemplate>
+                      <ViewCell>
+                          <Label Text="{Binding}"
+                                 FontSize="Medium"
+                                 TextColor="WhiteSmoke"/>
+                      </ViewCell>
+                  </DataTemplate>
+              </ListView.ItemTemplate>
+          </ListView>
+
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+              <Label Text="File Name:"
+                     TextColor="WhiteSmoke"
+                     Margin="5,5,5,0"/>
+              <Entry Text="{Binding FileName, Source={x:Reference thisView}}"
+                      WidthRequest="300"
+                      MinimumHeightRequest="32"/>
+          </StackLayout>
+
+          <StackLayout Grid.Row="2" Orientation="Horizontal">
+              <Button   Text="Ok"
+                        TextColor="Gold"
+                        WidthRequest="80"
+                        Command="{Binding OkButton, Source={x:Reference thisView}}"/>
+              <Button   Text="Cancel" Margin="10,0,0,0"
+                        TextColor="Gold"
+                        WidthRequest="80"
+                        Command="{Binding CancelButton, Source={x:Reference thisView}}"/>
+
+            </StackLayout>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

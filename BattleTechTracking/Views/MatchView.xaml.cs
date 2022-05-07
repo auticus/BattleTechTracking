@@ -15,7 +15,6 @@ namespace BattleTechTracking.Views
         public MatchView(MatchState state) : this()
         {
             viewModel.LoadMatchState(state);
-            
         }
     }
 }

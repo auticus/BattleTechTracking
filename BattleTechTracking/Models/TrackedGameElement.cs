@@ -49,6 +49,7 @@ namespace BattleTechTracking.Models
 
         private readonly LocationCodeToStringConverter _codeToLocationConverter = new LocationCodeToStringConverter();
 
+        [JsonIgnore]
         public EventHandler Invalidated { get; set; }
 
         /// <summary>
@@ -64,7 +65,10 @@ namespace BattleTechTracking.Models
             }
         }
 
+        [JsonIgnore]
         public string UnitHeader => GameElement.UnitHeader;
+
+        [JsonIgnore]
         public string UnitDetails => GameElement.UnitDetails;
 
         public int HexesMoved
@@ -155,7 +159,7 @@ namespace BattleTechTracking.Models
         public bool SensorsDamaged
         {
             get => _sensorsDamaged;
-            private set
+            set
             {
                 _sensorsDamaged = value;
                 OnPropertyChanged(nameof(SensorsDamaged));
@@ -165,7 +169,7 @@ namespace BattleTechTracking.Models
         public bool ArmOrShoulderDamaged
         {
             get => _armOrShoulderDamaged;
-            private set
+            set
             {
                 _armOrShoulderDamaged = value;
                 OnPropertyChanged(nameof(ArmOrShoulderDamaged));
@@ -175,7 +179,7 @@ namespace BattleTechTracking.Models
         public string PunchingModifier
         {
             get => _punchingMod;
-            private set
+            set
             {
                 _punchingMod = value;
                 OnPropertyChanged(nameof(PunchingModifier));
@@ -185,7 +189,7 @@ namespace BattleTechTracking.Models
         public string KickingModifier
         {
             get => _kickingMod;
-            private set
+            set
             {
                 _kickingMod = value;
                 OnPropertyChanged(nameof(KickingModifier));
