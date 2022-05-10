@@ -204,12 +204,14 @@ namespace BattleTechTracking.Models
         /// <summary>
         /// Gets the value showing the current heat's tooltip.
         /// </summary>
+        [JsonIgnore]
         public string CurrentHeatTooltip =>
             ThisCanTrackHeat ? Heat.GetHeatImpactTooltip(this) : string.Empty;
 
         /// <summary>
         /// Gets a value indicating that this game element tracks heat.
         /// </summary>
+        [JsonIgnore]
         public bool ThisCanTrackHeat => Heat.ElementTracksHeat(this);
        
         public int CurrentHeatSinks

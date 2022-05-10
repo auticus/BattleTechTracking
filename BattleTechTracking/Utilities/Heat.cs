@@ -45,6 +45,7 @@ namespace BattleTechTracking.Utilities
         /// <returns>A value indicating if the element is capable of tracking heat.</returns>
         public static bool ElementTracksHeat(IHeatable element)
         {
+            if (element.GameElement == null) return false;
             if (element.GameElement.GetType() == typeof(BattleMech)) return true;
             return element.GameElement.GetType() == typeof(IndustrialMech);
         }

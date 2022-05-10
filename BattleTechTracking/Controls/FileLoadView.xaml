@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:BattleTechTracking.Converters;assembly=BattleTechTracking"
              x:Class="BattleTechTracking.Controls.FileLoadView"
              x:Name="thisView">
+    <ContentView.Resources>
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConvert"/>
+    </ContentView.Resources>
     <ContentView.Content>
       <Grid>
           <Grid.RowDefinitions>
@@ -43,8 +47,10 @@
             <StackLayout Grid.Row="1" Orientation="Horizontal">
               <Label Text="File Name:"
                      TextColor="WhiteSmoke"
+                     IsVisible="{Binding IsLoadFile, Source={x:Reference thisView}, Converter={StaticResource InvertedBoolConvert}}"
                      Margin="5,5,5,0"/>
               <Entry Text="{Binding FileName, Source={x:Reference thisView}}"
+                     IsVisible="{Binding IsLoadFile, Source={x:Reference thisView}, Converter={StaticResource InvertedBoolConvert}}"
                       WidthRequest="300"
                       MinimumHeightRequest="32"/>
           </StackLayout>
@@ -58,8 +64,7 @@
                         TextColor="Gold"
                         WidthRequest="80"
                         Command="{Binding CancelButton, Source={x:Reference thisView}}"/>
-
-            </StackLayout>
+          </StackLayout>
         </Grid>
   </ContentView.Content>
 </ContentView>

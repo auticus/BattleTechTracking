@@ -366,7 +366,7 @@ namespace BattleTechTracking.ViewModels
 
             SelectedUnitFilter = UnitTypes.BATTLE_MECH;
 
-            SaveFileVM.OnFileViewModelFinished += (sender, args) =>
+            SaveFileVM.OnFileViewModelSaved += (sender, args) =>
             {
                 SetAllPanelsInvisible();
                 MatchTrackingViewVisible = true;

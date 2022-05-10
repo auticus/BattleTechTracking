@@ -115,6 +115,7 @@
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="battleTechPage2.jpg" />
     <Content Include="blackLight.png" />
     <Content Include="copy.png" />
     <Content Include="damageIcon.png" />

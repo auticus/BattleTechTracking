@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Input;
-using BattleTechTracking.Utilities;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -32,10 +30,21 @@ namespace BattleTechTracking.Controls
             typeof(IEnumerable<string>),
             typeof(FileLoadView));
 
+        public static readonly BindableProperty IsLoadFileProperty = BindableProperty.Create(
+            nameof(IsLoadFile),
+            typeof(bool),
+            typeof(FileLoadView));
+
         public string FileName
         {
             get => (string)GetValue(FileLoadView.FileNameProperty);
             set => SetValue(FileLoadView.FileNameProperty, value);
+        }
+
+        public bool IsLoadFile
+        {
+            get => (bool)GetValue(FileLoadView.IsLoadFileProperty);
+            set => SetValue(FileLoadView.IsLoadFileProperty, value);
         }
         
 

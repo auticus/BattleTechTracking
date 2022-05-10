@@ -19,13 +19,10 @@
         <Button Text="Load Existing Game" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" Padding="10"
                 BackgroundColor="Black" Opacity="0.8" CornerRadius="10"
                 FontSize="Medium" FontAttributes="Bold" TextColor="White" Command="{Binding LoadExistingGame}"/>
-        <Button Text="View Saved Game" HorizontalOptions="CenterAndExpand" Margin="0,0,0,10" Padding="10"
-                BackgroundColor="Black" Opacity="0.8" CornerRadius="10"
-                FontSize="Medium" FontAttributes="Bold" TextColor="White" Command="{Binding ViewSavedGame}"/>
         <Button Text="View/Edit Data" HorizontalOptions="CenterAndExpand" Padding="10"
                 BackgroundColor="Black" Opacity="0.8" CornerRadius="10"
                 FontSize="Medium" FontAttributes="Bold" TextColor="White" Command="{Binding OpenDataView}"/>
-        </StackLayout>
+    </StackLayout>
     <!--Bottom level Elements-->
     <StackLayout VerticalOptions="End">
         <Grid Padding="5" VerticalOptions="End">

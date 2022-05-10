@@ -71,7 +71,7 @@ namespace BattleTechTracking.Utilities
 
         public static MatchState LoadMatchState(string fileName)
         {
-            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}";
+            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}{MATCH_STATE_FILE_EXTENSION}";
             try
             {
                 using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
@@ -91,7 +91,7 @@ namespace BattleTechTracking.Utilities
                 Debug.WriteLine($"ERROR Reading File {e}");
             }
 
-            return null;
+            return MatchState.NoMatchStateLoaded;
         }
 
         /// <summary>

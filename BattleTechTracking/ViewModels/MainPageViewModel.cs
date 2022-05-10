@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-using BattleTechTracking.Factories;
+using BattleTechTracking.Models;
 using BattleTechTracking.Utilities;
 using BattleTechTracking.Views;
 using Xamarin.Forms;
@@ -12,9 +12,7 @@ namespace BattleTechTracking.ViewModels
         public ICommand OpenDataView { get; }
         public ICommand CreateNewGame { get; }
         public ICommand LoadExistingGame { get; }
-        public ICommand ViewSavedGame { get; }
-
-
+        
         public MainPageViewModel()
         {
             OpenDataView = new Command(async () =>
@@ -28,11 +26,24 @@ namespace BattleTechTracking.ViewModels
             });
             LoadExistingGame = new Command(async () =>
             {
-                var matchState = DataPump.LoadMatchState("SavedMatchState.json");
-                await PageNavigation.PushAsync(new MatchView(matchState));
-            });
+                var loadView = new LoadMatchStateView();
+                if (!(loadView.BindingContext is LoadFileViewModel loadViewModel))
+                {
+                    throw new ArgumentNullException("LoadFileView returns object that is not expected");
+                }
 
-            ViewSavedGame = new Command(() => throw new NotImplementedException());
+                loadViewModel.SaveFileIsVisible = true;
+                loadViewModel.OnFileViewModelLoaded += OnFileViewModelLoaded;
+                await PageNavigation.PushAsync(loadView);
+            });
+        }
+
+        private async void OnFileViewModelLoaded(object sender, MatchState data)
+        {
+            await PageNavigation.PopAsync();
+            if (data == MatchState.NoMatchStateLoaded) return;
+
+            await PageNavigation.PushAsync(new MatchView(data));
         }
     }
 }

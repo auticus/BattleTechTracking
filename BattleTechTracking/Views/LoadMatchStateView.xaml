@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:BattleTechTracking.Controls;assembly=BattleTechTracking"
+             xmlns:viewModels="clr-namespace:BattleTechTracking.ViewModels;assembly=BattleTechTracking"
+             x:Class="BattleTechTracking.Views.LoadMatchStateView"
+             BackgroundImageSource="battleTechPage2.jpg">
+    <ContentPage.BindingContext>
+        <viewModels:LoadFileViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <controls:FileLoadView Grid.Row="0"
+                                   Grid.Column="0"
+                                   Margin="10, 45, 0, 20"
+                                   OkButton="{Binding SaveFileOkButtonPressed}"
+                                   CancelButton="{Binding SaveFileCancelButtonPressed}"
+                                   FileName="{Binding SaveFileName, Mode=TwoWay}"
+                                   FileNames="{Binding FileNames}"
+                                   IsLoadFile="True"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
