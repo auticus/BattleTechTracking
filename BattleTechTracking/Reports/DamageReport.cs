@@ -5,11 +5,11 @@ using BattleTechTracking.Models;
 
 namespace BattleTechTracking.Reports
 {
-    public class DamageReport : IDataReport<string>
+    public class DamageReport : IDataReport
     {
         private const int FACTION_ONE_INDEX = 0;
         private const int FACTION_TWO_INDEX = 1;
-        private static LocationCodeToStringConverter _locCodeConverter = new LocationCodeToStringConverter();
+        private static readonly LocationCodeToStringConverter _locCodeConverter = new LocationCodeToStringConverter();
 
         public string GenerateReport(TextReportInput input)
         {
@@ -29,13 +29,12 @@ namespace BattleTechTracking.Reports
                 GetUnitDamageReport(sb, element);
             }
 
-            sb.AppendLine("========================= END OF FACTION DAMAGE REPORT =========================");
+            sb.AppendLine("!!END OF FACTION DAMAGE REPORT!!");
         }
 
         private static void GetFactionHeader(StringBuilder sb, TextReportInput input, int factionIndex)
         {
-            sb.AppendLine($"Faction:  {input.FactionNames[factionIndex]}");
-            sb.AppendLine("============================\r\n");
+            sb.AppendLine($"Faction:  {input.FactionNames[factionIndex]}\r\n");
         }
 
         private static void GetUnitDamageReport(StringBuilder sb, IReportable element)

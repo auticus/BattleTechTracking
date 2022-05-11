@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -24,9 +25,20 @@ namespace BattleTechTracking.Controls
             typeof(ReportsView)
             );
 
+        public static readonly BindableProperty ChartVisibleProperty = BindableProperty.Create(
+            nameof(ChartVisible),
+            typeof(bool),
+            typeof(ReportsView)
+        );
+
         public static readonly BindableProperty TextReportContentsProperty = BindableProperty.Create(
             nameof(TextReportContents),
             typeof(string),
+            typeof(ReportsView));
+
+        public static readonly BindableProperty ChartContentsProperty = BindableProperty.Create(
+            nameof(ChartContents),
+            typeof(Grid),
             typeof(ReportsView));
 
         public static readonly BindableProperty GenerateReportProperty = BindableProperty.Create(
@@ -49,13 +61,37 @@ namespace BattleTechTracking.Controls
         public bool TextReportVisible
         {
             get => (bool)GetValue(ReportsView.TextReportVisibleProperty);
-            set => SetValue(ReportsView.SelectedReportProperty, value);
+            set => SetValue(ReportsView.TextReportVisibleProperty, value);
+        }
+
+        public bool ChartVisible
+        {
+            get => (bool)GetValue(ReportsView.ChartVisibleProperty);
+            set => SetValue(ReportsView.ChartVisibleProperty, value);
         }
 
         public string TextReportContents
         {
             get => (string)GetValue(ReportsView.TextReportContentsProperty);
             set => SetValue(ReportsView.TextReportContentsProperty, value);
+        }
+
+        /// <summary>
+        /// XAML contents that will be dynamically rendered into a visual element.
+        /// </summary>
+        public Grid ChartContents
+        {
+            get
+            {
+                var grid = (Grid)GetValue(ReportsView.ChartContentsProperty);
+                ChartLayout.Children.Clear();
+
+                if (grid == null) return null;
+
+                ChartLayout.Children.Add(grid);
+                return grid;
+            } 
+            set => SetValue(ReportsView.ChartContentsProperty, value);
         }
 
         public Command GenerateReport

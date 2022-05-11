@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Input;
-using BattleTechTracking.Models;
 using BattleTechTracking.Reports;
 using Xamarin.Forms;
 
@@ -10,11 +10,13 @@ namespace BattleTechTracking.ViewModels
     {
         private string _selectedReport;
         private bool _textReportVisible;
+        private bool _chartVisible;
         private string _textReportContents;
-        private readonly Dictionary<string, dynamic> _reports = new Dictionary<string, dynamic>();
+        private Grid _chartContents;
+        private readonly Dictionary<string, dynamic> _reports;
         private TextReportInput _reportInput;
 
-        public List<string> DataReports { get; } = new List<string>();
+        public List<string> DataReports { get; } 
 
         public string SelectedReport
         {
@@ -23,8 +25,8 @@ namespace BattleTechTracking.ViewModels
             {
                 _selectedReport = value;
                 OnPropertyChanged(nameof(SelectedReport));
-                HideAllReportPanels();
                 DisplayAppropriatePanel();
+                if (ChartVisible) GenerateChartContents();
             }
         }
 
@@ -42,6 +44,19 @@ namespace BattleTechTracking.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets a value that will show the charts.
+        /// </summary>
+        public bool ChartVisible
+        {
+            get => _chartVisible;
+            set
+            {
+                _chartVisible = value;
+                OnPropertyChanged(nameof(ChartVisible));
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the value that will populate the text report.
         /// </summary>
         public string TextReportContents
@@ -55,14 +70,27 @@ namespace BattleTechTracking.ViewModels
         }
 
         /// <summary>
+        /// Gets or sets the value that will populate the chart contents.
+        /// </summary>
+        public Grid ChartContents
+        {
+            get => _chartContents;
+            set
+            {
+                _chartContents = value;
+                OnPropertyChanged(nameof(ChartContents));
+            }
+        }
+
+        /// <summary>
         /// Gets the command that will generate the report.
         /// </summary>
         public ICommand GenerateReportCommand { get; }
         
         public DataReportViewModel()
         {
-            BuildReportList();
-            BuildReportDictionary();
+            DataReports = DataReport.GetDataReportList().ToList();
+            _reports = DataReport.GetDataReportDictionary();
             GenerateReportCommand = new Command(GenerateReport);
         }
 
@@ -71,25 +99,24 @@ namespace BattleTechTracking.ViewModels
             _reportInput = input;
         }
 
-        private void BuildReportList()
-        {
-            DataReports.Add(DataReport.DAMAGE_REPORT);
-        }
-
-        private void BuildReportDictionary()
-        {
-            _reports.Add(DataReport.DAMAGE_REPORT, new DamageReport());
-        }
-
-        private void HideAllReportPanels()
-        {
-            TextReportVisible = false;
-        }
-
         private void DisplayAppropriatePanel()
         {
-            // currently this is the only type of report but charts will be added in the future
-            TextReportVisible = true;
+            if (string.IsNullOrEmpty(SelectedReport))
+            {
+                TextReportVisible = false;
+                ChartVisible = false;
+                return;
+            }
+
+            var report = _reports[SelectedReport];
+            TextReportVisible = (report is IDataReport);
+            ChartVisible = (report is IChart);
+        }
+
+        private void GenerateChartContents()
+        {
+            var report = _reports[SelectedReport] as IChart;
+            ChartContents = report?.GenerateChart();
         }
 
         private void GenerateReport()
@@ -97,7 +124,7 @@ namespace BattleTechTracking.ViewModels
             if (string.IsNullOrEmpty(SelectedReport)) return;
 
             var report = _reports[SelectedReport];
-            if (report is IDataReport<string> dataReport)
+            if (report is IDataReport dataReport)
             {
                 TextReportContents = dataReport.GenerateReport(_reportInput);
             }

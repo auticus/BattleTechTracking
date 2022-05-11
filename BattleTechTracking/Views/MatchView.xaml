@@ -222,7 +222,9 @@
                                       SelectedReport="{Binding DataReportVM.SelectedReport, Mode=TwoWay}"
                                       GenerateReport="{Binding DataReportVM.GenerateReportCommand}"
                                       TextReportVisible="{Binding DataReportVM.TextReportVisible}"
-                                      TextReportContents="{Binding DataReportVM.TextReportContents, Mode=TwoWay}"/>
+                                      TextReportContents="{Binding DataReportVM.TextReportContents, Mode=TwoWay}"
+                                      ChartVisible="{Binding DataReportVM.ChartVisible}"
+                                      ChartContents ="{Binding DataReportVM.ChartContents, Mode=TwoWay}"/>
 
                 <controls:FileLoadView Grid.Row="0"
                                        Grid.RowSpan="2"
