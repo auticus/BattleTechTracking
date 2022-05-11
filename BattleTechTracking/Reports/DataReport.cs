@@ -7,6 +7,7 @@ namespace BattleTechTracking.Reports
         public const string CLUSTER_HITS_TABLE = "Cluster Hits Table";
         public const string DAMAGE_REPORT = "Damage Report";
         public const string DETERMINING_CRITICAL_HITS = "Determining Critical Hits Table";
+        public const string FACING_AFTER_FALL_TABLE = "Facing After Fall Table";
         public const string KICK_LOCATION_TABLE = "Kick Location Table";
         public const string MECH_HIT_LOCATION_TABLE = "Mech Hit Location Table";
         public const string PUNCH_LOCATION_TABLE = "Punch Location Table";
@@ -18,6 +19,7 @@ namespace BattleTechTracking.Reports
                 CLUSTER_HITS_TABLE,
                 DAMAGE_REPORT,
                 DETERMINING_CRITICAL_HITS,
+                FACING_AFTER_FALL_TABLE,
                 KICK_LOCATION_TABLE,
                 MECH_HIT_LOCATION_TABLE,
                 PUNCH_LOCATION_TABLE
@@ -37,6 +39,7 @@ namespace BattleTechTracking.Reports
                 { CLUSTER_HITS_TABLE, new ClusterHitsTable()},
                 { DAMAGE_REPORT, new DamageReport() },
                 { DETERMINING_CRITICAL_HITS, new DetermineCritHitsTable()},
+                { FACING_AFTER_FALL_TABLE, new FacingAfterFallTable()},
                 { KICK_LOCATION_TABLE, new KickLocationTable()},
                 { MECH_HIT_LOCATION_TABLE, new MechHitLocationTable()},
                 { PUNCH_LOCATION_TABLE, new PunchLocationTable()}
