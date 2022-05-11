@@ -6,7 +6,9 @@ namespace BattleTechTracking.Reports
     {
         public const string DAMAGE_REPORT = "Damage Report";
         public const string DETERMINING_CRITICAL_HITS = "Determining Critical Hits Table";
+        public const string KICK_LOCATION_TABLE = "Kick Location Table";
         public const string MECH_HIT_LOCATION_TABLE = "Mech Hit Location Table";
+        public const string PUNCH_LOCATION_TABLE = "Punch Location Table";
 
         public static IEnumerable<string> GetDataReportList()
         {
@@ -14,7 +16,9 @@ namespace BattleTechTracking.Reports
             {
                 DAMAGE_REPORT,
                 DETERMINING_CRITICAL_HITS,
-                MECH_HIT_LOCATION_TABLE
+                KICK_LOCATION_TABLE,
+                MECH_HIT_LOCATION_TABLE,
+                PUNCH_LOCATION_TABLE
             };
 
             return reports;
@@ -30,7 +34,9 @@ namespace BattleTechTracking.Reports
             {
                 { DAMAGE_REPORT, new DamageReport() },
                 { DETERMINING_CRITICAL_HITS, new DetermineCritHitsTable()},
-                { MECH_HIT_LOCATION_TABLE, new MechHitLocationTable()}
+                { KICK_LOCATION_TABLE, new KickLocationTable()},
+                { MECH_HIT_LOCATION_TABLE, new MechHitLocationTable()},
+                { PUNCH_LOCATION_TABLE, new PunchLocationTable()}
             };
 
             return dictionary;
