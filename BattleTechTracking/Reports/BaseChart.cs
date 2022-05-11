@@ -1,9 +1,11 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace BattleTechTracking.Reports
 {
     public abstract class BaseChart : IChart
     {
+        protected readonly List<string[]> ChartEntries = new List<string[]>();
         public abstract Grid GenerateChart();
 
         /// <summary>
@@ -81,6 +83,23 @@ namespace BattleTechTracking.Reports
 
             grid.Children.Add(boxView);
             grid.Children.Add(label);
+        }
+
+        protected void InjectBody(Grid grid, int startingRow)
+        {
+            var row = startingRow;
+            var col = 0;
+            foreach (var rowEntry in ChartEntries)
+            {
+                foreach (var entry in rowEntry)
+                {
+                    InjectLabelInColumn(grid, entry, row, col, Color.WhiteSmoke);
+                    col++;
+                }
+
+                col = 0;
+                row++;
+            }
         }
 
         protected void InjectLabelInFooter(Grid grid, string caption, int row, Color textColor, int columnSpan)
