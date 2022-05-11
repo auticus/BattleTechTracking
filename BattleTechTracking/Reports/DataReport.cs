@@ -4,6 +4,7 @@ namespace BattleTechTracking.Reports
 {
     public class DataReport
     {
+        public const string CLUSTER_HITS_TABLE = "Cluster Hits Table";
         public const string DAMAGE_REPORT = "Damage Report";
         public const string DETERMINING_CRITICAL_HITS = "Determining Critical Hits Table";
         public const string KICK_LOCATION_TABLE = "Kick Location Table";
@@ -14,6 +15,7 @@ namespace BattleTechTracking.Reports
         {
             var reports = new List<string>
             {
+                CLUSTER_HITS_TABLE,
                 DAMAGE_REPORT,
                 DETERMINING_CRITICAL_HITS,
                 KICK_LOCATION_TABLE,
@@ -32,6 +34,7 @@ namespace BattleTechTracking.Reports
         {
             var dictionary = new Dictionary<string,dynamic>
             {
+                { CLUSTER_HITS_TABLE, new ClusterHitsTable()},
                 { DAMAGE_REPORT, new DamageReport() },
                 { DETERMINING_CRITICAL_HITS, new DetermineCritHitsTable()},
                 { KICK_LOCATION_TABLE, new KickLocationTable()},
