@@ -12,3 +12,15 @@ Planned Releases:
 0.3 - quality of life and code cleanup / refactor
 
 1.0 - final release - desktop app
+
+
+INSTALLATION
+Step 1 - Download the zip file.
+Step 2 - Unzip to a temp directory.
+Step 3 - The certificate must be installed on your machine before UWP allows the app to be installed.  This means double clicking the CER file and then installing it under the TRUSTED PEOPLE folder.  Failure to do this will result in the app not installing.
+Step 4 - Double Click on the APPXBUNDLE.  This will launch the installer.
+
+ALTERNATE INSTALLATION
+Step 1 - Download the zip file.
+Step 2 - Unzip to a temp directory.
+Step 3 - Double click the InstallTracker.bat file which runs the installation via Power Shell.
