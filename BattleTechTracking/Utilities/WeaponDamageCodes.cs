@@ -51,6 +51,7 @@ namespace BattleTechTracking.Utilities
         private static bool TryProcessRCode(string code, out int? RValue)
         {
             RValue = null;
+            if (string.IsNullOrEmpty(code)) return false;
             if (code.Substring(0, 1).ToUpper() != "R") return false;
             var value = code.Substring(1, code.Length - 1);
             if (!int.TryParse(value, out var tryValue)) return false;
@@ -62,6 +63,7 @@ namespace BattleTechTracking.Utilities
         {
             // example of a v code: V25/20/10
             VCodeValue = string.Empty;
+            if (string.IsNullOrEmpty(code)) return false;
             if (code.Substring(0, 1).ToUpper() != "V") return false;
             VCodeValue = code.Substring(1, code.Length - 1);
             return true;
