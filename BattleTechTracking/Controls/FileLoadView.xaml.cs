@@ -20,6 +20,11 @@ namespace BattleTechTracking.Controls
             typeof(ICommand),
             typeof(FileLoadView));
 
+        public static readonly BindableProperty DeleteButtonProperty = BindableProperty.Create(
+            nameof(DeleteButton),
+            typeof(ICommand),
+            typeof(FileLoadView));
+
         public static readonly BindableProperty FileNameProperty = BindableProperty.Create(
             nameof(FileName),
             typeof(string),
@@ -58,6 +63,12 @@ namespace BattleTechTracking.Controls
         {
             get => (ICommand)GetValue(FileLoadView.CancelButtonProperty);
             set => SetValue(FileLoadView.CancelButtonProperty, value);
+        }
+
+        public ICommand DeleteButton
+        {
+            get => (ICommand)GetValue(FileLoadView.DeleteButtonProperty);
+            set => SetValue(FileLoadView.DeleteButtonProperty, value);
         }
 
         public IEnumerable<string> FileNames

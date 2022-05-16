@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 using BattleTechTracking.Models;
@@ -52,6 +52,16 @@ namespace BattleTechTracking.ViewModels
 
         public ICommand SaveFileOkButtonPressed { get; protected set; }
         public ICommand SaveFileCancelButtonPressed { get; protected set; }
+        public ICommand DeleteFileButtonPressed { get; }
+
+        protected FileViewModelBase()
+        {
+            DeleteFileButtonPressed = new Command<string>((fileName) =>
+            {
+                DataPump.DeleteMatchState(fileName);
+                LoadFileNamesFromSaveLocation();
+            });
+        }
         
         private void LoadFileNamesFromSaveLocation()
         {

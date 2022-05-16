@@ -24,8 +24,8 @@ namespace BattleTechTracking.Utilities
         public static IEnumerable<T> GetPersistedDataForType<T>()
         {
             //System.Environment.ApplicationData
-            var fileName = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{GetFileNameForType<T>()}";
-            
+            var fileName = GetFilePath(GetFileNameForType<T>());
+
             if (!File.Exists(fileName))
             {
                 //if it does not already exist as a saved file, get the embedded version which should come with the app and return that in its stead.
@@ -38,8 +38,7 @@ namespace BattleTechTracking.Utilities
 
         public static void SavePersistedDataForType<T>(IEnumerable<T> data)
         {
-            var fileName = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{GetFileNameForType<T>()}";
-            
+            var fileName = GetFilePath(GetFileNameForType<T>());
             using (var file = File.CreateText(fileName))
             {
                 var serializer = new JsonSerializer();
@@ -49,7 +48,7 @@ namespace BattleTechTracking.Utilities
 
         public static void SaveMatchState(MatchState factions, string fileName)
         {
-            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}{MATCH_STATE_FILE_EXTENSION}";
+            var filePath = GetFilePath(fileName);
 
             try
             {
@@ -71,7 +70,7 @@ namespace BattleTechTracking.Utilities
 
         public static MatchState LoadMatchState(string fileName)
         {
-            var filePath = $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}{MATCH_STATE_FILE_EXTENSION}";
+            var filePath = GetFilePath(fileName);
             try
             {
                 using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
@@ -93,6 +92,22 @@ namespace BattleTechTracking.Utilities
 
             return MatchState.NoMatchStateLoaded;
         }
+
+        public static void DeleteMatchState(string fileName)
+        {
+            var filePath = GetFilePath(fileName);
+            try
+            {
+                File.Delete(filePath);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"ERROR deleting file {e}");
+            }
+        }
+
+        private static string GetFilePath(string fileName) 
+            => $"{Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)}\\{fileName}{MATCH_STATE_FILE_EXTENSION}";
 
         /// <summary>
         /// Returns an IEnumerable of the type given in the embedded JSON files of the application.

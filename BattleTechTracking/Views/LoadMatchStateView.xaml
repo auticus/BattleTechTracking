@@ -21,8 +21,9 @@
                                    Margin="10, 45, 0, 20"
                                    OkButton="{Binding SaveFileOkButtonPressed}"
                                    CancelButton="{Binding SaveFileCancelButtonPressed}"
+                                   DeleteButton="{Binding DeleteFileButtonPressed}"
                                    FileName="{Binding SaveFileName, Mode=TwoWay}"
-                                   FileNames="{Binding FileNames}"
+                                   FileNames="{Binding FileNames, Mode=TwoWay}"
                                    IsLoadFile="True"/>
         </Grid>
     </ContentPage.Content>
