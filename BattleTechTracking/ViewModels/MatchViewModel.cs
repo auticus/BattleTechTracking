@@ -113,12 +113,9 @@ namespace BattleTechTracking.ViewModels
             get => _activeFactionUnits;
             set
             {
+                UnsubscribeActionFactionUnitEvents();
                 _activeFactionUnits = value;
-
-                foreach (var element in _activeFactionUnits)
-                {
-                    element.Invalidated += OnGroupedElement_Invalidated;
-                }
+                SubscribeActionFactionUnitEvents();
                 OnPropertyChanged(nameof(ActiveFactionUnits));
             }
         }
@@ -552,6 +549,24 @@ namespace BattleTechTracking.ViewModels
         private void LoadVisibleUnits()
         {
             SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
+        }
+
+        private void UnsubscribeActionFactionUnitEvents()
+        {
+            if (_activeFactionUnits == null) return;
+            foreach (var element in _activeFactionUnits)
+            {
+                element.Invalidated -= OnGroupedElement_Invalidated;
+            }
+        }
+
+        private void SubscribeActionFactionUnitEvents()
+        {
+            if (_activeFactionUnits == null) return;
+            foreach (var element in _activeFactionUnits)
+            {
+                element.Invalidated += OnGroupedElement_Invalidated;
+            }
         }
 
         private void FilterVisibleUnitsBySearchCondition()
