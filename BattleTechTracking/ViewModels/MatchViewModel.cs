@@ -30,6 +30,9 @@ namespace BattleTechTracking.ViewModels
         private bool _activeUnitWeaponsVisible;
         private bool _activeUnitAmmoVisible;
         private bool _dataReportsVisible;
+        private bool _playerOneFactionVisible;
+        private bool _playerTwoFactionVisible;
+        private bool _batchUpdateActive = false;
         private string _activeFactionName;
         private string _faction1Name;
         private string _faction2Name;
@@ -37,10 +40,9 @@ namespace BattleTechTracking.ViewModels
         private string _selectedUnitFilter;
         private IDisplayListView _selectorViewSelectedUnit;
 
-        private IList<IDisplayMatchedListView>[] _factionUnits =
-            { new List<IDisplayMatchedListView>(), new List<IDisplayMatchedListView>() };
+        private readonly Dictionary<int, ObservableCollection<GroupedGameElement>> _factionUnits =
+            new Dictionary<int, ObservableCollection<GroupedGameElement>>();
 
-        private ObservableCollection<GroupedGameElement> _activeFactionUnits;
         private ObservableCollection<IDisplayListView> _selectorViewVisibleUnits;
         private TrackedGameElement _selectedActiveUnit;
 
@@ -52,22 +54,21 @@ namespace BattleTechTracking.ViewModels
             get => _activeFaction;
             set
             {
-                //put the current active observable collection into the cache
-                if (ActiveFactionUnits != null) _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
-
                 _activeFaction = value;
-                OnPropertyChanged(nameof(ActiveFaction));
 
-                //make the new active observable collection based on the new active faction
-                ActiveFactionUnits = GetGroupedFactionDataFromFactionData(_factionUnits[ActiveFaction]);
+                PlayerOneFactionVisible = ActiveFaction == 0;
+                PlayerTwoFactionVisible = ActiveFaction == 1;
+
                 ActiveFactionName = ActiveFaction == 0 ? Faction1Name : Faction2Name;
-
+                
                 // this is a turbo hack - but UWP for whatever reason gets really angry if there is only one element that gets set null
                 // it no longer registers selections and the add button stops working
-                SelectedActiveUnit = ActiveFactionUnits.Count == 1
-                    ? (TrackedGameElement)ActiveFactionUnits[0].GameElements[0]
+                var activeUnits = GetActiveFaction();
+                SelectedActiveUnit = activeUnits.Count == 1
+                    ? (TrackedGameElement)activeUnits[0].GameElements[0]
                     : null;
                 MatchTrackingViewVisible = SelectedActiveUnit != null;
+                OnPropertyChanged(nameof(ActiveFaction));
             }
         }
 
@@ -108,16 +109,14 @@ namespace BattleTechTracking.ViewModels
         /// <summary>
         /// The item source of the active faction's list of units.
         /// </summary>
-        public ObservableCollection<GroupedGameElement> ActiveFactionUnits
+        public ObservableCollection<GroupedGameElement> PlayerOneUnits
         {
-            get => _activeFactionUnits;
-            set
-            {
-                UnsubscribeActionFactionUnitEvents();
-                _activeFactionUnits = value;
-                SubscribeActionFactionUnitEvents();
-                OnPropertyChanged(nameof(ActiveFactionUnits));
-            }
+            get => _factionUnits[0];
+        }
+
+        public ObservableCollection<GroupedGameElement> PlayerTwoUnits
+        {
+            get => _factionUnits[1];
         }
 
         /// <summary>
@@ -132,6 +131,26 @@ namespace BattleTechTracking.ViewModels
                 OnPropertyChanged(nameof(SelectedActiveUnit));
                 SetActiveFlagOnSelectedElement();
                 SetDefaultPanelVisible();
+            }
+        }
+
+        public bool PlayerOneFactionVisible
+        {
+            get => _playerOneFactionVisible;
+            set
+            {
+                _playerOneFactionVisible = value;
+                OnPropertyChanged(nameof(PlayerOneFactionVisible));
+            }
+        }
+
+        public bool PlayerTwoFactionVisible
+        {
+            get => _playerTwoFactionVisible;
+            set
+            {
+                _playerTwoFactionVisible = value;
+                OnPropertyChanged(nameof(PlayerTwoFactionVisible));
             }
         }
 
@@ -347,9 +366,7 @@ namespace BattleTechTracking.ViewModels
 
         public MatchViewModel()
         {
-            Faction1Name = "Faction 1";
-            Faction2Name = "Faction 2";
-            ActiveFaction = 0;
+            InitializeFactionUnitData();
 
             UnitFilters = UnitTypes.BuildUnitTypesCollection();
             UnitActions = ActionsFactory.BuildActionsList().ToList();
@@ -371,14 +388,13 @@ namespace BattleTechTracking.ViewModels
 
             SaveCommand = new Command(() =>
             {
-                //make sure our active faction is saved out to the cache
-                _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
-                
+                const int factionOneId = 0;
+                const int factionTwoId = 1;
                 var matchState = new MatchState()
                 {
                     Faction1Name = this.Faction1Name,
                     Faction2Name = this.Faction2Name,
-                    Factions = _factionUnits
+                    Factions = new IList<IDisplayMatchedListView>[]{FlattenFactionUnitsToList(factionOneId), FlattenFactionUnitsToList(factionTwoId)}
                 };
 
                 SaveFileVM.SavedMatchState = matchState;
@@ -425,12 +441,21 @@ namespace BattleTechTracking.ViewModels
 
             BeginNewRound = new Command(() =>
             {
-                var nonActiveFaction = ActiveFaction == 1 ? 0 : 1;
-                //refresh the active faction in cache with whats in the observable
-                _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
+                var units = new List<ITrackable>();
+                for (var factionID = 0; factionID < _factionUnits.Count; factionID++)
+                {
+                    foreach (var groupedElement in _factionUnits[factionID])
+                    {
+                        units.AddRange(groupedElement.GameElements.Cast<ITrackable>());
+                    }
+                }
 
-                GameStateTracker.NextRound(_factionUnits[nonActiveFaction].Cast<ITrackable>());
-                GameStateTracker.NextRound(_factionUnits[ActiveFaction].Cast<ITrackable>());
+                _batchUpdateActive = true;
+                GameStateTracker.NextRound(units);
+
+                RefreshObservbableCollection(FACTION_1_INDEX);
+                RefreshObservbableCollection(FACTION_2_INDEX);
+                _batchUpdateActive = false;
             });
 
             ViewTrackGameElementDetails = new Command(() =>
@@ -466,10 +491,13 @@ namespace BattleTechTracking.ViewModels
 
             ReportsCommand = new Command(() =>
             {
-                //refresh the faction data with what is in the observable
-                _factionUnits[ActiveFaction] = FlattenActiveFactionUnitsToOneList();
+                var factionUnitData = new IList<IDisplayMatchedListView>[_factionUnits.Count];
+                for (var factionID = 0; factionID < _factionUnits.Count; factionID++)
+                {
+                    factionUnitData[factionID] = FlattenFactionUnitsToList(factionID);
+                }
 
-                DataReportVM.RefreshReportData(new TextReportInput(TextReportInput.ConvertFactionDataToReportableFormat(_factionUnits),
+                DataReportVM.RefreshReportData(new TextReportInput(TextReportInput.ConvertFactionDataToReportableFormat(factionUnitData),
                                                             new string[]{Faction1Name, Faction2Name}));
                 DataReportVM.TextReportContents = string.Empty;
                 DataReportVM.SelectedReport = string.Empty;
@@ -522,6 +550,10 @@ namespace BattleTechTracking.ViewModels
             FilterUnits = new Command(FilterVisibleUnitsBySearchCondition);
         }
 
+        /// <summary>
+        /// Called externally to pass in match state to the view model to set the data elements up.
+        /// </summary>
+        /// <param name="state"></param>
         public void LoadMatchState(MatchState state)
         {
             if (state == null) return;
@@ -529,8 +561,35 @@ namespace BattleTechTracking.ViewModels
             Faction1Name = state.Faction1Name;
             Faction2Name = state.Faction2Name;
 
-            _factionUnits = state.Factions;
-            ActiveFactionUnits = GetGroupedFactionDataFromFactionData(_factionUnits[0]);
+            _factionUnits.Clear();
+
+            for (var factionID = 0; factionID < state.Factions.Length; factionID++)
+            {
+                foreach (var item in state.Factions[factionID])
+                {
+                    item.Invalidated += OnGroupedElement_Invalidated;
+                }
+
+                var faction = GetGroupedFactionDataFromSavedMatchState(state.Factions[factionID]);
+                _factionUnits.Add(factionID, faction);
+            }
+
+            OnPropertyChanged(nameof(PlayerOneUnits));
+            OnPropertyChanged(nameof(PlayerTwoUnits));
+            PlayerOneFactionVisible = true;
+            PlayerTwoFactionVisible = false;
+        }
+
+        private void InitializeFactionUnitData()
+        {
+            Faction1Name = "Faction 1";
+            Faction2Name = "Faction 2";
+            _factionUnits.Add(0, new ObservableCollection<GroupedGameElement>());
+            _factionUnits.Add(1, new ObservableCollection<GroupedGameElement>());
+            ActiveFaction = 0;
+
+            OnPropertyChanged(nameof(PlayerOneUnits));
+            OnPropertyChanged(nameof(PlayerTwoUnits));
         }
 
         private void SetAllPanelsInvisible()
@@ -549,24 +608,6 @@ namespace BattleTechTracking.ViewModels
         private void LoadVisibleUnits()
         {
             SelectorViewVisibleUnits = new ObservableCollection<IDisplayListView>(GetAssociatedUnitsByFilterType());
-        }
-
-        private void UnsubscribeActionFactionUnitEvents()
-        {
-            if (_activeFactionUnits == null) return;
-            foreach (var element in _activeFactionUnits)
-            {
-                element.Invalidated -= OnGroupedElement_Invalidated;
-            }
-        }
-
-        private void SubscribeActionFactionUnitEvents()
-        {
-            if (_activeFactionUnits == null) return;
-            foreach (var element in _activeFactionUnits)
-            {
-                element.Invalidated += OnGroupedElement_Invalidated;
-            }
         }
 
         private void FilterVisibleUnitsBySearchCondition()
@@ -622,24 +663,27 @@ namespace BattleTechTracking.ViewModels
             }
 
             // pull the grouping out of the ActionFactionUnits collection - and if it doesn't exist right now - add that category
-            var activeFactionUnits = ActiveFactionUnits.FirstOrDefault(p => p.Key == gameElement.UnitAction);
+            var activeFactionUnits = GetActiveFaction().FirstOrDefault(p => p.Key == gameElement.UnitAction);
             if (activeFactionUnits == null)
             {
                 activeFactionUnits = new GroupedGameElement(gameElement.UnitAction, new List<IDisplayMatchedListView>());
-                ActiveFactionUnits.Add(activeFactionUnits);
+                GetActiveFaction().Add(activeFactionUnits);
             }
             
             activeFactionUnits.Add(gameElement);
+            gameElement.Invalidated += OnGroupedElement_Invalidated;
 
-            ActiveFactionUnits = GetGroupedFactionDataFromFactionData(ActiveFactionUnits);
+            RefreshObservbableCollection(ActiveFaction);
             SelectedActiveUnit = gameElement;
         }
 
+        private ObservableCollection<GroupedGameElement> GetActiveFaction() => PlayerOneFactionVisible ? PlayerOneUnits : PlayerTwoUnits;
+        
         private void SetActiveFlagOnSelectedElement()
         {
             // while the SelectedItem binding works fine, the visuals in UWP do not.  This flag was set on the base model to change text
             // colors around when items are selected.
-            foreach(var group in ActiveFactionUnits)
+            foreach(var group in GetActiveFaction())
             foreach (var element in group)
             {
                 element.IsSelected = false;
@@ -659,14 +703,13 @@ namespace BattleTechTracking.ViewModels
         }
 
         /// <summary>
-        /// Takes the <see cref="ActiveFactionUnits"/> collection and turns it into a single List of <see cref="IDisplayMatchedListView"/> elements.
+        /// Takes the factionID of the observable collection and turns it into a single List of <see cref="IDisplayMatchedListView"/> elements.
         /// </summary>
         /// <returns></returns>
-        private List<IDisplayMatchedListView> FlattenActiveFactionUnitsToOneList()
+        private List<IDisplayMatchedListView> FlattenFactionUnitsToList(int factionID)
         {
-            if (ActiveFactionUnits == null) return null;
             var flattenedList = new List<IDisplayMatchedListView>();
-            foreach (var groupedElement in ActiveFactionUnits)
+            foreach (var groupedElement in _factionUnits[factionID])
             {
                 flattenedList.AddRange(groupedElement.GameElements);
             }
@@ -674,7 +717,7 @@ namespace BattleTechTracking.ViewModels
             return flattenedList;
         }
 
-        private ObservableCollection<GroupedGameElement> GetGroupedFactionDataFromFactionData(IEnumerable<IDisplayMatchedListView> data)
+        private ObservableCollection<GroupedGameElement> GetGroupedFactionDataFromSavedMatchState(IEnumerable<IDisplayMatchedListView> data)
         {
             // I know there is likely a linq way to group by and do this, but for time sake I just decided to go the brute force direction
             // the idea here is taking one of the flat lists in cache and turning it into the grouped game element observable.
@@ -692,10 +735,11 @@ namespace BattleTechTracking.ViewModels
             return activeUnits;
         }
 
-        private ObservableCollection<GroupedGameElement> GetGroupedFactionDataFromFactionData(ObservableCollection<GroupedGameElement> data)
+        private void RefreshObservbableCollection(int factionID)
         {
+            var data = _factionUnits[factionID];
+
             // This goes through the entire observable collection and reorganizes it.
-            var activeUnits = new ObservableCollection<GroupedGameElement>();
             var readyUnits = new List<IDisplayMatchedListView>();
             var movedUnits = new List<IDisplayMatchedListView>();
             var shotUnits = new List<IDisplayMatchedListView>();
@@ -726,16 +770,15 @@ namespace BattleTechTracking.ViewModels
                 }
             }
 
-            if (readyUnits.Any()) activeUnits.Add(new GroupedGameElement(ActionsFactory.NO_ACTION, 
+            data.Clear();
+            if (readyUnits.Any()) data.Add(new GroupedGameElement(ActionsFactory.NO_ACTION, 
                 readyUnits.OrderBy(p=>p.UnitHeader)));
-            if (movedUnits.Any()) activeUnits.Add(new GroupedGameElement(ActionsFactory.MOVED,
+            if (movedUnits.Any()) data.Add(new GroupedGameElement(ActionsFactory.MOVED,
                 movedUnits.OrderBy(p => p.UnitHeader)));
-            if (shotUnits.Any()) activeUnits.Add(new GroupedGameElement(ActionsFactory.WEAPONS_SHOT,
+            if (shotUnits.Any()) data.Add(new GroupedGameElement(ActionsFactory.WEAPONS_SHOT,
                 shotUnits.OrderBy(p => p.UnitHeader)));
-            if (meleeUnits.Any()) activeUnits.Add(new GroupedGameElement(ActionsFactory.MELEE,
+            if (meleeUnits.Any()) data.Add(new GroupedGameElement(ActionsFactory.MELEE,
                 meleeUnits.OrderBy(p => p.UnitHeader)));
-
-            return activeUnits;
         }
 
         private GroupedGameElement GroupElementsByAction(string action, IEnumerable<IDisplayMatchedListView> data)
@@ -747,7 +790,7 @@ namespace BattleTechTracking.ViewModels
 
         private void RemoveUnitFromCollectionByID(Guid id)
         {
-            foreach (var gameElement in ActiveFactionUnits)
+            foreach (var gameElement in GetActiveFaction())
             {
                 var unit = gameElement.GameElements.FirstOrDefault(x => x.ID == id);
                 if (unit == null) continue;
@@ -760,21 +803,9 @@ namespace BattleTechTracking.ViewModels
         {
             //this will fire off everytime a unit action in one of the groupings changes, 
             //causing the entire observable to need to be redone.
-            UnsubAllGroupInvalidationEvents();
 
-            //rebuild the collection
-            ActiveFactionUnits = GetGroupedFactionDataFromFactionData(ActiveFactionUnits);
-
-            //Attempting to set the active unit to what was selected produces an infinite loop
-            //have not figured that out yet as to why it calls itself over and over
-        }
-
-        private void UnsubAllGroupInvalidationEvents()
-        {
-            foreach (var element in ActiveFactionUnits)
-            {
-                element.Invalidated -= OnGroupedElement_Invalidated;
-            }
+            if (!_batchUpdateActive)
+                RefreshObservbableCollection(ActiveFaction);
         }
 
         /// <summary>
@@ -786,8 +817,15 @@ namespace BattleTechTracking.ViewModels
             var nonActiveFaction = ActiveFaction == 1 ? 0 : 1;
             SelectedActiveUnit.RefreshComponentStatus();
 
+            var targetables = new List<ITargetable>();
+            
+            foreach (var element in _factionUnits[nonActiveFaction])
+            {
+                targetables.AddRange(element.GameElements.Cast<ITargetable>());
+            }
+
             SelectedActiveUnit.ValidTargets.Targets = new ObservableCollection<TargetedEntity>(
-                TargetingSystem.GetAllTargetedElementsModifiers(_factionUnits[nonActiveFaction].Cast<ITargetable>(), SelectedActiveUnit));
+                TargetingSystem.GetAllTargetedElementsModifiers(targetables, SelectedActiveUnit));
         }
     }
 }

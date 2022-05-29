@@ -48,11 +48,12 @@
                     <Button Text="{Binding Faction2Name}" WidthRequest="190" TextColor="Gold" Command="{Binding ActivateFaction2Command}"/>
                 </StackLayout>
 
-                <!-- List View faction units -->
+                <!-- List View faction units Faction 1-->
                 <ListView Grid.Row="1" Grid.Column="0" 
                           Margin="0,10,0,25"
-                          ItemsSource="{Binding ActiveFactionUnits}"
+                          ItemsSource="{Binding PlayerOneUnits}"
                           SelectedItem="{Binding SelectedActiveUnit}"
+                          IsVisible ="{Binding PlayerOneFactionVisible, Mode=TwoWay}"
                           VerticalOptions="FillAndExpand"
                           IsGroupingEnabled="True">
                     <ListView.GroupHeaderTemplate>
@@ -93,11 +94,11 @@
                                         <ColumnDefinition Width="40"/>
                                     </Grid.ColumnDefinitions>
                                     <Label Grid.Column="0"
-                                            Text="{Binding UnitHeader}"
-                                            TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
-                                            VerticalTextAlignment="Center"
-                                            FontAttributes="{Binding UnitStatus, Converter={StaticResource StatusToFontStyleConverter}}"
-                                            TextDecorations="{Binding UnitStatus, Converter={StaticResource StatusToDecorationConverter}}"/>
+                                           Text="{Binding UnitHeader}"
+                                           TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
+                                           VerticalTextAlignment="Center"
+                                           FontAttributes="{Binding UnitStatus, Converter={StaticResource StatusToFontStyleConverter}}"
+                                           TextDecorations="{Binding UnitStatus, Converter={StaticResource StatusToDecorationConverter}}"/>
                                     <Label Grid.Column="1"
                                            Text="{Binding UnitDetails}"
                                            TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
@@ -106,11 +107,81 @@
                                            FontSize="Caption"
                                            VerticalTextAlignment="Center"/>
                                     <ImageButton Grid.Column="2"
-                                            WidthRequest="32" HeightRequest="32" 
-                                            BackgroundColor="Black" Source="trash.jpg"
-                                            BorderColor="Gold" BorderWidth="1" 
-                                            Command="{Binding DeleteUnit, Source={x:Reference viewModel}}"
-                                            CommandParameter="{Binding ID}"/>
+                                                 WidthRequest="32" HeightRequest="32" 
+                                                 BackgroundColor="Black" Source="trash.jpg"
+                                                 BorderColor="Gold" BorderWidth="1" 
+                                                 Command="{Binding DeleteUnit, Source={x:Reference viewModel}}"
+                                                 CommandParameter="{Binding ID}"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <!-- List View faction units Faction 2-->
+                <ListView Grid.Row="1" Grid.Column="0" 
+                          Margin="0,10,0,25"
+                          ItemsSource="{Binding PlayerTwoUnits}"
+                          SelectedItem="{Binding SelectedActiveUnit}"
+                          IsVisible ="{Binding PlayerTwoFactionVisible, Mode=TwoWay}"
+                          VerticalOptions="FillAndExpand"
+                          IsGroupingEnabled="True">
+                    <ListView.GroupHeaderTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Label FontAttributes="Bold"
+                                       TextColor="Gray"
+                                       FontSize="Medium"
+                                       Text="{Binding Key}"/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.GroupHeaderTemplate>
+                    <ListView.Header>
+                        <ContentView BackgroundColor="MidnightBlue">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding ActiveFactionName}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                       FontSize="Medium" TextColor="Yellow"/>
+                                <ImageButton Grid.Column="1" WidthRequest="32" HeightRequest="32" 
+                                             CornerRadius="20" HorizontalOptions="End" 
+                                             BackgroundColor="Black" Source="plusIcon.jpg"
+                                             Margin="10,5,20,5" BorderColor="Gold" BorderWidth="1" 
+                                             Command="{Binding AddUnits}"/>
+                            </Grid>
+                        </ContentView>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Margin="5,5,0,0"
+                                      BackgroundColor="{Binding UnitStatus, Converter={StaticResource StatusToColorConverter}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="125"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0"
+                                           Text="{Binding UnitHeader}"
+                                           TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
+                                           VerticalTextAlignment="Center"
+                                           FontAttributes="{Binding UnitStatus, Converter={StaticResource StatusToFontStyleConverter}}"
+                                           TextDecorations="{Binding UnitStatus, Converter={StaticResource StatusToDecorationConverter}}"/>
+                                    <Label Grid.Column="1"
+                                           Text="{Binding UnitDetails}"
+                                           TextColor="{Binding IsSelected, Converter={StaticResource BoolToColorConverter}}"
+                                           TextDecorations="{Binding UnitStatus, Converter={StaticResource StatusToDecorationConverter}}"
+                                           FontAttributes="Italic"
+                                           FontSize="Caption"
+                                           VerticalTextAlignment="Center"/>
+                                    <ImageButton Grid.Column="2"
+                                                 WidthRequest="32" HeightRequest="32" 
+                                                 BackgroundColor="Black" Source="trash.jpg"
+                                                 BorderColor="Gold" BorderWidth="1" 
+                                                 Command="{Binding DeleteUnit, Source={x:Reference viewModel}}"
+                                                 CommandParameter="{Binding ID}"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using BattleTechTracking.Factories;
 using Xamarin.Forms;
 
 namespace BattleTechTracking.Converters
